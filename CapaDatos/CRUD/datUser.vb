@@ -10,9 +10,10 @@ Public Class datUser
             cmd.CommandText = "Select * from users Where userName=@user and passUser= @pass"
             cmd.Parameters.AddWithValue("@user", user)
             cmd.Parameters.AddWithValue("@pass", pass)
+            'objdao.BaseDatos = "Colegio_DB"
+            'objdao.Servidor = "FAPCOD\SQLEXPRESS"
             objdao.Conectar("", "", True)
             cmd.Connection = objdao.cnn
-            cmd.Connection.Open()
             'vean el problema 
             If cmd.ExecuteNonQuery Then
                 Return True

@@ -14,7 +14,7 @@ Public Class Login
         Dim objnegUser As New negUser
         Try
             If objnegUser.Login(username, passUser) Then
-                MsgBox("REGISTRO EXITOSO")
+                MsgBox("ENTRASTE")
             Else
                 MsgBox("ERROR", vbCritical)
             End If
