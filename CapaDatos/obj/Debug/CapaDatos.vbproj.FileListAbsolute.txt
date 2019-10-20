@@ -1,0 +1,12 @@
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.dll
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.pdb
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.dll
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.pdb
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.vbprojResolveAssemblyReference.cache
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.Resources.resources
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.vbproj.GenerateResource.Cache
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.dll
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.pdb

@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionASQL\datConexion.vb" />
+    <Compile Include="CRUD\datAlumno.vb" />
+    <Compile Include="CRUD\datProfesor.vb" />
+    <Compile Include="CRUD\datUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -105,7 +108,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EnviarMensajeACorreo\" />
+    <Folder Include="ServicioEmail\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

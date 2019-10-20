@@ -1,1 +1,17 @@
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaPresentacion.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaEntidad.dll
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaNegocio.dll
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaEntidad.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaNegocio.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.vbprojResolveAssemblyReference.cache
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.xml
+c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
