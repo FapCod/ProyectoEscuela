@@ -1,6 +1,5 @@
-create database Colegio_DB -- creamos la base de datos con la que trabajaremos 
+create database  -- creamos la base de datos con la que trabajaremos 
 use Colegio_DB -- Usamos la database creada
-
 create table Alumno (
 Idalumno int Primary Key not null, 
 NombreAlumno varchar (50) not null, 
@@ -37,3 +36,15 @@ AlumnosRegistrados int not null,
 select * from Alumno 
  select * from  Profesor 
  select * from  Seccion 
+
+
+create table Users(
+UserID int identity(1,1) primary key,
+userName nvarchar (100) unique not null,
+passUser nvarchar (100) not null,
+FirstName nvarchar(100) not null
+)
+insert into Users values ('admin1','123456789','Jackson')
+select * from Users
+Select * from users
+drop table Users

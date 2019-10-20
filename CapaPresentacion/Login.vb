@@ -15,6 +15,9 @@ Public Class Login
         Try
             If objnegUser.Login(username, passUser) Then
                 MsgBox("ENTRASTE")
+                Dim principal As New Principal
+                principal.Show()
+                Hide()
             Else
                 MsgBox("ERROR", vbCritical)
             End If
