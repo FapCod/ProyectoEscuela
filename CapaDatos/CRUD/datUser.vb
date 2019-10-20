@@ -1,25 +1,31 @@
-﻿Public Class datUser
-    ''Se crea funcion para el ingreso del ususario con retorno booleano
-    'Public Function Login(user As String, pass As String) As Boolean
-    '    'se usa using porque al terminar el proceso automaticamente sera liberada la memoria dependiendo de lo que haya estado ejecutandose.
-    '    Using connection = GetConnection()
-    '        connection.Open()
-    '        Using Comman = New SqlCommand()
-    '            Comman.Connection = connection
-    '            Comman.CommandText = "Select * from users Where userName=@user and passUser= @pass"
-    '            Comman.Parameters.AddWithValue("@user", user)
-    '            Comman.Parameters.AddWithValue("@pass", pass)
-    '            Comman.CommandType = CommandType.Text
-    '            Dim reader = Comman.ExecuteReader()
-    '            'si la variable reader tiene filas entonces retornara true 
-    '            If reader.HasRows Then
-    '                Return True
-    '            Else
-    '                Return False
-    '            End If
-    '        End Using
-    '    End Using
-    'End Function
+﻿Imports CapaDatos
+Imports System.Data.SqlClient
+
+Public Class datUser
+    Public Function Login(user As String, pass As String) As Boolean
+        Try
+            Dim objdao As New datConexion
+            Dim cmd As New SqlCommand
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "Select * from users Where userName=@user and passUser= @pass"
+            cmd.Parameters.AddWithValue("@user", user)
+            cmd.Parameters.AddWithValue("@pass", pass)
+            objdao.Conectar("", "", True)
+            cmd.Connection = objdao.cnn
+            cmd.Connection.Open()
+            'vean el problema 
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox("error ex" + ex.Message)
+        End Try
+
+        Return False
+    End Function
     ''Funcion si existe usuario
     'Public Function existsUser(id As Integer, loginName As String, pass As String) As Boolean
     '    Using connection = GetConnection()

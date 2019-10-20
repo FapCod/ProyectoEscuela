@@ -15,3 +15,6 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresent
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.xml
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.xml
