@@ -1,0 +1,6 @@
+'mustinherit , no puede ser instanciada 
+contructor de forma protegida.
+cade conexion privada,
+contructor de forma protegida;
+metdo protegido para proteger la conexion 
+se retorna instancia,

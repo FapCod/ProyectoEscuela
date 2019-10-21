@@ -19,6 +19,6 @@ Public Class negUser
         End If
     End Function
 
-    
+
 End Class
 

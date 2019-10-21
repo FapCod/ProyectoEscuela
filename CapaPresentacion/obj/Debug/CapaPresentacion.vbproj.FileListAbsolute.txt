@@ -9,7 +9,6 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresent
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaNegocio.pdb
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaNegocio.xml
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.vbprojResolveAssemblyReference.cache
-c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.exe
@@ -18,4 +17,6 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaPresent
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.dll
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.pdb
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.xml
-C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.Principal.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarProfesor.resources

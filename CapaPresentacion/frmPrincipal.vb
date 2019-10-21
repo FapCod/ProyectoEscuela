@@ -1,6 +1,6 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
-Public Class Principal
+Public Class frmPrincipal
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblNombreUser.Text = usuarioActivo.firstName
@@ -43,4 +43,8 @@ Public Class Principal
         End If
     End Sub
 
+    Private Sub btnRegistrarMaestro_Click(sender As Object, e As EventArgs) Handles btnRegistrarMaestro.Click
+        Dim frmRM As New frmAgregarProfesor
+        frmRM.Show()
+    End Sub
 End Class

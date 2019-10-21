@@ -49,5 +49,5 @@ Public Class datUser
         End Using
         Return False
     End Function
-   
+
 End Class
