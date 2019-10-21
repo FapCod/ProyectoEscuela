@@ -62,6 +62,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cache\Cargos.vb" />
+    <Compile Include="cache\usuarioActivo.vb" />
     <Compile Include="entAlumno.vb" />
     <Compile Include="entProfesor.vb" />
     <Compile Include="entUser.vb" />

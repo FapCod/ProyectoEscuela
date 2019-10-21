@@ -48,3 +48,19 @@ insert into Users values ('admin1','123456789','Jackson')
 select * from Users
 Select * from users
 drop table Users
+
+---------ELIMINAR TABLA USERS
+drop table Users;
+
+
+create table Users(
+UserID int identity(1,1) primary key,
+userName nvarchar (100) unique not null,
+passUser nvarchar (100) not null,
+FirstName nvarchar(100) not null,
+Positions nvarchar(100) not null
+)
+
+insert into Users values ('admin1','123456789','Jackson','Director')
+insert into Users values ('admin2','123456789','Marko','Profesor')
+select * from Users

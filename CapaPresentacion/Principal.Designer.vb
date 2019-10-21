@@ -26,19 +26,19 @@ Partial Class Principal
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblNombreUser = New System.Windows.Forms.Label()
-        Me.btnRegistrarMaestro = New System.Windows.Forms.Button()
-        Me.btnRegistrarAlumno = New System.Windows.Forms.Button()
-        Me.btnRegistrarNotas = New System.Windows.Forms.Button()
-        Me.btnListarMaestros = New System.Windows.Forms.Button()
-        Me.btnListarAlumnos = New System.Windows.Forms.Button()
-        Me.btnReportes = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCerrarC = New System.Windows.Forms.PictureBox()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnListarAlumnos = New System.Windows.Forms.Button()
+        Me.btnListarMaestros = New System.Windows.Forms.Button()
+        Me.btnRegistrarNotas = New System.Windows.Forms.Button()
+        Me.btnRegistrarAlumno = New System.Windows.Forms.Button()
+        Me.btnRegistrarMaestro = New System.Windows.Forms.Button()
+        Me.lblNombreUser = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrar
@@ -67,7 +67,7 @@ Partial Class Principal
         '
         Me.Panel1.BackColor = System.Drawing.Color.OrangeRed
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.btnCerrarC)
         Me.Panel1.Controls.Add(Me.btnReportes)
         Me.Panel1.Controls.Add(Me.btnListarAlumnos)
         Me.Panel1.Controls.Add(Me.btnListarMaestros)
@@ -82,96 +82,26 @@ Partial Class Principal
         Me.Panel1.Size = New System.Drawing.Size(286, 643)
         Me.Panel1.TabIndex = 2
         '
-        'PictureBox1
+        'Label1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(113, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(68, 592)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(140, 24)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Cerrar Cuenta"
         '
-        'lblNombreUser
+        'btnCerrarC
         '
-        Me.lblNombreUser.AutoSize = True
-        Me.lblNombreUser.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreUser.ForeColor = System.Drawing.Color.White
-        Me.lblNombreUser.Location = New System.Drawing.Point(76, 65)
-        Me.lblNombreUser.Name = "lblNombreUser"
-        Me.lblNombreUser.Size = New System.Drawing.Size(129, 24)
-        Me.lblNombreUser.TabIndex = 1
-        Me.lblNombreUser.Text = "NombreUser"
-        '
-        'btnRegistrarMaestro
-        '
-        Me.btnRegistrarMaestro.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnRegistrarMaestro.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarMaestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarMaestro.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarMaestro.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(0, 193)
-        Me.btnRegistrarMaestro.Name = "btnRegistrarMaestro"
-        Me.btnRegistrarMaestro.Size = New System.Drawing.Size(286, 58)
-        Me.btnRegistrarMaestro.TabIndex = 2
-        Me.btnRegistrarMaestro.Text = "Registrar Maestros"
-        Me.btnRegistrarMaestro.UseVisualStyleBackColor = False
-        '
-        'btnRegistrarAlumno
-        '
-        Me.btnRegistrarAlumno.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnRegistrarAlumno.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarAlumno.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarAlumno.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(0, 257)
-        Me.btnRegistrarAlumno.Name = "btnRegistrarAlumno"
-        Me.btnRegistrarAlumno.Size = New System.Drawing.Size(286, 58)
-        Me.btnRegistrarAlumno.TabIndex = 3
-        Me.btnRegistrarAlumno.Text = "Registrar Alumnos"
-        Me.btnRegistrarAlumno.UseVisualStyleBackColor = False
-        '
-        'btnRegistrarNotas
-        '
-        Me.btnRegistrarNotas.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnRegistrarNotas.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarNotas.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarNotas.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarNotas.Location = New System.Drawing.Point(0, 321)
-        Me.btnRegistrarNotas.Name = "btnRegistrarNotas"
-        Me.btnRegistrarNotas.Size = New System.Drawing.Size(286, 58)
-        Me.btnRegistrarNotas.TabIndex = 4
-        Me.btnRegistrarNotas.Text = "Registrar Notas"
-        Me.btnRegistrarNotas.UseVisualStyleBackColor = False
-        '
-        'btnListarMaestros
-        '
-        Me.btnListarMaestros.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnListarMaestros.FlatAppearance.BorderSize = 0
-        Me.btnListarMaestros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListarMaestros.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListarMaestros.ForeColor = System.Drawing.Color.White
-        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 385)
-        Me.btnListarMaestros.Name = "btnListarMaestros"
-        Me.btnListarMaestros.Size = New System.Drawing.Size(286, 58)
-        Me.btnListarMaestros.TabIndex = 5
-        Me.btnListarMaestros.Text = "Listar Maestros"
-        Me.btnListarMaestros.UseVisualStyleBackColor = False
-        '
-        'btnListarAlumnos
-        '
-        Me.btnListarAlumnos.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnListarAlumnos.FlatAppearance.BorderSize = 0
-        Me.btnListarAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListarAlumnos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListarAlumnos.ForeColor = System.Drawing.Color.White
-        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 449)
-        Me.btnListarAlumnos.Name = "btnListarAlumnos"
-        Me.btnListarAlumnos.Size = New System.Drawing.Size(286, 58)
-        Me.btnListarAlumnos.TabIndex = 6
-        Me.btnListarAlumnos.Text = "Listar Alumnos"
-        Me.btnListarAlumnos.UseVisualStyleBackColor = False
+        Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
+        Me.btnCerrarC.Location = New System.Drawing.Point(12, 581)
+        Me.btnCerrarC.Name = "btnCerrarC"
+        Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
+        Me.btnCerrarC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnCerrarC.TabIndex = 8
+        Me.btnCerrarC.TabStop = False
         '
         'btnReportes
         '
@@ -187,26 +117,96 @@ Partial Class Principal
         Me.btnReportes.Text = "Reportes"
         Me.btnReportes.UseVisualStyleBackColor = False
         '
-        'PictureBox2
+        'btnListarAlumnos
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 590)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 8
-        Me.PictureBox2.TabStop = False
+        Me.btnListarAlumnos.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnListarAlumnos.FlatAppearance.BorderSize = 0
+        Me.btnListarAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListarAlumnos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListarAlumnos.ForeColor = System.Drawing.Color.White
+        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 449)
+        Me.btnListarAlumnos.Name = "btnListarAlumnos"
+        Me.btnListarAlumnos.Size = New System.Drawing.Size(286, 58)
+        Me.btnListarAlumnos.TabIndex = 6
+        Me.btnListarAlumnos.Text = "Listar Alumnos"
+        Me.btnListarAlumnos.UseVisualStyleBackColor = False
         '
-        'Label1
+        'btnListarMaestros
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(68, 603)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 24)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Cerrar Cuenta"
+        Me.btnListarMaestros.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnListarMaestros.FlatAppearance.BorderSize = 0
+        Me.btnListarMaestros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListarMaestros.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListarMaestros.ForeColor = System.Drawing.Color.White
+        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 385)
+        Me.btnListarMaestros.Name = "btnListarMaestros"
+        Me.btnListarMaestros.Size = New System.Drawing.Size(286, 58)
+        Me.btnListarMaestros.TabIndex = 5
+        Me.btnListarMaestros.Text = "Listar Maestros"
+        Me.btnListarMaestros.UseVisualStyleBackColor = False
+        '
+        'btnRegistrarNotas
+        '
+        Me.btnRegistrarNotas.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnRegistrarNotas.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarNotas.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarNotas.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarNotas.Location = New System.Drawing.Point(0, 321)
+        Me.btnRegistrarNotas.Name = "btnRegistrarNotas"
+        Me.btnRegistrarNotas.Size = New System.Drawing.Size(286, 58)
+        Me.btnRegistrarNotas.TabIndex = 4
+        Me.btnRegistrarNotas.Text = "Registrar Notas"
+        Me.btnRegistrarNotas.UseVisualStyleBackColor = False
+        '
+        'btnRegistrarAlumno
+        '
+        Me.btnRegistrarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnRegistrarAlumno.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarAlumno.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarAlumno.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(0, 257)
+        Me.btnRegistrarAlumno.Name = "btnRegistrarAlumno"
+        Me.btnRegistrarAlumno.Size = New System.Drawing.Size(286, 58)
+        Me.btnRegistrarAlumno.TabIndex = 3
+        Me.btnRegistrarAlumno.Text = "Registrar Alumnos"
+        Me.btnRegistrarAlumno.UseVisualStyleBackColor = False
+        '
+        'btnRegistrarMaestro
+        '
+        Me.btnRegistrarMaestro.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnRegistrarMaestro.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarMaestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarMaestro.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarMaestro.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(0, 193)
+        Me.btnRegistrarMaestro.Name = "btnRegistrarMaestro"
+        Me.btnRegistrarMaestro.Size = New System.Drawing.Size(286, 58)
+        Me.btnRegistrarMaestro.TabIndex = 2
+        Me.btnRegistrarMaestro.Text = "Registrar Maestros"
+        Me.btnRegistrarMaestro.UseVisualStyleBackColor = False
+        '
+        'lblNombreUser
+        '
+        Me.lblNombreUser.AutoSize = True
+        Me.lblNombreUser.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUser.ForeColor = System.Drawing.Color.White
+        Me.lblNombreUser.Location = New System.Drawing.Point(79, 51)
+        Me.lblNombreUser.Name = "lblNombreUser"
+        Me.lblNombreUser.Size = New System.Drawing.Size(129, 24)
+        Me.lblNombreUser.TabIndex = 1
+        Me.lblNombreUser.Text = "NombreUser"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 38)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Principal
         '
@@ -225,8 +225,8 @@ Partial Class Principal
         Me.Text = "Principal"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -242,5 +242,5 @@ Partial Class Principal
     Friend WithEvents btnRegistrarMaestro As System.Windows.Forms.Button
     Friend WithEvents lblNombreUser As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnCerrarC As System.Windows.Forms.PictureBox
 End Class
