@@ -47,4 +47,9 @@ Public Class frmPrincipal
         Dim frmRM As New frmAgregarProfesor
         frmRM.Show()
     End Sub
+
+    Private Sub btnRegistrarAlumno_Click(sender As Object, e As EventArgs) Handles btnRegistrarAlumno.Click
+        Dim frmRA As New frmAgregarAlumno
+        frmRA.Show()
+    End Sub
 End Class

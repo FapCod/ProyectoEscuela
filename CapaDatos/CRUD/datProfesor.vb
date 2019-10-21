@@ -8,18 +8,18 @@ Public Class datProfesor
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "exec InsertarProf"
+                Command.CommandText = "InsertarProf"
                 Command.Parameters.AddWithValue("@nombre", objeP._nombreP)
                 Command.Parameters.AddWithValue("@apellido", objeP._apellidoP)
                 Command.Parameters.AddWithValue("@correo", objeP._correoP)
                 Command.Parameters.AddWithValue("@sexo", objeP._sexoP)
                 Command.Parameters.AddWithValue("@telefono", objeP._telefonoP)
                 Command.Parameters.AddWithValue("@direccion", objeP._direccionP)
-                Command.Parameters.AddWithValue("@asignatura", objeP._asignaturasP)
-                Command.Parameters.AddWithValue("@grado", objeP._gradoYseccionP)
+                Command.Parameters.AddWithValue("@asignaturas", objeP._asignaturasP)
+                Command.Parameters.AddWithValue("@grado_secc", objeP._gradoYseccionP)
                 Command.Parameters.AddWithValue("@tipo", objeP._tipoP)
                 Command.CommandType = CommandType.StoredProcedure
-                Dim reader = Command.ExecuteReader()
+                'Dim reader = Command.ExecuteReader()
                 If Command.ExecuteNonQuery Then
                     Return True
                 Else

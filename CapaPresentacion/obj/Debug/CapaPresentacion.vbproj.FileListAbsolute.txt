@@ -20,3 +20,4 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresent
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarProfesor.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarAlumno.resources
