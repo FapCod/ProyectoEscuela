@@ -6,3 +6,4 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.dll
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.xml
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.vbprojResolveAssemblyReference.cache

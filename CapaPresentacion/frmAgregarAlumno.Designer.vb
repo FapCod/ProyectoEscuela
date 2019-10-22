@@ -42,13 +42,20 @@ Partial Class frmAgregarAlumno
         Me.cmbGradoPri = New System.Windows.Forms.ComboBox()
         Me.cmbSeccionPri = New System.Windows.Forms.ComboBox()
         Me.cmbSeccionIn = New System.Windows.Forms.ComboBox()
+        Me.btnEditarA = New System.Windows.Forms.Button()
+        Me.btnEliminarA = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnBuscarA = New System.Windows.Forms.Button()
+        Me.txtBuscarA = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(109, 53)
+        Me.Label1.Location = New System.Drawing.Point(109, 56)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 24)
         Me.Label1.TabIndex = 0
@@ -126,7 +133,7 @@ Partial Class frmAgregarAlumno
         '
         'txtNombreA
         '
-        Me.txtNombreA.Location = New System.Drawing.Point(254, 56)
+        Me.txtNombreA.Location = New System.Drawing.Point(254, 59)
         Me.txtNombreA.Name = "txtNombreA"
         Me.txtNombreA.Size = New System.Drawing.Size(184, 22)
         Me.txtNombreA.TabIndex = 8
@@ -154,7 +161,7 @@ Partial Class frmAgregarAlumno
         '
         'btnAgregarAlumno
         '
-        Me.btnAgregarAlumno.Location = New System.Drawing.Point(113, 418)
+        Me.btnAgregarAlumno.Location = New System.Drawing.Point(113, 392)
         Me.btnAgregarAlumno.Name = "btnAgregarAlumno"
         Me.btnAgregarAlumno.Size = New System.Drawing.Size(399, 57)
         Me.btnAgregarAlumno.TabIndex = 14
@@ -228,11 +235,70 @@ Partial Class frmAgregarAlumno
         Me.cmbSeccionIn.Size = New System.Drawing.Size(60, 24)
         Me.cmbSeccionIn.TabIndex = 20
         '
+        'btnEditarA
+        '
+        Me.btnEditarA.Location = New System.Drawing.Point(113, 455)
+        Me.btnEditarA.Name = "btnEditarA"
+        Me.btnEditarA.Size = New System.Drawing.Size(201, 57)
+        Me.btnEditarA.TabIndex = 22
+        Me.btnEditarA.Text = "EDITAR"
+        Me.btnEditarA.UseVisualStyleBackColor = True
+        '
+        'btnEliminarA
+        '
+        Me.btnEliminarA.Location = New System.Drawing.Point(331, 455)
+        Me.btnEliminarA.Name = "btnEliminarA"
+        Me.btnEliminarA.Size = New System.Drawing.Size(181, 57)
+        Me.btnEliminarA.TabIndex = 23
+        Me.btnEliminarA.Text = "ELIMINAR"
+        Me.btnEliminarA.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(554, 94)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(643, 329)
+        Me.DataGridView1.TabIndex = 24
+        '
+        'btnBuscarA
+        '
+        Me.btnBuscarA.Location = New System.Drawing.Point(866, 21)
+        Me.btnBuscarA.Name = "btnBuscarA"
+        Me.btnBuscarA.Size = New System.Drawing.Size(104, 57)
+        Me.btnBuscarA.TabIndex = 25
+        Me.btnBuscarA.Text = "BUSCAR"
+        Me.btnBuscarA.UseVisualStyleBackColor = True
+        '
+        'txtBuscarA
+        '
+        Me.txtBuscarA.Location = New System.Drawing.Point(577, 38)
+        Me.txtBuscarA.Name = "txtBuscarA"
+        Me.txtBuscarA.Size = New System.Drawing.Size(283, 22)
+        Me.txtBuscarA.TabIndex = 26
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(573, 11)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(28, 24)
+        Me.Label9.TabIndex = 27
+        Me.Label9.Text = "id"
+        '
         'frmAgregarAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1209, 525)
+        Me.ClientSize = New System.Drawing.Size(1209, 567)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtBuscarA)
+        Me.Controls.Add(Me.btnBuscarA)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btnEliminarA)
+        Me.Controls.Add(Me.btnEditarA)
         Me.Controls.Add(Me.cmbSeccionPri)
         Me.Controls.Add(Me.cmbSeccionIn)
         Me.Controls.Add(Me.cmbGradoPri)
@@ -255,6 +321,7 @@ Partial Class frmAgregarAlumno
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAgregarAlumno"
         Me.Text = "frmAgregarAlumno"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,4 +346,10 @@ Partial Class frmAgregarAlumno
     Friend WithEvents cmbGradoPri As System.Windows.Forms.ComboBox
     Friend WithEvents cmbSeccionPri As System.Windows.Forms.ComboBox
     Friend WithEvents cmbSeccionIn As System.Windows.Forms.ComboBox
+    Friend WithEvents btnEditarA As System.Windows.Forms.Button
+    Friend WithEvents btnEliminarA As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents btnBuscarA As System.Windows.Forms.Button
+    Friend WithEvents txtBuscarA As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class
