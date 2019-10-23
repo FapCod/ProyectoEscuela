@@ -6,6 +6,7 @@
     Private telefonoP
     Private direccionP
     Private asignaturasP
+    Private NivelP
     Private gradoYseccionP
     Private tipoP
     Public Property _nombreP As String
@@ -64,6 +65,14 @@
             asignaturasP = value
         End Set
     End Property
+    Public Property _nivelP As String
+        Get
+            Return NivelP
+        End Get
+        Set(value As String)
+            NivelP = value
+        End Set
+    End Property
     Public Property _gradoYseccionP As String
         Get
             Return gradoYseccionP
@@ -81,4 +90,5 @@
         End Set
     End Property
 
+   
 End Class

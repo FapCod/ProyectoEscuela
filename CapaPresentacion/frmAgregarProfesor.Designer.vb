@@ -46,12 +46,19 @@ Partial Class frmAgregarProfesor
         Me.cmbTipoProf = New System.Windows.Forms.ComboBox()
         Me.btnAgregarM = New System.Windows.Forms.Button()
         Me.chcReligion = New System.Windows.Forms.CheckBox()
-        Me.cmbSecPorf = New System.Windows.Forms.ComboBox()
-        Me.cmbInicialSecPorf = New System.Windows.Forms.ComboBox()
         Me.cmbInicialGradPorf = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbSexo = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.rbInicial = New System.Windows.Forms.RadioButton()
+        Me.rbPrimaria = New System.Windows.Forms.RadioButton()
+        Me.dgvlista = New System.Windows.Forms.DataGridView()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtBuscarProf = New System.Windows.Forms.TextBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -136,7 +143,7 @@ Partial Class frmAgregarProfesor
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(115, 523)
+        Me.Label8.Location = New System.Drawing.Point(115, 565)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(171, 25)
         Me.Label8.TabIndex = 8
@@ -247,8 +254,8 @@ Partial Class frmAgregarProfesor
         'cmbGradPorf
         '
         Me.cmbGradPorf.FormattingEnabled = True
-        Me.cmbGradPorf.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.cmbGradPorf.Location = New System.Drawing.Point(308, 588)
+        Me.cmbGradPorf.Items.AddRange(New Object() {"1A", "1B", "1C", "2A", "2B", "2C", "3A", "3B", "3C", "4A", "4B", "4C ", "5A", "5B", "5C", "6A", "6B", "6C", " "})
+        Me.cmbGradPorf.Location = New System.Drawing.Point(426, 565)
         Me.cmbGradPorf.Name = "cmbGradPorf"
         Me.cmbGradPorf.Size = New System.Drawing.Size(109, 24)
         Me.cmbGradPorf.TabIndex = 21
@@ -264,9 +271,9 @@ Partial Class frmAgregarProfesor
         '
         'btnAgregarM
         '
-        Me.btnAgregarM.Location = New System.Drawing.Point(120, 658)
+        Me.btnAgregarM.Location = New System.Drawing.Point(115, 658)
         Me.btnAgregarM.Name = "btnAgregarM"
-        Me.btnAgregarM.Size = New System.Drawing.Size(412, 49)
+        Me.btnAgregarM.Size = New System.Drawing.Size(133, 49)
         Me.btnAgregarM.TabIndex = 23
         Me.btnAgregarM.Text = "AGREGAR"
         Me.btnAgregarM.UseVisualStyleBackColor = True
@@ -281,29 +288,11 @@ Partial Class frmAgregarProfesor
         Me.chcReligion.Text = "Religión "
         Me.chcReligion.UseVisualStyleBackColor = True
         '
-        'cmbSecPorf
-        '
-        Me.cmbSecPorf.FormattingEnabled = True
-        Me.cmbSecPorf.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F"})
-        Me.cmbSecPorf.Location = New System.Drawing.Point(423, 588)
-        Me.cmbSecPorf.Name = "cmbSecPorf"
-        Me.cmbSecPorf.Size = New System.Drawing.Size(109, 24)
-        Me.cmbSecPorf.TabIndex = 25
-        '
-        'cmbInicialSecPorf
-        '
-        Me.cmbInicialSecPorf.FormattingEnabled = True
-        Me.cmbInicialSecPorf.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cmbInicialSecPorf.Location = New System.Drawing.Point(423, 527)
-        Me.cmbInicialSecPorf.Name = "cmbInicialSecPorf"
-        Me.cmbInicialSecPorf.Size = New System.Drawing.Size(109, 24)
-        Me.cmbInicialSecPorf.TabIndex = 27
-        '
         'cmbInicialGradPorf
         '
         Me.cmbInicialGradPorf.FormattingEnabled = True
-        Me.cmbInicialGradPorf.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cmbInicialGradPorf.Location = New System.Drawing.Point(308, 527)
+        Me.cmbInicialGradPorf.Items.AddRange(New Object() {"1A", "1B", "1C", "2A", "2B", "2C", "3A", "3B", "3C"})
+        Me.cmbInicialGradPorf.Location = New System.Drawing.Point(308, 565)
         Me.cmbInicialGradPorf.Name = "cmbInicialGradPorf"
         Me.cmbInicialGradPorf.Size = New System.Drawing.Size(109, 24)
         Me.cmbInicialGradPorf.TabIndex = 26
@@ -314,19 +303,8 @@ Partial Class frmAgregarProfesor
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(303, 499)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(68, 25)
+        Me.Label10.Size = New System.Drawing.Size(0, 25)
         Me.Label10.TabIndex = 28
-        Me.Label10.Text = "Inicial"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(303, 554)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 25)
-        Me.Label11.TabIndex = 29
-        Me.Label11.Text = "Primaria"
         '
         'cmbSexo
         '
@@ -337,17 +315,108 @@ Partial Class frmAgregarProfesor
         Me.cmbSexo.Size = New System.Drawing.Size(109, 24)
         Me.cmbSexo.TabIndex = 30
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(110, 511)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(60, 25)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Nivel"
+        '
+        'rbInicial
+        '
+        Me.rbInicial.AutoSize = True
+        Me.rbInicial.Location = New System.Drawing.Point(308, 511)
+        Me.rbInicial.Name = "rbInicial"
+        Me.rbInicial.Size = New System.Drawing.Size(64, 21)
+        Me.rbInicial.TabIndex = 32
+        Me.rbInicial.TabStop = True
+        Me.rbInicial.Text = "Inicial"
+        Me.rbInicial.UseVisualStyleBackColor = True
+        '
+        'rbPrimaria
+        '
+        Me.rbPrimaria.AutoSize = True
+        Me.rbPrimaria.Location = New System.Drawing.Point(426, 515)
+        Me.rbPrimaria.Name = "rbPrimaria"
+        Me.rbPrimaria.Size = New System.Drawing.Size(81, 21)
+        Me.rbPrimaria.TabIndex = 33
+        Me.rbPrimaria.TabStop = True
+        Me.rbPrimaria.Text = "Primaria"
+        Me.rbPrimaria.UseVisualStyleBackColor = True
+        '
+        'dgvlista
+        '
+        Me.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvlista.Location = New System.Drawing.Point(795, 153)
+        Me.dgvlista.Name = "dgvlista"
+        Me.dgvlista.RowTemplate.Height = 24
+        Me.dgvlista.Size = New System.Drawing.Size(407, 489)
+        Me.dgvlista.TabIndex = 34
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(810, 71)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(21, 17)
+        Me.Label12.TabIndex = 35
+        Me.Label12.Text = "ID"
+        '
+        'txtBuscarProf
+        '
+        Me.txtBuscarProf.Location = New System.Drawing.Point(795, 91)
+        Me.txtBuscarProf.Multiline = True
+        Me.txtBuscarProf.Name = "txtBuscarProf"
+        Me.txtBuscarProf.Size = New System.Drawing.Size(217, 34)
+        Me.txtBuscarProf.TabIndex = 36
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(1039, 88)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(149, 45)
+        Me.btnBuscar.TabIndex = 37
+        Me.btnBuscar.Text = "BUSCAR"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(268, 658)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(124, 49)
+        Me.btnActualizar.TabIndex = 38
+        Me.btnActualizar.Text = "ACTUALIZAR"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(426, 658)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(124, 49)
+        Me.btnEliminar.TabIndex = 39
+        Me.btnEliminar.Text = "ELIMINAR"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1255, 734)
-        Me.Controls.Add(Me.cmbSexo)
+        Me.ClientSize = New System.Drawing.Size(1255, 744)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.txtBuscarProf)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.dgvlista)
+        Me.Controls.Add(Me.rbPrimaria)
+        Me.Controls.Add(Me.rbInicial)
         Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.cmbSexo)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.cmbInicialSecPorf)
         Me.Controls.Add(Me.cmbInicialGradPorf)
-        Me.Controls.Add(Me.cmbSecPorf)
         Me.Controls.Add(Me.chcReligion)
         Me.Controls.Add(Me.btnAgregarM)
         Me.Controls.Add(Me.cmbTipoProf)
@@ -374,6 +443,7 @@ Partial Class frmAgregarProfesor
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAgregarProfesor"
         Me.Text = "frmAgregarProfesor"
+        CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -402,10 +472,16 @@ Partial Class frmAgregarProfesor
     Friend WithEvents cmbTipoProf As System.Windows.Forms.ComboBox
     Friend WithEvents btnAgregarM As System.Windows.Forms.Button
     Friend WithEvents chcReligion As System.Windows.Forms.CheckBox
-    Friend WithEvents cmbSecPorf As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbInicialSecPorf As System.Windows.Forms.ComboBox
     Friend WithEvents cmbInicialGradPorf As System.Windows.Forms.ComboBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cmbSexo As System.Windows.Forms.ComboBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents rbInicial As System.Windows.Forms.RadioButton
+    Friend WithEvents rbPrimaria As System.Windows.Forms.RadioButton
+    Friend WithEvents dgvlista As System.Windows.Forms.DataGridView
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents txtBuscarProf As System.Windows.Forms.TextBox
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
 End Class

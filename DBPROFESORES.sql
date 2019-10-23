@@ -7,6 +7,7 @@ SexoProfesor char not null,
 TelefonoProfesor int , 
 DireccionProfesor varchar (100) not null,
 AsignaturasAsig varchar(100) not null, 
+nivel_Asig varchar (20) not null,
 Grados_Secci_Asig varchar (30) not null, 
 TipoProfesor varchar (30) not null 
 )
@@ -14,7 +15,7 @@ drop table Profesor
 ----------------------------------------------------------------------
 -------------Creacion de procedimientos para los Profesores-----------
 ----------------------------------------------------------------------
-
+drop procedure InsertarProf
 create procedure InsertarProf
 (
  @nombre varchar(50),
@@ -24,14 +25,14 @@ create procedure InsertarProf
  @telefono int,
  @direccion varchar(100), 
  @Asignaturas varchar(100),
+ @nivel varchar (20) ,
  @grado_secc varchar(30),
  @tipo varchar(30)
 )
 as
 begin
- insert into Profesor values ( @nombre, @apellido, @correo, @sexo, @telefono, @direccion, @Asignaturas, @grado_secc, @tipo)
+ insert into Profesor values ( @nombre, @apellido, @correo, @sexo, @telefono, @direccion, @Asignaturas, @nivel , @grado_secc, @tipo)
 end
-GO
 
 create procedure EliminarProf 
 (
@@ -52,12 +53,13 @@ create procedure ActualizarProf(
  @telefono int,
  @direccion varchar(100), 
  @Asignaturas varchar(100),
+ @nivel varchar(20),
  @grado_secc varchar(30),
  @tipo varchar(30)
 )
 as 
 begin 
-update  Profesor set NombreProfesor=@nombre, ApellidosProfesor=@apellido, CorreoProfesor=@correo, SexoProfesor=@sexo,  TelefonoProfesor=@telefono, DireccionProfesor=@direccion, AsignaturasAsig=@Asignaturas, Grado_Secci_Asig=@grado_secc, TipoProfesor=@tipo
+update  Profesor set NombreProfesor=@nombre, ApellidosProfesor=@apellido, CorreoProfesor=@correo, SexoProfesor=@sexo,  TelefonoProfesor=@telefono, DireccionProfesor=@direccion, AsignaturasAsig=@Asignaturas, nivel_Asig = @nivel,  Grados_Secci_Asig=@grado_secc, TipoProfesor=@tipo
 where Idprofesor = @id 
 end 
 go
