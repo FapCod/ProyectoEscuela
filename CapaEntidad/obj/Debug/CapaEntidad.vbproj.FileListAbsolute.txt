@@ -7,3 +7,21 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.xml
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.pdb
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.vbprojResolveAssemblyReference.cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.vbprojResolveAssemblyReference.cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.Resources.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.vbproj.GenerateResource.Cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\bin\Debug\CapaEntidad.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.vbprojResolveAssemblyReference.cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.Resources.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.vbproj.GenerateResource.Cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.pdb

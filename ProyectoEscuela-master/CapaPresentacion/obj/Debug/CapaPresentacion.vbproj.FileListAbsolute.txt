@@ -44,3 +44,7 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\ob
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.pdb

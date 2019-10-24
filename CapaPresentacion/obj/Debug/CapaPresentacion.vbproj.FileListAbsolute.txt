@@ -21,3 +21,51 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresent
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarProfesor.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarAlumno.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbprojResolveAssemblyReference.cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarAlumno.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarProfesor.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistroNotas.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaEntidad.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaNegocio.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaDatos.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbprojResolveAssemblyReference.cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarAlumno.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarProfesor.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistroNotas.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache

@@ -13,3 +13,33 @@ c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaNegocio
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaNegocio\obj\Debug\CapaNegocio.dll
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaNegocio\obj\Debug\CapaNegocio.xml
 c:\users\frank\documents\visual studio 2013\Projects\ProyectoEscuela\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.vbprojResolveAssemblyReference.cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.Resources.resources
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.vbproj.GenerateResource.Cache
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.xml
+C:\Users\Marko Alessandro\Desktop\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaNegocio.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaDatos.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\bin\Debug\CapaEntidad.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.vbprojResolveAssemblyReference.cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.Resources.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.vbproj.GenerateResource.Cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.xml
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaNegocio\obj\Debug\CapaNegocio.pdb
