@@ -55,6 +55,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(109, 56)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 24)
@@ -65,6 +66,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(109, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(89, 24)
@@ -75,6 +77,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(109, 137)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 24)
@@ -85,6 +88,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(109, 182)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 24)
@@ -95,6 +99,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(109, 219)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 24)
@@ -105,6 +110,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(114, 260)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 24)
@@ -115,6 +121,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(109, 312)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(100, 24)
@@ -125,11 +132,12 @@ Partial Class frmAgregarAlumno
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(109, 347)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(205, 24)
+        Me.Label8.Size = New System.Drawing.Size(197, 24)
         Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Nombre Aporderado"
+        Me.Label8.Text = "Nombre Apoderado"
         '
         'txtNombreA
         '
@@ -154,19 +162,22 @@ Partial Class frmAgregarAlumno
         '
         'txtNombreApo
         '
-        Me.txtNombreApo.Location = New System.Drawing.Point(320, 350)
+        Me.txtNombreApo.Location = New System.Drawing.Point(331, 349)
         Me.txtNombreApo.Name = "txtNombreApo"
         Me.txtNombreApo.Size = New System.Drawing.Size(184, 22)
         Me.txtNombreApo.TabIndex = 13
         '
         'btnAgregarAlumno
         '
+        Me.btnAgregarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnAgregarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarAlumno.ForeColor = System.Drawing.Color.White
         Me.btnAgregarAlumno.Location = New System.Drawing.Point(113, 392)
         Me.btnAgregarAlumno.Name = "btnAgregarAlumno"
         Me.btnAgregarAlumno.Size = New System.Drawing.Size(399, 57)
         Me.btnAgregarAlumno.TabIndex = 14
         Me.btnAgregarAlumno.Text = "Agregar"
-        Me.btnAgregarAlumno.UseVisualStyleBackColor = True
+        Me.btnAgregarAlumno.UseVisualStyleBackColor = False
         '
         'cmbSexoA
         '
@@ -189,9 +200,11 @@ Partial Class frmAgregarAlumno
         'rbInicial
         '
         Me.rbInicial.AutoSize = True
+        Me.rbInicial.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbInicial.ForeColor = System.Drawing.Color.White
         Me.rbInicial.Location = New System.Drawing.Point(254, 186)
         Me.rbInicial.Name = "rbInicial"
-        Me.rbInicial.Size = New System.Drawing.Size(64, 21)
+        Me.rbInicial.Size = New System.Drawing.Size(77, 24)
         Me.rbInicial.TabIndex = 17
         Me.rbInicial.TabStop = True
         Me.rbInicial.Text = "Inicial"
@@ -200,9 +213,11 @@ Partial Class frmAgregarAlumno
         'rbPrimaria
         '
         Me.rbPrimaria.AutoSize = True
+        Me.rbPrimaria.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbPrimaria.ForeColor = System.Drawing.Color.White
         Me.rbPrimaria.Location = New System.Drawing.Point(339, 186)
         Me.rbPrimaria.Name = "rbPrimaria"
-        Me.rbPrimaria.Size = New System.Drawing.Size(81, 21)
+        Me.rbPrimaria.Size = New System.Drawing.Size(98, 24)
         Me.rbPrimaria.TabIndex = 18
         Me.rbPrimaria.TabStop = True
         Me.rbPrimaria.Text = "Primaria"
@@ -237,21 +252,27 @@ Partial Class frmAgregarAlumno
         '
         'btnEditarA
         '
+        Me.btnEditarA.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEditarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarA.ForeColor = System.Drawing.Color.White
         Me.btnEditarA.Location = New System.Drawing.Point(113, 455)
         Me.btnEditarA.Name = "btnEditarA"
         Me.btnEditarA.Size = New System.Drawing.Size(201, 57)
         Me.btnEditarA.TabIndex = 22
         Me.btnEditarA.Text = "EDITAR"
-        Me.btnEditarA.UseVisualStyleBackColor = True
+        Me.btnEditarA.UseVisualStyleBackColor = False
         '
         'btnEliminarA
         '
+        Me.btnEliminarA.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEliminarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarA.ForeColor = System.Drawing.Color.White
         Me.btnEliminarA.Location = New System.Drawing.Point(331, 455)
         Me.btnEliminarA.Name = "btnEliminarA"
         Me.btnEliminarA.Size = New System.Drawing.Size(181, 57)
         Me.btnEliminarA.TabIndex = 23
         Me.btnEliminarA.Text = "ELIMINAR"
-        Me.btnEliminarA.UseVisualStyleBackColor = True
+        Me.btnEliminarA.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
@@ -264,12 +285,15 @@ Partial Class frmAgregarAlumno
         '
         'btnBuscarA
         '
+        Me.btnBuscarA.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnBuscarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarA.ForeColor = System.Drawing.Color.White
         Me.btnBuscarA.Location = New System.Drawing.Point(866, 21)
         Me.btnBuscarA.Name = "btnBuscarA"
         Me.btnBuscarA.Size = New System.Drawing.Size(104, 57)
         Me.btnBuscarA.TabIndex = 25
         Me.btnBuscarA.Text = "BUSCAR"
-        Me.btnBuscarA.UseVisualStyleBackColor = True
+        Me.btnBuscarA.UseVisualStyleBackColor = False
         '
         'txtBuscarA
         '
@@ -282,6 +306,7 @@ Partial Class frmAgregarAlumno
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(573, 11)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(28, 24)
@@ -292,6 +317,7 @@ Partial Class frmAgregarAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1209, 567)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtBuscarA)

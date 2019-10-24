@@ -271,12 +271,15 @@ Partial Class frmAgregarProfesor
         '
         'btnAgregarM
         '
+        Me.btnAgregarM.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnAgregarM.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarM.ForeColor = System.Drawing.Color.White
         Me.btnAgregarM.Location = New System.Drawing.Point(115, 658)
         Me.btnAgregarM.Name = "btnAgregarM"
         Me.btnAgregarM.Size = New System.Drawing.Size(133, 49)
         Me.btnAgregarM.TabIndex = 23
         Me.btnAgregarM.Text = "AGREGAR"
-        Me.btnAgregarM.UseVisualStyleBackColor = True
+        Me.btnAgregarM.UseVisualStyleBackColor = False
         '
         'chcReligion
         '
@@ -384,26 +387,33 @@ Partial Class frmAgregarProfesor
         '
         'btnActualizar
         '
+        Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnActualizar.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.Location = New System.Drawing.Point(268, 658)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(124, 49)
         Me.btnActualizar.TabIndex = 38
         Me.btnActualizar.Text = "ACTUALIZAR"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEliminar.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.Location = New System.Drawing.Point(426, 658)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(124, 49)
         Me.btnEliminar.TabIndex = 39
         Me.btnEliminar.Text = "ELIMINAR"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1255, 744)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnActualizar)
