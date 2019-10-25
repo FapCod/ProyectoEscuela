@@ -30,7 +30,19 @@ Public Class datUser
         End Using
         Return False
     End Function
-
+    Public Function Login1(user As String, pass As String) As Boolean
+        Try
+            cone(user, pass)
+            Using conexion = ObtenerConexionU()
+                conexion.Open()
+                Return True
+            End Using
+            Return False
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return False
+    End Function
     Public Function UsuarioExiste(id As Integer) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
@@ -49,5 +61,74 @@ Public Class datUser
         End Using
         Return False
     End Function
+    Public Function crearUsuario(user As String, pass As String) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "create login " + user + " with password = '" + pass + "'"
+                Command.CommandType = CommandType.Text
+                If Command.ExecuteNonQuery Then
+                    crearUsuario1(user)
+                    crearUsuario2(user)
+                    crearUsuario3(user)
+                    Return True
+
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    Public Function crearUsuario1(user As String) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "create user " + user + " for login " + user
+                Command.CommandType = CommandType.Text
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    Public Function crearUsuario2(user As String) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = " grant select, update, delete, insert on Alumno To " + user + " with grant option "
+                Command.CommandType = CommandType.Text
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    Public Function crearUsuario3(user As String) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "grant select, update, delete, insert on Profesor To " + user + " with grant option"
+                Command.CommandType = CommandType.Text
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    
 
 End Class

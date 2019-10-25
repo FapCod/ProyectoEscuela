@@ -2,8 +2,9 @@
 Imports CapaEntidad
 Public Class negUser
     Dim objUser As New datUser
+    Dim objUserr As New entUser
     Public Function Login(user As String, pass As String) As Boolean
-        Return objUser.Login(user, pass)
+        Return objUser.Login1(user, pass)
     End Function
 
     Public Function ValidarUser(id As Integer) As Boolean
@@ -18,6 +19,10 @@ Public Class negUser
             Return False
         End If
     End Function
+    Public Function crearUsuario(user As String, pass As String) As Boolean
+        Return objUser.crearUsuario(user, pass)
+    End Function
+
 
 
 End Class

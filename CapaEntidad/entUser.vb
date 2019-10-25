@@ -1,7 +1,7 @@
 ﻿Public Class entUser
     Private _userName
     Private _passUser
-    Private _FirstName
+    'Private _FirstName
     Public Property username As String
         Get
             Return _userName
@@ -18,12 +18,12 @@
             _passUser = value
         End Set
     End Property
-    Public Property firtsName As String
-        Get
-            Return _FirstName
-        End Get
-        Set(value As String)
-            _FirstName = value
-        End Set
-    End Property
+    'Public Property firtsName As String
+    '    Get
+    '        Return _FirstName
+    '    End Get
+    '    Set(value As String)
+    '        _FirstName = value
+    '    End Set
+    'End Property
 End Class
