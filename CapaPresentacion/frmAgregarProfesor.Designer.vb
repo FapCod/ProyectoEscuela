@@ -58,10 +58,6 @@ Partial Class frmAgregarProfesor
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtpass = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -411,6 +407,7 @@ Partial Class frmAgregarProfesor
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(1039, 94)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(149, 48)
@@ -442,54 +439,12 @@ Partial Class frmAgregarProfesor
         Me.btnEliminar.Text = "ELIMINAR"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
-        'txtUsername
-        '
-        Me.txtUsername.Location = New System.Drawing.Point(308, 12)
-        Me.txtUsername.Multiline = True
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(217, 35)
-        Me.txtUsername.TabIndex = 41
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(111, 12)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(104, 24)
-        Me.Label13.TabIndex = 40
-        Me.Label13.Text = "Username"
-        '
-        'txtpass
-        '
-        Me.txtpass.Location = New System.Drawing.Point(307, 49)
-        Me.txtpass.Multiline = True
-        Me.txtpass.Name = "txtpass"
-        Me.txtpass.Size = New System.Drawing.Size(217, 35)
-        Me.txtpass.TabIndex = 43
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(115, 50)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(99, 24)
-        Me.Label14.TabIndex = 42
-        Me.Label14.Text = "Password"
-        '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1761, 776)
-        Me.Controls.Add(Me.txtpass)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnBuscar)
@@ -572,8 +527,4 @@ Partial Class frmAgregarProfesor
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
-    Friend WithEvents txtUsername As System.Windows.Forms.TextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txtpass As System.Windows.Forms.TextBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
 End Class

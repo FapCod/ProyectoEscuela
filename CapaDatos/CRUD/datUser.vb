@@ -30,19 +30,7 @@ Public Class datUser
         End Using
         Return False
     End Function
-    Public Function Login1(user As String, pass As String) As Boolean
-        Try
-            cone(user, pass)
-            Using conexion = ObtenerConexionU()
-                conexion.Open()
-                Return True
-            End Using
-            Return False
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Return False
-    End Function
+
     Public Function UsuarioExiste(id As Integer) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()

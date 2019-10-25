@@ -71,3 +71,4 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\Capa
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistroNotas.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.CrearUser.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmListarAlumnos.resources

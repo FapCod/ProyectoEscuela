@@ -4,7 +4,7 @@ Public Class negUser
     Dim objUser As New datUser
     Dim objUserr As New entUser
     Public Function Login(user As String, pass As String) As Boolean
-        Return objUser.Login1(user, pass)
+        Return objUser.Login(user, pass)
     End Function
 
     Public Function ValidarUser(id As Integer) As Boolean

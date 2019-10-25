@@ -1,30 +1,19 @@
-create login Admin with password = '123456'
+
+create login Director with password = '1234567'
+create login Profesor with password = '12345678'
 --creacion de login por autenticacion sql server
-select * from Users;
-create user admin for login Admin
-grant select, update   , delete, insert on Alumno To Admin with grant option
-grant select, update   , delete, insert on Profesor To Admin with grant option
-
-
-select * from Alumno
------Procedimiento para crear Login
-create procedure crearUsuario(
-@user varchar(12),
-@pass varchar(20)
-)
-as 
-
- 
-declare @i int 
-set @i = 1
-while (@i=1)
- begin
- create login @user with password = @pass
- create user @user for login @user;
- grant select, update   , delete, insert on Alumno To @user with grant option;
- grant select, update   , delete, insert on Profesor To @user with grant option
-end 
-go
+--------Permisos y creacion de usuario para Director
+create user Director for login Director
+grant select, update   , delete, insert on Alumno To Director with grant option
+grant select, update   , delete, insert on profesor To Director with grant option
+grant select, update   , delete, insert on users To Director with grant option
+--------Permisos y creacion de usuario para Profesor
+create user Profesor for login Profesor
+grant select, update   , delete, insert on Alumno To Profesor with grant option
+grant select, update   , delete, insert on profesor To Profesor with grant option
+grant select, insert on users To Profesor with grant option
+GRANT EXECUTE ON OBJECT::MostarAlum TO Profesor 
+GRANT EXECUTE ON OBJECT::GradoAlum TO Profesor 
 
 
 
