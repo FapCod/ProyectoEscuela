@@ -30,6 +30,13 @@ Public Class datUser
         End Using
         Return False
     End Function
+    Public Function LoginU(user As String, pass As String) As Boolean
+        Using conexion = ObtenerConexionU()
+            'usuario2(user, pass)
+            Return True
+        End Using
+        Return False
+    End Function
 
     Public Function UsuarioExiste(id As Integer) As Boolean
         Using conexion = ObtenerConexion()

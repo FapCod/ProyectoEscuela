@@ -57,4 +57,9 @@ Public Class frmPrincipal
         Dim frmRN As New frmRegistroNotas
         frmRN.Show()
     End Sub
+
+    Private Sub btnListarAlumnos_Click(sender As Object, e As EventArgs) Handles btnListarAlumnos.Click
+        Dim frmListar As New frmListarAlumnos
+        frmListar.Show()
+    End Sub
 End Class
