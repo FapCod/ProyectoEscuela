@@ -58,8 +58,9 @@ Public Class frmPrincipal
         frmRN.Show()
     End Sub
 
-    Private Sub btnListarAlumnos_Click(sender As Object, e As EventArgs) Handles btnListarAlumnos.Click
-        Dim frmListar As New frmListarAlumnos
-        frmListar.Show()
+    
+    Private Sub btnRegistrarSeccion_Click(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.Click
+        Dim frmRS As New frmAgregarSeccion
+        frmRS.Show()
     End Sub
 End Class
