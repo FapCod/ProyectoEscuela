@@ -94,6 +94,18 @@ Public Class frmAgregarProfesor
     Sub Ver()
         Dim conexion As New negProfesor
         dgvlista.DataSource = conexion.obtenerTabla("select * from Profesor")
+        Dim conne As New negSeccion
+        'Combobox inicial
+        cmbInicialGradPorf.DataSource = conne.ObtenerCombobox("select GradoAula from Grado_Seccion where Nivel = 'Inicial'")
+        cmbInicialGradPorf.DisplayMember = "GradoAula"
+        cmbInicialSeccProf.DataSource = conne.ObtenerCombobox("Select NombreSeccion from Grado_Seccion")
+        cmbInicialSeccProf.DisplayMember = "NombreSeccion"
+        'combobox primaria
+        cmbGradPorf.DataSource = conne.ObtenerCombobox("select GradoAula from Grado_Seccion where Nivel = 'Primaria'")
+        cmbGradPorf.DisplayMember = "GradoAula"
+        cmbPrimariaSeccionProf.DataSource = conne.ObtenerCombobox("Select NombreSeccion from Grado_Seccion")
+        cmbPrimariaSeccionProf.DisplayMember = "NombreSeccion"
+
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim asigna As String
@@ -273,39 +285,30 @@ Public Class frmAgregarProfesor
 
     End Sub
 
+    Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbInicial.CheckedChanged
+        If rbInicial.Checked = True Then
+            cmbPrimariaSeccionProf.Enabled = False
+            cmbGradPorf.Enabled = False
+        End If
+        If rbInicial.Checked = True Then
+            cmbInicialGradPorf.Enabled = True
+            cmbInicialSeccProf.Enabled = True
+        End If
+        If rbPrimaria.Checked = True Then
+            cmbInicialSeccProf.Enabled = False
+            cmbInicialGradPorf.Enabled = False
+        End If
+        If rbPrimaria.Checked = True Then
+            cmbGradPorf.Enabled = True
+            cmbPrimariaSeccionProf.Enabled = True
+        End If
+    End Sub
 
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbPrimaria.CheckedChanged
 
     End Sub
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
-    End Sub
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    End Sub
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        LimpiarDatos()
     End Sub
 End Class

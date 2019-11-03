@@ -6,11 +6,21 @@ CorreoProfesor varchar (100) not null,
 SexoProfesor char not null,
 TelefonoProfesor int , 
 DireccionProfesor varchar (100) not null,
-AsignaturasAsig varchar(100) not null, 
+--AsignaturasAsig varchar(100) not null, 
+idAsignaturas int not null,
 nivel_Asig varchar (20) not null,
-Grados_Secci_Asig varchar (30) not null, 
+--Grados_Secci_Asig varchar (30) not null, 
+Idgra_seccion int not null,
 TipoProfesor varchar (30) not null 
+CONSTRAINT fk_Grado_Seccion FOREIGN KEY (Idgra_seccion) REFERENCES Grado_Seccion (Idgra_seccion),
+CONSTRAINT fk_Asignaturas FOREIGN KEY (idAsignaturas) REFERENCES Asignaturas (idAsignaturas) 
 )
+select * from profesor 
+exec InsertarProf  'brayan', 'martinez', 'Brayan@hotmail.com', 'H', '98123456', 'Av Sullana', '1','Primaria', '1', 'Contratado'
+exec InsertarProf  'Juan', 'martinez', 'Brayan@hotmail.com', 'H', '98123456', 'Av Sullana', '2','Primaria', '2', 'Contratado'
+exec InsertarProf  'Pedro', 'Ramirez', 'Brayan@hotmail.com', 'H', '98123456', 'Av Sullana', '3','Primaria', '3', 'Contratado'
+delete from profesor where NombreProfesor = 'Brayan'
+DBCC CHECKIDENT (profesor, RESEED, 0)
 drop table Profesor
 ----------------------------------------------------------------------
 -------------Creacion de procedimientos para los Profesores-----------

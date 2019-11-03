@@ -25,8 +25,9 @@ Partial Class frmListarAlumnos
         Me.btnEditarA = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.cmbGrado = New System.Windows.Forms.ComboBox()
+        Me.nmGrado = New System.Windows.Forms.NumericUpDown()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmGrado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnEditarA
@@ -62,14 +63,12 @@ Partial Class frmListarAlumnos
         Me.Button1.Text = "Alumnos de por grado"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'cmbGrado
+        'nmGrado
         '
-        Me.cmbGrado.FormattingEnabled = True
-        Me.cmbGrado.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.cmbGrado.Location = New System.Drawing.Point(366, 163)
-        Me.cmbGrado.Name = "cmbGrado"
-        Me.cmbGrado.Size = New System.Drawing.Size(121, 24)
-        Me.cmbGrado.TabIndex = 26
+        Me.nmGrado.Location = New System.Drawing.Point(341, 164)
+        Me.nmGrado.Name = "nmGrado"
+        Me.nmGrado.Size = New System.Drawing.Size(120, 22)
+        Me.nmGrado.TabIndex = 26
         '
         'frmListarAlumnos
         '
@@ -77,7 +76,7 @@ Partial Class frmListarAlumnos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1135, 644)
-        Me.Controls.Add(Me.cmbGrado)
+        Me.Controls.Add(Me.nmGrado)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnEditarA)
@@ -85,11 +84,12 @@ Partial Class frmListarAlumnos
         Me.Name = "frmListarAlumnos"
         Me.Text = "frmListarAlumnos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmGrado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents btnEditarA As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents cmbGrado As System.Windows.Forms.ComboBox
+    Friend WithEvents nmGrado As System.Windows.Forms.NumericUpDown
 End Class

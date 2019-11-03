@@ -58,6 +58,10 @@ Partial Class frmAgregarProfesor
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.cmbInicialSeccProf = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cmbPrimariaSeccionProf = New System.Windows.Forms.ComboBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -153,16 +157,16 @@ Partial Class frmAgregarProfesor
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(115, 601)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(161, 24)
+        Me.Label8.Size = New System.Drawing.Size(73, 24)
         Me.Label8.TabIndex = 8
-        Me.Label8.Text = "Grado Y seccion"
+        Me.Label8.Text = "Grado "
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(115, 656)
+        Me.Label9.Location = New System.Drawing.Point(115, 679)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(167, 24)
         Me.Label9.TabIndex = 9
@@ -275,7 +279,6 @@ Partial Class frmAgregarProfesor
         'cmbGradPorf
         '
         Me.cmbGradPorf.FormattingEnabled = True
-        Me.cmbGradPorf.Items.AddRange(New Object() {"1A", "1B", "1C", "2A", "2B", "2C", "3A", "3B", "3C", "4A", "4B", "4C ", "5A", "5B", "5C", "6A", "6B", "6C", " "})
         Me.cmbGradPorf.Location = New System.Drawing.Point(426, 601)
         Me.cmbGradPorf.Name = "cmbGradPorf"
         Me.cmbGradPorf.Size = New System.Drawing.Size(109, 25)
@@ -285,7 +288,7 @@ Partial Class frmAgregarProfesor
         '
         Me.cmbTipoProf.FormattingEnabled = True
         Me.cmbTipoProf.Items.AddRange(New Object() {"Contratado", "Nombrado"})
-        Me.cmbTipoProf.Location = New System.Drawing.Point(308, 656)
+        Me.cmbTipoProf.Location = New System.Drawing.Point(307, 678)
         Me.cmbTipoProf.Name = "cmbTipoProf"
         Me.cmbTipoProf.Size = New System.Drawing.Size(217, 25)
         Me.cmbTipoProf.TabIndex = 22
@@ -295,7 +298,7 @@ Partial Class frmAgregarProfesor
         Me.btnAgregarM.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnAgregarM.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarM.ForeColor = System.Drawing.Color.White
-        Me.btnAgregarM.Location = New System.Drawing.Point(115, 700)
+        Me.btnAgregarM.Location = New System.Drawing.Point(114, 730)
         Me.btnAgregarM.Name = "btnAgregarM"
         Me.btnAgregarM.Size = New System.Drawing.Size(133, 52)
         Me.btnAgregarM.TabIndex = 23
@@ -317,7 +320,6 @@ Partial Class frmAgregarProfesor
         'cmbInicialGradPorf
         '
         Me.cmbInicialGradPorf.FormattingEnabled = True
-        Me.cmbInicialGradPorf.Items.AddRange(New Object() {"1A", "1B", "1C", "2A", "2B", "2C", "3A", "3B", "3C"})
         Me.cmbInicialGradPorf.Location = New System.Drawing.Point(308, 601)
         Me.cmbInicialGradPorf.Name = "cmbInicialGradPorf"
         Me.cmbInicialGradPorf.Size = New System.Drawing.Size(109, 25)
@@ -420,7 +422,7 @@ Partial Class frmAgregarProfesor
         Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnActualizar.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Location = New System.Drawing.Point(268, 700)
+        Me.btnActualizar.Location = New System.Drawing.Point(260, 730)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(124, 52)
         Me.btnActualizar.TabIndex = 38
@@ -432,19 +434,62 @@ Partial Class frmAgregarProfesor
         Me.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnEliminar.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(426, 700)
+        Me.btnEliminar.Location = New System.Drawing.Point(406, 730)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(124, 52)
         Me.btnEliminar.TabIndex = 39
         Me.btnEliminar.Text = "ELIMINAR"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
+        'cmbInicialSeccProf
+        '
+        Me.cmbInicialSeccProf.FormattingEnabled = True
+        Me.cmbInicialSeccProf.Location = New System.Drawing.Point(307, 641)
+        Me.cmbInicialSeccProf.Name = "cmbInicialSeccProf"
+        Me.cmbInicialSeccProf.Size = New System.Drawing.Size(110, 25)
+        Me.cmbInicialSeccProf.TabIndex = 40
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(115, 642)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(82, 24)
+        Me.Label13.TabIndex = 41
+        Me.Label13.Text = "Seccion"
+        '
+        'cmbPrimariaSeccionProf
+        '
+        Me.cmbPrimariaSeccionProf.FormattingEnabled = True
+        Me.cmbPrimariaSeccionProf.Location = New System.Drawing.Point(426, 641)
+        Me.cmbPrimariaSeccionProf.Name = "cmbPrimariaSeccionProf"
+        Me.cmbPrimariaSeccionProf.Size = New System.Drawing.Size(109, 25)
+        Me.cmbPrimariaSeccionProf.TabIndex = 42
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCancelar.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Location = New System.Drawing.Point(682, 730)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(124, 52)
+        Me.btnCancelar.TabIndex = 43
+        Me.btnCancelar.Text = "CANCELAR"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1761, 776)
+        Me.ClientSize = New System.Drawing.Size(1761, 806)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.cmbPrimariaSeccionProf)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.cmbInicialSeccProf)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnBuscar)
@@ -527,4 +572,8 @@ Partial Class frmAgregarProfesor
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents cmbInicialSeccProf As System.Windows.Forms.ComboBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents cmbPrimariaSeccionProf As System.Windows.Forms.ComboBox
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
 End Class
