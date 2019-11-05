@@ -67,8 +67,11 @@
     <Compile Include="entAlumno.vb" />
     <Compile Include="entAnnoEscolar.vb" />
     <Compile Include="entAula.vb" />
+    <Compile Include="entCurso.vb" />
     <Compile Include="entMatricula.vb" />
+    <Compile Include="entNota.vb" />
     <Compile Include="entProfesor.vb" />
+    <Compile Include="entTrimestre.vb" />
     <Compile Include="entUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

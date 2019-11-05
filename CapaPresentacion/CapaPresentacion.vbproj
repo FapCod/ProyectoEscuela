@@ -82,6 +82,12 @@
     <Compile Include="frmAgregarMatricula.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAgregarNota.Designer.vb">
+      <DependentUpon>frmAgregarNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAgregarProfesor.Designer.vb">
       <DependentUpon>frmAgregarProfesor.vb</DependentUpon>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarMatricula.resx">
       <DependentUpon>frmAgregarMatricula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarNota.resx">
+      <DependentUpon>frmAgregarNota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarProfesor.resx">
       <DependentUpon>frmAgregarProfesor.vb</DependentUpon>

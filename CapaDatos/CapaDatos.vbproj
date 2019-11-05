@@ -66,8 +66,11 @@
     <Compile Include="CRUD\datAlumno.vb" />
     <Compile Include="CRUD\datAnnoEscolar.vb" />
     <Compile Include="CRUD\datAula.vb" />
+    <Compile Include="CRUD\datCurso.vb" />
     <Compile Include="CRUD\datMatricula.vb" />
+    <Compile Include="CRUD\datNota.vb" />
     <Compile Include="CRUD\datProfesor.vb" />
+    <Compile Include="CRUD\datTrimestre.vb" />
     <Compile Include="CRUD\datUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
