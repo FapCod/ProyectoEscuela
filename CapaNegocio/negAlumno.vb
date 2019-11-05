@@ -1,19 +1,23 @@
 ﻿Imports CapaDatos
 Imports CapaEntidad
 Public Class negAlumno
-    Dim objalum As New entAlumno
-    Dim objRAlumn As New datAlumno
-    Public Function Registrar_Alumno(objalum) As Boolean
-        Return objRAlumn.RegistrarAlumno(objalum)
+    Dim objentAlumno As New entAlumno
+    Dim objdatAlumno As New datAlumno
+
+    Public Function registrarAlumno(objentAlumno) As Boolean
+        Return objdatAlumno.registrarAlumno(objentAlumno)
     End Function
-    Public Function Editar_Alumno(objalum As entAlumno, id As Integer) As Boolean
-        Return objRAlumn.editarAlumno(objalum, id)
+
+    Public Function editarAlumno(objentAlumno) As Boolean
+        Return objdatAlumno.editarAlumno(objentAlumno)
     End Function
-    Public Function Eliminar_Alumno(id As Integer) As Boolean
-        Return objRAlumn.eliminarAlumno(id)
+
+    Public Function eliminarAlumno(objentAlumno) As Boolean
+        Return objdatAlumno.eliminarAlumno(objentAlumno)
     End Function
-    Public Function Buscar_Alumno(id As Integer) As DataTable
-        Return objRAlumn.buscarAlumno(id)
+
+    Public Function buscarAlumno(objentAlumno) As DataTable
+        Return objdatAlumno.buscarAlumno(objentAlumno)
     End Function
 
     'creacion de datatable

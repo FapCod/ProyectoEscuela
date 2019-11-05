@@ -6,7 +6,7 @@ Public Class frmPrincipal
         lblNombreUser.Text = usuarioActivo.firstName
         Dim usuario As New negUser()
 
-        If usuario.ValidarUser(usuarioActivo.UserID) = False Then
+        If usuario.validarUsuario(usuarioActivo.UserID) = False Then
             MessageBox.Show("Error")
             Me.Close()
         End If
@@ -59,8 +59,5 @@ Public Class frmPrincipal
     End Sub
 
     
-    Private Sub btnRegistrarSeccion_Click(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.Click
-        Dim frmRS As New frmAgregarSeccion
-        frmRS.Show()
-    End Sub
+   
 End Class

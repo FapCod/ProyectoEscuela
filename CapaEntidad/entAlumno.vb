@@ -1,74 +1,82 @@
 ﻿Public Class entAlumno
-    Private NombreA
-    Private ApellidosA
-    Private SexoA
-    Private NivelA
-    Private GradoA
-    Private SeccionA
-    Private DireccionA
-    Private NombreApo
-    Public Property _NombreA As String
+    Private dniAlumno
+    Private nombreAlumno
+    Private apellidoAlumno
+    Private sexoAlumno
+    Private nivelAlumno
+    Private gradoSeccionAlumno
+    Private direccionAlumno
+    Private nombreDeApoderadoAlumno
+
+    Public Property _dniAlumno As String
         Get
-            Return NombreA
+            Return dniAlumno
         End Get
         Set(value As String)
-            NombreA = value
+            dniAlumno = value
         End Set
     End Property
-    Public Property _ApellidosA As String
+
+    Public Property _nombreAlumno As String
         Get
-            Return ApellidosA
+            Return nombreAlumno
         End Get
         Set(value As String)
-            ApellidosA = value
+            nombreAlumno = value
         End Set
     End Property
-    Public Property _SexoA As String
+
+    Public Property _apellidoAlumno As String
         Get
-            Return SexoA
+            Return apellidoAlumno
         End Get
         Set(value As String)
-            SexoA = value
+            apellidoAlumno = value
         End Set
     End Property
-    Public Property _NivelA As String
+
+    Public Property _sexoAlumno As String
         Get
-            Return NivelA
+            Return sexoAlumno
         End Get
         Set(value As String)
-            NivelA = value
+            sexoAlumno = value
         End Set
     End Property
-    Public Property _GradoA As String
+
+    Public Property _nivelAlumno As String
         Get
-            Return GradoA
+            Return nivelAlumno
         End Get
         Set(value As String)
-            GradoA = value
+            nivelAlumno = value
         End Set
     End Property
-    Public Property _SeccionA As String
+
+    Public Property _gradoSeccionAlumno As String
         Get
-            Return SeccionA
+            Return gradoSeccionAlumno
         End Get
         Set(value As String)
-            SeccionA = value
+            gradoSeccionAlumno = value
         End Set
     End Property
-    Public Property _DireccionA As String
+
+    Public Property _direccionAlumno As String
         Get
-            Return DireccionA
+            Return direccionAlumno
         End Get
         Set(value As String)
-            DireccionA = value
+            direccionAlumno = value
         End Set
     End Property
-    Public Property _NombreApo As String
+
+    Public Property _nombreDeApoderadoAlumno As String
         Get
-            Return NombreApo
+            Return nombreDeApoderadoAlumno
         End Get
         Set(value As String)
-            NombreApo = value
+            nombreDeApoderadoAlumno = value
         End Set
     End Property
 

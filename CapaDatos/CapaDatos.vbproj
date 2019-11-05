@@ -65,7 +65,6 @@
     <Compile Include="ConexionASQL\datConexion.vb" />
     <Compile Include="CRUD\datAlumno.vb" />
     <Compile Include="CRUD\datProfesor.vb" />
-    <Compile Include="CRUD\datSeccion.vb" />
     <Compile Include="CRUD\datUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

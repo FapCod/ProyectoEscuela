@@ -30,23 +30,23 @@ Partial Class frmAgregarAlumno
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtNombreA = New System.Windows.Forms.TextBox()
-        Me.txtApellidoA = New System.Windows.Forms.TextBox()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.txtNombreApo = New System.Windows.Forms.TextBox()
-        Me.btnAgregarAlumno = New System.Windows.Forms.Button()
-        Me.cmbSexoA = New System.Windows.Forms.ComboBox()
-        Me.cmbGradoIn = New System.Windows.Forms.ComboBox()
-        Me.rbInicial = New System.Windows.Forms.RadioButton()
-        Me.rbPrimaria = New System.Windows.Forms.RadioButton()
-        Me.cmbGradoPri = New System.Windows.Forms.ComboBox()
-        Me.cmbSeccionPri = New System.Windows.Forms.ComboBox()
-        Me.cmbSeccionIn = New System.Windows.Forms.ComboBox()
-        Me.btnEditarA = New System.Windows.Forms.Button()
-        Me.btnEliminarA = New System.Windows.Forms.Button()
+        Me.txtnombreAlumno = New System.Windows.Forms.TextBox()
+        Me.txtapellidoAlumno = New System.Windows.Forms.TextBox()
+        Me.txtdireccionAlumno = New System.Windows.Forms.TextBox()
+        Me.txtnombreApoderadoAlumno = New System.Windows.Forms.TextBox()
+        Me.btnagregarAlumno = New System.Windows.Forms.Button()
+        Me.cmbsexoAlumno = New System.Windows.Forms.ComboBox()
+        Me.cmbgradoInicial = New System.Windows.Forms.ComboBox()
+        Me.rbinicial = New System.Windows.Forms.RadioButton()
+        Me.rbprimaria = New System.Windows.Forms.RadioButton()
+        Me.cmbgradoPrimaria = New System.Windows.Forms.ComboBox()
+        Me.cmbseccionPrimaria = New System.Windows.Forms.ComboBox()
+        Me.cmbseccionInicial = New System.Windows.Forms.ComboBox()
+        Me.btneditarAlumno = New System.Windows.Forms.Button()
+        Me.btneliminarAlumno = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnBuscarA = New System.Windows.Forms.Button()
-        Me.txtBuscarA = New System.Windows.Forms.TextBox()
+        Me.btnbuscarAlumno = New System.Windows.Forms.Button()
+        Me.txtidAlumno = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,140 +139,140 @@ Partial Class frmAgregarAlumno
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "Nombre Apoderado"
         '
-        'txtNombreA
+        'txtnombreAlumno
         '
-        Me.txtNombreA.Location = New System.Drawing.Point(254, 59)
-        Me.txtNombreA.Name = "txtNombreA"
-        Me.txtNombreA.Size = New System.Drawing.Size(184, 22)
-        Me.txtNombreA.TabIndex = 8
+        Me.txtnombreAlumno.Location = New System.Drawing.Point(254, 59)
+        Me.txtnombreAlumno.Name = "txtnombreAlumno"
+        Me.txtnombreAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtnombreAlumno.TabIndex = 8
         '
-        'txtApellidoA
+        'txtapellidoAlumno
         '
-        Me.txtApellidoA.Location = New System.Drawing.Point(254, 94)
-        Me.txtApellidoA.Name = "txtApellidoA"
-        Me.txtApellidoA.Size = New System.Drawing.Size(184, 22)
-        Me.txtApellidoA.TabIndex = 9
+        Me.txtapellidoAlumno.Location = New System.Drawing.Point(254, 94)
+        Me.txtapellidoAlumno.Name = "txtapellidoAlumno"
+        Me.txtapellidoAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtapellidoAlumno.TabIndex = 9
         '
-        'txtDireccion
+        'txtdireccionAlumno
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(254, 312)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(184, 22)
-        Me.txtDireccion.TabIndex = 12
+        Me.txtdireccionAlumno.Location = New System.Drawing.Point(254, 312)
+        Me.txtdireccionAlumno.Name = "txtdireccionAlumno"
+        Me.txtdireccionAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtdireccionAlumno.TabIndex = 12
         '
-        'txtNombreApo
+        'txtnombreApoderadoAlumno
         '
-        Me.txtNombreApo.Location = New System.Drawing.Point(331, 349)
-        Me.txtNombreApo.Name = "txtNombreApo"
-        Me.txtNombreApo.Size = New System.Drawing.Size(184, 22)
-        Me.txtNombreApo.TabIndex = 13
+        Me.txtnombreApoderadoAlumno.Location = New System.Drawing.Point(331, 349)
+        Me.txtnombreApoderadoAlumno.Name = "txtnombreApoderadoAlumno"
+        Me.txtnombreApoderadoAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtnombreApoderadoAlumno.TabIndex = 13
         '
-        'btnAgregarAlumno
+        'btnagregarAlumno
         '
-        Me.btnAgregarAlumno.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnAgregarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarAlumno.ForeColor = System.Drawing.Color.White
-        Me.btnAgregarAlumno.Location = New System.Drawing.Point(113, 392)
-        Me.btnAgregarAlumno.Name = "btnAgregarAlumno"
-        Me.btnAgregarAlumno.Size = New System.Drawing.Size(399, 57)
-        Me.btnAgregarAlumno.TabIndex = 14
-        Me.btnAgregarAlumno.Text = "Agregar"
-        Me.btnAgregarAlumno.UseVisualStyleBackColor = False
+        Me.btnagregarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnagregarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnagregarAlumno.ForeColor = System.Drawing.Color.White
+        Me.btnagregarAlumno.Location = New System.Drawing.Point(113, 392)
+        Me.btnagregarAlumno.Name = "btnagregarAlumno"
+        Me.btnagregarAlumno.Size = New System.Drawing.Size(399, 57)
+        Me.btnagregarAlumno.TabIndex = 14
+        Me.btnagregarAlumno.Text = "Agregar"
+        Me.btnagregarAlumno.UseVisualStyleBackColor = False
         '
-        'cmbSexoA
+        'cmbsexoAlumno
         '
-        Me.cmbSexoA.FormattingEnabled = True
-        Me.cmbSexoA.Items.AddRange(New Object() {"Hombre", "Mujer", "No especifico"})
-        Me.cmbSexoA.Location = New System.Drawing.Point(254, 140)
-        Me.cmbSexoA.Name = "cmbSexoA"
-        Me.cmbSexoA.Size = New System.Drawing.Size(184, 24)
-        Me.cmbSexoA.TabIndex = 15
+        Me.cmbsexoAlumno.FormattingEnabled = True
+        Me.cmbsexoAlumno.Items.AddRange(New Object() {"Hombre", "Mujer", "No especifico"})
+        Me.cmbsexoAlumno.Location = New System.Drawing.Point(254, 140)
+        Me.cmbsexoAlumno.Name = "cmbsexoAlumno"
+        Me.cmbsexoAlumno.Size = New System.Drawing.Size(184, 24)
+        Me.cmbsexoAlumno.TabIndex = 15
         '
-        'cmbGradoIn
+        'cmbgradoInicial
         '
-        Me.cmbGradoIn.FormattingEnabled = True
-        Me.cmbGradoIn.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cmbGradoIn.Location = New System.Drawing.Point(254, 222)
-        Me.cmbGradoIn.Name = "cmbGradoIn"
-        Me.cmbGradoIn.Size = New System.Drawing.Size(60, 24)
-        Me.cmbGradoIn.TabIndex = 16
+        Me.cmbgradoInicial.FormattingEnabled = True
+        Me.cmbgradoInicial.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cmbgradoInicial.Location = New System.Drawing.Point(254, 222)
+        Me.cmbgradoInicial.Name = "cmbgradoInicial"
+        Me.cmbgradoInicial.Size = New System.Drawing.Size(60, 24)
+        Me.cmbgradoInicial.TabIndex = 16
         '
-        'rbInicial
+        'rbinicial
         '
-        Me.rbInicial.AutoSize = True
-        Me.rbInicial.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbInicial.ForeColor = System.Drawing.Color.White
-        Me.rbInicial.Location = New System.Drawing.Point(254, 186)
-        Me.rbInicial.Name = "rbInicial"
-        Me.rbInicial.Size = New System.Drawing.Size(77, 24)
-        Me.rbInicial.TabIndex = 17
-        Me.rbInicial.TabStop = True
-        Me.rbInicial.Text = "Inicial"
-        Me.rbInicial.UseVisualStyleBackColor = True
+        Me.rbinicial.AutoSize = True
+        Me.rbinicial.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbinicial.ForeColor = System.Drawing.Color.White
+        Me.rbinicial.Location = New System.Drawing.Point(254, 186)
+        Me.rbinicial.Name = "rbinicial"
+        Me.rbinicial.Size = New System.Drawing.Size(77, 24)
+        Me.rbinicial.TabIndex = 17
+        Me.rbinicial.TabStop = True
+        Me.rbinicial.Text = "Inicial"
+        Me.rbinicial.UseVisualStyleBackColor = True
         '
-        'rbPrimaria
+        'rbprimaria
         '
-        Me.rbPrimaria.AutoSize = True
-        Me.rbPrimaria.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbPrimaria.ForeColor = System.Drawing.Color.White
-        Me.rbPrimaria.Location = New System.Drawing.Point(339, 186)
-        Me.rbPrimaria.Name = "rbPrimaria"
-        Me.rbPrimaria.Size = New System.Drawing.Size(98, 24)
-        Me.rbPrimaria.TabIndex = 18
-        Me.rbPrimaria.TabStop = True
-        Me.rbPrimaria.Text = "Primaria"
-        Me.rbPrimaria.UseVisualStyleBackColor = True
+        Me.rbprimaria.AutoSize = True
+        Me.rbprimaria.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbprimaria.ForeColor = System.Drawing.Color.White
+        Me.rbprimaria.Location = New System.Drawing.Point(339, 186)
+        Me.rbprimaria.Name = "rbprimaria"
+        Me.rbprimaria.Size = New System.Drawing.Size(98, 24)
+        Me.rbprimaria.TabIndex = 18
+        Me.rbprimaria.TabStop = True
+        Me.rbprimaria.Text = "Primaria"
+        Me.rbprimaria.UseVisualStyleBackColor = True
         '
-        'cmbGradoPri
+        'cmbgradoPrimaria
         '
-        Me.cmbGradoPri.FormattingEnabled = True
-        Me.cmbGradoPri.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.cmbGradoPri.Location = New System.Drawing.Point(339, 222)
-        Me.cmbGradoPri.Name = "cmbGradoPri"
-        Me.cmbGradoPri.Size = New System.Drawing.Size(60, 24)
-        Me.cmbGradoPri.TabIndex = 19
+        Me.cmbgradoPrimaria.FormattingEnabled = True
+        Me.cmbgradoPrimaria.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
+        Me.cmbgradoPrimaria.Location = New System.Drawing.Point(339, 222)
+        Me.cmbgradoPrimaria.Name = "cmbgradoPrimaria"
+        Me.cmbgradoPrimaria.Size = New System.Drawing.Size(60, 24)
+        Me.cmbgradoPrimaria.TabIndex = 19
         '
-        'cmbSeccionPri
+        'cmbseccionPrimaria
         '
-        Me.cmbSeccionPri.FormattingEnabled = True
-        Me.cmbSeccionPri.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cmbSeccionPri.Location = New System.Drawing.Point(339, 260)
-        Me.cmbSeccionPri.Name = "cmbSeccionPri"
-        Me.cmbSeccionPri.Size = New System.Drawing.Size(60, 24)
-        Me.cmbSeccionPri.TabIndex = 21
+        Me.cmbseccionPrimaria.FormattingEnabled = True
+        Me.cmbseccionPrimaria.Items.AddRange(New Object() {"A", "B", "C"})
+        Me.cmbseccionPrimaria.Location = New System.Drawing.Point(339, 260)
+        Me.cmbseccionPrimaria.Name = "cmbseccionPrimaria"
+        Me.cmbseccionPrimaria.Size = New System.Drawing.Size(60, 24)
+        Me.cmbseccionPrimaria.TabIndex = 21
         '
-        'cmbSeccionIn
+        'cmbseccionInicial
         '
-        Me.cmbSeccionIn.FormattingEnabled = True
-        Me.cmbSeccionIn.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cmbSeccionIn.Location = New System.Drawing.Point(254, 260)
-        Me.cmbSeccionIn.Name = "cmbSeccionIn"
-        Me.cmbSeccionIn.Size = New System.Drawing.Size(60, 24)
-        Me.cmbSeccionIn.TabIndex = 20
+        Me.cmbseccionInicial.FormattingEnabled = True
+        Me.cmbseccionInicial.Items.AddRange(New Object() {"A", "B", "C"})
+        Me.cmbseccionInicial.Location = New System.Drawing.Point(254, 260)
+        Me.cmbseccionInicial.Name = "cmbseccionInicial"
+        Me.cmbseccionInicial.Size = New System.Drawing.Size(60, 24)
+        Me.cmbseccionInicial.TabIndex = 20
         '
-        'btnEditarA
+        'btneditarAlumno
         '
-        Me.btnEditarA.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnEditarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditarA.ForeColor = System.Drawing.Color.White
-        Me.btnEditarA.Location = New System.Drawing.Point(113, 455)
-        Me.btnEditarA.Name = "btnEditarA"
-        Me.btnEditarA.Size = New System.Drawing.Size(201, 57)
-        Me.btnEditarA.TabIndex = 22
-        Me.btnEditarA.Text = "EDITAR"
-        Me.btnEditarA.UseVisualStyleBackColor = False
+        Me.btneditarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btneditarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btneditarAlumno.ForeColor = System.Drawing.Color.White
+        Me.btneditarAlumno.Location = New System.Drawing.Point(113, 455)
+        Me.btneditarAlumno.Name = "btneditarAlumno"
+        Me.btneditarAlumno.Size = New System.Drawing.Size(201, 57)
+        Me.btneditarAlumno.TabIndex = 22
+        Me.btneditarAlumno.Text = "EDITAR"
+        Me.btneditarAlumno.UseVisualStyleBackColor = False
         '
-        'btnEliminarA
+        'btneliminarAlumno
         '
-        Me.btnEliminarA.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnEliminarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarA.ForeColor = System.Drawing.Color.White
-        Me.btnEliminarA.Location = New System.Drawing.Point(331, 455)
-        Me.btnEliminarA.Name = "btnEliminarA"
-        Me.btnEliminarA.Size = New System.Drawing.Size(181, 57)
-        Me.btnEliminarA.TabIndex = 23
-        Me.btnEliminarA.Text = "ELIMINAR"
-        Me.btnEliminarA.UseVisualStyleBackColor = False
+        Me.btneliminarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btneliminarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btneliminarAlumno.ForeColor = System.Drawing.Color.White
+        Me.btneliminarAlumno.Location = New System.Drawing.Point(331, 455)
+        Me.btneliminarAlumno.Name = "btneliminarAlumno"
+        Me.btneliminarAlumno.Size = New System.Drawing.Size(181, 57)
+        Me.btneliminarAlumno.TabIndex = 23
+        Me.btneliminarAlumno.Text = "ELIMINAR"
+        Me.btneliminarAlumno.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
@@ -283,24 +283,24 @@ Partial Class frmAgregarAlumno
         Me.DataGridView1.Size = New System.Drawing.Size(643, 329)
         Me.DataGridView1.TabIndex = 24
         '
-        'btnBuscarA
+        'btnbuscarAlumno
         '
-        Me.btnBuscarA.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnBuscarA.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarA.ForeColor = System.Drawing.Color.White
-        Me.btnBuscarA.Location = New System.Drawing.Point(866, 21)
-        Me.btnBuscarA.Name = "btnBuscarA"
-        Me.btnBuscarA.Size = New System.Drawing.Size(104, 57)
-        Me.btnBuscarA.TabIndex = 25
-        Me.btnBuscarA.Text = "BUSCAR"
-        Me.btnBuscarA.UseVisualStyleBackColor = False
+        Me.btnbuscarAlumno.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnbuscarAlumno.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarAlumno.ForeColor = System.Drawing.Color.White
+        Me.btnbuscarAlumno.Location = New System.Drawing.Point(866, 21)
+        Me.btnbuscarAlumno.Name = "btnbuscarAlumno"
+        Me.btnbuscarAlumno.Size = New System.Drawing.Size(104, 57)
+        Me.btnbuscarAlumno.TabIndex = 25
+        Me.btnbuscarAlumno.Text = "BUSCAR"
+        Me.btnbuscarAlumno.UseVisualStyleBackColor = False
         '
-        'txtBuscarA
+        'txtidAlumno
         '
-        Me.txtBuscarA.Location = New System.Drawing.Point(577, 38)
-        Me.txtBuscarA.Name = "txtBuscarA"
-        Me.txtBuscarA.Size = New System.Drawing.Size(283, 22)
-        Me.txtBuscarA.TabIndex = 26
+        Me.txtidAlumno.Location = New System.Drawing.Point(577, 38)
+        Me.txtidAlumno.Name = "txtidAlumno"
+        Me.txtidAlumno.Size = New System.Drawing.Size(283, 22)
+        Me.txtidAlumno.TabIndex = 26
         '
         'Label9
         '
@@ -320,23 +320,23 @@ Partial Class frmAgregarAlumno
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1209, 567)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.txtBuscarA)
-        Me.Controls.Add(Me.btnBuscarA)
+        Me.Controls.Add(Me.txtidAlumno)
+        Me.Controls.Add(Me.btnbuscarAlumno)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.btnEliminarA)
-        Me.Controls.Add(Me.btnEditarA)
-        Me.Controls.Add(Me.cmbSeccionPri)
-        Me.Controls.Add(Me.cmbSeccionIn)
-        Me.Controls.Add(Me.cmbGradoPri)
-        Me.Controls.Add(Me.rbPrimaria)
-        Me.Controls.Add(Me.rbInicial)
-        Me.Controls.Add(Me.cmbGradoIn)
-        Me.Controls.Add(Me.cmbSexoA)
-        Me.Controls.Add(Me.btnAgregarAlumno)
-        Me.Controls.Add(Me.txtNombreApo)
-        Me.Controls.Add(Me.txtDireccion)
-        Me.Controls.Add(Me.txtApellidoA)
-        Me.Controls.Add(Me.txtNombreA)
+        Me.Controls.Add(Me.btneliminarAlumno)
+        Me.Controls.Add(Me.btneditarAlumno)
+        Me.Controls.Add(Me.cmbseccionPrimaria)
+        Me.Controls.Add(Me.cmbseccionInicial)
+        Me.Controls.Add(Me.cmbgradoPrimaria)
+        Me.Controls.Add(Me.rbprimaria)
+        Me.Controls.Add(Me.rbinicial)
+        Me.Controls.Add(Me.cmbgradoInicial)
+        Me.Controls.Add(Me.cmbsexoAlumno)
+        Me.Controls.Add(Me.btnagregarAlumno)
+        Me.Controls.Add(Me.txtnombreApoderadoAlumno)
+        Me.Controls.Add(Me.txtdireccionAlumno)
+        Me.Controls.Add(Me.txtapellidoAlumno)
+        Me.Controls.Add(Me.txtnombreAlumno)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -360,22 +360,22 @@ Partial Class frmAgregarAlumno
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txtNombreA As System.Windows.Forms.TextBox
-    Friend WithEvents txtApellidoA As System.Windows.Forms.TextBox
-    Friend WithEvents txtDireccion As System.Windows.Forms.TextBox
-    Friend WithEvents txtNombreApo As System.Windows.Forms.TextBox
-    Friend WithEvents btnAgregarAlumno As System.Windows.Forms.Button
-    Friend WithEvents cmbSexoA As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbGradoIn As System.Windows.Forms.ComboBox
-    Friend WithEvents rbInicial As System.Windows.Forms.RadioButton
-    Friend WithEvents rbPrimaria As System.Windows.Forms.RadioButton
-    Friend WithEvents cmbGradoPri As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbSeccionPri As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbSeccionIn As System.Windows.Forms.ComboBox
-    Friend WithEvents btnEditarA As System.Windows.Forms.Button
-    Friend WithEvents btnEliminarA As System.Windows.Forms.Button
+    Friend WithEvents txtnombreAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtapellidoAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtdireccionAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtnombreApoderadoAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents btnagregarAlumno As System.Windows.Forms.Button
+    Friend WithEvents cmbsexoAlumno As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbgradoInicial As System.Windows.Forms.ComboBox
+    Friend WithEvents rbinicial As System.Windows.Forms.RadioButton
+    Friend WithEvents rbprimaria As System.Windows.Forms.RadioButton
+    Friend WithEvents cmbgradoPrimaria As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbseccionPrimaria As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbseccionInicial As System.Windows.Forms.ComboBox
+    Friend WithEvents btneditarAlumno As System.Windows.Forms.Button
+    Friend WithEvents btneliminarAlumno As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents btnBuscarA As System.Windows.Forms.Button
-    Friend WithEvents txtBuscarA As System.Windows.Forms.TextBox
+    Friend WithEvents btnbuscarAlumno As System.Windows.Forms.Button
+    Friend WithEvents txtidAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

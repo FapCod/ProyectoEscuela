@@ -26,7 +26,6 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.btnReportes = New System.Windows.Forms.Button()
@@ -69,7 +68,6 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.OrangeRed
-        Me.Panel1.Controls.Add(Me.btnRegistrarSeccion)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnCerrarC)
         Me.Panel1.Controls.Add(Me.btnReportes)
@@ -86,21 +84,6 @@ Partial Class frmPrincipal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(285, 642)
         Me.Panel1.TabIndex = 2
-        '
-        'btnRegistrarSeccion
-        '
-        Me.btnRegistrarSeccion.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnRegistrarSeccion.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(-3, 131)
-        Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
-        Me.btnRegistrarSeccion.Size = New System.Drawing.Size(285, 58)
-        Me.btnRegistrarSeccion.TabIndex = 10
-        Me.btnRegistrarSeccion.Text = "Registrar Seccion"
-        Me.btnRegistrarSeccion.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -131,7 +114,7 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(0, 513)
+        Me.btnReportes.Location = New System.Drawing.Point(0, 508)
         Me.btnReportes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(285, 58)
@@ -146,7 +129,7 @@ Partial Class frmPrincipal
         Me.btnListarAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarAlumnos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarAlumnos.ForeColor = System.Drawing.Color.White
-        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 449)
+        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 442)
         Me.btnListarAlumnos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarAlumnos.Name = "btnListarAlumnos"
         Me.btnListarAlumnos.Size = New System.Drawing.Size(285, 58)
@@ -161,7 +144,7 @@ Partial Class frmPrincipal
         Me.btnListarMaestros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarMaestros.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarMaestros.ForeColor = System.Drawing.Color.White
-        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 385)
+        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 376)
         Me.btnListarMaestros.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarMaestros.Name = "btnListarMaestros"
         Me.btnListarMaestros.Size = New System.Drawing.Size(285, 58)
@@ -176,7 +159,7 @@ Partial Class frmPrincipal
         Me.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarNotas.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarNotas.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarNotas.Location = New System.Drawing.Point(0, 321)
+        Me.btnRegistrarNotas.Location = New System.Drawing.Point(0, 308)
         Me.btnRegistrarNotas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarNotas.Name = "btnRegistrarNotas"
         Me.btnRegistrarNotas.Size = New System.Drawing.Size(285, 58)
@@ -191,7 +174,7 @@ Partial Class frmPrincipal
         Me.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarAlumno.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarAlumno.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(0, 257)
+        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(0, 237)
         Me.btnRegistrarAlumno.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarAlumno.Name = "btnRegistrarAlumno"
         Me.btnRegistrarAlumno.Size = New System.Drawing.Size(285, 58)
@@ -206,7 +189,7 @@ Partial Class frmPrincipal
         Me.btnRegistrarMaestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarMaestro.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarMaestro.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(0, 193)
+        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(0, 166)
         Me.btnRegistrarMaestro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarMaestro.Name = "btnRegistrarMaestro"
         Me.btnRegistrarMaestro.Size = New System.Drawing.Size(285, 58)
@@ -272,5 +255,4 @@ Partial Class frmPrincipal
     Friend WithEvents lblNombreUser As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnCerrarC As System.Windows.Forms.PictureBox
-    Friend WithEvents btnRegistrarSeccion As System.Windows.Forms.Button
 End Class

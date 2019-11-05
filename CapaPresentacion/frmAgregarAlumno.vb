@@ -2,30 +2,28 @@
 Imports CapaNegocio
 Public Class frmAgregarAlumno
 
-    Private Sub btnAgregarAlumno_Click(sender As Object, e As EventArgs) Handles btnAgregarAlumno.Click
+    Private Sub btnAgregarAlumno_Click(sender As Object, e As EventArgs) Handles btnagregarAlumno.Click
         Dim objeA As New entAlumno
-        objeA._NombreA = txtNombreA.Text
-        objeA._ApellidosA = txtApellidoA.Text
-        objeA._SexoA = cmbSexoA.Text
-        If rbInicial.Checked = True Then
-            objeA._NivelA = "Inicial"
-            objeA._GradoA = cmbGradoIn.Text
-            objeA._SeccionA = cmbSeccionIn.Text
-        ElseIf rbPrimaria.Checked = True Then
-            objeA._NivelA = "Primaria"
-            objeA._GradoA = cmbGradoPri.Text
-            objeA._SeccionA = cmbSeccionPri.Text
+        objeA._nombreAlumno = txtnombreAlumno.Text
+        objeA._apellidoAlumno = txtapellidoAlumno.Text
+        objeA._sexoAlumno = cmbsexoAlumno.Text
+        If rbinicial.Checked = True Then
+            objeA._nivelAlumno = "Inicial"
+            objeA._gradoSeccionAlumno = cmbgradoInicial.Text
+        ElseIf rbprimaria.Checked = True Then
+            objeA._nivelAlumno = "Primaria"
+            objeA._gradoSeccionAlumno = cmbgradoPrimaria.Text
         End If
-        objeA._DireccionA = txtDireccion.Text
-        objeA._NombreApo = txtNombreApo.Text
+        objeA._direccionAlumno = txtdireccionAlumno.Text
+        objeA._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
         Dim negalum As New negAlumno
-        Dim verificarRA = negalum.Registrar_Alumno(objeA)
+        Dim verificarRA = negalum.registrarAlumno(objeA)
         If verificarRA = True Then
             MsgBox("registro exitoso")
-            cmbGradoPri.Enabled = True
-            cmbSeccionPri.Enabled = True
-            cmbGradoIn.Enabled = True
-            cmbSeccionIn.Enabled = True
+            cmbgradoPrimaria.Enabled = True
+            cmbseccionPrimaria.Enabled = True
+            cmbgradoInicial.Enabled = True
+            cmbseccionInicial.Enabled = True
             LimpiarDatos()
             Ver()
         Else
@@ -36,67 +34,67 @@ Public Class frmAgregarAlumno
     End Sub
 
 
-      
 
 
 
-    
-    Private Sub rbInicial_Click(sender As Object, e As EventArgs) Handles rbInicial.Click
-        If rbInicial.Checked = True Then
-            cmbGradoPri.Enabled = False
-            cmbSeccionPri.Enabled = False
+
+
+    Private Sub rbInicial_Click(sender As Object, e As EventArgs) Handles rbinicial.Click
+        If rbinicial.Checked = True Then
+            cmbgradoPrimaria.Enabled = False
+            cmbseccionPrimaria.Enabled = False
         End If
     End Sub
 
-    Private Sub rbPrimaria_Click(sender As Object, e As EventArgs) Handles rbPrimaria.Click
-        If rbPrimaria.Checked = True Then
-            cmbGradoIn.Enabled = False
-            cmbSeccionIn.Enabled = False
+    Private Sub rbPrimaria_Click(sender As Object, e As EventArgs) Handles rbprimaria.Click
+        If rbprimaria.Checked = True Then
+            cmbgradoInicial.Enabled = False
+            cmbseccionInicial.Enabled = False
         End If
     End Sub
     Public Sub LimpiarDatos()
-        txtNombreA.Clear()
-        txtApellidoA.Clear()
-        cmbSexoA.Text = ""
-        rbInicial.Checked = False
-        rbPrimaria.Checked = False
-        cmbGradoPri.Text = ("")
-        cmbSeccionPri.Text = ("")
-        cmbGradoIn.Text = ("")
-        cmbSeccionIn.Text = ("")
-        txtDireccion.Clear()
-        txtNombreApo.Clear()
+        txtnombreAlumno.Clear()
+        txtapellidoAlumno.Clear()
+        cmbsexoAlumno.Text = ""
+        rbinicial.Checked = False
+        rbprimaria.Checked = False
+        cmbgradoPrimaria.Text = ("")
+        cmbseccionPrimaria.Text = ("")
+        cmbgradoInicial.Text = ("")
+        cmbseccionInicial.Text = ("")
+        txtdireccionAlumno.Clear()
+        txtnombreApoderadoAlumno.Clear()
 
     End Sub
 
-    Private Sub btnEditarA_Click(sender As Object, e As EventArgs) Handles btnEditarA.Click
+    Private Sub btnEditarA_Click(sender As Object, e As EventArgs) Handles btneditarAlumno.Click
         Dim objeA As New entAlumno
-        objeA._NombreA = txtNombreA.Text
-        objeA._ApellidosA = txtApellidoA.Text
-        objeA._SexoA = cmbSexoA.Text
-        If rbInicial.Checked = True Then
-            objeA._NivelA = "Inicial"
-            objeA._GradoA = cmbGradoIn.Text
-            objeA._SeccionA = cmbSeccionIn.Text
-        ElseIf rbPrimaria.Checked = True Then
-            objeA._NivelA = "Primaria"
-            objeA._GradoA = cmbGradoPri.Text
-            objeA._SeccionA = cmbSeccionPri.Text
+        objeA._nombreAlumno = txtnombreAlumno.Text
+        objeA._apellidoAlumno = txtapellidoAlumno.Text
+        objeA._sexoAlumno = cmbsexoAlumno.Text
+        If rbinicial.Checked = True Then
+            objeA._nivelAlumno = "Inicial"
+            objeA._gradoSeccionAlumno = cmbgradoInicial.Text
+
+        ElseIf rbprimaria.Checked = True Then
+            objeA._nivelAlumno = "Primaria"
+            objeA._gradoSeccionAlumno = cmbgradoPrimaria.Text
+
         End If
-        objeA._DireccionA = txtDireccion.Text
-        objeA._NombreApo = txtNombreApo.Text
+        objeA._direccionAlumno = txtdireccionAlumno.Text
+        objeA._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
         Dim negalum As New negAlumno
         Dim id As Integer
         Dim i As Integer
         i = DataGridView1.CurrentRow.Index
         id = DataGridView1.Item(0, i).Value()
-        Dim verificarRA = negalum.Editar_Alumno(objeA, id)
+        Dim verificarRA = negalum.editarAlumno(objeA)
         If verificarRA = True Then
             MsgBox("Actualizacion Exitosa")
-            cmbGradoPri.Enabled = True
-            cmbSeccionPri.Enabled = True
-            cmbGradoIn.Enabled = True
-            cmbSeccionIn.Enabled = True
+            cmbgradoPrimaria.Enabled = True
+            cmbseccionPrimaria.Enabled = True
+            cmbgradoInicial.Enabled = True
+            cmbseccionInicial.Enabled = True
             LimpiarDatos()
             Ver()
         Else
@@ -104,19 +102,19 @@ Public Class frmAgregarAlumno
         End If
     End Sub
 
-    Private Sub btnEliminarA_Click(sender As Object, e As EventArgs) Handles btnEliminarA.Click
+    Private Sub btnEliminarA_Click(sender As Object, e As EventArgs) Handles btneliminarAlumno.Click
         Dim negalum As New negAlumno
         Dim id As Integer
         Dim i As Integer
         i = DataGridView1.CurrentRow.Index
         id = DataGridView1.Item(0, i).Value()
-        Dim verificarRA = negalum.Eliminar_Alumno(id)
+        Dim verificarRA = negalum.eliminarAlumno(id)
         If verificarRA = True Then
             MsgBox("Eliminacion Exitosa")
-            cmbGradoPri.Enabled = True
-            cmbSeccionPri.Enabled = True
-            cmbGradoIn.Enabled = True
-            cmbSeccionIn.Enabled = True
+            cmbgradoPrimaria.Enabled = True
+            cmbseccionPrimaria.Enabled = True
+            cmbgradoInicial.Enabled = True
+            cmbseccionInicial.Enabled = True
             LimpiarDatos()
             Ver()
         Else
@@ -136,60 +134,60 @@ Public Class frmAgregarAlumno
         Dim i As Integer
         Dim nivel As String
         i = DataGridView1.CurrentRow.Index
-        txtNombreA.Text = DataGridView1.Item(1, i).Value()
-        txtApellidoA.Text = DataGridView1.Item(2, i).Value()
-        cmbSexoA.Text = DataGridView1.Item(3, i).Value()
+        txtnombreAlumno.Text = DataGridView1.Item(1, i).Value()
+        txtapellidoAlumno.Text = DataGridView1.Item(2, i).Value()
+        cmbsexoAlumno.Text = DataGridView1.Item(3, i).Value()
         nivel = DataGridView1.Item(4, i).Value()
         If nivel = "Inicial" Then
-            cmbGradoPri.Text = ("")
-            cmbSeccionPri.Text = ("")
-            rbInicial.Checked = True
-            cmbGradoIn.Text = DataGridView1.Item(5, i).Value()
-            cmbSeccionIn.Text = DataGridView1.Item(6, i).Value()
+            cmbgradoPrimaria.Text = ("")
+            cmbseccionPrimaria.Text = ("")
+            rbinicial.Checked = True
+            cmbgradoInicial.Text = DataGridView1.Item(5, i).Value()
+            cmbseccionInicial.Text = DataGridView1.Item(6, i).Value()
         ElseIf nivel = "Primaria" Then
-            cmbGradoIn.Text = ("")
-            cmbSeccionIn.Text = ("")
-            rbPrimaria.Checked = True
-            cmbGradoPri.Text = DataGridView1.Item(5, i).Value()
-            cmbSeccionPri.Text = DataGridView1.Item(6, i).Value()
+            cmbgradoInicial.Text = ("")
+            cmbseccionInicial.Text = ("")
+            rbprimaria.Checked = True
+            cmbgradoPrimaria.Text = DataGridView1.Item(5, i).Value()
+            cmbseccionPrimaria.Text = DataGridView1.Item(6, i).Value()
         End If
-        txtDireccion.Text = DataGridView1.Item(7, i).Value()
-        txtNombreApo.Text = DataGridView1.Item(8, i).Value()
+        txtdireccionAlumno.Text = DataGridView1.Item(7, i).Value()
+        txtnombreApoderadoAlumno.Text = DataGridView1.Item(8, i).Value()
     End Sub
 
-    Private Sub btnBuscarA_Click(sender As Object, e As EventArgs) Handles btnBuscarA.Click
+    Private Sub btnBuscarA_Click(sender As Object, e As EventArgs) Handles btnbuscarAlumno.Click
         Dim negalumn As New negAlumno
         Dim id As Integer
-        id = Val(txtBuscarA.Text)
+        id = Val(txtidAlumno.Text)
 
-        DataGridView1.DataSource = negalumn.Buscar_Alumno(id)
+        DataGridView1.DataSource = negalumn.buscarAlumno(id)
 
 
 
 
     End Sub
 
-    Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbInicial.CheckedChanged
-        If rbInicial.Checked = True Then
-            cmbGradoPri.Enabled = False
-            cmbSeccionPri.Enabled = False
+    Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbinicial.CheckedChanged
+        If rbinicial.Checked = True Then
+            cmbgradoPrimaria.Enabled = False
+            cmbseccionPrimaria.Enabled = False
         End If
-        If rbInicial.Checked = True Then
-            cmbGradoIn.Enabled = True
-            cmbSeccionIn.Enabled = True
+        If rbinicial.Checked = True Then
+            cmbgradoInicial.Enabled = True
+            cmbseccionInicial.Enabled = True
         End If
-       
+
     End Sub
 
 
-    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbPrimaria.CheckedChanged
-        If rbPrimaria.Checked = True Then
-            cmbSeccionIn.Enabled = False
-            cmbGradoIn.Enabled = False
+    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbprimaria.CheckedChanged
+        If rbprimaria.Checked = True Then
+            cmbseccionInicial.Enabled = False
+            cmbgradoInicial.Enabled = False
         End If
-        If rbPrimaria.Checked = True Then
-            cmbGradoPri.Enabled = True
-            cmbSeccionPri.Enabled = True
+        If rbprimaria.Checked = True Then
+            cmbgradoPrimaria.Enabled = True
+            cmbseccionPrimaria.Enabled = True
         End If
     End Sub
 End Class

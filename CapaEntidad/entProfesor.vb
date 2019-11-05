@@ -1,95 +1,83 @@
 ﻿Public Class entProfesor
-    Private nombreP
-    Private apellidoP
-    Private correoP
-    Private sexoP
-    Private telefonoP
-    Private direccionP
-    Private asignaturasP
-    Private NivelP
-    Private gradoYseccionP
-    Public objsecc As entSeccion
-    Private tipoP
-    Public Property _nombreP As String
+    Private dniProfesor
+    Private nombreProfesor
+    Private apellidoProfesor
+    Private correoProfesor
+    Private sexoProfesor
+    Private telefonoProfesor
+    Private direccionProfesor
+    Private tipoProfesor
+    Public Property _dniProfesor As String
         Get
-            Return nombreP
+            Return dniProfesor
         End Get
         Set(value As String)
-            nombreP = value
-        End Set
-    End Property
-    Public Property _apellidoP As String
-        Get
-            Return apellidoP
-        End Get
-        Set(value As String)
-            apellidoP = value
-        End Set
-    End Property
-    Public Property _correoP As String
-        Get
-            Return correoP
-        End Get
-        Set(value As String)
-            correoP = value
-        End Set
-    End Property
-    Public Property _sexoP As String
-        Get
-            Return sexoP
-        End Get
-        Set(value As String)
-            sexoP = value
-        End Set
-    End Property
-    Public Property _telefonoP As String
-        Get
-            Return telefonoP
-        End Get
-        Set(value As String)
-            telefonoP = value
-        End Set
-    End Property
-    Public Property _direccionP As String
-        Get
-            Return direccionP
-        End Get
-        Set(value As String)
-            direccionP = value
-        End Set
-    End Property
-    Public Property _asignaturasP As String
-        Get
-            Return asignaturasP
-        End Get
-        Set(value As String)
-            asignaturasP = value
-        End Set
-    End Property
-    Public Property _nivelP As String
-        Get
-            Return NivelP
-        End Get
-        Set(value As String)
-            NivelP = value
-        End Set
-    End Property
-    Public Property _gradoYseccionP As String
-        Get
-            Return gradoYseccionP
-        End Get
-        Set(value As String)
-            gradoYseccionP = value
-        End Set
-    End Property
-    Public Property _tipoP As String
-        Get
-            Return tipoP
-        End Get
-        Set(value As String)
-            tipoP = value
+            dniProfesor = value
         End Set
     End Property
 
-   
+    Public Property _nombreProfesor As String
+        Get
+            Return nombreProfesor
+        End Get
+        Set(value As String)
+            nombreProfesor = value
+        End Set
+    End Property
+
+    Public Property _apellidoProfesor As String
+        Get
+            Return apellidoProfesor
+        End Get
+        Set(value As String)
+            apellidoProfesor = value
+        End Set
+    End Property
+
+    Public Property _correoProfesor As String
+        Get
+            Return correoProfesor
+        End Get
+        Set(value As String)
+            correoProfesor = value
+        End Set
+    End Property
+
+    Public Property _sexoProfesor As String
+        Get
+            Return sexoProfesor
+        End Get
+        Set(value As String)
+            sexoProfesor = value
+        End Set
+    End Property
+
+    Public Property _telefonoProfesor As String
+        Get
+            Return telefonoProfesor
+        End Get
+        Set(value As String)
+            telefonoProfesor = value
+        End Set
+    End Property
+
+    Public Property _direccionProfesor As String
+        Get
+            Return direccionProfesor
+        End Get
+        Set(value As String)
+            direccionProfesor = value
+        End Set
+    End Property
+    
+    Public Property _tipoProfesor As String
+        Get
+            Return tipoProfesor
+        End Get
+        Set(value As String)
+            tipoProfesor = value
+        End Set
+    End Property
+
+
 End Class

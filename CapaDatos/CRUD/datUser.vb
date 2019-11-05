@@ -4,14 +4,14 @@ Imports System.Data.SqlClient
 
 Public Class datUser
     Inherits datConexion
-    Public Function Login(user As String, pass As String) As Boolean
+    Public Function Login(nombreUsuario As String, contraseUsuario As String) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "select * from users where userName= @user and passUser = @pass "
-                Command.Parameters.AddWithValue("@user", user)
-                Command.Parameters.AddWithValue("@pass", pass)
+                Command.CommandText = "select * from user where userName=@nombreUsuario and passUser = @contraseUsuario"
+                Command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario)
+                Command.Parameters.AddWithValue("@contraseUsuario", contraseUsuario)
                 Command.CommandType = CommandType.Text
                 Dim reader = Command.ExecuteReader()
                 If reader.HasRows Then
@@ -31,13 +31,13 @@ Public Class datUser
         Return False
     End Function
 
-    Public Function UsuarioExiste(id As Integer) As Boolean
+    Public Function usuarioExiste(idUsuario As Integer) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "select * from users where UserID = @user"
-                Command.Parameters.AddWithValue("@user", id)
+                Command.CommandText = "select * from users where UserID = @idUsuario "
+                Command.Parameters.AddWithValue("@idUsuario ", idUsuario)
                 Command.CommandType = CommandType.Text
                 Dim reader = Command.ExecuteReader()
                 If reader.HasRows Then

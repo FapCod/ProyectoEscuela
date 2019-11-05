@@ -1,20 +1,25 @@
 ﻿Imports CapaDatos
 Imports CapaEntidad
 Public Class negProfesor
-    Dim objprof As New entProfesor
-    Dim objRProf As New datProfesor
-    Public Function Registrar_prof(objprofe) As Boolean
-        Return objRProf.RegistrarProfesor(objprofe)
+    Dim objentProfesor As New entProfesor
+    Dim objdatProfesor As New datProfesor
+
+    Public Function registrarProfesor(objentProfesor) As Boolean
+        Return objdatProfesor.registrarProfesor(objentProfesor)
     End Function
-    Public Function Actualizar_Profesor(objprof As entProfesor, id As Integer) As Boolean
-        Return objRProf.ActualizarProfesor(objprof, id)
+
+    Public Function actualizarProfesor(objentProfesor) As Boolean
+        Return objdatProfesor.actualizarProfesor(objentProfesor)
     End Function
-    Public Function Eliminar_Profesor(id As Integer) As Boolean
-        Return objRProf.EliminarProfesor(id)
+
+    Public Function eliminarProfesor(objentProfesor) As Boolean
+        Return objdatProfesor.eliminarProfesor(objentProfesor)
     End Function
-    Public Function Buscar_Profesor(id As Integer) As DataTable
-        Return objRProf.BuscarProfesor(id)
+
+    Public Function buscarProfesor(objentProfesor) As DataTable
+        Return objdatProfesor.buscarProfesor(objentProfesor)
     End Function
+
     Public Function obtenerTabla(cadena As String) As DataTable
         Dim dat As New datProfesor
         Return dat.obtenerTabla(cadena)

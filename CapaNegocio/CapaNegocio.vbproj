@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="negAlumno.vb" />
     <Compile Include="negProfesor.vb" />
-    <Compile Include="negSeccion.vb" />
     <Compile Include="negUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
