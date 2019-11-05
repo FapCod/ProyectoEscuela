@@ -168,4 +168,28 @@ Public Class frmAgregarAlumno
 
 
     End Sub
+
+    Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbInicial.CheckedChanged
+        If rbInicial.Checked = True Then
+            cmbGradoPri.Enabled = False
+            cmbSeccionPri.Enabled = False
+        End If
+        If rbInicial.Checked = True Then
+            cmbGradoIn.Enabled = True
+            cmbSeccionIn.Enabled = True
+        End If
+       
+    End Sub
+
+
+    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbPrimaria.CheckedChanged
+        If rbPrimaria.Checked = True Then
+            cmbSeccionIn.Enabled = False
+            cmbGradoIn.Enabled = False
+        End If
+        If rbPrimaria.Checked = True Then
+            cmbGradoPri.Enabled = True
+            cmbSeccionPri.Enabled = True
+        End If
+    End Sub
 End Class

@@ -8,6 +8,7 @@
     Private asignaturasP
     Private NivelP
     Private gradoYseccionP
+    Public objsecc As entSeccion
     Private tipoP
     Public Property _nombreP As String
         Get

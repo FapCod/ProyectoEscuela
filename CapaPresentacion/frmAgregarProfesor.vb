@@ -286,6 +286,7 @@ Public Class frmAgregarProfesor
     End Sub
 
     Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbInicial.CheckedChanged
+        
         If rbInicial.Checked = True Then
             cmbPrimariaSeccionProf.Enabled = False
             cmbGradPorf.Enabled = False
@@ -294,6 +295,17 @@ Public Class frmAgregarProfesor
             cmbInicialGradPorf.Enabled = True
             cmbInicialSeccProf.Enabled = True
         End If
+        
+    End Sub
+
+
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        LimpiarDatos()
+    End Sub
+
+    
+    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbPrimaria.CheckedChanged
         If rbPrimaria.Checked = True Then
             cmbInicialSeccProf.Enabled = False
             cmbInicialGradPorf.Enabled = False
@@ -302,13 +314,6 @@ Public Class frmAgregarProfesor
             cmbGradPorf.Enabled = True
             cmbPrimariaSeccionProf.Enabled = True
         End If
-    End Sub
-
-    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbPrimaria.CheckedChanged
-
-    End Sub
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        LimpiarDatos()
+        
     End Sub
 End Class
