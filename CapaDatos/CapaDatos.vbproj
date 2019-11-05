@@ -64,6 +64,9 @@
   <ItemGroup>
     <Compile Include="ConexionASQL\datConexion.vb" />
     <Compile Include="CRUD\datAlumno.vb" />
+    <Compile Include="CRUD\datAnnoEscolar.vb" />
+    <Compile Include="CRUD\datAula.vb" />
+    <Compile Include="CRUD\datMatricula.vb" />
     <Compile Include="CRUD\datProfesor.vb" />
     <Compile Include="CRUD\datUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -81,6 +84,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ServicioEmail\MaterEmailServer.vb" />
+    <Compile Include="ServicioEmail\SystemSupportMail.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -107,9 +112,7 @@
       <Name>CapaEntidad</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServicioEmail\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

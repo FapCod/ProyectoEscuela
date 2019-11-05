@@ -16,13 +16,13 @@ Public Class negAlumno
         Return objdatAlumno.eliminarAlumno(objentAlumno)
     End Function
 
-    Public Function buscarAlumno(objentAlumno) As DataTable
-        Return objdatAlumno.buscarAlumno(objentAlumno)
+    Public Function buscarAlumno(dni As String) As DataTable
+        Return objdatAlumno.buscarAlumno(dni)
     End Function
 
     'creacion de datatable
-    Public Function obtenerTabla(cadena As String) As DataTable
+    Public Function obtenerTabla() As DataTable
         Dim dat As New datAlumno
-        Return dat.obtenerTabla(cadena)
+        Return dat.obtenerTabla()
     End Function
 End Class

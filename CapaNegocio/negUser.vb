@@ -7,9 +7,9 @@ Public Class negUser
         Return objdatUser.Login(user, pass)
     End Function
 
-    Public Function validarUsuario(id As Integer) As Boolean
-        If usuarioActivo.UserID >= 1 Then
-            If objdatUser.usuarioExiste(usuarioActivo.UserID) = True Then
+    Public Function validarUsuario(nombreUsuario As String) As Boolean
+        If usuarioActivo.nombreUsuario <> "" Then
+            If objdatUser.usuarioExiste(usuarioActivo.nombreUsuario) = True Then
                 Return True
             Else
                 Return False
@@ -24,6 +24,8 @@ Public Class negUser
     End Function
 
 
-
+    Public Function recuperarContrasena(CorreoUsuario As String) As String
+        Return objdatUser.recuperarContrasenaUsuario(CorreoUsuario)
+    End Function
 End Class
 

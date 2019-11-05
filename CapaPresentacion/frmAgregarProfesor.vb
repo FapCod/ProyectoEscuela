@@ -3,25 +3,46 @@ Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmAgregarProfesor
 
-
+    Private Sub frmAgregarProfesor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Ver()
+        Dim objnegAula As New negAula
+        cmbcodigoAula.DataSource = objnegAula.listarAula()
+        cmbcodigoAula.DisplayMember = "nombreAula"
+    End Sub
 
     Private Sub btnAgregarM_Click(sender As Object, e As EventArgs) Handles btnagregarProfesor.Click
 
-        Dim objeP As New entProfesor
+        Dim objentProfesor As New entProfesor
+        objentProfesor._dniProfesor = txtdniProfesor.Text
+        objentProfesor._nombreProfesor = txtnombreProfesor.Text
+        objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
+        objentProfesor._edadProfesor = txtedadProfesor.Text
+        objentProfesor._sexoProfesor = cmbsexoProfesor.Text
+        objentProfesor._direccionProfesor = txtdireccionProfesor.Text
+        objentProfesor._correoProfesor = txtcorreoProfesor.Text
+        objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
+        If cmbcodigoAula.Text = "Inicial 3" Then
+            objentProfesor.objentAula._codigoAula = "I3"
+        ElseIf cmbcodigoAula.Text = "Inicial 4" Then
+            objentProfesor.objentAula._codigoAula = "I4"
+        ElseIf cmbcodigoAula.Text = "Inicial 5" Then
+            objentProfesor.objentAula._codigoAula = "I5"
+        ElseIf cmbcodigoAula.Text = "Primaria 1" Then
+            objentProfesor.objentAula._codigoAula = "P1"
+        ElseIf cmbcodigoAula.Text = "Primaria 2" Then
+            objentProfesor.objentAula._codigoAula = "P2"
+        ElseIf cmbcodigoAula.Text = "Primaria 3" Then
+            objentProfesor.objentAula._codigoAula = "P3"
+        ElseIf cmbcodigoAula.Text = "Primaria 4" Then
+            objentProfesor.objentAula._codigoAula = "P4"
+        ElseIf cmbcodigoAula.Text = "Primaria 5" Then
+            objentProfesor.objentAula._codigoAula = "P5"
+        ElseIf cmbcodigoAula.Text = "Primaria 6" Then
+            objentProfesor.objentAula._codigoAula = "P6"
+        End If
 
-        objeP._nombreProfesor = txtnombreProfesor.Text
-        objeP._apellidoProfesor = txtapellidoProfesor.Text
-        objeP._correoProfesor = txtcorreoProfesor.Text
-        objeP._sexoProfesor = cmbsexoProfesor.Text
-        objeP._telefonoProfesor = Val(txttelefonoProfesor.Text)
-        objeP._direccionProfesor = txtdireccionProfesor.Text
-        'validacion de checkbox
-
-        objeP._tipoProfesor = cmbtipoProfesor.Text
-        Dim negPro As New negProfesor
-        Dim negUsu As New negUser
-
-        Dim verificarRP = negPro.registrarProfesor(objeP)
+        Dim objnegProfesor As New negProfesor
+        Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
         If verificarRP = True Then
             MsgBox("registro exitoso")
         Else
@@ -35,24 +56,43 @@ Public Class frmAgregarProfesor
 
     Sub Ver()
         Dim conexion As New negProfesor
-        dgvlista.DataSource = conexion.obtenerTabla("select * from Profesor")
+        dgvlista.DataSource = conexion.obtenerTabla()
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnactualizarProfesor.Click
-        Dim objeP As New entProfesor
-        objeP._nombreProfesor = txtnombreProfesor.Text
-        objeP._apellidoProfesor = txtapellidoProfesor.Text
-        objeP._correoProfesor = txtcorreoProfesor.Text
-        objeP._sexoProfesor = cmbsexoProfesor.Text
-        objeP._telefonoProfesor = Val(txttelefonoProfesor.Text)
-        objeP._direccionProfesor = txtdireccionProfesor.Text
-        objeP._tipoProfesor = cmbtipoProfesor.Text
-        'validacion de checkbox
-        Dim negprofe As New negProfesor
-        Dim id As Integer
+        Dim objentProfesor As New entProfesor
+        Dim dni As String
         Dim i As Integer
         i = dgvlista.CurrentRow.Index
-        id = dgvlista.Item(0, i).Value()
-        Dim verificarRP = negprofe.actualizarProfesor(objeP)
+        dni = dgvlista.Item(0, i).Value()
+        objentProfesor._dniProfesor = dni
+        objentProfesor._nombreProfesor = txtnombreProfesor.Text
+        objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
+        objentProfesor._edadProfesor = txtedadProfesor.Text
+        objentProfesor._sexoProfesor = cmbsexoProfesor.Text
+        objentProfesor._direccionProfesor = txtdireccionProfesor.Text
+        objentProfesor._correoProfesor = txtcorreoProfesor.Text
+        objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
+        If cmbcodigoAula.Text = "Inicial 3" Then
+            objentProfesor.objentAula._codigoAula = "I3"
+        ElseIf cmbcodigoAula.Text = "Inicial 4" Then
+            objentProfesor.objentAula._codigoAula = "I4"
+        ElseIf cmbcodigoAula.Text = "Inicial 5" Then
+            objentProfesor.objentAula._codigoAula = "I5"
+        ElseIf cmbcodigoAula.Text = "Primaria 1" Then
+            objentProfesor.objentAula._codigoAula = "P1"
+        ElseIf cmbcodigoAula.Text = "Primaria 2" Then
+            objentProfesor.objentAula._codigoAula = "P2"
+        ElseIf cmbcodigoAula.Text = "Primaria 3" Then
+            objentProfesor.objentAula._codigoAula = "P3"
+        ElseIf cmbcodigoAula.Text = "Primaria 4" Then
+            objentProfesor.objentAula._codigoAula = "P4"
+        ElseIf cmbcodigoAula.Text = "Primaria 5" Then
+            objentProfesor.objentAula._codigoAula = "P5"
+        ElseIf cmbcodigoAula.Text = "Primaria 6" Then
+            objentProfesor.objentAula._codigoAula = "P6"
+        End If
+        Dim objnegProfesor As New negProfesor
+        Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
         If verificarRP = True Then
             MsgBox("Actualizacion Exitosa")
             LimpiarDatos()
@@ -66,41 +106,27 @@ Public Class frmAgregarProfesor
 
     Private Sub dgvlista_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
         Dim i As Integer
-        Dim asignaturas As String
-        Dim nivel As String
         i = dgvlista.CurrentRow.Index
+        txtdniProfesor.Text = dgvlista.Item(0, i).Value()
         txtnombreProfesor.Text = dgvlista.Item(1, i).Value()
         txtapellidoProfesor.Text = dgvlista.Item(2, i).Value()
-        txtcorreoProfesor.Text = dgvlista.Item(3, i).Value()
+        txtedadProfesor.Text = dgvlista.Item(3, i).Value()
         cmbsexoProfesor.Text = dgvlista.Item(4, i).Value()
-        txttelefonoProfesor.Text = dgvlista.Item(5, i).Value()
-        txtdireccionProfesor.Text = dgvlista.Item(6, i).Value()
-        asignaturas = dgvlista.Item(7, i).Value()
-        nivel = dgvlista.Item(8, i).Value
-        If nivel = "Inicial" Then
-            cmbprimariaGradoProfesor.Text = ("")
-            rbinicialProfesor.Checked = True
-            cmbinicialGradoProfesor.Text = dgvlista.Item(9, i).Value()
-        ElseIf nivel = "Primaria" Then
-            cmbinicialGradoProfesor.Text = ("")
-            rbprimariaProfesor.Checked = True
-            cmbprimariaGradoProfesor.Text = dgvlista.Item(9, i).Value()
-        End If
-
-        cmbtipoProfesor.Text = dgvlista.Item(10, i).Value()
+        txtdireccionProfesor.Text = dgvlista.Item(5, i).Value()
+        txtcorreoProfesor.Text = dgvlista.Item(6, i).Value()
+        txttelefonoProfesor.Text = dgvlista.Item(7, i).Value()
+        cmbcodigoAula.Text = dgvlista.Item(8, i).Value()
     End Sub
 
-    Private Sub frmAgregarProfesor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Ver()
-    End Sub
+    
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btneliminarProfesor.Click
-        Dim negprof As New negProfesor
-        Dim id As Integer
+        Dim objnegProfesor As New negProfesor
+        Dim dni As String
         Dim i As Integer
         i = dgvlista.CurrentRow.Index
-        id = dgvlista.Item(0, i).Value()
-        Dim verificarRA = negprof.eliminarProfesor(id)
+        dni = dgvlista.Item(0, i).Value()
+        Dim verificarRA = objnegProfesor.eliminarProfesor(dni)
         If verificarRA = True Then
             MsgBox("Eliminacion Exitosa")
             Ver()
@@ -112,41 +138,27 @@ Public Class frmAgregarProfesor
 
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnbuscarProfesor.Click
-        Dim negprof As New negProfesor
-        Dim id As Integer
-        id = Val(txtidProfesor.Text)
-
-        dgvlista.DataSource = negprof.buscarProfesor(id)
+        Dim objnegProfesor As New negProfesor
+        Dim dni As String
+        dni = txtdniIIProfesor.Text
+        dgvlista.DataSource = objnegProfesor.buscarProfesor(dni)
 
     End Sub
 
     Public Sub LimpiarDatos()
+        txtdniProfesor.Clear()
         txtnombreProfesor.Clear()
         txtapellidoProfesor.Clear()
+        txtedadProfesor.Clear()
         cmbsexoProfesor.Text = ""
-        rbinicialProfesor.Checked = False
-        rbprimariaProfesor.Checked = False
-        cmbinicialGradoProfesor.Text = ("")
-        cmbprimariaGradoProfesor.Text = ("")
-        txtidProfesor.Clear()
+        txtdireccionProfesor.Clear()
         txtcorreoProfesor.Clear()
         txttelefonoProfesor.Clear()
-        txtdireccionProfesor.Clear()
-        cmbtipoProfesor.Text = ("")
-       
-
+        cmbcodigoAula.Text = ""
+        txtdniIIProfesor.Clear()
     End Sub
 
-    Private Sub rbInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbinicialProfesor.CheckedChanged
-
-        If rbinicialProfesor.Checked = True Then
-            cmbprimariaGradoProfesor.Enabled = False
-        End If
-        If rbinicialProfesor.Checked = True Then
-            cmbinicialGradoProfesor.Enabled = True
-        End If
-
-    End Sub
+    
 
 
 
@@ -155,13 +167,4 @@ Public Class frmAgregarProfesor
     End Sub
 
 
-    Private Sub rbPrimaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbprimariaProfesor.CheckedChanged
-        If rbprimariaProfesor.Checked = True Then
-            cmbinicialGradoProfesor.Enabled = False
-        End If
-        If rbprimariaProfesor.Checked = True Then
-            cmbprimariaGradoProfesor.Enabled = True
-        End If
-
-    End Sub
 End Class

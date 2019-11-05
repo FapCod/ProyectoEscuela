@@ -1,33 +1,32 @@
 use Colegio_DB -- Usamos la database creada
 ------Creacion de la tabla alumno-----------------
 create table alumno(
-idAlumno  int identity(1,1) Primary Key not null,
-dniAlumno char (8) unique not null,
+dniAlumno char (8) Primary Key not null,
 nombreAlumno varchar (40) not null,
 apellidoAlumno varchar (40) not null,
+edadAlumno int not null,
 sexoAlumno char(1) not null,
-nivelAlumno varchar (11) not null,
-gradoSeccionAlumno varchar (3) not null,
 direccionAlumno varchar (50) not null,
-nombreDeApoderadoAlumno varchar (40) not null
+nombreApoderadoAlumno varchar(50) not null, 
+numeroTelefonoApoderado varchar(11) 
 )
 ------Fin de la creacion  de la tabla alumno-------
 
 
 ----Creacion de procedimiento de AgregarAlumno----
 CREATE PROCEDURE agregaralumno(
-@dni char(8),
-@nombre varchar (50), 
-@apellido varchar (50),
-@sexo char (50),
-@nivel varchar (20),
-@gradoSeccion int,
-@direccion varchar(100),
-@nombreApoderado varchar (100)
+@dniAlumno char(8),
+@nombreAlumno varchar (50), 
+@apellidoAlumno varchar (50),
+@edadAlumno int,
+@sexoAlumno char (1),
+@direccionAlumno varchar(100),
+@nombreApoderadoAlumno varchar (100),
+@numeroTelefonoApoderado varchar(11) 
 )
 as
 begin
-insert into Alumno values (@dni,@nombre,@apellido, @sexo, @nivel, @gradoSeccion, @direccion, @nombreApoderado)
+insert into alumno values (@dniAlumno,@nombreAlumno,@apellidoAlumno,@edadAlumno, @sexoAlumno,@direccionAlumno, @nombreApoderadoAlumno,@numeroTelefonoApoderado)
 end
 ----Finalizacion del procedimiento de AgregarAlumno----
 
@@ -48,24 +47,22 @@ go
 
 ----Creacion de procedimiento de ActualizarAlumno----
 create procedure actualizaralumno(
-@dni char(8),
-@nombre varchar (50), 
-@apellido varchar (50),
-@sexo char (50),
-@nivel varchar (20),
-@gradoSeccion int,
-@direccion varchar(100),
-@nombreApoderado varchar (100)
+@dniAlumno char(8),
+@nombreAlumno varchar (50), 
+@apellidoAlumno varchar (50),
+@edadAlumno int,
+@sexoAlumno char (1),
+@direccionAlumno varchar(100),
+@nombreApoderadoAlumno varchar (100),
+@numeroTelefonoApoderado varchar(11) 
 )
 as 
 begin 
-update  Alumno set NombreAlumno=@nombre, ApellidoAlumno=@apellido, SexoAlumno=@sexo,  NivelAlumno=@nivel, gradoSeccionAlumno=@gradoseccion, DireccionAlumno=@direccion, nombreDeApoderadoAlumno=@nombreApoderado
-where dniAlumno = @dni
+update  Alumno set NombreAlumno=@nombreAlumno, ApellidoAlumno=@apellidoAlumno,edadAlumno=@edadAlumno ,SexoAlumno=@sexoAlumno, DireccionAlumno=@direccionAlumno, nombreApoderadoAlumno=@nombreApoderadoAlumno,numeroTelefonoApoderado=@numeroTelefonoApoderado
+where dniAlumno = @dniAlumno
 end 
 go
 ----Finalizacion del procedimiento de ActualizarAlumno----
-
-
 
 ----Creacion de procedimiento de BuscarAlumno----
 create procedure buscaralumno(

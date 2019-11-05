@@ -3,14 +3,18 @@ Imports CapaNegocio
 Public Class frmPrincipal
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblNombreUser.Text = usuarioActivo.firstName
+        lblNombreUser.Text = usuarioActivo.nombreUsuario
+        lblNombresUsuario.Text = usuarioActivo.nombresUsuario
+        lblApellidoUsuario.Text = usuarioActivo.apellidoUsuario
+        lblCorreoUsuario.Text = usuarioActivo.correoUsuario
+        lblCargoUsuario.Text = usuarioActivo.cargoUsuario
         Dim usuario As New negUser()
 
-        If usuario.validarUsuario(usuarioActivo.UserID) = False Then
+        If usuario.validarUsuario(usuarioActivo.nombreUsuario) = False Then
             MessageBox.Show("Error")
             Me.Close()
         End If
-        If usuarioActivo.UserID = Nothing OrElse usuarioActivo.UserID = 0 Then
+        If usuarioActivo.nombreUsuario = Nothing OrElse usuarioActivo.nombreUsuario = "" Then
             MessageBox.Show("Error")
             Me.Close()
         End If
@@ -37,7 +41,7 @@ Public Class frmPrincipal
         End If
     End Sub
     Private Sub manejoDePermisos() ' restricciones en los botones
-        If usuarioActivo.Cargo = Cargos.Profesor Then
+        If usuarioActivo.cargoUsuario = Cargos.Profesor Then
             btnRegistrarMaestro.Enabled = False
             btnListarMaestros.Enabled = False
         End If
@@ -54,7 +58,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnRegistrarNotas_Click(sender As Object, e As EventArgs) Handles btnRegistrarNotas.Click
-        Dim frmRN As New frmRegistroNotas
+        Dim frmRN As New frmRegistrarNotas
         frmRN.Show()
     End Sub
 

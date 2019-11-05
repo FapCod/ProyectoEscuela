@@ -2,11 +2,12 @@
     Private dniProfesor
     Private nombreProfesor
     Private apellidoProfesor
-    Private correoProfesor
+    Private edadProfesor
     Private sexoProfesor
-    Private telefonoProfesor
     Private direccionProfesor
-    Private tipoProfesor
+    Private correoProfesor
+    Private telefonoProfesor
+    Public objentAula As New entAula
     Public Property _dniProfesor As String
         Get
             Return dniProfesor
@@ -34,12 +35,12 @@
         End Set
     End Property
 
-    Public Property _correoProfesor As String
+    Public Property _edadProfesor As String
         Get
-            Return correoProfesor
+            Return edadProfesor
         End Get
         Set(value As String)
-            correoProfesor = value
+            edadProfesor = value
         End Set
     End Property
 
@@ -52,6 +53,26 @@
         End Set
     End Property
 
+    Public Property _direccionProfesor As String
+        Get
+            Return direccionProfesor
+        End Get
+        Set(value As String)
+            direccionProfesor = value
+        End Set
+    End Property
+
+    Public Property _correoProfesor As String
+        Get
+            Return correoProfesor
+        End Get
+        Set(value As String)
+            correoProfesor = value
+        End Set
+    End Property
+
+
+
     Public Property _telefonoProfesor As String
         Get
             Return telefonoProfesor
@@ -61,23 +82,9 @@
         End Set
     End Property
 
-    Public Property _direccionProfesor As String
-        Get
-            Return direccionProfesor
-        End Get
-        Set(value As String)
-            direccionProfesor = value
-        End Set
-    End Property
-    
-    Public Property _tipoProfesor As String
-        Get
-            Return tipoProfesor
-        End Get
-        Set(value As String)
-            tipoProfesor = value
-        End Set
-    End Property
+    Public Sub New()
+        objentAula = New entAula
+    End Sub
 
 
 End Class

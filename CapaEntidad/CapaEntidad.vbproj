@@ -65,6 +65,9 @@
     <Compile Include="cache\Cargos.vb" />
     <Compile Include="cache\usuarioActivo.vb" />
     <Compile Include="entAlumno.vb" />
+    <Compile Include="entAnnoEscolar.vb" />
+    <Compile Include="entAula.vb" />
+    <Compile Include="entMatricula.vb" />
     <Compile Include="entProfesor.vb" />
     <Compile Include="entUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

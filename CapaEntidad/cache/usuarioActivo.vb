@@ -1,5 +1,7 @@
 ﻿Public Module usuarioActivo
-    Public UserID
-    Public firstName
-    Public Cargo
+    Public nombreUsuario
+    Public nombresUsuario
+    Public apellidoUsuario
+    Public correoUsuario
+    Public cargoUsuario
 End Module

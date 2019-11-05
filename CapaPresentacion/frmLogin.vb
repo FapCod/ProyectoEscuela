@@ -34,4 +34,8 @@ Public Class frmLogin
         txtUser.Focus()
     End Sub
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim frmrecuperarContrasena As New frmRecuperarContrasena()
+        frmrecuperarContrasena.Show()
+    End Sub
 End Class

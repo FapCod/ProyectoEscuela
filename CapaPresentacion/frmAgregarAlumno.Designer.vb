@@ -25,9 +25,6 @@ Partial Class frmAgregarAlumno
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtnombreAlumno = New System.Windows.Forms.TextBox()
@@ -36,18 +33,18 @@ Partial Class frmAgregarAlumno
         Me.txtnombreApoderadoAlumno = New System.Windows.Forms.TextBox()
         Me.btnagregarAlumno = New System.Windows.Forms.Button()
         Me.cmbsexoAlumno = New System.Windows.Forms.ComboBox()
-        Me.cmbgradoInicial = New System.Windows.Forms.ComboBox()
-        Me.rbinicial = New System.Windows.Forms.RadioButton()
-        Me.rbprimaria = New System.Windows.Forms.RadioButton()
-        Me.cmbgradoPrimaria = New System.Windows.Forms.ComboBox()
-        Me.cmbseccionPrimaria = New System.Windows.Forms.ComboBox()
-        Me.cmbseccionInicial = New System.Windows.Forms.ComboBox()
         Me.btneditarAlumno = New System.Windows.Forms.Button()
         Me.btneliminarAlumno = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnbuscarAlumno = New System.Windows.Forms.Button()
-        Me.txtidAlumno = New System.Windows.Forms.TextBox()
+        Me.txtdniiAlumno = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtdniAlumno = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtedadAlumno = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtnumeroTelefonoApoderado = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,51 +75,18 @@ Partial Class frmAgregarAlumno
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(109, 137)
+        Me.Label3.Location = New System.Drawing.Point(107, 171)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 24)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Sexo"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(109, 182)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 24)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Nivel"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(109, 219)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 24)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Grado"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(114, 260)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(82, 24)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Seccion"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(109, 312)
+        Me.Label7.Location = New System.Drawing.Point(107, 218)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(100, 24)
         Me.Label7.TabIndex = 6
@@ -133,11 +97,11 @@ Partial Class frmAgregarAlumno
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(109, 347)
+        Me.Label8.Location = New System.Drawing.Point(109, 257)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(197, 24)
+        Me.Label8.Size = New System.Drawing.Size(114, 24)
         Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Nombre Apoderado"
+        Me.Label8.Text = "Apoderado"
         '
         'txtnombreAlumno
         '
@@ -155,14 +119,14 @@ Partial Class frmAgregarAlumno
         '
         'txtdireccionAlumno
         '
-        Me.txtdireccionAlumno.Location = New System.Drawing.Point(254, 312)
+        Me.txtdireccionAlumno.Location = New System.Drawing.Point(252, 218)
         Me.txtdireccionAlumno.Name = "txtdireccionAlumno"
         Me.txtdireccionAlumno.Size = New System.Drawing.Size(184, 22)
         Me.txtdireccionAlumno.TabIndex = 12
         '
         'txtnombreApoderadoAlumno
         '
-        Me.txtnombreApoderadoAlumno.Location = New System.Drawing.Point(331, 349)
+        Me.txtnombreApoderadoAlumno.Location = New System.Drawing.Point(254, 257)
         Me.txtnombreApoderadoAlumno.Name = "txtnombreApoderadoAlumno"
         Me.txtnombreApoderadoAlumno.Size = New System.Drawing.Size(184, 22)
         Me.txtnombreApoderadoAlumno.TabIndex = 13
@@ -182,73 +146,11 @@ Partial Class frmAgregarAlumno
         'cmbsexoAlumno
         '
         Me.cmbsexoAlumno.FormattingEnabled = True
-        Me.cmbsexoAlumno.Items.AddRange(New Object() {"Hombre", "Mujer", "No especifico"})
-        Me.cmbsexoAlumno.Location = New System.Drawing.Point(254, 140)
+        Me.cmbsexoAlumno.Items.AddRange(New Object() {"M", "F", "No especifico"})
+        Me.cmbsexoAlumno.Location = New System.Drawing.Point(252, 174)
         Me.cmbsexoAlumno.Name = "cmbsexoAlumno"
         Me.cmbsexoAlumno.Size = New System.Drawing.Size(184, 24)
         Me.cmbsexoAlumno.TabIndex = 15
-        '
-        'cmbgradoInicial
-        '
-        Me.cmbgradoInicial.FormattingEnabled = True
-        Me.cmbgradoInicial.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cmbgradoInicial.Location = New System.Drawing.Point(254, 222)
-        Me.cmbgradoInicial.Name = "cmbgradoInicial"
-        Me.cmbgradoInicial.Size = New System.Drawing.Size(60, 24)
-        Me.cmbgradoInicial.TabIndex = 16
-        '
-        'rbinicial
-        '
-        Me.rbinicial.AutoSize = True
-        Me.rbinicial.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbinicial.ForeColor = System.Drawing.Color.White
-        Me.rbinicial.Location = New System.Drawing.Point(254, 186)
-        Me.rbinicial.Name = "rbinicial"
-        Me.rbinicial.Size = New System.Drawing.Size(77, 24)
-        Me.rbinicial.TabIndex = 17
-        Me.rbinicial.TabStop = True
-        Me.rbinicial.Text = "Inicial"
-        Me.rbinicial.UseVisualStyleBackColor = True
-        '
-        'rbprimaria
-        '
-        Me.rbprimaria.AutoSize = True
-        Me.rbprimaria.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbprimaria.ForeColor = System.Drawing.Color.White
-        Me.rbprimaria.Location = New System.Drawing.Point(339, 186)
-        Me.rbprimaria.Name = "rbprimaria"
-        Me.rbprimaria.Size = New System.Drawing.Size(98, 24)
-        Me.rbprimaria.TabIndex = 18
-        Me.rbprimaria.TabStop = True
-        Me.rbprimaria.Text = "Primaria"
-        Me.rbprimaria.UseVisualStyleBackColor = True
-        '
-        'cmbgradoPrimaria
-        '
-        Me.cmbgradoPrimaria.FormattingEnabled = True
-        Me.cmbgradoPrimaria.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.cmbgradoPrimaria.Location = New System.Drawing.Point(339, 222)
-        Me.cmbgradoPrimaria.Name = "cmbgradoPrimaria"
-        Me.cmbgradoPrimaria.Size = New System.Drawing.Size(60, 24)
-        Me.cmbgradoPrimaria.TabIndex = 19
-        '
-        'cmbseccionPrimaria
-        '
-        Me.cmbseccionPrimaria.FormattingEnabled = True
-        Me.cmbseccionPrimaria.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cmbseccionPrimaria.Location = New System.Drawing.Point(339, 260)
-        Me.cmbseccionPrimaria.Name = "cmbseccionPrimaria"
-        Me.cmbseccionPrimaria.Size = New System.Drawing.Size(60, 24)
-        Me.cmbseccionPrimaria.TabIndex = 21
-        '
-        'cmbseccionInicial
-        '
-        Me.cmbseccionInicial.FormattingEnabled = True
-        Me.cmbseccionInicial.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cmbseccionInicial.Location = New System.Drawing.Point(254, 260)
-        Me.cmbseccionInicial.Name = "cmbseccionInicial"
-        Me.cmbseccionInicial.Size = New System.Drawing.Size(60, 24)
-        Me.cmbseccionInicial.TabIndex = 20
         '
         'btneditarAlumno
         '
@@ -295,12 +197,12 @@ Partial Class frmAgregarAlumno
         Me.btnbuscarAlumno.Text = "BUSCAR"
         Me.btnbuscarAlumno.UseVisualStyleBackColor = False
         '
-        'txtidAlumno
+        'txtdniiAlumno
         '
-        Me.txtidAlumno.Location = New System.Drawing.Point(577, 38)
-        Me.txtidAlumno.Name = "txtidAlumno"
-        Me.txtidAlumno.Size = New System.Drawing.Size(283, 22)
-        Me.txtidAlumno.TabIndex = 26
+        Me.txtdniiAlumno.Location = New System.Drawing.Point(577, 38)
+        Me.txtdniiAlumno.Name = "txtdniiAlumno"
+        Me.txtdniiAlumno.Size = New System.Drawing.Size(283, 22)
+        Me.txtdniiAlumno.TabIndex = 26
         '
         'Label9
         '
@@ -309,9 +211,63 @@ Partial Class frmAgregarAlumno
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(573, 11)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(28, 24)
+        Me.Label9.Size = New System.Drawing.Size(47, 24)
         Me.Label9.TabIndex = 27
-        Me.Label9.Text = "id"
+        Me.Label9.Text = "DNI"
+        '
+        'txtdniAlumno
+        '
+        Me.txtdniAlumno.Location = New System.Drawing.Point(254, 24)
+        Me.txtdniAlumno.Name = "txtdniAlumno"
+        Me.txtdniAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtdniAlumno.TabIndex = 29
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(109, 21)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(47, 24)
+        Me.Label10.TabIndex = 28
+        Me.Label10.Text = "DNI"
+        '
+        'txtedadAlumno
+        '
+        Me.txtedadAlumno.Location = New System.Drawing.Point(252, 135)
+        Me.txtedadAlumno.Name = "txtedadAlumno"
+        Me.txtedadAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtedadAlumno.TabIndex = 31
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(107, 135)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(56, 24)
+        Me.Label6.TabIndex = 30
+        Me.Label6.Text = "Edad"
+        '
+        'txtnumeroTelefonoApoderado
+        '
+        Me.txtnumeroTelefonoApoderado.Location = New System.Drawing.Point(263, 294)
+        Me.txtnumeroTelefonoApoderado.Name = "txtnumeroTelefonoApoderado"
+        Me.txtnumeroTelefonoApoderado.Size = New System.Drawing.Size(184, 22)
+        Me.txtnumeroTelefonoApoderado.TabIndex = 33
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(109, 292)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(157, 24)
+        Me.Label4.TabIndex = 32
+        Me.Label4.Text = "Telf Apoderado"
         '
         'frmAgregarAlumno
         '
@@ -319,18 +275,18 @@ Partial Class frmAgregarAlumno
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1209, 567)
+        Me.Controls.Add(Me.txtnumeroTelefonoApoderado)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtedadAlumno)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtdniAlumno)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.txtidAlumno)
+        Me.Controls.Add(Me.txtdniiAlumno)
         Me.Controls.Add(Me.btnbuscarAlumno)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btneliminarAlumno)
         Me.Controls.Add(Me.btneditarAlumno)
-        Me.Controls.Add(Me.cmbseccionPrimaria)
-        Me.Controls.Add(Me.cmbseccionInicial)
-        Me.Controls.Add(Me.cmbgradoPrimaria)
-        Me.Controls.Add(Me.rbprimaria)
-        Me.Controls.Add(Me.rbinicial)
-        Me.Controls.Add(Me.cmbgradoInicial)
         Me.Controls.Add(Me.cmbsexoAlumno)
         Me.Controls.Add(Me.btnagregarAlumno)
         Me.Controls.Add(Me.txtnombreApoderadoAlumno)
@@ -339,9 +295,6 @@ Partial Class frmAgregarAlumno
         Me.Controls.Add(Me.txtnombreAlumno)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -355,9 +308,6 @@ Partial Class frmAgregarAlumno
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtnombreAlumno As System.Windows.Forms.TextBox
@@ -366,16 +316,16 @@ Partial Class frmAgregarAlumno
     Friend WithEvents txtnombreApoderadoAlumno As System.Windows.Forms.TextBox
     Friend WithEvents btnagregarAlumno As System.Windows.Forms.Button
     Friend WithEvents cmbsexoAlumno As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbgradoInicial As System.Windows.Forms.ComboBox
-    Friend WithEvents rbinicial As System.Windows.Forms.RadioButton
-    Friend WithEvents rbprimaria As System.Windows.Forms.RadioButton
-    Friend WithEvents cmbgradoPrimaria As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbseccionPrimaria As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbseccionInicial As System.Windows.Forms.ComboBox
     Friend WithEvents btneditarAlumno As System.Windows.Forms.Button
     Friend WithEvents btneliminarAlumno As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btnbuscarAlumno As System.Windows.Forms.Button
-    Friend WithEvents txtidAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtdniiAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents txtdniAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txtedadAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtnumeroTelefonoApoderado As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

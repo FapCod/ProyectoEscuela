@@ -2,11 +2,11 @@
     Private dniAlumno
     Private nombreAlumno
     Private apellidoAlumno
+    Private edadAlumno
     Private sexoAlumno
-    Private nivelAlumno
-    Private gradoSeccionAlumno
     Private direccionAlumno
     Private nombreDeApoderadoAlumno
+    Private numeroTelefonoApoderado
 
     Public Property _dniAlumno As String
         Get
@@ -35,30 +35,21 @@
         End Set
     End Property
 
+    Public Property _edadAlumno As String
+        Get
+            Return edadAlumno
+        End Get
+        Set(value As String)
+            edadAlumno = value
+        End Set
+    End Property
+
     Public Property _sexoAlumno As String
         Get
             Return sexoAlumno
         End Get
         Set(value As String)
             sexoAlumno = value
-        End Set
-    End Property
-
-    Public Property _nivelAlumno As String
-        Get
-            Return nivelAlumno
-        End Get
-        Set(value As String)
-            nivelAlumno = value
-        End Set
-    End Property
-
-    Public Property _gradoSeccionAlumno As String
-        Get
-            Return gradoSeccionAlumno
-        End Get
-        Set(value As String)
-            gradoSeccionAlumno = value
         End Set
     End Property
 
@@ -80,4 +71,12 @@
         End Set
     End Property
 
+    Public Property _numeroTelefonoApoderado As String
+        Get
+            Return numeroTelefonoApoderado
+        End Get
+        Set(value As String)
+            numeroTelefonoApoderado = value
+        End Set
+    End Property
 End Class

@@ -69,7 +69,6 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\Capa
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.Resources.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.GenerateResource.Cache
-C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistroNotas.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmListarAlumnos.resources
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaPresentacion\obj\Debug\CapaPresentacion.exe
@@ -102,3 +101,6 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\bin\Debug
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.xml
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistrarNotas.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRecuperarContrasena.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarMatricula.resources

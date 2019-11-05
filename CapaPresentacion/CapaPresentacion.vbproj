@@ -76,6 +76,12 @@
     <Compile Include="frmAgregarAlumno.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAgregarMatricula.Designer.vb">
+      <DependentUpon>frmAgregarMatricula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarMatricula.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAgregarProfesor.Designer.vb">
       <DependentUpon>frmAgregarProfesor.vb</DependentUpon>
     </Compile>
@@ -95,10 +101,16 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistroNotas.Designer.vb">
-      <DependentUpon>frmRegistroNotas.vb</DependentUpon>
+    <Compile Include="frmRecuperarContrasena.Designer.vb">
+      <DependentUpon>frmRecuperarContrasena.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistroNotas.vb">
+    <Compile Include="frmRecuperarContrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarNotas.Designer.vb">
+      <DependentUpon>frmRegistrarNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarNotas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,6 +139,9 @@
     <EmbeddedResource Include="frmAgregarAlumno.resx">
       <DependentUpon>frmAgregarAlumno.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarMatricula.resx">
+      <DependentUpon>frmAgregarMatricula.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarProfesor.resx">
       <DependentUpon>frmAgregarProfesor.vb</DependentUpon>
     </EmbeddedResource>
@@ -136,8 +151,11 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistroNotas.resx">
-      <DependentUpon>frmRegistroNotas.vb</DependentUpon>
+    <EmbeddedResource Include="frmRecuperarContrasena.resx">
+      <DependentUpon>frmRecuperarContrasena.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarNotas.resx">
+      <DependentUpon>frmRegistrarNotas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

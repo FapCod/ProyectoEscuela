@@ -20,8 +20,8 @@ Public Class negProfesor
         Return objdatProfesor.buscarProfesor(objentProfesor)
     End Function
 
-    Public Function obtenerTabla(cadena As String) As DataTable
+    Public Function obtenerTabla() As DataTable
         Dim dat As New datProfesor
-        Return dat.obtenerTabla(cadena)
+        Return dat.obtenerTabla()
     End Function
 End Class
