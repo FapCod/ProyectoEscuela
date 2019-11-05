@@ -8,12 +8,17 @@ Public Class frmAgregarMatricula
         Dim objnegAnnoEscolar As New negAnnoEscolar
         cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
         cmbannoEscolar.DisplayMember = "numeroAnno"
+        ver()
+    End Sub
+
+    Sub ver()
+        Dim objnegMatricula As New negMatricula
+        DataGridView1.DataSource = objnegMatricula.obtenerTabla()
     End Sub
 
     Private Sub btnagregarMatricula_Click(sender As Object, e As EventArgs) Handles btnagregarMatricula.Click
         Dim objentMatricula As New entMatricula
         objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
-        objentMatricula._gradoAlumno = cmbcodigoAula.Text
         If cmbcodigoAula.Text = "Inicial 3" Then
             objentMatricula.objentAula._codigoAula = "I3"
         ElseIf cmbcodigoAula.Text = "Inicial 4" Then
@@ -36,9 +41,10 @@ Public Class frmAgregarMatricula
         objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
         objentMatricula.objentAnnoEscolar._numeroAnno = cmbannoEscolar.Text
         Dim objnegMatricula As New negMatricula
-        Dim verificarRP = objnegMatricula.registrarmatricula(objnegMatricula)
+        Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
         If verificarRP = True Then
             MsgBox("registro exitoso")
+            ver()
             LimpiarDatos()
         Else
             MsgBox("Error de registro de profesor")

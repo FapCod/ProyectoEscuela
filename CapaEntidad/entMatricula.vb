@@ -1,7 +1,6 @@
 ﻿Public Class entMatricula
     Private idMatricula
     Private fechaMatricula
-    Private gradoAlumno
     Public objentAula As New entAula
     Public objentAlumno As New entAlumno
     Public objentAnnoEscolar As New entAnnoEscolar
@@ -20,15 +19,6 @@
         End Get
         Set(value As Date)
             fechaMatricula = value
-        End Set
-    End Property
-
-    Public Property _gradoAlumno As Date
-        Get
-            Return gradoAlumno
-        End Get
-        Set(value As Date)
-            gradoAlumno = value
         End Set
     End Property
     Public Sub New()

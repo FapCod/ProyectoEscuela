@@ -7,9 +7,8 @@ Public Class datMatricula
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = ""
+                Command.CommandText = "registrarMatricula"
                 Command.Parameters.AddWithValue("@fechaMatricula", objMatricula._fechaMatricula)
-                Command.Parameters.AddWithValue("@gradoAlumno", objMatricula._gradoAlumno)
                 Command.Parameters.AddWithValue("@codigoAula", objMatricula.objentAula._codigoAula)
                 Command.Parameters.AddWithValue("@dniAlumno", objMatricula.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@numeroAnno", objMatricula.objentAnnoEscolar._numeroAnno)
@@ -47,5 +46,25 @@ Public Class datMatricula
             End Using
         End Using
         Return False
+    End Function
+    Public Function obtenerTabla() As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "listarmatricula"
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
     End Function
 End Class

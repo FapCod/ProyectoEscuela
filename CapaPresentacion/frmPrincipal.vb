@@ -58,10 +58,14 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnRegistrarNotas_Click(sender As Object, e As EventArgs) Handles btnRegistrarNotas.Click
-        Dim frmRN As New frmRegistrarNotas
-        frmRN.Show()
+        Dim frmAN As New frmAgregarNota
+        frmAN.Show()
     End Sub
 
     
    
+    Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
+        Dim frmAM As New frmAgregarMatricula
+        frmAM.Show()
+    End Sub
 End Class

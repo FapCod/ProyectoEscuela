@@ -21,3 +21,6 @@ as
 begin 
 insert into annoEscolar values ( @numeroAnno, @fechaInicio, @fechaTermino) 
 end 
+
+exec registrarAnnoEscolar 2015,'01/03/2015','01/12/2015'
+

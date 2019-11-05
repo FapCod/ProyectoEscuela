@@ -101,7 +101,6 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\bin\Debug
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.xml
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistrarNotas.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmRecuperarContrasena.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarMatricula.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarNota.resources

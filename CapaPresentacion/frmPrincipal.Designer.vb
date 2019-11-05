@@ -26,6 +26,10 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCargoUsuario = New System.Windows.Forms.Label()
+        Me.lblCorreoUsuario = New System.Windows.Forms.Label()
+        Me.lblApellidoUsuario = New System.Windows.Forms.Label()
+        Me.lblNombresUsuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.btnReportes = New System.Windows.Forms.Button()
@@ -36,10 +40,6 @@ Partial Class frmPrincipal
         Me.btnRegistrarMaestro = New System.Windows.Forms.Button()
         Me.lblNombreUser = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblNombresUsuario = New System.Windows.Forms.Label()
-        Me.lblApellidoUsuario = New System.Windows.Forms.Label()
-        Me.lblCorreoUsuario = New System.Windows.Forms.Label()
-        Me.lblCargoUsuario = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +93,50 @@ Partial Class frmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(341, 666)
         Me.Panel1.TabIndex = 2
         '
+        'lblCargoUsuario
+        '
+        Me.lblCargoUsuario.AutoSize = True
+        Me.lblCargoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCargoUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblCargoUsuario.Location = New System.Drawing.Point(68, 152)
+        Me.lblCargoUsuario.Name = "lblCargoUsuario"
+        Me.lblCargoUsuario.Size = New System.Drawing.Size(137, 24)
+        Me.lblCargoUsuario.TabIndex = 13
+        Me.lblCargoUsuario.Text = "CargoUsuario"
+        '
+        'lblCorreoUsuario
+        '
+        Me.lblCorreoUsuario.AutoSize = True
+        Me.lblCorreoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCorreoUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblCorreoUsuario.Location = New System.Drawing.Point(3, 128)
+        Me.lblCorreoUsuario.Name = "lblCorreoUsuario"
+        Me.lblCorreoUsuario.Size = New System.Drawing.Size(145, 24)
+        Me.lblCorreoUsuario.TabIndex = 12
+        Me.lblCorreoUsuario.Text = "CorreoUsuario"
+        '
+        'lblApellidoUsuario
+        '
+        Me.lblApellidoUsuario.AutoSize = True
+        Me.lblApellidoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellidoUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblApellidoUsuario.Location = New System.Drawing.Point(67, 104)
+        Me.lblApellidoUsuario.Name = "lblApellidoUsuario"
+        Me.lblApellidoUsuario.Size = New System.Drawing.Size(161, 24)
+        Me.lblApellidoUsuario.TabIndex = 11
+        Me.lblApellidoUsuario.Text = "ApellidoUsuario"
+        '
+        'lblNombresUsuario
+        '
+        Me.lblNombresUsuario.AutoSize = True
+        Me.lblNombresUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombresUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblNombresUsuario.Location = New System.Drawing.Point(67, 80)
+        Me.lblNombresUsuario.Name = "lblNombresUsuario"
+        Me.lblNombresUsuario.Size = New System.Drawing.Size(168, 24)
+        Me.lblNombresUsuario.TabIndex = 10
+        Me.lblNombresUsuario.Text = "NombresUsuario"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -127,7 +171,7 @@ Partial Class frmPrincipal
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(341, 58)
         Me.btnReportes.TabIndex = 7
-        Me.btnReportes.Text = "Reportes"
+        Me.btnReportes.Text = "Matricula"
         Me.btnReportes.UseVisualStyleBackColor = False
         '
         'btnListarAlumnos
@@ -226,50 +270,6 @@ Partial Class frmPrincipal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'lblNombresUsuario
-        '
-        Me.lblNombresUsuario.AutoSize = True
-        Me.lblNombresUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombresUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblNombresUsuario.Location = New System.Drawing.Point(67, 80)
-        Me.lblNombresUsuario.Name = "lblNombresUsuario"
-        Me.lblNombresUsuario.Size = New System.Drawing.Size(168, 24)
-        Me.lblNombresUsuario.TabIndex = 10
-        Me.lblNombresUsuario.Text = "NombresUsuario"
-        '
-        'lblApellidoUsuario
-        '
-        Me.lblApellidoUsuario.AutoSize = True
-        Me.lblApellidoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblApellidoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblApellidoUsuario.Location = New System.Drawing.Point(67, 104)
-        Me.lblApellidoUsuario.Name = "lblApellidoUsuario"
-        Me.lblApellidoUsuario.Size = New System.Drawing.Size(161, 24)
-        Me.lblApellidoUsuario.TabIndex = 11
-        Me.lblApellidoUsuario.Text = "ApellidoUsuario"
-        '
-        'lblCorreoUsuario
-        '
-        Me.lblCorreoUsuario.AutoSize = True
-        Me.lblCorreoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCorreoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblCorreoUsuario.Location = New System.Drawing.Point(3, 128)
-        Me.lblCorreoUsuario.Name = "lblCorreoUsuario"
-        Me.lblCorreoUsuario.Size = New System.Drawing.Size(145, 24)
-        Me.lblCorreoUsuario.TabIndex = 12
-        Me.lblCorreoUsuario.Text = "CorreoUsuario"
-        '
-        'lblCargoUsuario
-        '
-        Me.lblCargoUsuario.AutoSize = True
-        Me.lblCargoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCargoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblCargoUsuario.Location = New System.Drawing.Point(68, 152)
-        Me.lblCargoUsuario.Name = "lblCargoUsuario"
-        Me.lblCargoUsuario.Size = New System.Drawing.Size(137, 24)
-        Me.lblCargoUsuario.TabIndex = 13
-        Me.lblCargoUsuario.Text = "CargoUsuario"
         '
         'frmPrincipal
         '

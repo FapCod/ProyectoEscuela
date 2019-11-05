@@ -113,12 +113,6 @@
     <Compile Include="frmRecuperarContrasena.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrarNotas.Designer.vb">
-      <DependentUpon>frmRegistrarNotas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmRegistrarNotas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecuperarContrasena.resx">
       <DependentUpon>frmRecuperarContrasena.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarNotas.resx">
-      <DependentUpon>frmRegistrarNotas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
