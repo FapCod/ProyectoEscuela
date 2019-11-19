@@ -16,10 +16,13 @@ Public Class frmLogin
         Dim passUser = txtPass.Text
         Dim validarLogin = negUser.Login(txtUser.Text, txtPass.Text)
         If validarLogin = True Then
+            Me.Hide()
+            Dim frmBienvenidoUser As New frmBienvenidoUser
+            frmBienvenidoUser.ShowDialog()
             Dim frmprincipal As New frmPrincipal()
             frmprincipal.Show()
             AddHandler frmprincipal.FormClosed, AddressOf Me.CerrarCuenta
-            Me.Hide()
+
         Else
             MessageBox.Show("Usuario o contraseña incorrecta.")
             txtPass.Clear()

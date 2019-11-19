@@ -22,6 +22,7 @@ Partial Class frmAgregarProfesor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAgregarProfesor))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,6 +50,7 @@ Partial Class frmAgregarProfesor
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cmbcodigoAula = New System.Windows.Forms.ComboBox()
+        Me.cmbCodigoSeccion = New System.Windows.Forms.ComboBox()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -181,6 +183,7 @@ Partial Class frmAgregarProfesor
         '
         'cmbsexoProfesor
         '
+        Me.cmbsexoProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbsexoProfesor.FormattingEnabled = True
         Me.cmbsexoProfesor.Items.AddRange(New Object() {"M", "F", "No Especificado"})
         Me.cmbsexoProfesor.Location = New System.Drawing.Point(308, 233)
@@ -314,11 +317,21 @@ Partial Class frmAgregarProfesor
         '
         'cmbcodigoAula
         '
+        Me.cmbcodigoAula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbcodigoAula.FormattingEnabled = True
         Me.cmbcodigoAula.Location = New System.Drawing.Point(308, 420)
         Me.cmbcodigoAula.Name = "cmbcodigoAula"
-        Me.cmbcodigoAula.Size = New System.Drawing.Size(216, 25)
+        Me.cmbcodigoAula.Size = New System.Drawing.Size(80, 25)
         Me.cmbcodigoAula.TabIndex = 9
+        '
+        'cmbCodigoSeccion
+        '
+        Me.cmbCodigoSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCodigoSeccion.FormattingEnabled = True
+        Me.cmbCodigoSeccion.Location = New System.Drawing.Point(394, 420)
+        Me.cmbCodigoSeccion.Name = "cmbCodigoSeccion"
+        Me.cmbCodigoSeccion.Size = New System.Drawing.Size(80, 25)
+        Me.cmbCodigoSeccion.TabIndex = 49
         '
         'frmAgregarProfesor
         '
@@ -326,6 +339,7 @@ Partial Class frmAgregarProfesor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1244, 708)
+        Me.Controls.Add(Me.cmbCodigoSeccion)
         Me.Controls.Add(Me.cmbcodigoAula)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtedadProfesor)
@@ -355,7 +369,9 @@ Partial Class frmAgregarProfesor
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Gadugi", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAgregarProfesor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarProfesor"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).EndInit()
@@ -390,4 +406,5 @@ Partial Class frmAgregarProfesor
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents cmbcodigoAula As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbCodigoSeccion As System.Windows.Forms.ComboBox
 End Class

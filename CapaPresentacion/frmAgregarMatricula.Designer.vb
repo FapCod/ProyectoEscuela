@@ -22,6 +22,7 @@ Partial Class frmAgregarMatricula
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAgregarMatricula))
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtdniAlumno = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -148,6 +149,7 @@ Partial Class frmAgregarMatricula
         '
         'cmbannoEscolar
         '
+        Me.cmbannoEscolar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbannoEscolar.FormattingEnabled = True
         Me.cmbannoEscolar.Location = New System.Drawing.Point(212, 34)
         Me.cmbannoEscolar.Name = "cmbannoEscolar"
@@ -156,6 +158,7 @@ Partial Class frmAgregarMatricula
         '
         'cmbcodigoAula
         '
+        Me.cmbcodigoAula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbcodigoAula.FormattingEnabled = True
         Me.cmbcodigoAula.Location = New System.Drawing.Point(212, 97)
         Me.cmbcodigoAula.Name = "cmbcodigoAula"
@@ -196,7 +199,9 @@ Partial Class frmAgregarMatricula
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAgregarMatricula"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarMatricula"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

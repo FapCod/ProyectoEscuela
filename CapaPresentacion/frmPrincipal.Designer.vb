@@ -23,15 +23,12 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblCargoUsuario = New System.Windows.Forms.Label()
         Me.lblCorreoUsuario = New System.Windows.Forms.Label()
         Me.lblApellidoUsuario = New System.Windows.Forms.Label()
         Me.lblNombresUsuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.btnReportes = New System.Windows.Forms.Button()
         Me.btnListarAlumnos = New System.Windows.Forms.Button()
         Me.btnListarMaestros = New System.Windows.Forms.Button()
@@ -39,35 +36,14 @@ Partial Class frmPrincipal
         Me.btnRegistrarAlumno = New System.Windows.Forms.Button()
         Me.btnRegistrarMaestro = New System.Windows.Forms.Button()
         Me.lblNombreUser = New System.Windows.Forms.Label()
+        Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnMinimizar = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1220, 2)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(25, 27)
-        Me.btnCerrar.TabIndex = 0
-        Me.btnCerrar.UseVisualStyleBackColor = True
-        '
-        'btnMinimizar
-        '
-        Me.btnMinimizar.BackgroundImage = CType(resources.GetObject("btnMinimizar.BackgroundImage"), System.Drawing.Image)
-        Me.btnMinimizar.FlatAppearance.BorderSize = 0
-        Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimizar.Location = New System.Drawing.Point(1189, 2)
-        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMinimizar.Name = "btnMinimizar"
-        Me.btnMinimizar.Size = New System.Drawing.Size(25, 27)
-        Me.btnMinimizar.TabIndex = 1
-        Me.btnMinimizar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -147,17 +123,6 @@ Partial Class frmPrincipal
         Me.Label1.Size = New System.Drawing.Size(140, 24)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Cerrar Cuenta"
-        '
-        'btnCerrarC
-        '
-        Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
-        Me.btnCerrarC.Location = New System.Drawing.Point(21, 615)
-        Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCerrarC.Name = "btnCerrarC"
-        Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
-        Me.btnCerrarC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnCerrarC.TabIndex = 8
-        Me.btnCerrarC.TabStop = False
         '
         'btnReportes
         '
@@ -260,6 +225,17 @@ Partial Class frmPrincipal
         Me.lblNombreUser.TabIndex = 1
         Me.lblNombreUser.Text = "NombreUser"
         '
+        'btnCerrarC
+        '
+        Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
+        Me.btnCerrarC.Location = New System.Drawing.Point(21, 615)
+        Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCerrarC.Name = "btnCerrarC"
+        Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
+        Me.btnCerrarC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnCerrarC.TabIndex = 8
+        Me.btnCerrarC.TabStop = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -270,6 +246,30 @@ Partial Class frmPrincipal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'btnMinimizar
+        '
+        Me.btnMinimizar.BackgroundImage = CType(resources.GetObject("btnMinimizar.BackgroundImage"), System.Drawing.Image)
+        Me.btnMinimizar.FlatAppearance.BorderSize = 0
+        Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimizar.Location = New System.Drawing.Point(1189, 2)
+        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.Size = New System.Drawing.Size(25, 27)
+        Me.btnMinimizar.TabIndex = 1
+        Me.btnMinimizar.UseVisualStyleBackColor = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(1220, 2)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(25, 27)
+        Me.btnCerrar.TabIndex = 0
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'frmPrincipal
         '
@@ -283,6 +283,7 @@ Partial Class frmPrincipal
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

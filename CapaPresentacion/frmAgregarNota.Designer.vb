@@ -22,6 +22,7 @@ Partial Class frmAgregarNota
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAgregarNota))
         Me.cmbnota = New System.Windows.Forms.ComboBox()
         Me.cmbtrimestre = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,6 +42,7 @@ Partial Class frmAgregarNota
         '
         'cmbnota
         '
+        Me.cmbnota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbnota.FormattingEnabled = True
         Me.cmbnota.Items.AddRange(New Object() {"A", "B", "C"})
         Me.cmbnota.Location = New System.Drawing.Point(51, 217)
@@ -50,6 +52,7 @@ Partial Class frmAgregarNota
         '
         'cmbtrimestre
         '
+        Me.cmbtrimestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbtrimestre.FormattingEnabled = True
         Me.cmbtrimestre.Location = New System.Drawing.Point(257, 91)
         Me.cmbtrimestre.Name = "cmbtrimestre"
@@ -154,6 +157,7 @@ Partial Class frmAgregarNota
         '
         'cmbcodigocurso
         '
+        Me.cmbcodigocurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbcodigocurso.FormattingEnabled = True
         Me.cmbcodigocurso.Location = New System.Drawing.Point(425, 91)
         Me.cmbcodigocurso.Name = "cmbcodigocurso"
@@ -173,6 +177,7 @@ Partial Class frmAgregarNota
         '
         'cmbCompetencia
         '
+        Me.cmbCompetencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCompetencia.FormattingEnabled = True
         Me.cmbCompetencia.Items.AddRange(New Object() {"Exposicion", "Trabajos", "Examen"})
         Me.cmbCompetencia.Location = New System.Drawing.Point(51, 156)
@@ -200,7 +205,9 @@ Partial Class frmAgregarNota
         Me.Controls.Add(Me.btnagregarNota)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAgregarNota"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarNota"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
