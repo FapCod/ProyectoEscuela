@@ -29,6 +29,7 @@ Partial Class frmPrincipal
         Me.lblApellidoUsuario = New System.Windows.Forms.Label()
         Me.lblNombresUsuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.btnReportes = New System.Windows.Forms.Button()
         Me.btnListarAlumnos = New System.Windows.Forms.Button()
         Me.btnListarMaestros = New System.Windows.Forms.Button()
@@ -36,10 +37,10 @@ Partial Class frmPrincipal
         Me.btnRegistrarAlumno = New System.Windows.Forms.Button()
         Me.btnRegistrarMaestro = New System.Windows.Forms.Button()
         Me.lblNombreUser = New System.Windows.Forms.Label()
-        Me.btnCerrarC = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +49,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.OrangeRed
+        Me.Panel1.Controls.Add(Me.btnRegistrarSeccion)
         Me.Panel1.Controls.Add(Me.lblCargoUsuario)
         Me.Panel1.Controls.Add(Me.lblCorreoUsuario)
         Me.Panel1.Controls.Add(Me.lblApellidoUsuario)
@@ -66,7 +68,7 @@ Partial Class frmPrincipal
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(341, 666)
+        Me.Panel1.Size = New System.Drawing.Size(341, 717)
         Me.Panel1.TabIndex = 2
         '
         'lblCargoUsuario
@@ -118,11 +120,22 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(77, 626)
+        Me.Label1.Location = New System.Drawing.Point(77, 677)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 24)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Cerrar Cuenta"
+        '
+        'btnCerrarC
+        '
+        Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
+        Me.btnCerrarC.Location = New System.Drawing.Point(12, 661)
+        Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCerrarC.Name = "btnCerrarC"
+        Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
+        Me.btnCerrarC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnCerrarC.TabIndex = 8
+        Me.btnCerrarC.TabStop = False
         '
         'btnReportes
         '
@@ -225,17 +238,6 @@ Partial Class frmPrincipal
         Me.lblNombreUser.TabIndex = 1
         Me.lblNombreUser.Text = "NombreUser"
         '
-        'btnCerrarC
-        '
-        Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
-        Me.btnCerrarC.Location = New System.Drawing.Point(21, 615)
-        Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCerrarC.Name = "btnCerrarC"
-        Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
-        Me.btnCerrarC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnCerrarC.TabIndex = 8
-        Me.btnCerrarC.TabStop = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -271,12 +273,27 @@ Partial Class frmPrincipal
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'btnRegistrarSeccion
+        '
+        Me.btnRegistrarSeccion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnRegistrarSeccion.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 599)
+        Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
+        Me.btnRegistrarSeccion.Size = New System.Drawing.Size(341, 58)
+        Me.btnRegistrarSeccion.TabIndex = 14
+        Me.btnRegistrarSeccion.Text = "Registrar Seccion"
+        Me.btnRegistrarSeccion.UseVisualStyleBackColor = False
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1251, 666)
+        Me.ClientSize = New System.Drawing.Size(1251, 717)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.btnCerrar)
@@ -312,4 +329,5 @@ Partial Class frmPrincipal
     Friend WithEvents lblCorreoUsuario As System.Windows.Forms.Label
     Friend WithEvents lblApellidoUsuario As System.Windows.Forms.Label
     Friend WithEvents lblNombresUsuario As System.Windows.Forms.Label
+    Friend WithEvents btnRegistrarSeccion As System.Windows.Forms.Button
 End Class

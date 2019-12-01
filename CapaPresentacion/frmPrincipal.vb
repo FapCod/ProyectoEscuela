@@ -68,4 +68,9 @@ Public Class frmPrincipal
         Dim frmAM As New frmAgregarMatricula
         frmAM.Show()
     End Sub
+
+    Private Sub btnRegistrarSeccion_Click(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.Click
+        Dim frmSC As New frmagregarSeccion
+        frmSC.Show()
+    End Sub
 End Class

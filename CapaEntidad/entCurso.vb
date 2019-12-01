@@ -1,6 +1,7 @@
 ﻿Public Class entCurso
     Private codigoCurso
     Private nombreCurso
+    Public objGrado As entGrado
     Private competencia1
     Private competencia2
     Private competencia3
@@ -49,5 +50,7 @@
             competencia3 = value
         End Set
     End Property
-
+    Public Sub New()
+        objGrado = New entGrado
+    End Sub
 End Class

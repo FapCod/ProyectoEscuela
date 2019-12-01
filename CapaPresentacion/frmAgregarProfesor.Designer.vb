@@ -49,8 +49,8 @@ Partial Class frmAgregarProfesor
         Me.txtedadProfesor = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.cmbcodigoAula = New System.Windows.Forms.ComboBox()
-        Me.cmbCodigoSeccion = New System.Windows.Forms.ComboBox()
+        Me.rbtlibre = New System.Windows.Forms.RadioButton()
+        Me.rbtAsignado = New System.Windows.Forms.RadioButton()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -311,27 +311,31 @@ Partial Class frmAgregarProfesor
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(109, 418)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 24)
+        Me.Label8.Size = New System.Drawing.Size(73, 24)
         Me.Label8.TabIndex = 48
-        Me.Label8.Text = "Aula"
+        Me.Label8.Text = "Estado"
         '
-        'cmbcodigoAula
+        'rbtlibre
         '
-        Me.cmbcodigoAula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbcodigoAula.FormattingEnabled = True
-        Me.cmbcodigoAula.Location = New System.Drawing.Point(308, 420)
-        Me.cmbcodigoAula.Name = "cmbcodigoAula"
-        Me.cmbcodigoAula.Size = New System.Drawing.Size(80, 25)
-        Me.cmbcodigoAula.TabIndex = 9
+        Me.rbtlibre.AutoSize = True
+        Me.rbtlibre.Location = New System.Drawing.Point(308, 420)
+        Me.rbtlibre.Name = "rbtlibre"
+        Me.rbtlibre.Size = New System.Drawing.Size(63, 22)
+        Me.rbtlibre.TabIndex = 49
+        Me.rbtlibre.TabStop = True
+        Me.rbtlibre.Text = "Libre"
+        Me.rbtlibre.UseVisualStyleBackColor = True
         '
-        'cmbCodigoSeccion
+        'rbtAsignado
         '
-        Me.cmbCodigoSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbCodigoSeccion.FormattingEnabled = True
-        Me.cmbCodigoSeccion.Location = New System.Drawing.Point(394, 420)
-        Me.cmbCodigoSeccion.Name = "cmbCodigoSeccion"
-        Me.cmbCodigoSeccion.Size = New System.Drawing.Size(80, 25)
-        Me.cmbCodigoSeccion.TabIndex = 49
+        Me.rbtAsignado.AutoSize = True
+        Me.rbtAsignado.Location = New System.Drawing.Point(417, 420)
+        Me.rbtAsignado.Name = "rbtAsignado"
+        Me.rbtAsignado.Size = New System.Drawing.Size(92, 22)
+        Me.rbtAsignado.TabIndex = 50
+        Me.rbtAsignado.TabStop = True
+        Me.rbtAsignado.Text = "Asignado"
+        Me.rbtAsignado.UseVisualStyleBackColor = True
         '
         'frmAgregarProfesor
         '
@@ -339,8 +343,8 @@ Partial Class frmAgregarProfesor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1244, 708)
-        Me.Controls.Add(Me.cmbCodigoSeccion)
-        Me.Controls.Add(Me.cmbcodigoAula)
+        Me.Controls.Add(Me.rbtAsignado)
+        Me.Controls.Add(Me.rbtlibre)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtedadProfesor)
         Me.Controls.Add(Me.Label13)
@@ -405,6 +409,6 @@ Partial Class frmAgregarProfesor
     Friend WithEvents txtedadProfesor As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents cmbcodigoAula As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbCodigoSeccion As System.Windows.Forms.ComboBox
+    Friend WithEvents rbtlibre As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtAsignado As System.Windows.Forms.RadioButton
 End Class

@@ -255,7 +255,7 @@ Partial Class frmAgregarAlumno
         '
         'txtnumeroTelefonoApoderado
         '
-        Me.txtnumeroTelefonoApoderado.Location = New System.Drawing.Point(263, 294)
+        Me.txtnumeroTelefonoApoderado.Location = New System.Drawing.Point(272, 295)
         Me.txtnumeroTelefonoApoderado.Name = "txtnumeroTelefonoApoderado"
         Me.txtnumeroTelefonoApoderado.Size = New System.Drawing.Size(184, 22)
         Me.txtnumeroTelefonoApoderado.TabIndex = 33

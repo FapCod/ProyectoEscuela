@@ -5,9 +5,7 @@ Public Class frmAgregarProfesor
 
     Private Sub frmAgregarProfesor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ver()
-        Dim objnegAula As New negAula
-        cmbcodigoAula.DataSource = objnegAula.listarAula()
-        cmbcodigoAula.DisplayMember = "nombreAula"
+        
     End Sub
 
     Private Sub btnAgregarM_Click(sender As Object, e As EventArgs) Handles btnagregarProfesor.Click
@@ -21,26 +19,12 @@ Public Class frmAgregarProfesor
         objentProfesor._direccionProfesor = txtdireccionProfesor.Text
         objentProfesor._correoProfesor = txtcorreoProfesor.Text
         objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-        If cmbcodigoAula.Text = "Inicial 3" Then
-            objentProfesor.objentAula._codigoAula = "I3"
-        ElseIf cmbcodigoAula.Text = "Inicial 4" Then
-            objentProfesor.objentAula._codigoAula = "I4"
-        ElseIf cmbcodigoAula.Text = "Inicial 5" Then
-            objentProfesor.objentAula._codigoAula = "I5"
-        ElseIf cmbcodigoAula.Text = "Primaria 1" Then
-            objentProfesor.objentAula._codigoAula = "P1"
-        ElseIf cmbcodigoAula.Text = "Primaria 2" Then
-            objentProfesor.objentAula._codigoAula = "P2"
-        ElseIf cmbcodigoAula.Text = "Primaria 3" Then
-            objentProfesor.objentAula._codigoAula = "P3"
-        ElseIf cmbcodigoAula.Text = "Primaria 4" Then
-            objentProfesor.objentAula._codigoAula = "P4"
-        ElseIf cmbcodigoAula.Text = "Primaria 5" Then
-            objentProfesor.objentAula._codigoAula = "P5"
-        ElseIf cmbcodigoAula.Text = "Primaria 6" Then
-            objentProfesor.objentAula._codigoAula = "P6"
+        If rbtlibre.Checked = True Then
+            objentProfesor._estadoProfesor = True
         End If
-
+        If rbtAsignado.Checked = False Then
+            objentProfesor._estadoProfesor = False
+        End If
         Dim objnegProfesor As New negProfesor
         Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
         If verificarRP = True Then
@@ -65,6 +49,7 @@ Public Class frmAgregarProfesor
         i = dgvlista.CurrentRow.Index
         dni = dgvlista.Item(0, i).Value()
         objentProfesor._dniProfesor = dni
+        objentProfesor._dniProfesor = txtdniProfesor.Text
         objentProfesor._nombreProfesor = txtnombreProfesor.Text
         objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
         objentProfesor._edadProfesor = txtedadProfesor.Text
@@ -72,24 +57,11 @@ Public Class frmAgregarProfesor
         objentProfesor._direccionProfesor = txtdireccionProfesor.Text
         objentProfesor._correoProfesor = txtcorreoProfesor.Text
         objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-        If cmbcodigoAula.Text = "Inicial 3" Then
-            objentProfesor.objentAula._codigoAula = "I3"
-        ElseIf cmbcodigoAula.Text = "Inicial 4" Then
-            objentProfesor.objentAula._codigoAula = "I4"
-        ElseIf cmbcodigoAula.Text = "Inicial 5" Then
-            objentProfesor.objentAula._codigoAula = "I5"
-        ElseIf cmbcodigoAula.Text = "Primaria 1" Then
-            objentProfesor.objentAula._codigoAula = "P1"
-        ElseIf cmbcodigoAula.Text = "Primaria 2" Then
-            objentProfesor.objentAula._codigoAula = "P2"
-        ElseIf cmbcodigoAula.Text = "Primaria 3" Then
-            objentProfesor.objentAula._codigoAula = "P3"
-        ElseIf cmbcodigoAula.Text = "Primaria 4" Then
-            objentProfesor.objentAula._codigoAula = "P4"
-        ElseIf cmbcodigoAula.Text = "Primaria 5" Then
-            objentProfesor.objentAula._codigoAula = "P5"
-        ElseIf cmbcodigoAula.Text = "Primaria 6" Then
-            objentProfesor.objentAula._codigoAula = "P6"
+        If rbtlibre.Checked = True Then
+            objentProfesor._estadoProfesor = True
+        End If
+        If rbtAsignado.Checked = False Then
+            objentProfesor._estadoProfesor = False
         End If
         Dim objnegProfesor As New negProfesor
         Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
@@ -115,7 +87,11 @@ Public Class frmAgregarProfesor
         txtdireccionProfesor.Text = dgvlista.Item(5, i).Value()
         txtcorreoProfesor.Text = dgvlista.Item(6, i).Value()
         txttelefonoProfesor.Text = dgvlista.Item(7, i).Value()
-        cmbcodigoAula.Text = dgvlista.Item(8, i).Value()
+        If dgvlista.Item(8, i).Value() = True Then
+            rbtlibre.Checked = True
+        ElseIf dgvlista.Item(8, i).Value() = False Then
+            rbtAsignado.Checked = True
+        End If
     End Sub
 
     
@@ -154,7 +130,8 @@ Public Class frmAgregarProfesor
         txtdireccionProfesor.Clear()
         txtcorreoProfesor.Clear()
         txttelefonoProfesor.Clear()
-        cmbcodigoAula.Text = ""
+        rbtlibre.Checked = False
+        rbtAsignado.Checked = False
         txtdniIIProfesor.Clear()
     End Sub
 
@@ -167,4 +144,87 @@ Public Class frmAgregarProfesor
     End Sub
 
 
+    Private Sub txtdniProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniProfesor.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtdniProfesor.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtdniIIProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniIIProfesor.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtdniIIProfesor.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtnombreProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombreProfesor.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtapellidoProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellidoProfesor.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtedadProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtedadProfesor.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtedadProfesor.TextLength > 1 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txttelefonoProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttelefonoProfesor.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txttelefonoProfesor.TextLength > 8 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
 End Class

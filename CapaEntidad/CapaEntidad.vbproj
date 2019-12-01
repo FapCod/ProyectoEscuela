@@ -66,8 +66,8 @@
     <Compile Include="cache\usuarioActivo.vb" />
     <Compile Include="entAlumno.vb" />
     <Compile Include="entAnnoEscolar.vb" />
-    <Compile Include="entAula.vb" />
     <Compile Include="entCurso.vb" />
+    <Compile Include="entGrado.vb" />
     <Compile Include="entMatricula.vb" />
     <Compile Include="entNota.vb" />
     <Compile Include="entProfesor.vb" />

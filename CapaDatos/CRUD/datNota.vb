@@ -14,7 +14,6 @@ Public Class datNota
                 Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
                 Command.Parameters.AddWithValue("@codigoCurso", objNota.objentCurso._codigoCurso)
-
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
                     da = New SqlDataAdapter(Command)
@@ -38,6 +37,7 @@ Public Class datNota
                 Command.Parameters.AddWithValue("@codigoCurso", objNota.objentCurso._codigoCurso)
                 Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
+                Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True

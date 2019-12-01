@@ -30,16 +30,22 @@ Partial Class frmAgregarMatricula
         Me.btneliminarMatricula = New System.Windows.Forms.Button()
         Me.btneditarMatricula = New System.Windows.Forms.Button()
         Me.btnagregarMatricula = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbannoEscolar = New System.Windows.Forms.ComboBox()
-        Me.cmbcodigoGrado = New System.Windows.Forms.ComboBox()
-        Me.txtvacantesLibres = New System.Windows.Forms.TextBox()
+        Me.cmbcodGrado = New System.Windows.Forms.ComboBox()
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.cmbCodigoSeccion = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbcodseccion = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.rbtinicial = New System.Windows.Forms.RadioButton()
+        Me.rbtPrimaria = New System.Windows.Forms.RadioButton()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.dgvprimaria = New System.Windows.Forms.DataGridView()
+        Me.dgvinicial = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvprimaria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvinicial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
@@ -47,7 +53,7 @@ Partial Class frmAgregarMatricula
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(208, 72)
+        Me.Label6.Location = New System.Drawing.Point(2, 133)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(81, 24)
         Me.Label6.TabIndex = 53
@@ -77,7 +83,7 @@ Partial Class frmAgregarMatricula
         Me.DataGridView1.Location = New System.Drawing.Point(452, 34)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(643, 329)
+        Me.DataGridView1.Size = New System.Drawing.Size(643, 176)
         Me.DataGridView1.TabIndex = 47
         '
         'btneliminarMatricula
@@ -116,17 +122,6 @@ Partial Class frmAgregarMatricula
         Me.btnagregarMatricula.Text = "Agregar"
         Me.btnagregarMatricula.UseVisualStyleBackColor = False
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(3, 146)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(183, 24)
-        Me.Label3.TabIndex = 36
-        Me.Label3.Text = "VACANTES LIBRES"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -158,21 +153,14 @@ Partial Class frmAgregarMatricula
         Me.cmbannoEscolar.Size = New System.Drawing.Size(143, 24)
         Me.cmbannoEscolar.TabIndex = 55
         '
-        'cmbcodigoGrado
+        'cmbcodGrado
         '
-        Me.cmbcodigoGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbcodigoGrado.FormattingEnabled = True
-        Me.cmbcodigoGrado.Location = New System.Drawing.Point(212, 97)
-        Me.cmbcodigoGrado.Name = "cmbcodigoGrado"
-        Me.cmbcodigoGrado.Size = New System.Drawing.Size(143, 24)
-        Me.cmbcodigoGrado.TabIndex = 56
-        '
-        'txtvacantesLibres
-        '
-        Me.txtvacantesLibres.Location = New System.Drawing.Point(7, 173)
-        Me.txtvacantesLibres.Name = "txtvacantesLibres"
-        Me.txtvacantesLibres.Size = New System.Drawing.Size(184, 22)
-        Me.txtvacantesLibres.TabIndex = 57
+        Me.cmbcodGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbcodGrado.FormattingEnabled = True
+        Me.cmbcodGrado.Location = New System.Drawing.Point(6, 160)
+        Me.cmbcodGrado.Name = "cmbcodGrado"
+        Me.cmbcodGrado.Size = New System.Drawing.Size(143, 24)
+        Me.cmbcodGrado.TabIndex = 56
         '
         'dtFecha
         '
@@ -181,25 +169,87 @@ Partial Class frmAgregarMatricula
         Me.dtFecha.Size = New System.Drawing.Size(200, 22)
         Me.dtFecha.TabIndex = 58
         '
-        'cmbCodigoSeccion
+        'Label3
         '
-        Me.cmbCodigoSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbCodigoSeccion.FormattingEnabled = True
-        Me.cmbCodigoSeccion.Location = New System.Drawing.Point(212, 171)
-        Me.cmbCodigoSeccion.Name = "cmbCodigoSeccion"
-        Me.cmbCodigoSeccion.Size = New System.Drawing.Size(143, 24)
-        Me.cmbCodigoSeccion.TabIndex = 60
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(218, 133)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 24)
+        Me.Label3.TabIndex = 59
+        Me.Label3.Text = "SECCION"
+        '
+        'cmbcodseccion
+        '
+        Me.cmbcodseccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbcodseccion.FormattingEnabled = True
+        Me.cmbcodseccion.Location = New System.Drawing.Point(212, 160)
+        Me.cmbcodseccion.Name = "cmbcodseccion"
+        Me.cmbcodseccion.Size = New System.Drawing.Size(143, 24)
+        Me.cmbcodseccion.TabIndex = 60
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(208, 146)
+        Me.Label4.Location = New System.Drawing.Point(208, 72)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 24)
-        Me.Label4.TabIndex = 59
-        Me.Label4.Text = "SECCION"
+        Me.Label4.Size = New System.Drawing.Size(66, 24)
+        Me.Label4.TabIndex = 61
+        Me.Label4.Text = "NIVEL"
+        '
+        'rbtinicial
+        '
+        Me.rbtinicial.AutoSize = True
+        Me.rbtinicial.Location = New System.Drawing.Point(222, 99)
+        Me.rbtinicial.Name = "rbtinicial"
+        Me.rbtinicial.Size = New System.Drawing.Size(64, 21)
+        Me.rbtinicial.TabIndex = 63
+        Me.rbtinicial.TabStop = True
+        Me.rbtinicial.Text = "Inicial"
+        Me.rbtinicial.UseVisualStyleBackColor = True
+        '
+        'rbtPrimaria
+        '
+        Me.rbtPrimaria.AutoSize = True
+        Me.rbtPrimaria.Location = New System.Drawing.Point(301, 99)
+        Me.rbtPrimaria.Name = "rbtPrimaria"
+        Me.rbtPrimaria.Size = New System.Drawing.Size(81, 21)
+        Me.rbtPrimaria.TabIndex = 64
+        Me.rbtPrimaria.TabStop = True
+        Me.rbtPrimaria.Text = "Primaria"
+        Me.rbtPrimaria.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(448, 219)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(208, 24)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "CURSOS ASIGNADOS"
+        '
+        'dgvprimaria
+        '
+        Me.dgvprimaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvprimaria.Location = New System.Drawing.Point(456, 254)
+        Me.dgvprimaria.Name = "dgvprimaria"
+        Me.dgvprimaria.RowTemplate.Height = 24
+        Me.dgvprimaria.Size = New System.Drawing.Size(638, 119)
+        Me.dgvprimaria.TabIndex = 66
+        '
+        'dgvinicial
+        '
+        Me.dgvinicial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvinicial.Location = New System.Drawing.Point(456, 254)
+        Me.dgvinicial.Name = "dgvinicial"
+        Me.dgvinicial.RowTemplate.Height = 24
+        Me.dgvinicial.Size = New System.Drawing.Size(638, 119)
+        Me.dgvinicial.TabIndex = 67
         '
         'frmAgregarMatricula
         '
@@ -207,11 +257,16 @@ Partial Class frmAgregarMatricula
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1124, 391)
-        Me.Controls.Add(Me.cmbCodigoSeccion)
+        Me.Controls.Add(Me.dgvinicial)
+        Me.Controls.Add(Me.dgvprimaria)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.rbtPrimaria)
+        Me.Controls.Add(Me.rbtinicial)
         Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cmbcodseccion)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dtFecha)
-        Me.Controls.Add(Me.txtvacantesLibres)
-        Me.Controls.Add(Me.cmbcodigoGrado)
+        Me.Controls.Add(Me.cmbcodGrado)
         Me.Controls.Add(Me.cmbannoEscolar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtdniAlumno)
@@ -220,7 +275,6 @@ Partial Class frmAgregarMatricula
         Me.Controls.Add(Me.btneliminarMatricula)
         Me.Controls.Add(Me.btneditarMatricula)
         Me.Controls.Add(Me.btnagregarMatricula)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -228,6 +282,8 @@ Partial Class frmAgregarMatricula
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarMatricula"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvprimaria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvinicial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,13 +295,17 @@ Partial Class frmAgregarMatricula
     Friend WithEvents btneliminarMatricula As System.Windows.Forms.Button
     Friend WithEvents btneditarMatricula As System.Windows.Forms.Button
     Friend WithEvents btnagregarMatricula As System.Windows.Forms.Button
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmbannoEscolar As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbcodigoGrado As System.Windows.Forms.ComboBox
-    Friend WithEvents txtvacantesLibres As System.Windows.Forms.TextBox
+    Friend WithEvents cmbcodGrado As System.Windows.Forms.ComboBox
     Friend WithEvents dtFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents cmbCodigoSeccion As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cmbcodseccion As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents rbtinicial As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtPrimaria As System.Windows.Forms.RadioButton
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents dgvprimaria As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvinicial As System.Windows.Forms.DataGridView
 End Class

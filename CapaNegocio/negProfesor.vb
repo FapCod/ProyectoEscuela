@@ -24,4 +24,8 @@ Public Class negProfesor
         Dim dat As New datProfesor
         Return dat.obtenerTabla()
     End Function
+    Public Function ListarProfesor() As DataTable
+        Dim dat As New datProfesor
+        Return dat.ProfesoresLibres()
+    End Function
 End Class

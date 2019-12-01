@@ -34,3 +34,12 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaEntidad\obj\Deb
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.xml
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\bin\Debug\CapaEntidad.xml
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.vbprojResolveAssemblyReference.cache
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.Resources.resources
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.vbproj.GenerateResource.Cache
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.xml
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaEntidad\obj\Debug\CapaEntidad.pdb

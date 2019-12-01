@@ -41,4 +41,10 @@ Public Class frmLogin
         Dim frmrecuperarContrasena As New frmRecuperarContrasena()
         frmrecuperarContrasena.Show()
     End Sub
+
+    Private Sub txtUser_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUser.KeyPress
+        If Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        End If
+    End Sub
 End Class

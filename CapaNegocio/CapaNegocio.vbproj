@@ -64,8 +64,8 @@
   <ItemGroup>
     <Compile Include="negAlumno.vb" />
     <Compile Include="negAnnoEscolar.vb" />
-    <Compile Include="negAula.vb" />
     <Compile Include="negCurso.vb" />
+    <Compile Include="negGrado.vb" />
     <Compile Include="negMatricula.vb" />
     <Compile Include="negNota.vb" />
     <Compile Include="negProfesor.vb" />

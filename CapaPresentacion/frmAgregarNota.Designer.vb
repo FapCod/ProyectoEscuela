@@ -37,7 +37,13 @@ Partial Class frmAgregarNota
         Me.cmbcodigocurso = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cmbCompetencia = New System.Windows.Forms.ComboBox()
+        Me.rbtInicial = New System.Windows.Forms.RadioButton()
+        Me.rbtprimaria = New System.Windows.Forms.RadioButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbannoEscolar = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbnota
@@ -185,12 +191,67 @@ Partial Class frmAgregarNota
         Me.cmbCompetencia.Size = New System.Drawing.Size(180, 24)
         Me.cmbCompetencia.TabIndex = 75
         '
+        'rbtInicial
+        '
+        Me.rbtInicial.AutoSize = True
+        Me.rbtInicial.Location = New System.Drawing.Point(29, 3)
+        Me.rbtInicial.Name = "rbtInicial"
+        Me.rbtInicial.Size = New System.Drawing.Size(64, 21)
+        Me.rbtInicial.TabIndex = 76
+        Me.rbtInicial.TabStop = True
+        Me.rbtInicial.Text = "Inicial"
+        Me.rbtInicial.UseVisualStyleBackColor = True
+        '
+        'rbtprimaria
+        '
+        Me.rbtprimaria.AutoSize = True
+        Me.rbtprimaria.Location = New System.Drawing.Point(157, 3)
+        Me.rbtprimaria.Name = "rbtprimaria"
+        Me.rbtprimaria.Size = New System.Drawing.Size(81, 21)
+        Me.rbtprimaria.TabIndex = 77
+        Me.rbtprimaria.TabStop = True
+        Me.rbtprimaria.Text = "Primaria"
+        Me.rbtprimaria.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.rbtprimaria)
+        Me.Panel1.Controls.Add(Me.rbtInicial)
+        Me.Panel1.Location = New System.Drawing.Point(51, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(255, 31)
+        Me.Panel1.TabIndex = 78
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(253, 129)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(147, 24)
+        Me.Label3.TabIndex = 79
+        Me.Label3.Text = "AÑO ESCOLAR"
+        '
+        'cmbannoEscolar
+        '
+        Me.cmbannoEscolar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbannoEscolar.FormattingEnabled = True
+        Me.cmbannoEscolar.Items.AddRange(New Object() {"Exposicion", "Trabajos", "Examen"})
+        Me.cmbannoEscolar.Location = New System.Drawing.Point(257, 156)
+        Me.cmbannoEscolar.Name = "cmbannoEscolar"
+        Me.cmbannoEscolar.Size = New System.Drawing.Size(180, 24)
+        Me.cmbannoEscolar.TabIndex = 80
+        '
         'frmAgregarNota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1187, 661)
+        Me.Controls.Add(Me.cmbannoEscolar)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.cmbCompetencia)
         Me.Controls.Add(Me.cmbcodigocurso)
         Me.Controls.Add(Me.Label4)
@@ -210,6 +271,8 @@ Partial Class frmAgregarNota
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarNota"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -228,4 +291,9 @@ Partial Class frmAgregarNota
     Friend WithEvents cmbcodigocurso As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cmbCompetencia As System.Windows.Forms.ComboBox
+    Friend WithEvents rbtInicial As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtprimaria As System.Windows.Forms.RadioButton
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cmbannoEscolar As System.Windows.Forms.ComboBox
 End Class

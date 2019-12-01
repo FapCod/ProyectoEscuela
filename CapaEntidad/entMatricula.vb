@@ -1,9 +1,11 @@
 ﻿Public Class entMatricula
     Private idMatricula
     Private fechaMatricula
-    Public objentAula As New entAula
-    Public objentAlumno As New entAlumno
-    Public objentAnnoEscolar As New entAnnoEscolar
+    Public objentgrado As entGrado
+    Public objentAlumno As entAlumno
+    Public objentSeccion As entSeccion
+    Public objentAnnoEscolar As entAnnoEscolar
+    Private nivelAlumno
     Public Property _idMatricula As String
         Get
             Return idMatricula
@@ -21,9 +23,18 @@
             fechaMatricula = value
         End Set
     End Property
+    Public Property _nivelAlumno As String
+        Get
+            Return nivelAlumno
+        End Get
+        Set(value As String)
+            nivelAlumno = value
+        End Set
+    End Property
     Public Sub New()
-        objentAula = New entAula
+        objentGrado = New entGrado
         objentAlumno = New entAlumno
         objentAnnoEscolar = New entAnnoEscolar
+        objentSeccion = New entSeccion
     End Sub
 End Class

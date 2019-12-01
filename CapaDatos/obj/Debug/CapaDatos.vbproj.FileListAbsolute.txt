@@ -46,3 +46,15 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaDatos\obj\Debug
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaDatos\obj\Debug\CapaDatos.xml
 C:\Universidad\Ingenieria de Software\ProyectoEscuela-master\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.vbprojResolveAssemblyReference.cache
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.Resources.resources
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.vbproj.GenerateResource.Cache
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.xml
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaDatos.xml
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaDatos\bin\Debug\CapaEntidad.xml

@@ -84,7 +84,6 @@ Partial Class frmRecuperarContrasena
         Me.Controls.Add(Me.btnEnviar)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "frmRecuperarContrasena"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRecuperarContrasena"

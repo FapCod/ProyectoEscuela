@@ -119,4 +119,99 @@ Public Class frmAgregarAlumno
 
   
     
+    Private Sub txtdniAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniAlumno.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtdniAlumno.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtnombreAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombreAlumno.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtapellidoAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellidoAlumno.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtedadAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtedadAlumno.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtedadAlumno.TextLength > 1 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtnombreApoderadoAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombreApoderadoAlumno.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtnumeroTelefonoApoderado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnumeroTelefonoApoderado.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtnumeroTelefonoApoderado.TextLength > 8 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub txtdniiAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniiAlumno.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtdniAlumno.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
 End Class

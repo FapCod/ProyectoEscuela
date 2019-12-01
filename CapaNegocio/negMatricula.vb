@@ -6,9 +6,7 @@ Public Class negMatricula
     Public Function registrarMatricula(objentMatricula) As Boolean
         Return objdatMatricula.registrarMatricula(objentMatricula)
     End Function
-    Public Function obtenerVacantesLibres(objAula As entAula) As Integer
-        Return objdatMatricula.obtenerVacantesLibres(objAula)
-    End Function
+   
     Public Function obtenerTabla() As DataTable
         Return objdatMatricula.obtenerTabla()
     End Function

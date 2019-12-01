@@ -1,20 +1,19 @@
 ﻿Public Class entSeccion
     Private codigoSeccion
     Private nombreSeccion
-    Private codigoGrado
-    Private dniProfesor
-    Private numeroAno
+    Public objentGrado As entGrado
+    Public objentProfesor As entProfesor
+    Public objentNumeroAnno As entAnnoEscolar
     Private numeroVacantes
-
-    Public Property _codigoSeccion As String
+    Private nivel
+    Public Property _codigoSeccion As Integer
         Get
             Return codigoSeccion
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoSeccion = value
         End Set
     End Property
-
     Public Property _nombreSeccion As String
         Get
             Return nombreSeccion
@@ -23,34 +22,6 @@
             nombreSeccion = value
         End Set
     End Property
-
-    Public Property _codigoGrado As String
-        Get
-            Return codigoGrado
-        End Get
-        Set(value As String)
-            codigoGrado = value
-        End Set
-    End Property
-
-    Public Property _dniProfesor As String
-        Get
-            Return dniProfesor
-        End Get
-        Set(value As String)
-            dniProfesor = value
-        End Set
-    End Property
-
-    Public Property _numeroAno As Integer
-        Get
-            Return numeroAno
-        End Get
-        Set(value As Integer)
-            numeroAno = value
-        End Set
-    End Property
-
     Public Property _numeroVacantes As Integer
         Get
             Return numeroVacantes
@@ -59,4 +30,17 @@
             numeroVacantes = value
         End Set
     End Property
+    Public Property _nivel As String
+        Get
+            Return nivel
+        End Get
+        Set(value As String)
+            nivel = value
+        End Set
+    End Property
+    Public Sub New()
+        objentGrado = New entGrado
+        objentProfesor = New entProfesor
+        objentNumeroAnno = New entAnnoEscolar
+    End Sub
 End Class

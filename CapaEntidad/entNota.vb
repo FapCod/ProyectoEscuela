@@ -1,19 +1,10 @@
 ﻿Public Class entNota
-    Private codigoNota 
     Private nota
     Private descripcion
-    Public objentAlumno As New entAlumno
     Public objentCurso As New entCurso
+    Public objentAlumno As New entAlumno
     Public objentTrimestre As New entTrimestre
-    Public Property _codigoNota As String
-        Get
-            Return codigoNota
-        End Get
-        Set(value As String)
-            codigoNota = value
-        End Set
-    End Property
-
+    Public objentAnnoEscolar As New entAnnoEscolar
     Public Property _nota As String
         Get
             Return nota
@@ -33,8 +24,9 @@
     End Property
 
     Public Sub New()
-        objentAlumno = New entAlumno
         objentCurso = New entCurso
+        objentAlumno = New entAlumno
         objentTrimestre = New entTrimestre
+        objentAnnoEscolar = New entAnnoEscolar
     End Sub
 End Class
