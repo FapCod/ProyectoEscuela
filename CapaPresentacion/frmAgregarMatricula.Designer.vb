@@ -34,9 +34,11 @@ Partial Class frmAgregarMatricula
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbannoEscolar = New System.Windows.Forms.ComboBox()
-        Me.cmbcodigoAula = New System.Windows.Forms.ComboBox()
+        Me.cmbcodigoGrado = New System.Windows.Forms.ComboBox()
         Me.txtvacantesLibres = New System.Windows.Forms.TextBox()
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
+        Me.cmbCodigoSeccion = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -156,14 +158,14 @@ Partial Class frmAgregarMatricula
         Me.cmbannoEscolar.Size = New System.Drawing.Size(143, 24)
         Me.cmbannoEscolar.TabIndex = 55
         '
-        'cmbcodigoAula
+        'cmbcodigoGrado
         '
-        Me.cmbcodigoAula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbcodigoAula.FormattingEnabled = True
-        Me.cmbcodigoAula.Location = New System.Drawing.Point(212, 97)
-        Me.cmbcodigoAula.Name = "cmbcodigoAula"
-        Me.cmbcodigoAula.Size = New System.Drawing.Size(143, 24)
-        Me.cmbcodigoAula.TabIndex = 56
+        Me.cmbcodigoGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbcodigoGrado.FormattingEnabled = True
+        Me.cmbcodigoGrado.Location = New System.Drawing.Point(212, 97)
+        Me.cmbcodigoGrado.Name = "cmbcodigoGrado"
+        Me.cmbcodigoGrado.Size = New System.Drawing.Size(143, 24)
+        Me.cmbcodigoGrado.TabIndex = 56
         '
         'txtvacantesLibres
         '
@@ -179,15 +181,37 @@ Partial Class frmAgregarMatricula
         Me.dtFecha.Size = New System.Drawing.Size(200, 22)
         Me.dtFecha.TabIndex = 58
         '
+        'cmbCodigoSeccion
+        '
+        Me.cmbCodigoSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCodigoSeccion.FormattingEnabled = True
+        Me.cmbCodigoSeccion.Location = New System.Drawing.Point(212, 171)
+        Me.cmbCodigoSeccion.Name = "cmbCodigoSeccion"
+        Me.cmbCodigoSeccion.Size = New System.Drawing.Size(143, 24)
+        Me.cmbCodigoSeccion.TabIndex = 60
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(208, 146)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(93, 24)
+        Me.Label4.TabIndex = 59
+        Me.Label4.Text = "SECCION"
+        '
         'frmAgregarMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1124, 391)
+        Me.Controls.Add(Me.cmbCodigoSeccion)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dtFecha)
         Me.Controls.Add(Me.txtvacantesLibres)
-        Me.Controls.Add(Me.cmbcodigoAula)
+        Me.Controls.Add(Me.cmbcodigoGrado)
         Me.Controls.Add(Me.cmbannoEscolar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtdniAlumno)
@@ -219,7 +243,9 @@ Partial Class frmAgregarMatricula
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmbannoEscolar As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbcodigoAula As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbcodigoGrado As System.Windows.Forms.ComboBox
     Friend WithEvents txtvacantesLibres As System.Windows.Forms.TextBox
     Friend WithEvents dtFecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cmbCodigoSeccion As System.Windows.Forms.ComboBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

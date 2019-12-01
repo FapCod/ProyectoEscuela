@@ -69,6 +69,7 @@
     <Compile Include="negMatricula.vb" />
     <Compile Include="negNota.vb" />
     <Compile Include="negProfesor.vb" />
+    <Compile Include="negSeccion.vb" />
     <Compile Include="negTrimestre.vb" />
     <Compile Include="negUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

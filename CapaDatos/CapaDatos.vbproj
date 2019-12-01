@@ -70,6 +70,7 @@
     <Compile Include="CRUD\datMatricula.vb" />
     <Compile Include="CRUD\datNota.vb" />
     <Compile Include="CRUD\datProfesor.vb" />
+    <Compile Include="CRUD\datSeccion.vb" />
     <Compile Include="CRUD\datTrimestre.vb" />
     <Compile Include="CRUD\datUser.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

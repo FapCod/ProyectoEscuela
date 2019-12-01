@@ -105,3 +105,4 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresent
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarMatricula.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarNota.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmBienvenidoUser.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgregarSeccion.resources
