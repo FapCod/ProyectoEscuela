@@ -169,7 +169,9 @@ Partial Class frmagregarSeccion
         '
         'btnguardar
         '
-        Me.btnguardar.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnguardar.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(77, 367)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(375, 44)

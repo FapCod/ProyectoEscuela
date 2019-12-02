@@ -47,4 +47,12 @@ Public Class frmLogin
             e.Handled = True
         End If
     End Sub
+
+    Private Sub btnIngresar_MouseEnter(sender As Object, e As EventArgs) Handles btnIngresar.MouseEnter
+        btnIngresar.BackColor = Color.DarkOrange
+    End Sub
+
+    Private Sub btnIngresar_MouseLeave(sender As Object, e As EventArgs) Handles btnIngresar.MouseLeave
+        btnIngresar.BackColor = Color.Orange
+    End Sub
 End Class

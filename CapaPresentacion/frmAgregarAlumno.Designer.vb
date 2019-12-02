@@ -194,7 +194,7 @@ Partial Class frmAgregarAlumno
         Me.btnbuscarAlumno.ForeColor = System.Drawing.Color.White
         Me.btnbuscarAlumno.Location = New System.Drawing.Point(866, 21)
         Me.btnbuscarAlumno.Name = "btnbuscarAlumno"
-        Me.btnbuscarAlumno.Size = New System.Drawing.Size(104, 57)
+        Me.btnbuscarAlumno.Size = New System.Drawing.Size(136, 57)
         Me.btnbuscarAlumno.TabIndex = 25
         Me.btnbuscarAlumno.Text = "BUSCAR"
         Me.btnbuscarAlumno.UseVisualStyleBackColor = False

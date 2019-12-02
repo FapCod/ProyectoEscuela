@@ -2,15 +2,15 @@
 Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmAgregarProfesor
-
+#Region "Funcionalidad de la ventana"
     Private Sub frmAgregarProfesor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ver()
-        
     End Sub
 
     Private Sub btnAgregarM_Click(sender As Object, e As EventArgs) Handles btnagregarProfesor.Click
 
         Dim objentProfesor As New entProfesor
+        If comprobar() Then
         objentProfesor._dniProfesor = txtdniProfesor.Text
         objentProfesor._nombreProfesor = txtnombreProfesor.Text
         objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
@@ -34,43 +34,46 @@ Public Class frmAgregarProfesor
         End If
         Ver()
         LimpiarDatos()
-
+        Else
+            MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
+        End If
 
     End Sub
 
-    Sub Ver()
-        Dim conexion As New negProfesor
-        dgvlista.DataSource = conexion.obtenerTabla()
-    End Sub
+
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnactualizarProfesor.Click
         Dim objentProfesor As New entProfesor
         Dim dni As String
         Dim i As Integer
         i = dgvlista.CurrentRow.Index
         dni = dgvlista.Item(0, i).Value()
-        objentProfesor._dniProfesor = dni
-        objentProfesor._dniProfesor = txtdniProfesor.Text
-        objentProfesor._nombreProfesor = txtnombreProfesor.Text
-        objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
-        objentProfesor._edadProfesor = txtedadProfesor.Text
-        objentProfesor._sexoProfesor = cmbsexoProfesor.Text
-        objentProfesor._direccionProfesor = txtdireccionProfesor.Text
-        objentProfesor._correoProfesor = txtcorreoProfesor.Text
-        objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-        If rbtlibre.Checked = True Then
-            objentProfesor._estadoProfesor = True
-        End If
-        If rbtAsignado.Checked = False Then
-            objentProfesor._estadoProfesor = False
-        End If
-        Dim objnegProfesor As New negProfesor
-        Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
-        If verificarRP = True Then
-            MsgBox("Actualizacion Exitosa")
-            LimpiarDatos()
-            Ver()
+        If comprobar() Then
+            objentProfesor._dniProfesor = dni
+            objentProfesor._dniProfesor = txtdniProfesor.Text
+            objentProfesor._nombreProfesor = txtnombreProfesor.Text
+            objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
+            objentProfesor._edadProfesor = txtedadProfesor.Text
+            objentProfesor._sexoProfesor = cmbsexoProfesor.Text
+            objentProfesor._direccionProfesor = txtdireccionProfesor.Text
+            objentProfesor._correoProfesor = txtcorreoProfesor.Text
+            objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
+            If rbtlibre.Checked = True Then
+                objentProfesor._estadoProfesor = True
+            End If
+            If rbtAsignado.Checked = False Then
+                objentProfesor._estadoProfesor = False
+            End If
+            Dim objnegProfesor As New negProfesor
+            Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
+            If verificarRP = True Then
+                MsgBox("Actualizacion Exitosa")
+                LimpiarDatos()
+                Ver()
+            Else
+                MsgBox("Error de Actualizacion de Alumno")
+            End If
         Else
-            MsgBox("Error de Actualizacion de Alumno")
+            MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
         End If
     End Sub
 
@@ -94,7 +97,7 @@ Public Class frmAgregarProfesor
         End If
     End Sub
 
-    
+
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btneliminarProfesor.Click
         Dim objnegProfesor As New negProfesor
@@ -120,7 +123,17 @@ Public Class frmAgregarProfesor
         dgvlista.DataSource = objnegProfesor.buscarProfesor(dni)
 
     End Sub
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btncancelarProfesor.Click
+        LimpiarDatos()
+    End Sub
 
+#End Region
+
+#Region "metodos creados"
+    Sub Ver()
+        Dim conexion As New negProfesor
+        dgvlista.DataSource = conexion.obtenerTabla()
+    End Sub
     Public Sub LimpiarDatos()
         txtdniProfesor.Clear()
         txtnombreProfesor.Clear()
@@ -135,15 +148,19 @@ Public Class frmAgregarProfesor
         txtdniIIProfesor.Clear()
     End Sub
 
-    
+#End Region
 
+#Region "funciones creadas"
+    Public Function comprobar() As Boolean
+        If Len(Trim$(txtdniProfesor.Text)) <> 0 And Len(Trim$(txtnombreProfesor.Text)) <> 0 And Len(Trim$(txtapellidoProfesor.Text)) <> 0 And Len(Trim$(txtedadProfesor.Text)) <> 0 And Len(Trim$(cmbsexoProfesor.Text)) <> 0 And Len(Trim$(txtdireccionProfesor.Text)) <> 0 And Len(Trim$(txtcorreoProfesor.Text)) <> 0 And Len(Trim$(txttelefonoProfesor.Text)) <> 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+#End Region
 
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btncancelarProfesor.Click
-        LimpiarDatos()
-    End Sub
-
-
+#Region "validacion de numeros y letras"
     Private Sub txtdniProfesor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniProfesor.KeyPress
         If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
             e.Handled = False
@@ -227,4 +244,48 @@ Public Class frmAgregarProfesor
             e.Handled = True   'Si es letra no entra al textbox
         End If
     End Sub
+#End Region
+
+#Region "los colores cambian"
+    Private Sub btnagregarProfesor_MouseEnter(sender As Object, e As EventArgs) Handles btnagregarProfesor.MouseEnter
+        btnagregarProfesor.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnagregarProfesor_MouseLeave(sender As Object, e As EventArgs) Handles btnagregarProfesor.MouseLeave
+        btnagregarProfesor.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnactualizarProfesor_MouseEnter(sender As Object, e As EventArgs) Handles btnactualizarProfesor.MouseEnter
+        btnactualizarProfesor.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnactualizarProfesor_MouseLeave(sender As Object, e As EventArgs) Handles btnactualizarProfesor.MouseLeave
+        btnactualizarProfesor.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btneliminarProfesor_MouseEnter(sender As Object, e As EventArgs) Handles btneliminarProfesor.MouseEnter
+        btneliminarProfesor.BackColor = Color.Red
+    End Sub
+
+    Private Sub btneliminarProfesor_MouseLeave(sender As Object, e As EventArgs) Handles btneliminarProfesor.MouseLeave
+        btneliminarProfesor.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btncancelarProfesor_MouseEnter(sender As Object, e As EventArgs) Handles btncancelarProfesor.MouseEnter
+        btncancelarProfesor.BackColor = Color.Red
+    End Sub
+
+    Private Sub btncancelarProfesor_MouseLeave(sender As Object, e As EventArgs) Handles btncancelarProfesor.MouseLeave
+        btncancelarProfesor.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnbuscarProfesor_MouseEnter(sender As Object, e As EventArgs) Handles btnbuscarProfesor.MouseEnter
+        btnbuscarProfesor.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnbuscarProfesor_MouseLeave(sender As Object, e As EventArgs) Handles btnbuscarProfesor.MouseLeave
+        btnbuscarProfesor.BackColor = Color.DodgerBlue
+    End Sub
+#End Region
+    
 End Class

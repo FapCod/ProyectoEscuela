@@ -24,6 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
         Me.lblCargoUsuario = New System.Windows.Forms.Label()
         Me.lblCorreoUsuario = New System.Windows.Forms.Label()
         Me.lblApellidoUsuario = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class frmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +70,21 @@ Partial Class frmPrincipal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(341, 717)
         Me.Panel1.TabIndex = 2
+        '
+        'btnRegistrarSeccion
+        '
+        Me.btnRegistrarSeccion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnRegistrarSeccion.FlatAppearance.BorderSize = 0
+        Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 599)
+        Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
+        Me.btnRegistrarSeccion.Size = New System.Drawing.Size(341, 58)
+        Me.btnRegistrarSeccion.TabIndex = 14
+        Me.btnRegistrarSeccion.Text = "Registrar Seccion"
+        Me.btnRegistrarSeccion.UseVisualStyleBackColor = False
         '
         'lblCargoUsuario
         '
@@ -272,21 +287,6 @@ Partial Class frmPrincipal
         Me.btnCerrar.Size = New System.Drawing.Size(25, 27)
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.UseVisualStyleBackColor = True
-        '
-        'btnRegistrarSeccion
-        '
-        Me.btnRegistrarSeccion.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnRegistrarSeccion.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 599)
-        Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
-        Me.btnRegistrarSeccion.Size = New System.Drawing.Size(341, 58)
-        Me.btnRegistrarSeccion.TabIndex = 14
-        Me.btnRegistrarSeccion.Text = "Registrar Seccion"
-        Me.btnRegistrarSeccion.UseVisualStyleBackColor = False
         '
         'frmPrincipal
         '

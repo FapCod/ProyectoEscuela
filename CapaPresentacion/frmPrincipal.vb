@@ -73,4 +73,60 @@ Public Class frmPrincipal
         Dim frmSC As New frmagregarSeccion
         frmSC.Show()
     End Sub
+
+    Private Sub btnRegistrarMaestro_MouseEnter(sender As Object, e As EventArgs) Handles btnRegistrarMaestro.MouseEnter
+        btnRegistrarMaestro.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnRegistrarMaestro_MouseLeave(sender As Object, e As EventArgs) Handles btnRegistrarMaestro.MouseLeave
+        btnRegistrarMaestro.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnRegistrarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btnRegistrarAlumno.MouseEnter
+        btnRegistrarAlumno.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnRegistrarAlumno_MouseLeave(sender As Object, e As EventArgs) Handles btnRegistrarAlumno.MouseLeave
+        btnRegistrarAlumno.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnRegistrarNotas_MouseEnter(sender As Object, e As EventArgs) Handles btnRegistrarNotas.MouseEnter
+        btnRegistrarNotas.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnRegistrarNotas_MouseLeave(sender As Object, e As EventArgs) Handles btnRegistrarNotas.MouseLeave
+        btnRegistrarNotas.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnListarMaestros_MouseEnter(sender As Object, e As EventArgs) Handles btnListarMaestros.MouseEnter
+        btnListarMaestros.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnListarMaestros_MouseLeave(sender As Object, e As EventArgs) Handles btnListarMaestros.MouseLeave
+        btnListarMaestros.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnListarAlumnos_MouseEnter(sender As Object, e As EventArgs) Handles btnListarAlumnos.MouseEnter
+        btnListarAlumnos.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnListarAlumnos_MouseLeave(sender As Object, e As EventArgs) Handles btnListarAlumnos.MouseLeave
+        btnListarAlumnos.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnReportes_MouseEnter(sender As Object, e As EventArgs) Handles btnReportes.MouseEnter
+        btnReportes.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnReportes_MouseLeave(sender As Object, e As EventArgs) Handles btnReportes.MouseLeave
+        btnReportes.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnRegistrarSeccion_MouseEnter(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.MouseEnter
+        btnRegistrarSeccion.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnRegistrarSeccion_MouseLeave(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.MouseLeave
+        btnRegistrarSeccion.BackColor = Color.DodgerBlue
+    End Sub
 End Class

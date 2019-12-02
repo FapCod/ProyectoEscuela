@@ -1,72 +1,64 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmAgregarAlumno
+#Region "Funcionalidad de la ventana"
 
+    Private Sub frmAgregarAlumno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Ver()
+    End Sub
     Private Sub btnAgregarAlumno_Click(sender As Object, e As EventArgs) Handles btnagregarAlumno.Click
-        Dim objentAlumno As New entAlumno
-        objentAlumno._dniAlumno = txtdniAlumno.Text
-        objentAlumno._nombreAlumno = txtnombreAlumno.Text
-        objentAlumno._apellidoAlumno = txtapellidoAlumno.Text
-        objentAlumno._edadAlumno = txtedadAlumno.Text
-        objentAlumno._sexoAlumno = cmbsexoAlumno.Text
-        objentAlumno._direccionAlumno = txtdireccionAlumno.Text
-        objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
-        objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
-        Dim objnegAlumno As New negAlumno
-        Dim verificarRA = objnegAlumno.registrarAlumno(objentAlumno)
-        If verificarRA = True Then
-            MsgBox("registro exitoso")
-            LimpiarDatos()
-            Ver()
+        If comprobar() Then
+            Dim objentAlumno As New entAlumno
+            objentAlumno._dniAlumno = txtdniAlumno.Text
+            objentAlumno._nombreAlumno = txtnombreAlumno.Text
+            objentAlumno._apellidoAlumno = txtapellidoAlumno.Text
+            objentAlumno._edadAlumno = txtedadAlumno.Text
+            objentAlumno._sexoAlumno = cmbsexoAlumno.Text
+            objentAlumno._direccionAlumno = txtdireccionAlumno.Text
+            objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
+            objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
+            Dim objnegAlumno As New negAlumno
+            Dim verificarRA = objnegAlumno.registrarAlumno(objentAlumno)
+            If verificarRA = True Then
+                MsgBox("registro exitoso")
+                LimpiarDatos()
+                Ver()
+            Else
+                MsgBox("Error de registro de Alumno")
+            End If
         Else
-            MsgBox("Error de registro de Alumno")
+            MsgBox("DEBE DE LLENAR TODOS LOS CAMPOS", MsgBoxStyle.Critical)
         End If
 
-
     End Sub
 
-
-
-
-
-
-
-  
-
-    
-    Public Sub LimpiarDatos()
-        txtdniAlumno.Clear()
-        txtnombreAlumno.Clear()
-        txtapellidoAlumno.Clear()
-        txtedadAlumno.Clear()
-        cmbsexoAlumno.Text = ""
-        txtdireccionAlumno.Clear()
-        txtnombreApoderadoAlumno.Clear()
-        txtnumeroTelefonoApoderado.Clear()
-    End Sub
 
     Private Sub btnEditarA_Click(sender As Object, e As EventArgs) Handles btneditarAlumno.Click
-        Dim objentAlumno As New entAlumno
-        Dim dni As String
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        dni = DataGridView1.Item(0, i).Value()
-        objentAlumno._dniAlumno = dni
-        objentAlumno._nombreAlumno = txtnombreAlumno.Text
-        objentAlumno._apellidoAlumno = txtapellidoAlumno.Text
-        objentAlumno._edadAlumno = txtedadAlumno.Text
-        objentAlumno._sexoAlumno = cmbsexoAlumno.Text
-        objentAlumno._direccionAlumno = txtdireccionAlumno.Text
-        objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
-        objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
-        Dim negalum As New negAlumno
-        Dim verificarRA = negalum.editarAlumno(objentAlumno)
-        If verificarRA = True Then
-            MsgBox("Actualizacion Exitosa")
-            LimpiarDatos()
-            Ver()
+        If comprobar() Then
+            Dim objentAlumno As New entAlumno
+            Dim dni As String
+            Dim i As Integer
+            i = DataGridView1.CurrentRow.Index
+            dni = DataGridView1.Item(0, i).Value()
+            objentAlumno._dniAlumno = dni
+            objentAlumno._nombreAlumno = txtnombreAlumno.Text
+            objentAlumno._apellidoAlumno = txtapellidoAlumno.Text
+            objentAlumno._edadAlumno = txtedadAlumno.Text
+            objentAlumno._sexoAlumno = cmbsexoAlumno.Text
+            objentAlumno._direccionAlumno = txtdireccionAlumno.Text
+            objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
+            objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
+            Dim negalum As New negAlumno
+            Dim verificarRA = negalum.editarAlumno(objentAlumno)
+            If verificarRA = True Then
+                MsgBox("Actualizacion Exitosa")
+                LimpiarDatos()
+                Ver()
+            Else
+                MsgBox("Error de Actualizacion de Alumno")
+            End If
         Else
-            MsgBox("Error de Actualizacion de Alumno")
+            MsgBox("DEBE DE LLENAR TODOS LOS CAMPOS", MsgBoxStyle.Critical)
         End If
     End Sub
 
@@ -85,14 +77,11 @@ Public Class frmAgregarAlumno
             MsgBox("Error de Eliminacion de Alumno")
         End If
     End Sub
-
-    Sub Ver()
-        Dim conexion As New negALUMNO
-        DataGridView1.DataSource = conexion.obtenerTabla()
-    End Sub
-
-    Private Sub frmAgregarAlumno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Ver()
+    Private Sub btnBuscarA_Click(sender As Object, e As EventArgs) Handles btnbuscarAlumno.Click
+        Dim objnegAlumno As New negAlumno
+        Dim dni As String
+        dni = txtdniiAlumno.Text
+        DataGridView1.DataSource = objnegAlumno.buscarAlumno(dni)
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Dim i As Integer
@@ -106,19 +95,40 @@ Public Class frmAgregarAlumno
         txtnombreApoderadoAlumno.Text = DataGridView1.Item(6, i).Value()
         txtnumeroTelefonoApoderado.Text = DataGridView1.Item(7, i).Value()
     End Sub
+#End Region
 
-    Private Sub btnBuscarA_Click(sender As Object, e As EventArgs) Handles btnbuscarAlumno.Click
-        Dim objnegAlumno As New negAlumno
-        Dim dni As String
-        dni = txtdniiAlumno.Text
-        DataGridView1.DataSource = objnegAlumno.buscarAlumno(dni)
+#Region "metodos creados"
+
+
+    Sub Ver()
+        Dim conexion As New negAlumno
+        DataGridView1.DataSource = conexion.obtenerTabla()
     End Sub
+    Public Sub LimpiarDatos()
+        txtdniAlumno.Clear()
+        txtnombreAlumno.Clear()
+        txtapellidoAlumno.Clear()
+        txtedadAlumno.Clear()
+        cmbsexoAlumno.Text = ""
+        txtdireccionAlumno.Clear()
+        txtnombreApoderadoAlumno.Clear()
+        txtnumeroTelefonoApoderado.Clear()
+    End Sub
+#End Region
 
-   
+#Region "funciones creadas"
+    Public Function comprobar() As Boolean
+        If Len(Trim$(txtdniAlumno.Text)) <> 0 And Len(Trim$(txtnombreAlumno.Text)) <> 0 And Len(Trim$(txtapellidoAlumno.Text)) <> 0 And Len(Trim$(txtedadAlumno.Text)) <> 0 And Len(Trim$(cmbsexoAlumno.Text)) <> 0 And Len(Trim$(txtdireccionAlumno.Text)) <> 0 And Len(Trim$(txtnombreApoderadoAlumno.Text)) <> 0 And Len(Trim$(txtnumeroTelefonoApoderado.Text)) <> 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+#End Region
+
+#Region "Validacion de numero y letras"
 
 
-  
-    
     Private Sub txtdniAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniAlumno.KeyPress
         If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
             e.Handled = False
@@ -214,4 +224,42 @@ Public Class frmAgregarAlumno
             e.Handled = True   'Si es letra no entra al textbox
         End If
     End Sub
+#End Region
+
+#Region "Los colores cambian"
+
+
+    Private Sub btnagregarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btnagregarAlumno.MouseEnter
+        btnagregarAlumno.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnagregarAlumno_MouseLeave(sender As Object, e As EventArgs) Handles btnagregarAlumno.MouseLeave
+        btnagregarAlumno.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btneditarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btneditarAlumno.MouseEnter
+        btneditarAlumno.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btneditarAlumno_MouseLeave(sender As Object, e As EventArgs) Handles btneditarAlumno.MouseLeave
+        btneditarAlumno.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btneliminarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btneliminarAlumno.MouseEnter
+        btneliminarAlumno.BackColor = Color.Red
+    End Sub
+
+    Private Sub btneliminarAlumno_MouseLeave(sender As Object, e As EventArgs) Handles btneliminarAlumno.MouseLeave
+        btneliminarAlumno.BackColor = Color.DodgerBlue
+    End Sub
+
+    Private Sub btnbuscarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btnbuscarAlumno.MouseEnter
+        btnbuscarAlumno.BackColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub btnbuscarAlumno_MouseLeave(sender As Object, e As EventArgs) Handles btnbuscarAlumno.MouseLeave
+        btnbuscarAlumno.BackColor = Color.DodgerBlue
+    End Sub
+#End Region
+
 End Class
