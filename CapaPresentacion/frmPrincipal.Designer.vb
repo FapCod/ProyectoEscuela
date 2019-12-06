@@ -22,6 +22,7 @@ Partial Class frmPrincipal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
@@ -41,6 +42,10 @@ Partial Class frmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnReporteProfesor = New System.Windows.Forms.Button()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.thorafecha = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +54,7 @@ Partial Class frmPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.OrangeRed
+        Me.Panel1.Controls.Add(Me.btnReporteProfesor)
         Me.Panel1.Controls.Add(Me.btnRegistrarSeccion)
         Me.Panel1.Controls.Add(Me.lblCargoUsuario)
         Me.Panel1.Controls.Add(Me.lblCorreoUsuario)
@@ -68,7 +74,7 @@ Partial Class frmPrincipal
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(341, 717)
+        Me.Panel1.Size = New System.Drawing.Size(341, 882)
         Me.Panel1.TabIndex = 2
         '
         'btnRegistrarSeccion
@@ -78,7 +84,7 @@ Partial Class frmPrincipal
         Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 599)
+        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 637)
         Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
         Me.btnRegistrarSeccion.Size = New System.Drawing.Size(341, 58)
@@ -135,7 +141,7 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(77, 677)
+        Me.Label1.Location = New System.Drawing.Point(109, 832)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 24)
         Me.Label1.TabIndex = 9
@@ -144,7 +150,7 @@ Partial Class frmPrincipal
         'btnCerrarC
         '
         Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
-        Me.btnCerrarC.Location = New System.Drawing.Point(12, 661)
+        Me.btnCerrarC.Location = New System.Drawing.Point(44, 816)
         Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrarC.Name = "btnCerrarC"
         Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
@@ -159,7 +165,7 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(0, 537)
+        Me.btnReportes.Location = New System.Drawing.Point(0, 563)
         Me.btnReportes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(341, 58)
@@ -174,7 +180,7 @@ Partial Class frmPrincipal
         Me.btnListarAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarAlumnos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarAlumnos.ForeColor = System.Drawing.Color.White
-        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 471)
+        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 488)
         Me.btnListarAlumnos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarAlumnos.Name = "btnListarAlumnos"
         Me.btnListarAlumnos.Size = New System.Drawing.Size(341, 58)
@@ -189,7 +195,7 @@ Partial Class frmPrincipal
         Me.btnListarMaestros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarMaestros.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarMaestros.ForeColor = System.Drawing.Color.White
-        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 405)
+        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 409)
         Me.btnListarMaestros.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarMaestros.Name = "btnListarMaestros"
         Me.btnListarMaestros.Size = New System.Drawing.Size(341, 58)
@@ -269,7 +275,7 @@ Partial Class frmPrincipal
         Me.btnMinimizar.BackgroundImage = CType(resources.GetObject("btnMinimizar.BackgroundImage"), System.Drawing.Image)
         Me.btnMinimizar.FlatAppearance.BorderSize = 0
         Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimizar.Location = New System.Drawing.Point(1189, 2)
+        Me.btnMinimizar.Location = New System.Drawing.Point(1324, 9)
         Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMinimizar.Name = "btnMinimizar"
         Me.btnMinimizar.Size = New System.Drawing.Size(25, 27)
@@ -281,19 +287,62 @@ Partial Class frmPrincipal
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1220, 2)
+        Me.btnCerrar.Location = New System.Drawing.Point(1355, 9)
         Me.btnCerrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(25, 27)
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'btnReporteProfesor
+        '
+        Me.btnReporteProfesor.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnReporteProfesor.FlatAppearance.BorderSize = 0
+        Me.btnReporteProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteProfesor.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteProfesor.ForeColor = System.Drawing.Color.White
+        Me.btnReporteProfesor.Location = New System.Drawing.Point(0, 710)
+        Me.btnReporteProfesor.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnReporteProfesor.Name = "btnReporteProfesor"
+        Me.btnReporteProfesor.Size = New System.Drawing.Size(341, 58)
+        Me.btnReporteProfesor.TabIndex = 15
+        Me.btnReporteProfesor.Text = "ReporteProfesor"
+        Me.btnReporteProfesor.UseVisualStyleBackColor = False
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Font = New System.Drawing.Font("Gadugi", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.ForeColor = System.Drawing.Color.White
+        Me.lblHora.Location = New System.Drawing.Point(1130, 728)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(250, 40)
+        Me.lblHora.TabIndex = 16
+        Me.lblHora.Text = "AquiIraLaHora"
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Gadugi", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.ForeColor = System.Drawing.Color.White
+        Me.lblFecha.Location = New System.Drawing.Point(1104, 792)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(182, 28)
+        Me.lblFecha.TabIndex = 16
+        Me.lblFecha.Text = "aquiIraLaFecha"
+        '
+        'thorafecha
+        '
+        Me.thorafecha.Enabled = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1251, 717)
+        Me.ClientSize = New System.Drawing.Size(1409, 882)
+        Me.Controls.Add(Me.lblFecha)
+        Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.btnCerrar)
@@ -304,12 +353,13 @@ Partial Class frmPrincipal
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Principal"
+        Me.Text = "\"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
@@ -330,4 +380,8 @@ Partial Class frmPrincipal
     Friend WithEvents lblApellidoUsuario As System.Windows.Forms.Label
     Friend WithEvents lblNombresUsuario As System.Windows.Forms.Label
     Friend WithEvents btnRegistrarSeccion As System.Windows.Forms.Button
+    Friend WithEvents btnReporteProfesor As System.Windows.Forms.Button
+    Friend WithEvents lblHora As System.Windows.Forms.Label
+    Friend WithEvents lblFecha As System.Windows.Forms.Label
+    Friend WithEvents thorafecha As System.Windows.Forms.Timer
 End Class

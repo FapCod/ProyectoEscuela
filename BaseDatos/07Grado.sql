@@ -18,3 +18,15 @@ insert into grado values  ( 4, 'Primaria')
 insert into grado values  (5, 'Primaria') 
 insert into grado values  ( 6, 'Primaria') 
 
+
+create procedure listarGradoI
+as 
+begin
+SELECT codigoGrado,numeroGrado FROM grado where nivelGrado = 'Inicial'
+end
+
+create procedure listarGradoP
+as 
+begin
+SELECT codigoGrado,numeroGrado FROM grado where nivelGrado = 'Primaria'
+end

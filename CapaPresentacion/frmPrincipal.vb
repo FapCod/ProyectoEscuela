@@ -129,4 +129,13 @@ Public Class frmPrincipal
     Private Sub btnRegistrarSeccion_MouseLeave(sender As Object, e As EventArgs) Handles btnRegistrarSeccion.MouseLeave
         btnRegistrarSeccion.BackColor = Color.DodgerBlue
     End Sub
+
+    Private Sub btnReporteProfesor_Click(sender As Object, e As EventArgs) Handles btnReporteProfesor.Click
+        frmReporteProfesor.Show()
+    End Sub
+
+    Private Sub thorafecha_Tick(sender As Object, e As EventArgs) Handles thorafecha.Tick
+        lblHora.Text = DateTime.Now.ToLongTimeString
+        lblFecha.Text = DateTime.Now.Date.ToLongDateString
+    End Sub
 End Class

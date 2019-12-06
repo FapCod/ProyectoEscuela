@@ -12,4 +12,8 @@ Public Class negSeccion
     Public Function cargarSeccion(grado As Integer) As DataTable
         Return objdatSeccion.cargarSeccion(grado)
     End Function
+    Public Function cargarSeccionP(grado As Integer) As DataTable
+        Return objdatSeccion.cargarSeccionP(grado)
+    End Function
+   
 End Class

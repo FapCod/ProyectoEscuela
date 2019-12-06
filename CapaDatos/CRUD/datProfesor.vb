@@ -18,14 +18,19 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
                 Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
-
+                Command.Parameters.AddWithValue("@eliminacionLogica", objProfesor._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 'Dim reader = Command.ExecuteReader()
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
-                    Return False
-                End If
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
+                    MsgBox("Alumno ya creado")
+                End Try
+                
             End Using
         End Using
         Return False
@@ -46,6 +51,7 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
                 Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objProfesor._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -82,7 +88,7 @@ Public Class datProfesor
             Using Command = New SqlCommand()
                 Command.Connection = conexion
                 Command.CommandText = "eliminarProfesor"
-                Command.Parameters.AddWithValue("@dni", dni)
+                Command.Parameters.AddWithValue("@dniProfesor", dni)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -98,7 +104,7 @@ Public Class datProfesor
         Dim cnn As SqlConnection
         Dim cadena As String
         cnn = ObtenerConexion()
-        cadena = "select * from profesor"
+        cadena = "obtenerTablaProfesor"
         cnn.Open()
         Dim cmd As New SqlCommand(cadena, cnn)
         Dim dt2 As New DataTable
@@ -112,6 +118,25 @@ Public Class datProfesor
                 Command.Connection = conexion
                 Command.CommandText = "listarProfesor"
                 Command.CommandType = CommandType.StoredProcedure
+                Dim dt2 As New DataTable
+                dt2.Load(Command.ExecuteReader())
+                If Command.ExecuteNonQuery Then
+                    Return dt2
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+        Return Nothing
+    End Function
+
+    Public Function ObtenerReporteProfesor() As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "Select dniProfesor,nombreProfesor,apellidoProfesor from profesor"
+                Command.CommandType = CommandType.Text
                 Dim dt2 As New DataTable
                 dt2.Load(Command.ExecuteReader())
                 If Command.ExecuteNonQuery Then

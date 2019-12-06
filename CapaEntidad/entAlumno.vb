@@ -7,7 +7,7 @@
     Private direccionAlumno
     Private nombreDeApoderadoAlumno
     Private numeroTelefonoApoderado
-
+    Private eliminacionLogica
     Public Property _dniAlumno As String
         Get
             Return dniAlumno
@@ -77,6 +77,14 @@
         End Get
         Set(value As String)
             numeroTelefonoApoderado = value
+        End Set
+    End Property
+    Public Property _eliminacionLogica As Boolean
+        Get
+            Return eliminacionLogica
+        End Get
+        Set(value As Boolean)
+            eliminacionLogica = value
         End Set
     End Property
 End Class

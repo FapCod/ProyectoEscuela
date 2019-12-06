@@ -48,9 +48,6 @@ Partial Class frmAgregarProfesor
         Me.txtdniProfesor = New System.Windows.Forms.TextBox()
         Me.txtedadProfesor = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.rbtlibre = New System.Windows.Forms.RadioButton()
-        Me.rbtAsignado = New System.Windows.Forms.RadioButton()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -304,48 +301,12 @@ Partial Class frmAgregarProfesor
         Me.Label13.TabIndex = 46
         Me.Label13.Text = "Edad"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(109, 418)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(73, 24)
-        Me.Label8.TabIndex = 48
-        Me.Label8.Text = "Estado"
-        '
-        'rbtlibre
-        '
-        Me.rbtlibre.AutoSize = True
-        Me.rbtlibre.Location = New System.Drawing.Point(308, 420)
-        Me.rbtlibre.Name = "rbtlibre"
-        Me.rbtlibre.Size = New System.Drawing.Size(63, 22)
-        Me.rbtlibre.TabIndex = 49
-        Me.rbtlibre.TabStop = True
-        Me.rbtlibre.Text = "Libre"
-        Me.rbtlibre.UseVisualStyleBackColor = True
-        '
-        'rbtAsignado
-        '
-        Me.rbtAsignado.AutoSize = True
-        Me.rbtAsignado.Location = New System.Drawing.Point(417, 420)
-        Me.rbtAsignado.Name = "rbtAsignado"
-        Me.rbtAsignado.Size = New System.Drawing.Size(92, 22)
-        Me.rbtAsignado.TabIndex = 50
-        Me.rbtAsignado.TabStop = True
-        Me.rbtAsignado.Text = "Asignado"
-        Me.rbtAsignado.UseVisualStyleBackColor = True
-        '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1244, 708)
-        Me.Controls.Add(Me.rbtAsignado)
-        Me.Controls.Add(Me.rbtlibre)
-        Me.Controls.Add(Me.Label8)
+        Me.ClientSize = New System.Drawing.Size(1244, 643)
         Me.Controls.Add(Me.txtedadProfesor)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtdniProfesor)
@@ -377,7 +338,6 @@ Partial Class frmAgregarProfesor
         Me.Name = "frmAgregarProfesor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarProfesor"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -408,7 +368,4 @@ Partial Class frmAgregarProfesor
     Friend WithEvents txtdniProfesor As System.Windows.Forms.TextBox
     Friend WithEvents txtedadProfesor As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents rbtlibre As System.Windows.Forms.RadioButton
-    Friend WithEvents rbtAsignado As System.Windows.Forms.RadioButton
 End Class

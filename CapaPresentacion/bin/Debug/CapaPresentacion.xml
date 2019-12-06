@@ -6,7 +6,23 @@ CapaPresentacion
 </name>
 </assembly>
 <members>
-<member name="P:CapaPresentacion.My.Resources.Resources.ResourceManager">
+<member name="T:CapaPresentacion.Colegio_DBDataSet.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:CapaPresentacion.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>

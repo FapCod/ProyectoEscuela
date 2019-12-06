@@ -19,12 +19,8 @@ Public Class frmAgregarProfesor
         objentProfesor._direccionProfesor = txtdireccionProfesor.Text
         objentProfesor._correoProfesor = txtcorreoProfesor.Text
         objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-        If rbtlibre.Checked = True Then
             objentProfesor._estadoProfesor = True
-        End If
-        If rbtAsignado.Checked = False Then
-            objentProfesor._estadoProfesor = False
-        End If
+        objentProfesor._eliminacionLogica = False
         Dim objnegProfesor As New negProfesor
         Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
         If verificarRP = True Then
@@ -35,7 +31,7 @@ Public Class frmAgregarProfesor
         Ver()
         LimpiarDatos()
         Else
-            MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
+        MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
         End If
 
     End Sub
@@ -57,17 +53,14 @@ Public Class frmAgregarProfesor
             objentProfesor._direccionProfesor = txtdireccionProfesor.Text
             objentProfesor._correoProfesor = txtcorreoProfesor.Text
             objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-            If rbtlibre.Checked = True Then
-                objentProfesor._estadoProfesor = True
-            End If
-            If rbtAsignado.Checked = False Then
-                objentProfesor._estadoProfesor = False
-            End If
+            objentProfesor._estadoProfesor = True
+            objentProfesor._eliminacionLogica = False
             Dim objnegProfesor As New negProfesor
             Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
             If verificarRP = True Then
                 MsgBox("Actualizacion Exitosa")
                 LimpiarDatos()
+
                 Ver()
             Else
                 MsgBox("Error de Actualizacion de Alumno")
@@ -90,11 +83,6 @@ Public Class frmAgregarProfesor
         txtdireccionProfesor.Text = dgvlista.Item(5, i).Value()
         txtcorreoProfesor.Text = dgvlista.Item(6, i).Value()
         txttelefonoProfesor.Text = dgvlista.Item(7, i).Value()
-        If dgvlista.Item(8, i).Value() = True Then
-            rbtlibre.Checked = True
-        ElseIf dgvlista.Item(8, i).Value() = False Then
-            rbtAsignado.Checked = True
-        End If
     End Sub
 
 
@@ -139,15 +127,12 @@ Public Class frmAgregarProfesor
         txtnombreProfesor.Clear()
         txtapellidoProfesor.Clear()
         txtedadProfesor.Clear()
-        cmbsexoProfesor.Text = ""
+        cmbsexoProfesor.Text = Nothing
         txtdireccionProfesor.Clear()
         txtcorreoProfesor.Clear()
         txttelefonoProfesor.Clear()
-        rbtlibre.Checked = False
-        rbtAsignado.Checked = False
         txtdniIIProfesor.Clear()
     End Sub
-
 #End Region
 
 #Region "funciones creadas"

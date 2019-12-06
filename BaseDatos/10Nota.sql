@@ -8,6 +8,7 @@ codigoCurso varchar(15), --fk
 dniAlumno char(8), --fk 
 codigoTrimestre varchar(10), --fk
 numeroAnno int, --fk
+eliminacionLogica bit
 CONSTRAINT fk_curso FOREIGN KEY (codigoCurso) REFERENCES Curso (codigoCurso),
 CONSTRAINT fk_Trimestre FOREIGN KEY (codigoTrimestre) REFERENCES Trimestre (codigoTrimestre),
 CONSTRAINT fk_anoEscolar  FOREIGN KEY (numeroAnno) REFERENCES annoEscolar (numeroAnno),
@@ -23,11 +24,12 @@ create procedure agregarnota(
 @codigoCurso varchar(15), 
 @dniAlumno char(8), 
 @codigoTrimestre varchar(10),
-@numeroAnno int
+@numeroAnno int,
+@eliminacionLogica bit
 )
 as 
 begin
-insert into nota values ( @nota, @descripcion, @codigoCurso, @dniAlumno, @codigoTrimestre, @numeroAnno) 
+insert into nota values ( @nota, @descripcion, @codigoCurso, @dniAlumno, @codigoTrimestre, @numeroAnno,@eliminacionLogica ) 
 end 
 
 --creamos procedimiento para listar alumnos por curso y trimestre
@@ -44,5 +46,5 @@ FROM     dbo.alumno INNER JOIN
                   dbo.nota ON dbo.alumno.dniAlumno = dbo.nota.dniAlumno INNER JOIN
                   dbo.curso ON dbo.nota.codigoCurso = dbo.curso.codigoCurso INNER JOIN
                   dbo.trimestre ON dbo.nota.codigoTrimestre = dbo.trimestre.codigoTrimestre
-				  where dbo.alumno.dniAlumno = @dniAlumno and dbo.trimestre.codigoTrimestre = @codigoTrimestre and dbo.curso.codigoCurso = @codigoCurso 
+				  where dbo.alumno.dniAlumno = @dniAlumno and dbo.trimestre.codigoTrimestre = @codigoTrimestre and dbo.curso.codigoCurso = @codigoCurso and dbo.nota.eliminacionLogica=0
 end

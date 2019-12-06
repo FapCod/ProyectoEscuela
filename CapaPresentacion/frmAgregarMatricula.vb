@@ -12,30 +12,37 @@ Public Class frmAgregarMatricula
     End Sub
 
     Private Sub btnagregarMatricula_Click(sender As Object, e As EventArgs) Handles btnagregarMatricula.Click
+
         Dim objentMatricula As New entMatricula
-        If comprobar() Then
-        objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
-        objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
-        objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
-        objentMatricula.objentgrado._codigoGrado = Val(cmbcodGrado.Text)
-        objentMatricula.objentSeccion._nombreSeccion = cmbcodseccion.Text
-        If rbtinicial.Checked = True Then
-            objentMatricula._nivelAlumno = "Inicial"
-
-        End If
-        If rbtPrimaria.Checked = True Then
-            objentMatricula._nivelAlumno = "Primaria"
-
-        End If
         Dim objnegMatricula As New negMatricula
-        Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
-        If verificarRP = True Then
-            MsgBox("registro exitoso")
-            ver()
-            LimpiarDatos()
-        Else
-            MsgBox("Error de registro de profesor")
-        End If
+        If comprobar() Then
+            If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
+                objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
+                objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
+                objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
+                objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
+                objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
+                If rbtinicial.Checked = True Then
+                    objentMatricula._nivelAlumno = "Inicial"
+
+                End If
+                If rbtPrimaria.Checked = True Then
+                    objentMatricula._nivelAlumno = "Primaria"
+
+                End If
+                objentMatricula._eliminacionLogica = False
+
+                Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
+                If verificarRP = True Then
+                    MsgBox("registro exitoso")
+                    ver()
+                    LimpiarDatos()
+                Else
+                    MsgBox("Error de registro de Matricula")
+                End If
+            Else
+                MsgBox("El alumno no existe")
+            End If
         Else
             MsgBox("Debe llenar todos los datos")
         End If
@@ -46,6 +53,7 @@ Public Class frmAgregarMatricula
         If rbtinicial.Checked = True Then
             cmbcodGrado.DataSource = objnegGrado.listarGradoInicial()
             cmbcodGrado.DisplayMember = "numeroGrado"
+            cmbcodGrado.ValueMember = "codigoGrado"
             dgvinicial.DataSource = objnegCurso.listarCursoInicial()
             dgvinicial.Visible = True
             dgvprimaria.Visible = False
@@ -58,30 +66,41 @@ Public Class frmAgregarMatricula
         If rbtPrimaria.Checked = True Then
             cmbcodGrado.DataSource = objnegGrado.listarGradoPrimaria()
             cmbcodGrado.DisplayMember = "numeroGrado"
+            cmbcodGrado.ValueMember = "codigoGrado"
             dgvprimaria.DataSource = objnegCurso.listarCursoPrimaria()
             dgvprimaria.Visible = True
             dgvinicial.Visible = False
         End If
     End Sub
-
-    Private Sub cmbcodGrado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodGrado.SelectedIndexChanged
-        Dim objnegSeccion As New negSeccion
-        cmbcodseccion.DataSource = objnegSeccion.cargarSeccion(Val(cmbcodGrado.Text))
-        cmbcodseccion.DisplayMember = "nombreSeccion"
-    End Sub
 #End Region
 
 #Region "metodos creados"
     Public Sub LimpiarDatos()
-        cmbcodGrado.Text = ""
+        cmbcodGrado.Text = Nothing
         txtdniAlumno.Clear()
-        cmbcodseccion.Text = ""
+        cmbcodseccion.Text = Nothing
         dgvinicial.Visible = False
         dgvprimaria.Visible = False
+        rbtinicial.Checked = False
+        rbtPrimaria.Checked = False
     End Sub
     Sub ver()
         Dim objnegMatricula As New negMatricula
         DataGridView1.DataSource = objnegMatricula.obtenerTabla()
+        DataGridView1.Columns(0).Visible = False
+    End Sub
+
+    Public Sub cargarDatosSeccionInicial()
+        Dim objneg As New negSeccion
+        cmbcodseccion.DataSource = objneg.cargarSeccion(Val(cmbcodGrado.Text))
+        cmbcodseccion.DisplayMember = "nombreSeccion"
+        cmbcodseccion.ValueMember = "codigoSeccion"
+    End Sub
+    Public Sub cargarDatosSeccionPrimaria()
+        Dim objneg As New negSeccion
+        cmbcodseccion.DataSource = objneg.cargarSeccionP(Val(cmbcodGrado.Text))
+        cmbcodseccion.DisplayMember = "nombreSeccion"
+        cmbcodseccion.ValueMember = "codigoSeccion"
     End Sub
 #End Region
 
@@ -139,4 +158,21 @@ Public Class frmAgregarMatricula
 
 #End Region
 
+    
+
+
+    Private Sub cmbcodGrado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodGrado.SelectedIndexChanged
+        If rbtinicial.Checked = True Then
+            cargarDatosSeccionInicial()
+        ElseIf rbtPrimaria.Checked = True Then
+            cargarDatosSeccionPrimaria()
+        Else
+            MsgBox("Debe elegir primaria o inicial")
+        End If
+
+    End Sub
+
+    Private Sub cmbcodseccion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodseccion.SelectedIndexChanged
+
+    End Sub
 End Class

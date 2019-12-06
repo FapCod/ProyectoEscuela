@@ -10,6 +10,8 @@ Public Class frmagregarSeccion
         cmbannoEscolar.DisplayMember = "numeroAnno"
         cmbProfesor.DataSource = objnegProfesor.ListarProfesor()
         cmbProfesor.DisplayMember = "nombreProfesor"
+        cmbProfesor.ValueMember = "dniProfesor"
+
         dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
@@ -24,9 +26,10 @@ Public Class frmagregarSeccion
                 objentSeccion._nivel = "Primaria"
             End If
             objentSeccion._numeroVacantes = txtvacantes.Text
-            objentSeccion.objentGrado._codigoGrado = cmbGrado.Text
+            objentSeccion.objentGrado._codigoGrado = cmbGrado.SelectedValue
             objentSeccion.objentNumeroAnno._numeroAnno = Val(cmbannoEscolar.Text)
-            objentSeccion.objentProfesor._dniProfesor = cmbProfesor.Text
+            objentSeccion.objentProfesor._dniProfesor = cmbProfesor.SelectedValue
+            objentSeccion._eliminacionLogica = False
             If objnegSeccion.registrarSeccion(objentSeccion) Then
                 MsgBox("Se inserto un nuevo Registro")
                 dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
@@ -40,6 +43,7 @@ Public Class frmagregarSeccion
         If rbtinicial.Checked = True Then
             cmbGrado.DataSource = objnegGrado.listarGradoInicial
             cmbGrado.DisplayMember = "numeroGrado"
+            cmbGrado.ValueMember = "codigoGrado"
         End If
     End Sub
 
@@ -48,6 +52,7 @@ Public Class frmagregarSeccion
         If rbtprimaria.Checked = True Then
             cmbGrado.DataSource = objnegGrado.listarGradoPrimaria
             cmbGrado.DisplayMember = "numeroGrado"
+            cmbGrado.ValueMember = "codigoGrado"
         End If
     End Sub
 #End Region

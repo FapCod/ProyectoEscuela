@@ -5,7 +5,7 @@ Public Class datGrado
         Dim cnn As SqlConnection
         Dim cadena As String
         cnn = ObtenerConexion()
-        cadena = "SELECT numeroGrado FROM grado where nivelGrado = 'Inicial' "
+        cadena = "listarGradoI "
         cnn.Open()
         Dim cmd As New SqlCommand(cadena, cnn)
         Dim dt2 As New DataTable
@@ -16,7 +16,7 @@ Public Class datGrado
         Dim cnn As SqlConnection
         Dim cadena As String
         cnn = ObtenerConexion()
-        cadena = "SELECT numeroGrado FROM grado where nivelGrado = 'Primaria'"
+        cadena = "listarGradoP"
         cnn.Open()
         Dim cmd As New SqlCommand(cadena, cnn)
         Dim dt3 As New DataTable

@@ -15,6 +15,7 @@ Public Class datSeccion
                 Command.Parameters.AddWithValue("@numeroAnno", objSeccion.objentNumeroAnno._numeroAnno)
                 Command.Parameters.AddWithValue("@numeroVacantes", objSeccion._numeroVacantes)
                 Command.Parameters.AddWithValue("@nivel", objSeccion._nivel)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objSeccion._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -32,9 +33,8 @@ Public Class datSeccion
             Dim da As SqlDataAdapter
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandType = CommandType.Text
-                'Command.CommandText = "SELECT dbo.seccion.nombreSeccion, dbo.grado.numeroGrado, dbo.profesor.nombreProfesor, dbo.profesor.apellidoProfesor, dbo.annoEscolar.numeroAnno, dbo.seccion.nivel, dbo.seccion.numeroVacantes FROM     dbo.grado INNER JOIN dbo.seccion ON dbo.grado.codigoGrado = dbo.seccion.codigoGrado INNER JOIN dbo.annoEscolar ON dbo.seccion.numeroAnno = dbo.annoEscolar.numeroAnno CROSS JOIN dbo.profesor "
-                Command.CommandText = "Select * from Seccion"
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "obtenerTablaSeccion"
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
                     da = New SqlDataAdapter(Command)
@@ -55,7 +55,29 @@ Public Class datSeccion
             Using Command = New SqlCommand()
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
-                Command.CommandText = "seccionInicial"
+                Command.CommandText = "listarSeccionI"
+                Command.Parameters.AddWithValue("@grado", grado)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+
+    Public Function cargarSeccionP(grado As Integer) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "listarSeccionP"
                 Command.Parameters.AddWithValue("@grado", grado)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable

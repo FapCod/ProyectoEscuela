@@ -6,7 +6,9 @@ Public Class negMatricula
     Public Function registrarMatricula(objentMatricula) As Boolean
         Return objdatMatricula.registrarMatricula(objentMatricula)
     End Function
-   
+    Public Function VerificarSiExisteAlumno(dni As String) As Integer
+        Return objdatMatricula.VerificarSiExisteAlumno(dni)
+    End Function
     Public Function obtenerTabla() As DataTable
         Return objdatMatricula.obtenerTabla()
     End Function

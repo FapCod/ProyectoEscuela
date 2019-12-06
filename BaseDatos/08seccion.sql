@@ -7,11 +7,14 @@ codigoGrado int, --fk
 dniProfesor char(8), --fk 
 numeroAnno int, --fk
 numeroVacantes int,
- nivel varchar(20)
+nivel varchar(20),
+eliminacionLogica bit
 CONSTRAINT fk_gradoo FOREIGN KEY (codigoGrado) REFERENCES grado (codigoGrado),
-CONSTRAINT fk_annoEscolar FOREIGN KEY (numeroanno) REFERENCES annoEscolar (numeroanno)
+CONSTRAINT fk_annoEscolar FOREIGN KEY (numeroanno) REFERENCES annoEscolar (numeroanno),
+CONSTRAINT fk_profesoor FOREIGN KEY (dniProfesor) REFERENCES Profesor (dniProfesor)
 )
---fin de la creacion de la tabla seccion 
+--fin de la creacion de la tabla seccion
+
 
 --creamos procedimientos almacenado para registrar seccion
 create procedure registrarSeccion (
@@ -20,20 +23,55 @@ create procedure registrarSeccion (
 @dniProfesor char(8), 
 @numeroAnno int, 
 @numeroVacantes int,
-@nivel varchar(20)
+@nivel varchar(20),
+@eliminacionLogica bit 
 ) 
 as 
 begin 
-insert into seccion values (@nombreSeccion, @codigoGrado, @dniProfesor, @numeroAnno, @numeroVacantes, @nivel)
+insert into seccion values (@nombreSeccion, @codigoGrado, @dniProfesor, @numeroAnno, @numeroVacantes, @nivel,@eliminacionLogica)
 end 
 --fin del procedimientos almacenado registrar seccion
 
 --creamos procedimientos almacenado para listarseccion 
-create procedure listarSeccion(
+create procedure listarSeccionP(
 @grado int
 ) 
 as 
 begin
-select nombreSeccion from seccion where codigoGrado = @grado
+SELECT dbo.seccion.codigoSeccion, dbo.seccion.nombreSeccion
+FROM     dbo.grado INNER JOIN
+                  dbo.seccion ON dbo.grado.codigoGrado = dbo.seccion.codigoGrado 
+				  WHERE  dbo.grado.numeroGrado=@grado and dbo.seccion.eliminacionLogica=0 and dbo.seccion.nivel='Primaria' and  dbo.grado.nivelGrado='Primaria'
 end
+
+create procedure listarSeccionI(
+@grado int
+) 
+as 
+begin
+SELECT dbo.seccion.codigoSeccion, dbo.seccion.nombreSeccion
+FROM     dbo.grado INNER JOIN
+                  dbo.seccion ON dbo.grado.codigoGrado = dbo.seccion.codigoGrado 
+				  WHERE  dbo.grado.numeroGrado=@grado and dbo.seccion.eliminacionLogica=0 and dbo.seccion.nivel='Inicial' and dbo.grado.nivelGrado='Inicial'
+
+end
+exec listarSeccionP 4
+drop procedure listarSeccionI
+drop procedure listarSeccionP
 -- fin del procedimiento almacenado listar seccion
+
+
+create procedure obtenerTablaSeccion
+as
+begin
+ SELECT dbo.seccion.codigoSeccion, dbo.seccion.nombreSeccion, dbo.grado.numeroGrado, dbo.profesor.nombreProfesor, dbo.seccion.numeroAnno, dbo.seccion.numeroVacantes, dbo.seccion.nivel
+FROM     dbo.grado INNER JOIN
+                  dbo.seccion ON dbo.grado.codigoGrado = dbo.seccion.codigoGrado INNER JOIN
+                  dbo.profesor ON dbo.seccion.dniProfesor = dbo.profesor.dniProfesor  where dbo.seccion.eliminacionLogica=0
+end
+
+
+select * from seccion
+select * from grado
+
+

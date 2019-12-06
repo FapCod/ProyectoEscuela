@@ -8,6 +8,7 @@
     Private correoProfesor
     Private telefonoProfesor
     Private estadoProfesor
+    Private eliminacionLogica
     Public Property _dniProfesor As String
         Get
             Return dniProfesor
@@ -89,7 +90,14 @@
             estadoProfesor = value
         End Set
     End Property
-
+    Public Property _eliminacionLogica As Boolean
+        Get
+            Return eliminacionLogica
+        End Get
+        Set(value As Boolean)
+            eliminacionLogica = value
+        End Set
+    End Property
 
 
 End Class

@@ -38,12 +38,18 @@ Public Class datNota
                 Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
                 Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objNota._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
-                    Return False
-                End If
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
+                    MsgBox("Alumno no existe", MsgBoxStyle.Critical)
+                End Try
+                
             End Using
         End Using
         Return False

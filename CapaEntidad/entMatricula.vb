@@ -6,6 +6,7 @@
     Public objentSeccion As entSeccion
     Public objentAnnoEscolar As entAnnoEscolar
     Private nivelAlumno
+    Private eliminacionLogica
     Public Property _idMatricula As String
         Get
             Return idMatricula
@@ -29,6 +30,14 @@
         End Get
         Set(value As String)
             nivelAlumno = value
+        End Set
+    End Property
+    Public Property _eliminacionLogica As Boolean
+        Get
+            Return eliminacionLogica
+        End Get
+        Set(value As Boolean)
+            eliminacionLogica = value
         End Set
     End Property
     Public Sub New()

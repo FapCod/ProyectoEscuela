@@ -46,10 +46,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -70,6 +73,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colegio_DBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Colegio_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Colegio_DBDataSet.vb">
+      <DependentUpon>Colegio_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarSeccion.Designer.vb">
       <DependentUpon>frmAgregarSeccion.vb</DependentUpon>
     </Compile>
@@ -125,6 +136,12 @@
     <Compile Include="frmRecuperarContrasena.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporteProfesor.Designer.vb">
+      <DependentUpon>frmReporteProfesor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteProfesor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -175,6 +192,9 @@
     <EmbeddedResource Include="frmRecuperarContrasena.resx">
       <DependentUpon>frmRecuperarContrasena.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteProfesor.resx">
+      <DependentUpon>frmReporteProfesor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -184,8 +204,20 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptReporteProfesor.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Colegio_DBDataSet.xsc">
+      <DependentUpon>Colegio_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Colegio_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Colegio_DBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Colegio_DBDataSet.xss">
+      <DependentUpon>Colegio_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

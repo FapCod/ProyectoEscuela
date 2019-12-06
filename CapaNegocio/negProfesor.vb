@@ -28,4 +28,8 @@ Public Class negProfesor
         Dim dat As New datProfesor
         Return dat.ProfesoresLibres()
     End Function
+    Public Function ObtenerReporteProfesor() As DataTable
+        Dim dat As New datProfesor
+        Return dat.ObtenerReporteProfesor()
+    End Function
 End Class

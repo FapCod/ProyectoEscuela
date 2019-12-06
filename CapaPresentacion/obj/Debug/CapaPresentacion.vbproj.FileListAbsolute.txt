@@ -135,3 +135,6 @@ C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaPresen
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaPresentacion\bin\Debug\CapaDatos.xml
 C:\Universidad\Ingenieria de Software\ProyectoEscuela\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmagregarSeccion.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmagregarSeccion.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteProfesor.resources
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\RdlCompile.compiled

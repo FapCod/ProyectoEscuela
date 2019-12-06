@@ -11,6 +11,7 @@ direccionProfesor varchar (50) not null,
 correoProfesor varchar (30) not null,
 telefonoProfesor varchar (11) not null,
 estadoProfesor bit,
+eliminacionLogica bit
 )
 
 -----Fin de la creacion de la tabla Profesor----------
@@ -26,11 +27,12 @@ create procedure agregarProfesor
 @direccionProfesor varchar (50) ,
 @correoProfesor varchar (30) ,
 @telefonoProfesor varchar (11) ,
-@estadoProfesor bit
+@estadoProfesor bit,
+@eliminacionLogica bit
 )
 as
 begin
- insert into Profesor values ( @dniProfesor,@nombreProfesor, @apellidoProfesor,@edadProfesor, @sexoProfesor,@direccionProfesor, @correoProfesor, @telefonoProfesor, @estadoProfesor)
+ insert into Profesor values ( @dniProfesor,@nombreProfesor, @apellidoProfesor,@edadProfesor, @sexoProfesor,@direccionProfesor, @correoProfesor, @telefonoProfesor, @estadoProfesor,@eliminacionLogica)
 end
 
 -------Finalizacion de procedimiento AgregarProfesor-----
@@ -46,7 +48,7 @@ create procedure eliminarProfesor
 )
 as 
 begin 
-delete  from Profesor where dniProfesor=@dniProfesor
+update  Profesor set eliminacionLogica=1 where dniProfesor=@dniProfesor
 end 
 go
 -------Finalizacion de procedimiento EliminarProfesor-----
@@ -62,11 +64,12 @@ create procedure actualizarProfesor(
 @direccionProfesor varchar (50) ,
 @correoProfesor varchar (30) ,
 @telefonoProfesor varchar (11),
-@estadoProfesor bit
+@estadoProfesor bit,
+@eliminacionLogica bit 
 )
 as 
 begin 
-update  Profesor set NombreProfesor=@nombreProfesor, ApellidoProfesor=@apellidoProfesor, edadProfesor=@edadProfesor, SexoProfesor=@sexoProfesor, DireccionProfesor=@direccionProfesor, CorreoProfesor=@correoProfesor, TelefonoProfesor=@telefonoProfesor, estadoProfesor = @estadoProfesor
+update  Profesor set NombreProfesor=@nombreProfesor, ApellidoProfesor=@apellidoProfesor, edadProfesor=@edadProfesor, SexoProfesor=@sexoProfesor, DireccionProfesor=@direccionProfesor, CorreoProfesor=@correoProfesor, TelefonoProfesor=@telefonoProfesor, estadoProfesor = @estadoProfesor,eliminacionLogica=@eliminacionLogica  
 where dniProfesor = @dniProfesor
 end 
 go
@@ -80,7 +83,7 @@ create procedure buscarprofesor(
 )
 as
 begin
-select * from Profesor where dniProfesor = @dniProfesor
+select * from Profesor where dniProfesor = @dniProfesor and eliminacionLogica =0
 end 
 go
 -------Finalizacion de procedimiento BuscarProfesor-----
@@ -99,6 +102,21 @@ end
 create procedure listarprofesor
 as
 begin 
-select nombreProfesor from profesor where estadoProfesor = 0
+select dniProfesor,nombreProfesor from profesor where estadoProfesor = 1 and eliminacionLogica=0
 end
+drop procedure listarprofesor
 
+create procedure obtenerTablaProfesor
+as 
+begin
+select 
+dniProfesor ,
+nombreProfesor, 
+apellidoProfesor ,
+edadProfesor ,
+sexoProfesor ,
+direccionProfesor, 
+correoProfesor ,
+telefonoProfesor  from profesor where eliminacionLogica=0
+end
+select * from profesor

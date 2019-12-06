@@ -18,12 +18,17 @@ Public Class datAlumno
                 Command.Parameters.AddWithValue("@direccionAlumno", objAlumno._direccionAlumno)
                 Command.Parameters.AddWithValue("@nombreApoderadoAlumno", objAlumno._nombreDeApoderadoAlumno)
                 Command.Parameters.AddWithValue("@numeroTelefonoApoderado", objAlumno._numeroTelefonoApoderado)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objAlumno._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
-                    Return False
-                End If
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
+                    MsgBox("Alumno ya registrado")
+                End Try
             End Using
         End Using
         Return False
@@ -43,6 +48,7 @@ Public Class datAlumno
                 Command.Parameters.AddWithValue("@direccionAlumno", objAlumno._direccionAlumno)
                 Command.Parameters.AddWithValue("@nombreApoderadoAlumno", objAlumno._nombreDeApoderadoAlumno)
                 Command.Parameters.AddWithValue("@numeroTelefonoApoderado", objAlumno._numeroTelefonoApoderado)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objAlumno._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -101,7 +107,7 @@ Public Class datAlumno
             Using Command = New SqlCommand()
                 Command.Connection = conexion
                 Command.CommandType = CommandType.Text
-                Command.CommandText = "SELECT * FROM alumno"
+                Command.CommandText = "obtenerTablaAlumno"
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
                     da = New SqlDataAdapter(Command)
