@@ -30,10 +30,28 @@ Public Class frmagregarSeccion
             objentSeccion.objentNumeroAnno._numeroAnno = Val(cmbannoEscolar.Text)
             objentSeccion.objentProfesor._dniProfesor = cmbProfesor.SelectedValue
             objentSeccion._eliminacionLogica = False
-            If objnegSeccion.registrarSeccion(objentSeccion) Then
-                MsgBox("Se inserto un nuevo Registro")
-                dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
+            If rbtinicial.Checked = True Then
+                If objnegSeccion.VerificarSiExisteSeccionYGradoI(objentSeccion) = 0 Then
+                    If objnegSeccion.registrarSeccion(objentSeccion) Then
+                        MsgBox("Se inserto un nuevo Registro")
+                        dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
+                    End If
+                Else
+                    MsgBox("Ya existe un Grado con esa seccion")
+                    txtSeccion.Focus()
+                End If
+            ElseIf rbtprimaria.Checked = True Then
+                If objnegSeccion.VerificarSiExisteSeccionYGradoP(objentSeccion) = 0 Then
+                    If objnegSeccion.registrarSeccion(objentSeccion) Then
+                        MsgBox("Se inserto un nuevo Registro")
+                        dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
+                    End If
+                Else
+                    MsgBox("Ya existe un Grado con esa seccion")
+                    txtSeccion.Focus()
+                End If
             End If
+
         Else
             MsgBox("Debe de llenar todos los campos")
         End If
@@ -86,6 +104,18 @@ Public Class frmagregarSeccion
             e.Handled = True   'Si es letra no entra al textbox
         End If
     End Sub
+
+    Private Sub txtSeccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSeccion.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio si entra al textbox
+            e.Handled = False
+        Else
+            e.Handled = True   'Si es numero no entra al textbox
+        End If
+    End Sub
 #End Region
 
 #Region "los colores cambian"
@@ -98,4 +128,5 @@ Public Class frmagregarSeccion
     End Sub
 #End Region
 
+    
 End Class

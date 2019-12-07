@@ -9,4 +9,8 @@ Public Class negNota
     Public Function obtenerTabla(objentNota) As DataTable
         Return objdatNota.obtenerTabla(objentNota)
     End Function
+
+    Public Function editarNota(objentNota As entNota, idNota As Integer) As Boolean
+        Return objdatNota.editarNota(objentNota, idNota)
+    End Function
 End Class

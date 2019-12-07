@@ -54,4 +54,31 @@ Public Class datNota
         End Using
         Return False
     End Function
+    Public Function editarNota(objNota As entNota, idNota As Integer) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "editarnota"
+                Command.Parameters.AddWithValue("@codigoNota", idNota)
+                Command.Parameters.AddWithValue("@nota", objNota._nota)
+                Command.Parameters.AddWithValue("@descripcion", objNota._descripcion)
+                Command.Parameters.AddWithValue("@codigoCurso", objNota.objentCurso._codigoCurso)
+                Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
+                Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
+                Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objNota._eliminacionLogica)
+                Command.CommandType = CommandType.StoredProcedure
+
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+               
+
+            End Using
+        End Using
+        Return False
+    End Function
 End Class

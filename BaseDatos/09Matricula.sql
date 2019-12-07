@@ -80,13 +80,14 @@ end
 create procedure obtenerTablaMatricula
 as 
 begin
-SELECT dbo.matricula.idMatricula, dbo.matricula.fechaMatricula, dbo.grado.numeroGrado, dbo.alumno.nombreAlumno, dbo.annoEscolar.numeroAnno, dbo.seccion.nombreSeccion, dbo.matricula.nivelAlumno
+SELECT dbo.matricula.idMatricula, dbo.matricula.fechaMatricula, dbo.grado.numeroGrado, dbo.alumno.dniAlumno, dbo.annoEscolar.numeroAnno, dbo.seccion.nombreSeccion, dbo.matricula.nivelAlumno
 FROM     dbo.alumno INNER JOIN
                   dbo.matricula ON dbo.alumno.dniAlumno = dbo.matricula.dniAlumno INNER JOIN
                   dbo.annoEscolar ON dbo.matricula.numeroAnno = dbo.annoEscolar.numeroAnno INNER JOIN
                   dbo.grado ON dbo.matricula.codigoGrado = dbo.grado.codigoGrado INNER JOIN
                   dbo.seccion ON dbo.matricula.codigoSeccion = dbo.seccion.codigoSeccion AND dbo.annoEscolar.numeroAnno = dbo.seccion.numeroAnno AND dbo.grado.codigoGrado = dbo.seccion.codigoGrado where dbo.matricula.eliminacionLogica = 0
 end
-
+drop procedure obtenerTablaMatricula
 EXEC obtenerTablaMatricula
 delete from matricula where idMatricula = 14
+

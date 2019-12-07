@@ -25,6 +25,47 @@ Public Class datMatricula
         End Using
         Return False
     End Function
+    Public Function editarMatricula(objMatricula As entMatricula, idMatricula As Integer) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "actualizarMatricula"
+                Command.Parameters.AddWithValue("@idMatricula", idMatricula)
+                Command.Parameters.AddWithValue("@fechaMatricula", objMatricula._fechaMatricula)
+                Command.Parameters.AddWithValue("@codigoGrado", objMatricula.objentgrado._codigoGrado)
+                Command.Parameters.AddWithValue("@dniAlumno", objMatricula.objentAlumno._dniAlumno)
+                Command.Parameters.AddWithValue("@numeroAnno", objMatricula.objentAnnoEscolar._numeroAnno)
+                Command.Parameters.AddWithValue("@codigoSeccion", objMatricula.objentSeccion._codigoSeccion)
+                Command.Parameters.AddWithValue("@nivelAlumno", objMatricula._nivelAlumno)
+                Command.Parameters.AddWithValue("@eliminacionLogica", objMatricula._eliminacionLogica)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    Public Function eliminarMatricula(idMatricula As Integer) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "eliminarMatricula"
+                Command.Parameters.AddWithValue("@idMatricula", idMatricula)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
     
     Public Function VerificarSiExisteAlumno(dni As String) As Integer
         Using conexion = ObtenerConexion()
@@ -50,6 +91,27 @@ Public Class datMatricula
                 End If
             End Using
         End Using
+    End Function
+
+  
+
+    Public Function decrementarVacante(objMatricula As entMatricula) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "decrementarVacante"
+                Command.Parameters.AddWithValue("@codigoGrado", objMatricula.objentgrado._codigoGrado)
+                Command.Parameters.AddWithValue("@codigoSeccion", objMatricula.objentSeccion._codigoSeccion)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
     End Function
    
     Public Function obtenerTabla() As DataTable

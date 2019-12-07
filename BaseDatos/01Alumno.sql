@@ -100,12 +100,13 @@ create procedure VerificarSiExisteAlumno(
 @dni char(8))
 as begin 
 SELECT dniAlumno FROM alumno 
-          WHERE eliminacionLogica =0 and dniAlumno=1
+          WHERE eliminacionLogica =0 and dniAlumno=@dni
 END  
 
-
+exec VerificarSiExisteAlumno 71414254
 
 select * from alumno
 
 
 
+delete from alumno

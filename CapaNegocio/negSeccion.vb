@@ -15,5 +15,11 @@ Public Class negSeccion
     Public Function cargarSeccionP(grado As Integer) As DataTable
         Return objdatSeccion.cargarSeccionP(grado)
     End Function
-   
+    Public Function VerificarSiExisteSeccionYGradoI(objentSeccion) As Integer
+        Return objdatSeccion.VerificarSiExisteSeccionYGradoI(objentSeccion)
+    End Function
+    Public Function VerificarSiExisteSeccionYGradoP(objentSeccion) As Integer
+        Return objdatSeccion.VerificarSiExisteSeccionYGradoP(objentSeccion)
+    End Function
+
 End Class

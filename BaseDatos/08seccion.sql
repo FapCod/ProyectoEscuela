@@ -71,7 +71,31 @@ FROM     dbo.grado INNER JOIN
 end
 
 
-select * from seccion
-select * from grado
 
+
+create procedure decrementarVacante(@codigoGrado int,@codigoSeccion int)
+as begin
+UPDATE seccion
+SET    numeroVacantes = numeroVacantes - 1 where codigoGrado=@codigoGrado and codigoSeccion=@codigoSeccion
+end
+exec decrementarVacante @codigoGrado=3, @codigoSeccion=9
+drop procedure decrementarVacante
+
+select * from seccion
+
+
+create procedure VerificarSiExisteSeccionYGradoI(
+@nombreSeccion varchar,
+@codigoGrado int)
+as begin 
+SELECT * FROM seccion
+          WHERE eliminacionLogica =0 and nombreSeccion= @nombreSeccion and codigoGrado=@codigoGrado and nivel='Inicial' 
+END  
+create procedure VerificarSiExisteSeccionYGradoP(
+@nombreSeccion varchar,
+@codigoGrado int)
+as begin 
+SELECT * FROM seccion
+          WHERE eliminacionLogica =0 and nombreSeccion= @nombreSeccion and codigoGrado=@codigoGrado and nivel='Primaria' 
+END  
 

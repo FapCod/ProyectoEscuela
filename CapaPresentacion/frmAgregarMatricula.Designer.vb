@@ -164,9 +164,10 @@ Partial Class frmAgregarMatricula
         '
         'dtFecha
         '
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtFecha.Location = New System.Drawing.Point(2, 99)
         Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(200, 22)
+        Me.dtFecha.Size = New System.Drawing.Size(125, 22)
         Me.dtFecha.TabIndex = 58
         '
         'Label3

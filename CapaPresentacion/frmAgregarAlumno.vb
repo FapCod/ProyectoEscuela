@@ -41,7 +41,7 @@ Public Class frmAgregarAlumno
             Dim i As Integer
             i = DataGridView1.CurrentRow.Index
             dni = DataGridView1.Item(0, i).Value()
-            objentAlumno._dniAlumno = dni
+            objentAlumno._dniAlumno = txtdniAlumno.Text
             objentAlumno._nombreAlumno = txtnombreAlumno.Text
             objentAlumno._apellidoAlumno = txtapellidoAlumno.Text
             objentAlumno._edadAlumno = txtedadAlumno.Text

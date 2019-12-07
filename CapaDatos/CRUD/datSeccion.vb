@@ -90,4 +90,59 @@ Public Class datSeccion
             End Using
         End Using
     End Function
+
+    Public Function VerificarSiExisteSeccionYGradoI(objSeccion As entSeccion) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiExisteSeccionYGradoI"
+                Command.Parameters.AddWithValue("@nombreSeccion", objSeccion._nombreSeccion)
+                Command.Parameters.AddWithValue("@codigoGrado", objSeccion.objentGrado._codigoGrado)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+    Public Function VerificarSiExisteSeccionYGradoP(objSeccion As entSeccion) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiExisteSeccionYGradoP"
+                Command.Parameters.AddWithValue("@nombreSeccion", objSeccion._nombreSeccion)
+                Command.Parameters.AddWithValue("@codigoGrado", objSeccion.objentGrado._codigoGrado)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+
+
 End Class

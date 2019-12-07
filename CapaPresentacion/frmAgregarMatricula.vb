@@ -35,6 +35,7 @@ Public Class frmAgregarMatricula
                 Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
                 If verificarRP = True Then
                     MsgBox("registro exitoso")
+                    objnegMatricula.decrementarVacante(objentMatricula)
                     ver()
                     LimpiarDatos()
                 Else
@@ -172,7 +173,80 @@ Public Class frmAgregarMatricula
 
     End Sub
 
-    Private Sub cmbcodseccion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodseccion.SelectedIndexChanged
+    
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        dtFecha.Text = DataGridView1.Item(1, i).Value()
+        cmbcodGrado.Text = DataGridView1.Item(2, i).Value()
+        txtdniAlumno.Text = DataGridView1.Item(3, i).Value()
+        cmbannoEscolar.Text = DataGridView1.Item(4, i).Value()
+        cmbcodseccion.Text = DataGridView1.Item(5, i).Value()
+        Dim nivel As String
+        nivel = DataGridView1.Item(6, i).Value()
+        Dim comparar As Integer
+        Dim nievelA As String = "Primaria"
+        comparar = nivel.CompareTo(nievelA)
+        If comparar = 0 Then
+            rbtPrimaria.Checked = True
+        Else
+            rbtinicial.Checked = True
+        End If
+    End Sub
 
+    Private Sub btneditarMatricula_Click(sender As Object, e As EventArgs) Handles btneditarMatricula.Click
+        Dim idMatricula As Integer
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        idMatricula = DataGridView1.Item(0, i).Value()
+        Dim objentMatricula As New entMatricula
+        Dim objnegMatricula As New negMatricula
+        If comprobar() Then
+            If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
+                objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
+                objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
+                objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
+                objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
+                objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
+                If rbtinicial.Checked = True Then
+                    objentMatricula._nivelAlumno = "Inicial"
+
+                End If
+                If rbtPrimaria.Checked = True Then
+                    objentMatricula._nivelAlumno = "Primaria"
+
+                End If
+                objentMatricula._eliminacionLogica = False
+
+                Dim verificarRP = objnegMatricula.editarMatricula(objentMatricula, idMatricula)
+                If verificarRP = True Then
+                    MsgBox("Actualizacion exitosa")
+                    ver()
+                    LimpiarDatos()
+                Else
+                    MsgBox("Error al actualizar Matricula")
+                End If
+            Else
+                MsgBox("El alumno no existe")
+            End If
+        Else
+            MsgBox("Debe llenar todos los datos")
+        End If
+    End Sub
+
+    Private Sub btneliminarMatricula_Click(sender As Object, e As EventArgs) Handles btneliminarMatricula.Click
+        Dim idMatricula As Integer
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        idMatricula = DataGridView1.Item(0, i).Value()
+        Dim objnegMatricula As New negMatricula
+        Dim verificarRP = objnegMatricula.eliminarMatricula(idMatricula)
+        If verificarRP = True Then
+            MsgBox("Elimincacion exitosa")
+            ver()
+            LimpiarDatos()
+        Else
+            MsgBox("Error al eliminar Matricula")
+        End If
     End Sub
 End Class

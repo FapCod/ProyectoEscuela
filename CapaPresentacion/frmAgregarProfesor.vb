@@ -63,7 +63,7 @@ Public Class frmAgregarProfesor
 
                 Ver()
             Else
-                MsgBox("Error de Actualizacion de Alumno")
+                MsgBox("Error de Actualizacion de Profesor")
             End If
         Else
             MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
@@ -98,7 +98,7 @@ Public Class frmAgregarProfesor
             MsgBox("Eliminacion Exitosa")
             Ver()
         Else
-            MsgBox("Error de Eliminacion de Alumno")
+            MsgBox("Error de Eliminacion de Profesor")
         End If
         LimpiarDatos()
     End Sub
