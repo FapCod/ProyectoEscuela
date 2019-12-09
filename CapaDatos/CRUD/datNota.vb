@@ -81,4 +81,36 @@ Public Class datNota
         End Using
         Return False
     End Function
+
+
+    Public Function validarSiExisteNota(objNota As entNota) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "validarSiExisteNota"
+                Command.Parameters.AddWithValue("@descripcion", objNota._descripcion)
+                Command.Parameters.AddWithValue("@codigoCurso", objNota.objentCurso._codigoCurso)
+                Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
+                Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
+                Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
 End Class

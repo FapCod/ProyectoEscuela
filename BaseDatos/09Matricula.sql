@@ -22,9 +22,6 @@ CONSTRAINT fk_seccionn FOREIGN KEY (codigoSeccion) REFERENCES seccion (codigoSec
 --------------------------------------------------------
 
 ----Procedimiento para registrar una matricula-------
-exec registrarMatricula '2019-11-20', 1, 23456234, 2019, 2, 'Primaria', 0
-select * from seccion
-select * from matricula
 create procedure registrarMatricula(
 @fechaMatricula date,
 @codigoGrado int,
@@ -38,7 +35,7 @@ as
 begin
 insert into matricula values (@fechaMatricula, @codigoGrado, @dniAlumno, @numeroAnno, @codigoSeccion, @nivelAlumno,@eliminacionLogica ) 
 end 
-drop procedure registrarMatricula
+
 
 ------fin del procedimiento almacenado Registrar matricula--------------
 
@@ -87,7 +84,30 @@ FROM     dbo.alumno INNER JOIN
                   dbo.grado ON dbo.matricula.codigoGrado = dbo.grado.codigoGrado INNER JOIN
                   dbo.seccion ON dbo.matricula.codigoSeccion = dbo.seccion.codigoSeccion AND dbo.annoEscolar.numeroAnno = dbo.seccion.numeroAnno AND dbo.grado.codigoGrado = dbo.seccion.codigoGrado where dbo.matricula.eliminacionLogica = 0
 end
-drop procedure obtenerTablaMatricula
-EXEC obtenerTablaMatricula
-delete from matricula where idMatricula = 14
+
+
+
+
+
+Create procedure VerificarSiEsDeInicialoPrimaria(
+@dni varchar(10),
+@nivel varchar(10)
+)
+as begin
+SELECT dniAlumno, nivelAlumno
+FROM     dbo.matricula 
+WHERE dniAlumno like '%'+@dni+'%' and eliminacionLogica=0 and nivelAlumno=@nivel
+end
+
+
+Create procedure VerificarSiExisteMatricula(
+@dni varchar(10)
+)
+as begin
+SELECT dniAlumno, nivelAlumno
+FROM     dbo.matricula 
+WHERE eliminacionLogica =0 and dniAlumno=@dni
+end
+
+
 

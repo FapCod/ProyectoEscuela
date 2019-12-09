@@ -29,7 +29,6 @@ Partial Class frmAgregarNota
         Me.txtdniAlumno = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btneliminarNota = New System.Windows.Forms.Button()
         Me.btneditarNota = New System.Windows.Forms.Button()
         Me.btnagregarNota = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,11 +38,11 @@ Partial Class frmAgregarNota
         Me.cmbCompetencia = New System.Windows.Forms.ComboBox()
         Me.rbtInicial = New System.Windows.Forms.RadioButton()
         Me.rbtprimaria = New System.Windows.Forms.RadioButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbannoEscolar = New System.Windows.Forms.ComboBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbnota
@@ -78,7 +77,7 @@ Partial Class frmAgregarNota
         '
         'txtdniAlumno
         '
-        Me.txtdniAlumno.Location = New System.Drawing.Point(47, 93)
+        Me.txtdniAlumno.Location = New System.Drawing.Point(53, 83)
         Me.txtdniAlumno.Name = "txtdniAlumno"
         Me.txtdniAlumno.Size = New System.Drawing.Size(184, 22)
         Me.txtdniAlumno.TabIndex = 67
@@ -88,7 +87,7 @@ Partial Class frmAgregarNota
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(47, 66)
+        Me.Label10.Location = New System.Drawing.Point(53, 56)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(141, 24)
         Me.Label10.TabIndex = 66
@@ -103,18 +102,6 @@ Partial Class frmAgregarNota
         Me.DataGridView1.Size = New System.Drawing.Size(716, 329)
         Me.DataGridView1.TabIndex = 65
         '
-        'btneliminarNota
-        '
-        Me.btneliminarNota.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btneliminarNota.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btneliminarNota.ForeColor = System.Drawing.Color.White
-        Me.btneliminarNota.Location = New System.Drawing.Point(821, 135)
-        Me.btneliminarNota.Name = "btneliminarNota"
-        Me.btneliminarNota.Size = New System.Drawing.Size(181, 57)
-        Me.btneliminarNota.TabIndex = 64
-        Me.btneliminarNota.Text = "ELIMINAR"
-        Me.btneliminarNota.UseVisualStyleBackColor = False
-        '
         'btneditarNota
         '
         Me.btneditarNota.BackColor = System.Drawing.Color.DodgerBlue
@@ -122,7 +109,7 @@ Partial Class frmAgregarNota
         Me.btneditarNota.ForeColor = System.Drawing.Color.White
         Me.btneditarNota.Location = New System.Drawing.Point(603, 135)
         Me.btneditarNota.Name = "btneditarNota"
-        Me.btneditarNota.Size = New System.Drawing.Size(201, 57)
+        Me.btneditarNota.Size = New System.Drawing.Size(399, 57)
         Me.btneditarNota.TabIndex = 63
         Me.btneditarNota.Text = "EDITAR"
         Me.btneditarNota.UseVisualStyleBackColor = False
@@ -194,7 +181,7 @@ Partial Class frmAgregarNota
         'rbtInicial
         '
         Me.rbtInicial.AutoSize = True
-        Me.rbtInicial.Location = New System.Drawing.Point(29, 3)
+        Me.rbtInicial.Location = New System.Drawing.Point(58, 21)
         Me.rbtInicial.Name = "rbtInicial"
         Me.rbtInicial.Size = New System.Drawing.Size(64, 21)
         Me.rbtInicial.TabIndex = 76
@@ -205,22 +192,13 @@ Partial Class frmAgregarNota
         'rbtprimaria
         '
         Me.rbtprimaria.AutoSize = True
-        Me.rbtprimaria.Location = New System.Drawing.Point(157, 3)
+        Me.rbtprimaria.Location = New System.Drawing.Point(132, 21)
         Me.rbtprimaria.Name = "rbtprimaria"
         Me.rbtprimaria.Size = New System.Drawing.Size(81, 21)
         Me.rbtprimaria.TabIndex = 77
         Me.rbtprimaria.TabStop = True
         Me.rbtprimaria.Text = "Primaria"
         Me.rbtprimaria.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.rbtprimaria)
-        Me.Panel1.Controls.Add(Me.rbtInicial)
-        Me.Panel1.Location = New System.Drawing.Point(51, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(255, 31)
-        Me.Panel1.TabIndex = 78
         '
         'Label3
         '
@@ -243,15 +221,26 @@ Partial Class frmAgregarNota
         Me.cmbannoEscolar.Size = New System.Drawing.Size(180, 24)
         Me.cmbannoEscolar.TabIndex = 80
         '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(34, 111)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(227, 124)
+        Me.DataGridView2.TabIndex = 81
+        '
         'frmAgregarNota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1187, 661)
+        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.rbtInicial)
+        Me.Controls.Add(Me.rbtprimaria)
         Me.Controls.Add(Me.cmbannoEscolar)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.cmbCompetencia)
         Me.Controls.Add(Me.cmbcodigocurso)
         Me.Controls.Add(Me.Label4)
@@ -261,7 +250,6 @@ Partial Class frmAgregarNota
         Me.Controls.Add(Me.txtdniAlumno)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.btneliminarNota)
         Me.Controls.Add(Me.btneditarNota)
         Me.Controls.Add(Me.btnagregarNota)
         Me.Controls.Add(Me.Label2)
@@ -271,8 +259,7 @@ Partial Class frmAgregarNota
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarNota"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -283,7 +270,6 @@ Partial Class frmAgregarNota
     Friend WithEvents txtdniAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents btneliminarNota As System.Windows.Forms.Button
     Friend WithEvents btneditarNota As System.Windows.Forms.Button
     Friend WithEvents btnagregarNota As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -293,7 +279,7 @@ Partial Class frmAgregarNota
     Friend WithEvents cmbCompetencia As System.Windows.Forms.ComboBox
     Friend WithEvents rbtInicial As System.Windows.Forms.RadioButton
     Friend WithEvents rbtprimaria As System.Windows.Forms.RadioButton
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmbannoEscolar As System.Windows.Forms.ComboBox
+    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
 End Class

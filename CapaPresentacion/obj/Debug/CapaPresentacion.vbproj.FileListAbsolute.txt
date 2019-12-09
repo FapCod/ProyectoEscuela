@@ -138,3 +138,4 @@ C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresent
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteProfesor.resources
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\RdlCompile.cache
 C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\RdlCompile.compiled
+C:\Users\Frank\Documents\Visual Studio 2013\Projects\ProyectoEscuela\CapaPresentacion\obj\Debug\CapaPresentacion.frmAnnoEscolar.resources

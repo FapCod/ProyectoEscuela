@@ -20,7 +20,7 @@ Public Class frmPrincipal
         End If
         manejoDePermisos()
     End Sub
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         If MessageBox.Show("Estas seguro de cerrar Ventana?", "Mensaje",
          MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Application.Exit()
@@ -29,7 +29,7 @@ Public Class frmPrincipal
     End Sub
 
 
-    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -137,5 +137,9 @@ Public Class frmPrincipal
     Private Sub thorafecha_Tick(sender As Object, e As EventArgs) Handles thorafecha.Tick
         lblHora.Text = DateTime.Now.ToLongTimeString
         lblFecha.Text = DateTime.Now.Date.ToLongDateString
+    End Sub
+
+    Private Sub btnAperturarAno_Click(sender As Object, e As EventArgs) Handles btnAperturarAno.Click
+        frmAnnoEscolar.Show()
     End Sub
 End Class

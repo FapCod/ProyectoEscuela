@@ -12,6 +12,5 @@ cargoUsuario varchar (11) not null
 
 -----Ingresamos usuarios desde sqlServer-----------
 insert into usuario values('director','director','Bayan','Martinez Ojeda','brayanmartinezojeda@gmail.com', 'director')
-select * from usuario
+
 -----Fin de ingresos de  usuarios desde sqlServer-----------
-select * from alumno

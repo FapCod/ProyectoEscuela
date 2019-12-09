@@ -10,12 +10,11 @@ edadAlumno int not null,
 sexoAlumno char(1) not null,
 direccionAlumno varchar (50) not null,
 nombreApoderadoAlumno varchar(50) not null, 
-numeroTelefonoApoderado varchar(11),
-eliminacionLogica bit  
+numeroTelefonoApoderado varchar(11)
 )
 ------Fin de la creacion  de la tabla alumno-------
 
-select * from alumno
+
 ----Creacion de procedimiento de AgregarAlumno----
 CREATE PROCEDURE agregaralumno(
 @dniAlumno char(8),
@@ -25,12 +24,11 @@ CREATE PROCEDURE agregaralumno(
 @sexoAlumno char (1),
 @direccionAlumno varchar(100),
 @nombreApoderadoAlumno varchar (100),
-@numeroTelefonoApoderado varchar(11),
-@eliminacionLogica bit 
+@numeroTelefonoApoderado varchar(11)
 )
 as
 begin
-insert into alumno values (@dniAlumno,@nombreAlumno,@apellidoAlumno,@edadAlumno, @sexoAlumno,@direccionAlumno, @nombreApoderadoAlumno,@numeroTelefonoApoderado,@eliminacionLogica)
+insert into alumno values (@dniAlumno,@nombreAlumno,@apellidoAlumno,@edadAlumno, @sexoAlumno,@direccionAlumno, @nombreApoderadoAlumno,@numeroTelefonoApoderado)
 end
 ----Finalizacion del procedimiento de AgregarAlumno----
 
@@ -42,7 +40,7 @@ create procedure eliminaralumno(
 )
 as 
 begin 
-update  Alumno set eliminacionLogica=1 where dniAlumno = @dni
+delete from  Alumno where dniAlumno = @dni
 end 
 go
 ----Finalizacion del procedimiento de EliminarAlumno----
@@ -58,12 +56,11 @@ create procedure actualizaralumno(
 @sexoAlumno char (1),
 @direccionAlumno varchar(100),
 @nombreApoderadoAlumno varchar (100),
-@numeroTelefonoApoderado varchar(11), 
-@eliminacionLogica bit 
+@numeroTelefonoApoderado varchar(11) 
 )
 as 
 begin 
-update  Alumno set NombreAlumno=@nombreAlumno, ApellidoAlumno=@apellidoAlumno,edadAlumno=@edadAlumno ,SexoAlumno=@sexoAlumno, DireccionAlumno=@direccionAlumno, nombreApoderadoAlumno=@nombreApoderadoAlumno,numeroTelefonoApoderado=@numeroTelefonoApoderado,eliminacionLogica=@eliminacionLogica 
+update  Alumno set NombreAlumno=@nombreAlumno, ApellidoAlumno=@apellidoAlumno,edadAlumno=@edadAlumno ,SexoAlumno=@sexoAlumno, DireccionAlumno=@direccionAlumno, nombreApoderadoAlumno=@nombreApoderadoAlumno,numeroTelefonoApoderado=@numeroTelefonoApoderado 
 where dniAlumno = @dniAlumno
 end 
 go
@@ -75,7 +72,7 @@ create procedure buscaralumno(
 )
 as
 begin
-select * from Alumno where dniAlumno = @dni and eliminacionLogica=0
+select * from Alumno where dniAlumno = @dni 
 end 
 go
 ----Finalizacion del procedimiento de BuscarAlumno----
@@ -92,7 +89,7 @@ sexoAlumno ,
 direccionAlumno ,
 nombreApoderadoAlumno ,
 numeroTelefonoApoderado 
-FROM alumno where eliminacionLogica=0
+FROM alumno 
 end
 
 
@@ -100,13 +97,9 @@ create procedure VerificarSiExisteAlumno(
 @dni char(8))
 as begin 
 SELECT dniAlumno FROM alumno 
-          WHERE eliminacionLogica =0 and dniAlumno=@dni
+          WHERE  dniAlumno=@dni
 END  
 
-exec VerificarSiExisteAlumno 71414254
-
-select * from alumno
 
 
 
-delete from alumno

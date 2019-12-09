@@ -1,10 +1,10 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmLogin
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
-    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 

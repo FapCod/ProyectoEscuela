@@ -93,7 +93,56 @@ Public Class datMatricula
         End Using
     End Function
 
-  
+    Public Function VerificarSiExisteMatricula(dni As String) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiExisteMatricula"
+                Command.Parameters.AddWithValue("@dni", dni)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+    Public Function VerificarSiHayVacante(codigoGrado As Integer) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiHayVacante"
+                Command.Parameters.AddWithValue("@codigoGrado", codigoGrado)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
 
     Public Function decrementarVacante(objMatricula As entMatricula) As Boolean
         Using conexion = ObtenerConexion()
@@ -103,6 +152,44 @@ Public Class datMatricula
                 Command.CommandText = "decrementarVacante"
                 Command.Parameters.AddWithValue("@codigoGrado", objMatricula.objentgrado._codigoGrado)
                 Command.Parameters.AddWithValue("@codigoSeccion", objMatricula.objentSeccion._codigoSeccion)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+
+    Public Function decrementarVacante(codigoGrado As Integer, codigoSeccion As Integer) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "decrementarVacante"
+                Command.Parameters.AddWithValue("@codigoGrado", codigoGrado)
+                Command.Parameters.AddWithValue("@codigoSeccion", codigoSeccion)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+
+    Public Function aumentarVacante(codigoGrado As Integer, codigoSeccion As Integer) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "aumentarVacante"
+                Command.Parameters.AddWithValue("@codigoGrado", codigoGrado)
+                Command.Parameters.AddWithValue("@codigoSeccion", codigoSeccion)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -128,6 +215,55 @@ Public Class datMatricula
                     da = New SqlDataAdapter(Command)
                     da.Fill(dt)
                     Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+    Public Function VerificarSiEsDeInicialoPrimaria(dni As String, nivel As String) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiEsDeInicialoPrimaria"
+                Command.Parameters.AddWithValue("@dni", dni)
+                Command.Parameters.AddWithValue("@nivel", nivel)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+
+    Public Function VerificarSiEsDeInicialoPrimariaInteger(dni As String, nivel As String) As Integer
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "VerificarSiEsDeInicialoPrimaria"
+                Command.Parameters.AddWithValue("@dni", dni)
+                Command.Parameters.AddWithValue("@nivel", nivel)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    If dt.Rows.Count = 0 Then
+                        Return 0
+                    Else
+                        Return 1
+                    End If
                 Else
                     Return Nothing
                 End If

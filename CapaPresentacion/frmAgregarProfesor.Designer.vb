@@ -182,7 +182,7 @@ Partial Class frmAgregarProfesor
         '
         Me.cmbsexoProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbsexoProfesor.FormattingEnabled = True
-        Me.cmbsexoProfesor.Items.AddRange(New Object() {"M", "F", "No Especificado"})
+        Me.cmbsexoProfesor.Items.AddRange(New Object() {"M", "F", "N"})
         Me.cmbsexoProfesor.Location = New System.Drawing.Point(308, 233)
         Me.cmbsexoProfesor.Name = "cmbsexoProfesor"
         Me.cmbsexoProfesor.Size = New System.Drawing.Size(109, 25)

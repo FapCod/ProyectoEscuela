@@ -18,7 +18,6 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
                 Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
-                Command.Parameters.AddWithValue("@eliminacionLogica", objProfesor._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 'Dim reader = Command.ExecuteReader()
                 Try
@@ -51,7 +50,6 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
                 Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
-                Command.Parameters.AddWithValue("@eliminacionLogica", objProfesor._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True

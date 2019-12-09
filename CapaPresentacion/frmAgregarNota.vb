@@ -10,6 +10,7 @@ Public Class frmAgregarNota
         Dim objnegAnnoEscolar As New negAnnoEscolar
         cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
         cmbannoEscolar.DisplayMember = "numeroAnno"
+        DataGridView2.Visible = False
     End Sub
 
     Private Sub btnagregarNota_Click(sender As Object, e As EventArgs) Handles btnagregarNota.Click
@@ -29,15 +30,30 @@ Public Class frmAgregarNota
             End If
             objentNotas._eliminacionLogica = False
             Dim objnegNota As New negNota
-            Dim verificarRA = objnegNota.registrarNota(objentNotas)
-            If verificarRA = True Then
-                MsgBox("registro exitoso")
-                DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
-                DataGridView1.Columns(0).Visible = False
-                'LimpiarDatos()
-                'Ver()
+            If objnegNota.validarSiExisteNota(objentNotas) = 0 Then
+                Dim objnegM As New negMatricula
+                Dim nivelM As String = Nothing
+                If rbtInicial.Checked = True Then
+                    nivelM = "Inicial"
+                ElseIf rbtprimaria.Checked = True Then
+                    nivelM = "Primaria"
+                End If
+                If objnegM.VerificarSiEsDeInicialoPrimariaInteger(txtdniAlumno.Text, nivelM) = 1 Then
+                    Dim verificarRA = objnegNota.registrarNota(objentNotas)
+                    If verificarRA = True Then
+                        MsgBox("registro exitoso")
+                        DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
+                        DataGridView1.Columns(0).Visible = False
+                        LimpiarDatos()
+                        'Ver()
+                    Else
+                        MsgBox("Error de registro de nota")
+                    End If
+                Else
+                    MsgBox("El alumno no existe en ese nivel")
+                End If
             Else
-                MsgBox("Error de registro de nota")
+                MsgBox("no puede registrar dos notas iguales")
             End If
         Else
             MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
@@ -65,7 +81,14 @@ Public Class frmAgregarNota
 #End Region
 
 #Region "metodos creados"
-
+    Public Sub LimpiarDatos()
+        txtdniAlumno.Clear()
+        rbtInicial.Checked = False
+        rbtprimaria.Checked = False
+        cmbCompetencia.Text = Nothing
+        cmbnota.Text = Nothing
+        DataGridView2.Visible = False
+    End Sub
 #End Region
 
 #Region "funciones creadas"
@@ -112,13 +135,6 @@ Public Class frmAgregarNota
         btneditarNota.BackColor = Color.DodgerBlue
     End Sub
 
-    Private Sub btneliminarNota_MouseEnter(sender As Object, e As EventArgs) Handles btneliminarNota.MouseEnter
-        btneliminarNota.BackColor = Color.Red
-    End Sub
-
-    Private Sub btneliminarNota_MouseLeave(sender As Object, e As EventArgs) Handles btneliminarNota.MouseLeave
-        btneliminarNota.BackColor = Color.DodgerBlue
-    End Sub
 #End Region
     
    
@@ -159,7 +175,7 @@ Public Class frmAgregarNota
         End If
     End Sub
 
-    Private Sub btneliminarNota_Click(sender As Object, e As EventArgs) Handles btneliminarNota.Click
+    Private Sub btneliminarNota_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -184,4 +200,24 @@ Public Class frmAgregarNota
         cmbnota.Text = DataGridView1.Item(7, i).Value()
     End Sub
 
+
+    
+    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
+        Dim objneg As New negMatricula
+
+        If rbtInicial.Checked = True Then
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtInicial.Text)
+            DataGridView2.Visible = True
+        ElseIf rbtprimaria.Checked = True Then
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtprimaria.Text)
+            DataGridView2.Visible = True
+        Else
+            MsgBox("Debe seleccionar Inicial o Primaria")
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        txtdniAlumno.Text = DataGridView2.CurrentRow.Cells(0).Value
+        DataGridView2.Visible = False
+    End Sub
 End Class

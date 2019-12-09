@@ -22,4 +22,4 @@ insert into annoEscolar values ( @numeroAnno, @fechaInicio, @fechaTermino)
 end 
 
 exec registrarAnnoEscolar 2019,'2019/03/2','2019/12/20'
-select * from annoEscolar
+

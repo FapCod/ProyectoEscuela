@@ -17,7 +17,6 @@ Public Class frmAgregarAlumno
             objentAlumno._direccionAlumno = txtdireccionAlumno.Text
             objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
             objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
-            objentAlumno._eliminacionLogica = False
             Dim objnegAlumno As New negAlumno
             Dim verificarRA = objnegAlumno.registrarAlumno(objentAlumno)
             If verificarRA = True Then
@@ -49,7 +48,6 @@ Public Class frmAgregarAlumno
             objentAlumno._direccionAlumno = txtdireccionAlumno.Text
             objentAlumno._nombreDeApoderadoAlumno = txtnombreApoderadoAlumno.Text
             objentAlumno._numeroTelefonoApoderado = txtnumeroTelefonoApoderado.Text
-            objentAlumno._eliminacionLogica = False
             Dim negalum As New negAlumno
             Dim verificarRA = negalum.editarAlumno(objentAlumno)
             If verificarRA = True Then

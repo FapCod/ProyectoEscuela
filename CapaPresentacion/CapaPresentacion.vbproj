@@ -87,6 +87,12 @@
     <Compile Include="frmAgregarSeccion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAnnoEscolar.Designer.vb">
+      <DependentUpon>frmAnnoEscolar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnnoEscolar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBienvenidoUser.Designer.vb">
       <DependentUpon>frmBienvenidoUser.vb</DependentUpon>
     </Compile>
@@ -167,6 +173,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarSeccion.resx">
       <DependentUpon>frmAgregarSeccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnnoEscolar.resx">
+      <DependentUpon>frmAnnoEscolar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBienvenidoUser.resx">
       <DependentUpon>frmBienvenidoUser.vb</DependentUpon>

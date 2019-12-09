@@ -20,7 +20,7 @@ Public Class frmAgregarProfesor
         objentProfesor._correoProfesor = txtcorreoProfesor.Text
         objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
             objentProfesor._estadoProfesor = True
-        objentProfesor._eliminacionLogica = False
+
         Dim objnegProfesor As New negProfesor
         Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
         If verificarRP = True Then
@@ -54,7 +54,6 @@ Public Class frmAgregarProfesor
             objentProfesor._correoProfesor = txtcorreoProfesor.Text
             objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
             objentProfesor._estadoProfesor = True
-            objentProfesor._eliminacionLogica = False
             Dim objnegProfesor As New negProfesor
             Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
             If verificarRP = True Then

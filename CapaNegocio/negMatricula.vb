@@ -16,11 +16,29 @@ Public Class negMatricula
     Public Function VerificarSiExisteAlumno(dni As String) As Integer
         Return objdatMatricula.VerificarSiExisteAlumno(dni)
     End Function
+    Public Function VerificarSiExisteMatricula(dni As String) As Integer
+        Return objdatMatricula.VerificarSiExisteMatricula(dni)
+    End Function
+    Public Function VerificarSiHayVacante(codigoGrado As Integer) As Integer
+        Return objdatMatricula.VerificarSiHayVacante(codigoGrado)
+    End Function
     Public Function obtenerTabla() As DataTable
         Return objdatMatricula.obtenerTabla()
     End Function
 
+    Public Function VerificarSiEsDeInicialoPrimaria(dni As String, nivel As String) As DataTable
+        Return objdatMatricula.VerificarSiEsDeInicialoPrimaria(dni, nivel)
+    End Function
+    Public Function VerificarSiEsDeInicialoPrimariaInteger(dni As String, nivel As String) As Integer
+        Return objdatMatricula.VerificarSiEsDeInicialoPrimariaInteger(dni, nivel)
+    End Function
     Public Function decrementarVacante(objentMatricula) As Boolean
         Return objdatMatricula.decrementarVacante(objentMatricula)
+    End Function
+    Public Function decrementarVacante(codigoGrado As Integer, codigoSeccion As Integer) As Boolean
+        Return objdatMatricula.decrementarVacante(codigoGrado, codigoSeccion)
+    End Function
+    Public Function aumentarVacante(codigoGrado As Integer, codigoSeccion As Integer) As Boolean
+        Return objdatMatricula.aumentarVacante(codigoGrado, codigoSeccion)
     End Function
 End Class

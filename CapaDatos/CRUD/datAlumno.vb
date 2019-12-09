@@ -18,7 +18,7 @@ Public Class datAlumno
                 Command.Parameters.AddWithValue("@direccionAlumno", objAlumno._direccionAlumno)
                 Command.Parameters.AddWithValue("@nombreApoderadoAlumno", objAlumno._nombreDeApoderadoAlumno)
                 Command.Parameters.AddWithValue("@numeroTelefonoApoderado", objAlumno._numeroTelefonoApoderado)
-                Command.Parameters.AddWithValue("@eliminacionLogica", objAlumno._eliminacionLogica)
+
                 Command.CommandType = CommandType.StoredProcedure
                 Try
                     If Command.ExecuteNonQuery Then
@@ -48,7 +48,6 @@ Public Class datAlumno
                 Command.Parameters.AddWithValue("@direccionAlumno", objAlumno._direccionAlumno)
                 Command.Parameters.AddWithValue("@nombreApoderadoAlumno", objAlumno._nombreDeApoderadoAlumno)
                 Command.Parameters.AddWithValue("@numeroTelefonoApoderado", objAlumno._numeroTelefonoApoderado)
-                Command.Parameters.AddWithValue("@eliminacionLogica", objAlumno._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True

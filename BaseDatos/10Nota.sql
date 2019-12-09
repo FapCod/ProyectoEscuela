@@ -66,6 +66,21 @@ FROM     dbo.alumno INNER JOIN
 				  where dbo.alumno.dniAlumno = @dniAlumno and dbo.trimestre.codigoTrimestre = @codigoTrimestre and dbo.curso.codigoCurso = @codigoCurso and dbo.nota.eliminacionLogica=0
 end
 
-drop procedure listarNotaAlumnoPorCursoTrimestre
-delete from nota
-select * from nota
+
+
+
+--VALIDAR SI LA NOTA YA EXISTE
+create  procedure validarSiExisteNota (
+@descripcion varchar(100), 
+@codigoCurso varchar(15),
+@dniAlumno char(8),
+@codigoTrimestre varchar(10),
+@numeroAnno	int
+)
+as 
+begin 
+select * from nota where  descripcion = @descripcion and codigoCurso = @codigoCurso and dniAlumno = @dniAlumno 
+and codigoTrimestre = @codigoTrimestre and numeroAnno = @numeroAnno 
+end 
+
+

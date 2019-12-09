@@ -55,9 +55,7 @@ FROM     dbo.grado INNER JOIN
 				  WHERE  dbo.grado.numeroGrado=@grado and dbo.seccion.eliminacionLogica=0 and dbo.seccion.nivel='Inicial' and dbo.grado.nivelGrado='Inicial'
 
 end
-exec listarSeccionP 4
-drop procedure listarSeccionI
-drop procedure listarSeccionP
+
 -- fin del procedimiento almacenado listar seccion
 
 
@@ -78,10 +76,27 @@ as begin
 UPDATE seccion
 SET    numeroVacantes = numeroVacantes - 1 where codigoGrado=@codigoGrado and codigoSeccion=@codigoSeccion
 end
-exec decrementarVacante @codigoGrado=3, @codigoSeccion=9
-drop procedure decrementarVacante
 
-select * from seccion
+create procedure aumentarVacante(@codigoGrado int,@codigoSeccion int)
+as begin
+UPDATE seccion
+SET    numeroVacantes = numeroVacantes + 1 where codigoGrado=@codigoGrado and codigoSeccion=@codigoSeccion
+end
+
+
+
+
+
+--Comentario
+create procedure VerificarSiHayVacante(@codigoGrado int)
+as begin
+Select * from seccion 
+WHERE numeroVacantes=0 and codigoGrado=@codigoGrado
+end
+
+
+--fin
+
 
 
 create procedure VerificarSiExisteSeccionYGradoI(
@@ -91,6 +106,8 @@ as begin
 SELECT * FROM seccion
           WHERE eliminacionLogica =0 and nombreSeccion= @nombreSeccion and codigoGrado=@codigoGrado and nivel='Inicial' 
 END  
+
+
 create procedure VerificarSiExisteSeccionYGradoP(
 @nombreSeccion varchar,
 @codigoGrado int)
@@ -98,4 +115,5 @@ as begin
 SELECT * FROM seccion
           WHERE eliminacionLogica =0 and nombreSeccion= @nombreSeccion and codigoGrado=@codigoGrado and nivel='Primaria' 
 END  
+
 
