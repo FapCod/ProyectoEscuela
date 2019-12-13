@@ -262,4 +262,11 @@ Public Class frmAgregarAlumno
     End Sub
 #End Region
 
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
+
+   
 End Class

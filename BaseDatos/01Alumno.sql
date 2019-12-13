@@ -102,4 +102,22 @@ END
 
 
 
+--creacion de procedimientos para listar los alumnos con grado y seccion
+
+--creamos un procedimiento almacenado para listar alumnos por grado y seccion 
+create procedure listarAlumnosPorGradoSeccion(
+@anno int,
+@nivel varchar(10) ,
+@grado int ,
+@seccion int
+)
+as
+begin
+SELECT dbo.matricula.fechaMatricula, dbo.alumno.dniAlumno, dbo.alumno.nombreAlumno, dbo.alumno.apellidoAlumno, dbo.grado.numeroGrado, dbo.seccion.nombreSeccion, dbo.matricula.nivelAlumno
+FROM     dbo.alumno INNER JOIN
+                  dbo.matricula ON dbo.alumno.dniAlumno = dbo.matricula.dniAlumno INNER JOIN
+                  dbo.grado ON dbo.matricula.codigoGrado = dbo.grado.codigoGrado INNER JOIN
+                  dbo.seccion ON dbo.matricula.codigoSeccion = dbo.seccion.codigoSeccion AND dbo.grado.codigoGrado = dbo.seccion.codigoGrado
+				  where dbo.matricula.codigoGrado = @grado and dbo.matricula.codigoSeccion = @seccion and dbo.matricula.eliminacionLogica = 0 and dbo.matricula.nivelAlumno = @nivel and dbo.matricula.numeroAnno = @anno
+end 
 

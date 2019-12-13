@@ -289,6 +289,12 @@ Partial Public Class Colegio_DBDataSet
 
         Private columnapellidoProfesor As Global.System.Data.DataColumn
 
+        Private columnnombreSeccion As Global.System.Data.DataColumn
+
+        Private columnnumeroGrado As Global.System.Data.DataColumn
+
+        Private columnnivel As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -349,6 +355,30 @@ Partial Public Class Colegio_DBDataSet
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property nombreSeccionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnombreSeccion
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numeroGradoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumeroGrado
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property nivelColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnivel
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -385,9 +415,9 @@ Partial Public Class Colegio_DBDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddDataTable1Row(ByVal dniProfesor As String, ByVal nombreProfesor As String, ByVal apellidoProfesor As String) As DataTable1Row
+        Public Overloads Function AddDataTable1Row(ByVal dniProfesor As String, ByVal nombreProfesor As String, ByVal apellidoProfesor As String, ByVal nombreSeccion As String, ByVal numeroGrado As String, ByVal nivel As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow, DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {dniProfesor, nombreProfesor, apellidoProfesor}
+            Dim columnValuesArray() As Object = New Object() {dniProfesor, nombreProfesor, apellidoProfesor, nombreSeccion, numeroGrado, nivel}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -413,6 +443,9 @@ Partial Public Class Colegio_DBDataSet
             Me.columndniProfesor = MyBase.Columns("dniProfesor")
             Me.columnnombreProfesor = MyBase.Columns("nombreProfesor")
             Me.columnapellidoProfesor = MyBase.Columns("apellidoProfesor")
+            Me.columnnombreSeccion = MyBase.Columns("nombreSeccion")
+            Me.columnnumeroGrado = MyBase.Columns("numeroGrado")
+            Me.columnnivel = MyBase.Columns("nivel")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -424,6 +457,12 @@ Partial Public Class Colegio_DBDataSet
             MyBase.Columns.Add(Me.columnnombreProfesor)
             Me.columnapellidoProfesor = New Global.System.Data.DataColumn("apellidoProfesor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnapellidoProfesor)
+            Me.columnnombreSeccion = New Global.System.Data.DataColumn("nombreSeccion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnombreSeccion)
+            Me.columnnumeroGrado = New Global.System.Data.DataColumn("numeroGrado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumeroGrado)
+            Me.columnnivel = New Global.System.Data.DataColumn("nivel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnivel)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -615,6 +654,51 @@ Partial Public Class Colegio_DBDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property nombreSeccion() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDataTable1.nombreSeccionColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nombreSeccion' in table 'DataTable1' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDataTable1.nombreSeccionColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numeroGrado() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDataTable1.numeroGradoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numeroGrado' in table 'DataTable1' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDataTable1.numeroGradoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property nivel() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDataTable1.nivelColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nivel' in table 'DataTable1' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDataTable1.nivelColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsdniProfesorNull() As Boolean
             Return Me.IsNull(Me.tableDataTable1.dniProfesorColumn)
         End Function
@@ -647,6 +731,42 @@ Partial Public Class Colegio_DBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetapellidoProfesorNull()
             Me(Me.tableDataTable1.apellidoProfesorColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnombreSeccionNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.nombreSeccionColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnombreSeccionNull()
+            Me(Me.tableDataTable1.nombreSeccionColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumeroGradoNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.numeroGradoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumeroGradoNull()
+            Me(Me.tableDataTable1.numeroGradoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnivelNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.nivelColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnivelNull()
+            Me(Me.tableDataTable1.nivelColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

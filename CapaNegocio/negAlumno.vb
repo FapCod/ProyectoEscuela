@@ -25,4 +25,9 @@ Public Class negAlumno
         Dim dat As New datAlumno
         Return dat.obtenerTabla()
     End Function
+
+    Public Function obtenerTablaListar(anno As Integer, nivel As String, grado As Integer, seccion As Integer) As DataTable
+        Dim dat As New datAlumno
+        Return dat.obtenerTablaListar(anno, nivel, grado, seccion)
+    End Function
 End Class

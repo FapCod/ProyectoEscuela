@@ -59,7 +59,87 @@ Public Class frmAgregarNota
             MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
         End If
     End Sub
+    Private Sub btneditarNota_Click(sender As Object, e As EventArgs) Handles btneditarNota.Click
+        Dim idNota As Integer
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        idNota = DataGridView1.Item(0, i).Value()
+        Dim objentNotas As New entNota
+        If comprobar() Then
+            objentNotas._nota = cmbnota.Text
+            objentNotas._descripcion = cmbCompetencia.Text
+            objentNotas.objentAlumno._dniAlumno = txtdniAlumno.Text
+            objentNotas.objentAnnoEscolar._numeroAnno = cmbannoEscolar.Text
+            objentNotas.objentCurso._codigoCurso = cmbcodigocurso.SelectedValue
+            If cmbtrimestre.Text = "Primer Trimestre" Then
+                objentNotas.objentTrimestre._codigoTrimestre = "1Tri"
+            ElseIf cmbtrimestre.Text = "Segundo Trimestre" Then
+                objentNotas.objentTrimestre._codigoTrimestre = "2Tri"
+            ElseIf cmbtrimestre.Text = "Tercer Trimestre" Then
+                objentNotas.objentTrimestre._codigoTrimestre = "3Tri"
+            End If
+            objentNotas._eliminacionLogica = False
+            Dim objnegNota As New negNota
+            Dim verificarRA = objnegNota.editarNota(objentNotas, idNota)
+            If verificarRA = True Then
+                MsgBox("Actualizacion exitosa")
+                DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
+                DataGridView1.Columns(0).Visible = False
+                'LimpiarDatos()
+                'Ver()
+            Else
+                MsgBox("Error al actualizar nota")
+            End If
+        Else
+            MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
+        End If
+    End Sub
 
+    Private Sub btneliminarNota_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        Dim nivel As String
+        nivel = DataGridView1.Item(1, i).Value()
+        Dim comparar As Integer
+        Dim nievelA As String = "Primaria"
+        comparar = nivel.CompareTo(nievelA)
+        If comparar = 0 Then
+            rbtprimaria.Checked = True
+        Else
+            rbtInicial.Checked = True
+        End If
+        txtdniAlumno.Text = DataGridView1.Item(2, i).Value()
+        cmbtrimestre.Text = DataGridView1.Item(3, i).Value()
+        cmbcodigocurso.Text = DataGridView1.Item(4, i).Value()
+        cmbCompetencia.Text = DataGridView1.Item(5, i).Value()
+        cmbannoEscolar.Text = DataGridView1.Item(6, i).Value()
+        cmbnota.Text = DataGridView1.Item(7, i).Value()
+    End Sub
+
+
+
+    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
+        Dim objneg As New negMatricula
+
+        If rbtInicial.Checked = True Then
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtInicial.Text)
+            DataGridView2.Visible = True
+        ElseIf rbtprimaria.Checked = True Then
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtprimaria.Text)
+            DataGridView2.Visible = True
+        Else
+            MsgBox("Debe seleccionar Inicial o Primaria")
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        txtdniAlumno.Text = DataGridView2.CurrentRow.Cells(0).Value
+        DataGridView2.Visible = False
+    End Sub
     Private Sub rbtInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbtInicial.CheckedChanged
         Dim objnegCurso As New negCurso
         If rbtInicial.Checked = True Then
@@ -137,87 +217,11 @@ Public Class frmAgregarNota
 
 #End Region
     
-   
-    
-    Private Sub btneditarNota_Click(sender As Object, e As EventArgs) Handles btneditarNota.Click
-        Dim idNota As Integer
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        idNota = DataGridView1.Item(0, i).Value()
-        Dim objentNotas As New entNota
-        If comprobar() Then
-            objentNotas._nota = cmbnota.Text
-            objentNotas._descripcion = cmbCompetencia.Text
-            objentNotas.objentAlumno._dniAlumno = txtdniAlumno.Text
-            objentNotas.objentAnnoEscolar._numeroAnno = cmbannoEscolar.Text
-            objentNotas.objentCurso._codigoCurso = cmbcodigocurso.SelectedValue
-            If cmbtrimestre.Text = "Primer Trimestre" Then
-                objentNotas.objentTrimestre._codigoTrimestre = "1Tri"
-            ElseIf cmbtrimestre.Text = "Segundo Trimestre" Then
-                objentNotas.objentTrimestre._codigoTrimestre = "2Tri"
-            ElseIf cmbtrimestre.Text = "Tercer Trimestre" Then
-                objentNotas.objentTrimestre._codigoTrimestre = "3Tri"
-            End If
-            objentNotas._eliminacionLogica = False
-            Dim objnegNota As New negNota
-            Dim verificarRA = objnegNota.editarNota(objentNotas, idNota)
-            If verificarRA = True Then
-                MsgBox("Actualizacion exitosa")
-                DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
-                DataGridView1.Columns(0).Visible = False
-                'LimpiarDatos()
-                'Ver()
-            Else
-                MsgBox("Error al actualizar nota")
-            End If
-        Else
-            MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
-        End If
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
     End Sub
-
-    Private Sub btneliminarNota_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        Dim nivel As String
-        nivel = DataGridView1.Item(1, i).Value()
-        Dim comparar As Integer
-        Dim nievelA As String = "Primaria"
-        comparar = nivel.CompareTo(nievelA)
-        If comparar = 0 Then
-            rbtprimaria.Checked = True
-        Else
-            rbtInicial.Checked = True
-        End If
-        txtdniAlumno.Text = DataGridView1.Item(2, i).Value()
-        cmbtrimestre.Text = DataGridView1.Item(3, i).Value()
-        cmbcodigocurso.Text = DataGridView1.Item(4, i).Value()
-        cmbCompetencia.Text = DataGridView1.Item(5, i).Value()
-        cmbannoEscolar.Text = DataGridView1.Item(6, i).Value()
-        cmbnota.Text = DataGridView1.Item(7, i).Value()
-    End Sub
-
+#End Region
 
     
-    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
-        Dim objneg As New negMatricula
-
-        If rbtInicial.Checked = True Then
-            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtInicial.Text)
-            DataGridView2.Visible = True
-        ElseIf rbtprimaria.Checked = True Then
-            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtprimaria.Text)
-            DataGridView2.Visible = True
-        Else
-            MsgBox("Debe seleccionar Inicial o Primaria")
-        End If
-    End Sub
-
-    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        txtdniAlumno.Text = DataGridView2.CurrentRow.Cells(0).Value
-        DataGridView2.Visible = False
-    End Sub
 End Class

@@ -6,7 +6,39 @@ CapaPresentacion
 </name>
 </assembly>
 <members>
-<member name="T:CapaPresentacion.Colegio_DBDataSet.DataTable1DataTable">
+<member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet1.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet1.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet1.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet.DataTable1DataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -30,10 +62,6 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="P:CapaPresentacion.My.Resources.Resources._00">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="T:CapaPresentacion.My.Resources.Resources">
 	<summary>

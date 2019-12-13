@@ -271,5 +271,12 @@ Public Class frmAgregarProfesor
         btnbuscarProfesor.BackColor = Color.DodgerBlue
     End Sub
 #End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
+
     
 End Class

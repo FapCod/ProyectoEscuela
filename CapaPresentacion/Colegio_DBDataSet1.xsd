@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Colegio_DBDataSet1" targetNamespace="http://tempuri.org/Colegio_DBDataSet1.xsd" xmlns:mstns="http://tempuri.org/Colegio_DBDataSet1.xsd" xmlns="http://tempuri.org/Colegio_DBDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Colegio_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Colegio_DBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaPresentacion.My.MySettings.GlobalReference.Default.Colegio_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Colegio_DBDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Colegio_DBDataSet1" msprop:Generator_UserDSName="Colegio_DBDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fechaMatricula" msprop:Generator_ColumnVarNameInTable="columnfechaMatricula" msprop:Generator_ColumnPropNameInRow="fechaMatricula" msprop:Generator_ColumnPropNameInTable="fechaMatriculaColumn" msprop:Generator_UserColumnName="fechaMatricula" type="xs:string" minOccurs="0" />
+              <xs:element name="dniAlumno" msprop:Generator_ColumnVarNameInTable="columndniAlumno" msprop:Generator_ColumnPropNameInRow="dniAlumno" msprop:Generator_ColumnPropNameInTable="dniAlumnoColumn" msprop:Generator_UserColumnName="dniAlumno" type="xs:string" minOccurs="0" />
+              <xs:element name="nombreAlumno" msprop:Generator_ColumnVarNameInTable="columnnombreAlumno" msprop:Generator_ColumnPropNameInRow="nombreAlumno" msprop:Generator_ColumnPropNameInTable="nombreAlumnoColumn" msprop:Generator_UserColumnName="nombreAlumno" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidoAlumno" msprop:Generator_ColumnVarNameInTable="columnapellidoAlumno" msprop:Generator_ColumnPropNameInRow="apellidoAlumno" msprop:Generator_ColumnPropNameInTable="apellidoAlumnoColumn" msprop:Generator_UserColumnName="apellidoAlumno" type="xs:string" minOccurs="0" />
+              <xs:element name="numeroGrado" msprop:Generator_ColumnVarNameInTable="columnnumeroGrado" msprop:Generator_ColumnPropNameInRow="numeroGrado" msprop:Generator_ColumnPropNameInTable="numeroGradoColumn" msprop:Generator_UserColumnName="numeroGrado" type="xs:string" minOccurs="0" />
+              <xs:element name="nombreSeccion" msprop:Generator_ColumnVarNameInTable="columnnombreSeccion" msprop:Generator_ColumnPropNameInRow="nombreSeccion" msprop:Generator_ColumnPropNameInTable="nombreSeccionColumn" msprop:Generator_UserColumnName="nombreSeccion" type="xs:string" minOccurs="0" />
+              <xs:element name="nivelAlumno" msprop:Generator_ColumnVarNameInTable="columnnivelAlumno" msprop:Generator_ColumnPropNameInRow="nivelAlumno" msprop:Generator_ColumnPropNameInTable="nivelAlumnoColumn" msprop:Generator_UserColumnName="nivelAlumno" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

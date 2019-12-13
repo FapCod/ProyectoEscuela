@@ -82,5 +82,30 @@ begin
 select * from nota where  descripcion = @descripcion and codigoCurso = @codigoCurso and dniAlumno = @dniAlumno 
 and codigoTrimestre = @codigoTrimestre and numeroAnno = @numeroAnno 
 end 
+---
 
+--creamos procedimiento almacenado para listar notas de reporte
+create procedure listarNotasReporte(
+@dni char(8),
+@anno int, 
+@nivel varchar(10),
+@grado int, 
+@seccion int, 
+@curso varchar(15)
+)
+as
+begin
+SELECT        dbo.annoEscolar.numeroAnno, dbo.alumno.dniAlumno, dbo.grado.nivelGrado, dbo.grado.numeroGrado, dbo.seccion.nombreSeccion, dbo.curso.nombreCurso, dbo.trimestre.descripcionTrimestre, dbo.nota.descripcion, 
+                         dbo.nota.nota
+FROM            dbo.alumno INNER JOIN
+                         dbo.nota ON dbo.alumno.dniAlumno = dbo.nota.dniAlumno INNER JOIN
+                         dbo.annoEscolar ON dbo.nota.numeroAnno = dbo.annoEscolar.numeroAnno INNER JOIN
+                         dbo.curso ON dbo.nota.codigoCurso = dbo.curso.codigoCurso INNER JOIN
+                         dbo.seccion ON dbo.annoEscolar.numeroAnno = dbo.seccion.numeroAnno INNER JOIN
+                         dbo.grado ON dbo.seccion.codigoGrado = dbo.grado.codigoGrado INNER JOIN
+                         dbo.trimestre ON dbo.nota.codigoTrimestre = dbo.trimestre.codigoTrimestre
+						 where dbo.nota.dniAlumno = @dni and dbo.nota.numeroAnno = @anno
+						 and dbo.grado.nivelGrado = @nivel and dbo.grado.codigoGrado = @grado
+						 and dbo.seccion.codigoSeccion = @seccion and dbo.nota.codigoCurso = @curso	
+end
 

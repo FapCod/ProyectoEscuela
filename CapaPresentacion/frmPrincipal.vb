@@ -1,7 +1,7 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmPrincipal
-
+#Region "Botones del formulario"
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblNombreUser.Text = usuarioActivo.nombreUsuario
         lblNombresUsuario.Text = usuarioActivo.nombresUsuario
@@ -20,26 +20,13 @@ Public Class frmPrincipal
         End If
         manejoDePermisos()
     End Sub
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
-        If MessageBox.Show("Estas seguro de cerrar Ventana?", "Mensaje",
-         MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Application.Exit()
-        End If
-
-    End Sub
-
-
-    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs)
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-
     Private Sub btnCerrarC_Click(sender As Object, e As EventArgs) Handles btnCerrarC.Click
         If MessageBox.Show("Estas seguro de cerrar cuenta?", "Mensaje",
-         MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Close()
         End If
     End Sub
+
     Private Sub manejoDePermisos() ' restricciones en los botones
         If usuarioActivo.cargoUsuario = Cargos.Profesor Then
             btnRegistrarMaestro.Enabled = False
@@ -131,7 +118,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnReporteProfesor_Click(sender As Object, e As EventArgs) Handles btnReporteProfesor.Click
-        frmReporteProfesor.Show()
+        frmReportes.Show()
     End Sub
 
     Private Sub thorafecha_Tick(sender As Object, e As EventArgs) Handles thorafecha.Tick
@@ -142,4 +129,21 @@ Public Class frmPrincipal
     Private Sub btnAperturarAno_Click(sender As Object, e As EventArgs) Handles btnAperturarAno.Click
         frmAnnoEscolar.Show()
     End Sub
+
+    Private Sub btnListarAlumnos_Click(sender As Object, e As EventArgs) Handles btnListarAlumnos.Click
+        frmListarAlumnos.Show()
+    End Sub
+
+    Private Sub btnListarMaestros_Click(sender As Object, e As EventArgs) Handles btnListarMaestros.Click
+        frmListarMestros.Show()
+    End Sub
+#End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
+
+   
 End Class

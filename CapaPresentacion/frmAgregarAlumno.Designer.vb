@@ -148,7 +148,7 @@ Partial Class frmAgregarAlumno
         '
         Me.cmbsexoAlumno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbsexoAlumno.FormattingEnabled = True
-        Me.cmbsexoAlumno.Items.AddRange(New Object() {"M", "F", "No especifico"})
+        Me.cmbsexoAlumno.Items.AddRange(New Object() {"M", "F", "N"})
         Me.cmbsexoAlumno.Location = New System.Drawing.Point(252, 174)
         Me.cmbsexoAlumno.Name = "cmbsexoAlumno"
         Me.cmbsexoAlumno.Size = New System.Drawing.Size(184, 24)

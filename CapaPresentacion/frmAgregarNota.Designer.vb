@@ -224,7 +224,7 @@ Partial Class frmAgregarNota
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(34, 111)
+        Me.DataGridView2.Location = New System.Drawing.Point(24, 111)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowTemplate.Height = 24
         Me.DataGridView2.Size = New System.Drawing.Size(227, 124)

@@ -105,8 +105,32 @@ Public Class datAlumno
             Dim da As SqlDataAdapter
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandType = CommandType.Text
+                Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "obtenerTablaAlumno"
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+    Public Function obtenerTablaListar(anno As Integer, nivel As String, grado As Integer, seccion As Integer) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "listarAlumnosPorGradoSeccion"
+                Command.Parameters.AddWithValue("@anno", anno)
+                Command.Parameters.AddWithValue("@nivel", nivel)
+                Command.Parameters.AddWithValue("@grado", grado)
+                Command.Parameters.AddWithValue("@seccion", seccion)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
                     da = New SqlDataAdapter(Command)

@@ -22,6 +22,7 @@ Partial Class frmagregarSeccion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmagregarSeccion))
         Me.txtvacantes = New System.Windows.Forms.TextBox()
         Me.label = New System.Windows.Forms.Label()
         Me.txtSeccion = New System.Windows.Forms.TextBox()
@@ -208,7 +209,9 @@ Partial Class frmagregarSeccion
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmagregarSeccion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmagregarSeccion"
         CType(Me.dgvSeccion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

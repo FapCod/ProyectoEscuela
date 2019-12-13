@@ -116,3 +116,19 @@ direccionProfesor,
 correoProfesor ,
 telefonoProfesor  from profesor 
 end
+
+--creamos un procedimiento almacenado para listar profesores por grado y seccion 
+create procedure listarProfesorPorGradoSeccion(
+@anno int, 
+@nivel varchar(10),
+@grado int, 
+@seccion int
+)
+as 
+begin
+SELECT dbo.profesor.dniProfesor, dbo.profesor.nombreProfesor, dbo.profesor.apellidoProfesor, dbo.seccion.nombreSeccion, dbo.grado.numeroGrado, dbo.seccion.nivel
+FROM     dbo.grado INNER JOIN
+                  dbo.seccion ON dbo.grado.codigoGrado = dbo.seccion.codigoGrado INNER JOIN
+                  dbo.profesor ON dbo.seccion.dniProfesor = dbo.profesor.dniProfesor
+				  where dbo.seccion.numeroAnno = @anno and dbo.seccion.nivel = @nivel and dbo.seccion.codigoGrado = @grado and dbo.seccion.codigoSeccion = @seccion
+end 

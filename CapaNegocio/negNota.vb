@@ -10,6 +10,9 @@ Public Class negNota
         Return objdatNota.obtenerTabla(objentNota)
     End Function
 
+    Public Function ObtenerTablaListar(dni As String, anno As Integer, nivel As String, grado As Integer, seccion As Integer, curso As String) As DataTable
+        Return objdatNota.obtenerTablaListar(dni, anno, nivel, grado, seccion, curso)
+    End Function
     Public Function editarNota(objentNota As entNota, idNota As Integer) As Boolean
         Return objdatNota.editarNota(objentNota, idNota)
     End Function

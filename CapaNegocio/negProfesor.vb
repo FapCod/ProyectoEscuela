@@ -32,4 +32,8 @@ Public Class negProfesor
         Dim dat As New datProfesor
         Return dat.ObtenerReporteProfesor()
     End Function
+    Public Function ObtenerTablaListar(anno As Integer, nivel As String, grado As Integer, seccion As Integer) As DataTable
+        Dim dat As New datProfesor
+        Return dat.obtenerTablaListar(anno, nivel, grado, seccion)
+    End Function
 End Class
