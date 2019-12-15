@@ -2,25 +2,43 @@
 Public Class datGrado
     Inherits datConexion
     Public Function listarGradoInicial() As DataTable
-        Dim cnn As SqlConnection
-        Dim cadena As String
-        cnn = ObtenerConexion()
-        cadena = "listarGradoI "
-        cnn.Open()
-        Dim cmd As New SqlCommand(cadena, cnn)
-        Dim dt2 As New DataTable
-        dt2.Load(cmd.ExecuteReader())
-        Return dt2
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "listarGradoI"
+                Command.CommandType = CommandType.StoredProcedure
+                Dim dt1 As New DataTable
+                dt1.Load(Command.ExecuteReader())
+                If Command.ExecuteNonQuery Then
+                    Return dt1
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+        Return Nothing
     End Function
+
     Public Function listarGradoPrimaria() As DataTable
-        Dim cnn As SqlConnection
-        Dim cadena As String
-        cnn = ObtenerConexion()
-        cadena = "listarGradoP"
-        cnn.Open()
-        Dim cmd As New SqlCommand(cadena, cnn)
-        Dim dt3 As New DataTable
-        dt3.Load(cmd.ExecuteReader())
-        Return dt3
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "listarGradoP"
+                Command.CommandType = CommandType.StoredProcedure
+                Dim dt1 As New DataTable
+                dt1.Load(Command.ExecuteReader())
+                If Command.ExecuteNonQuery Then
+                    Return dt1
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+        Return Nothing
     End Function
+
+   
+    
 End Class

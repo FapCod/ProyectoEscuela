@@ -31,6 +31,7 @@ Public Class frmPrincipal
         If usuarioActivo.cargoUsuario = Cargos.Profesor Then
             btnRegistrarMaestro.Enabled = False
             btnListarMaestros.Enabled = False
+            btnAperturarAno.Enabled = False
         End If
     End Sub
 
@@ -146,4 +147,12 @@ Public Class frmPrincipal
 #End Region
 
    
+    Private Sub btnEditarMisDatos_Click(sender As Object, e As EventArgs) Handles btnEditarMisDatos.Click
+        Dim director As String = "Director"
+        If usuarioActivo.cargoUsuario.Equals(director) Then
+            frmEditarDatosDirector.Show()
+        Else
+            frmEditarDatosProfesor.Show()
+        End If
+    End Sub
 End Class

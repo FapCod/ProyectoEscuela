@@ -7,18 +7,20 @@ Public Class frmAgregarNota
         Dim objnegTrimestre As New negTrimestre
         cmbtrimestre.DataSource = objnegTrimestre.listarTrimestre()
         cmbtrimestre.DisplayMember = "descripcionTrimestre"
-        Dim objnegAnnoEscolar As New negAnnoEscolar
-        cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
-        cmbannoEscolar.DisplayMember = "numeroAnno"
+        'Dim objnegAnnoEscolar As New negAnnoEscolar
+        'cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
+        'cmbannoEscolar.DisplayMember = "numeroAnno"
         DataGridView2.Visible = False
     End Sub
 
     Private Sub btnagregarNota_Click(sender As Object, e As EventArgs) Handles btnagregarNota.Click
         Dim objentNotas As New entNota
         If comprobar() Then
+            Dim dniAlumno As Integer
+            dniAlumno = DataGridView2.CurrentRow.Cells(0).Value
             objentNotas._nota = cmbnota.Text
             objentNotas._descripcion = cmbCompetencia.Text
-            objentNotas.objentAlumno._dniAlumno = txtdniAlumno.Text
+            objentNotas.objentAlumno._dniAlumno = dniAlumno
             objentNotas.objentAnnoEscolar._numeroAnno = cmbannoEscolar.Text
             objentNotas.objentCurso._codigoCurso = cmbcodigocurso.SelectedValue
             If cmbtrimestre.Text = "Primer Trimestre" Then
@@ -38,7 +40,7 @@ Public Class frmAgregarNota
                 ElseIf rbtprimaria.Checked = True Then
                     nivelM = "Primaria"
                 End If
-                If objnegM.VerificarSiEsDeInicialoPrimariaInteger(txtdniAlumno.Text, nivelM) = 1 Then
+                If objnegM.VerificarSiEsDeInicialoPrimariaInteger(txtapellidoAlumno.Text, nivelM) = 1 Then
                     Dim verificarRA = objnegNota.registrarNota(objentNotas)
                     If verificarRA = True Then
                         MsgBox("registro exitoso")
@@ -53,7 +55,7 @@ Public Class frmAgregarNota
                     MsgBox("El alumno no existe en ese nivel")
                 End If
             Else
-                MsgBox("no puede registrar dos notas iguales")
+                MsgBox("Ya existe Nota para aquella competencia")
             End If
         Else
             MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
@@ -62,13 +64,17 @@ Public Class frmAgregarNota
     Private Sub btneditarNota_Click(sender As Object, e As EventArgs) Handles btneditarNota.Click
         Dim idNota As Integer
         Dim i As Integer
+        Dim objnegNota As New negNota
         i = DataGridView1.CurrentRow.Index
         idNota = DataGridView1.Item(0, i).Value()
+        Dim dniAlumno As String
+        dniAlumno = DataGridView2.CurrentRow.Cells(0).Value
         Dim objentNotas As New entNota
         If comprobar() Then
+
             objentNotas._nota = cmbnota.Text
             objentNotas._descripcion = cmbCompetencia.Text
-            objentNotas.objentAlumno._dniAlumno = txtdniAlumno.Text
+            objentNotas.objentAlumno._dniAlumno = dniAlumno
             objentNotas.objentAnnoEscolar._numeroAnno = cmbannoEscolar.Text
             objentNotas.objentCurso._codigoCurso = cmbcodigocurso.SelectedValue
             If cmbtrimestre.Text = "Primer Trimestre" Then
@@ -79,25 +85,29 @@ Public Class frmAgregarNota
                 objentNotas.objentTrimestre._codigoTrimestre = "3Tri"
             End If
             objentNotas._eliminacionLogica = False
-            Dim objnegNota As New negNota
-            Dim verificarRA = objnegNota.editarNota(objentNotas, idNota)
-            If verificarRA = True Then
-                MsgBox("Actualizacion exitosa")
-                DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
-                DataGridView1.Columns(0).Visible = False
-                'LimpiarDatos()
-                'Ver()
+            If objnegNota.validarSiExisteNota(objentNotas) = 0 Then
+                Dim verificarRA = objnegNota.editarNota(objentNotas, idNota)
+                If verificarRA = True Then
+                    MsgBox("Actualizacion exitosa")
+                    DataGridView1.DataSource = objnegNota.obtenerTabla(objentNotas)
+                    DataGridView1.Columns(0).Visible = False
+                    radioButtonEnabletrue()
+                    LimpiarDatos()
+                    'Ver()
+                Else
+                    MsgBox("Error al actualizar nota")
+                End If
+
             Else
-                MsgBox("Error al actualizar nota")
+                MsgBox("Ya existe Nota para aquella competencia")
             End If
+
         Else
             MsgBox("Debe llenar los datos que le faltan", MsgBoxStyle.Information)
         End If
     End Sub
 
-    Private Sub btneliminarNota_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Dim i As Integer
@@ -112,24 +122,26 @@ Public Class frmAgregarNota
         Else
             rbtInicial.Checked = True
         End If
-        txtdniAlumno.Text = DataGridView1.Item(2, i).Value()
-        cmbtrimestre.Text = DataGridView1.Item(3, i).Value()
-        cmbcodigocurso.Text = DataGridView1.Item(4, i).Value()
-        cmbCompetencia.Text = DataGridView1.Item(5, i).Value()
-        cmbannoEscolar.Text = DataGridView1.Item(6, i).Value()
-        cmbnota.Text = DataGridView1.Item(7, i).Value()
+        txtapellidoAlumno.Text = DataGridView1.Item(3, i).Value()
+        cmbtrimestre.Text = DataGridView1.Item(5, i).Value()
+        cmbcodigocurso.Text = DataGridView1.Item(6, i).Value()
+        cmbCompetencia.Text = DataGridView1.Item(7, i).Value()
+        cmbannoEscolar.Text = DataGridView1.Item(8, i).Value()
+        cmbnota.Text = DataGridView1.Item(9, i).Value()
+
+        radioButtonEnableFalse()
     End Sub
 
 
 
-    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
+    Private Sub txtapellidoAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtapellidoAlumno.TextChanged
         Dim objneg As New negMatricula
 
         If rbtInicial.Checked = True Then
-            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtInicial.Text)
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtapellidoAlumno.Text, rbtInicial.Text)
             DataGridView2.Visible = True
         ElseIf rbtprimaria.Checked = True Then
-            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtdniAlumno.Text, rbtprimaria.Text)
+            DataGridView2.DataSource = objneg.VerificarSiEsDeInicialoPrimaria(txtapellidoAlumno.Text, rbtprimaria.Text)
             DataGridView2.Visible = True
         Else
             MsgBox("Debe seleccionar Inicial o Primaria")
@@ -137,7 +149,11 @@ Public Class frmAgregarNota
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        txtdniAlumno.Text = DataGridView2.CurrentRow.Cells(0).Value
+        cmbannoEscolar.DropDownStyle = ComboBoxStyle.DropDown
+        Dim dniAlumno As Integer
+        dniAlumno = DataGridView2.CurrentRow.Cells(0).Value
+        txtapellidoAlumno.Text = DataGridView2.CurrentRow.Cells(1).Value
+        cmbannoEscolar.Text = DataGridView2.CurrentRow.Cells(3).Value
         DataGridView2.Visible = False
     End Sub
     Private Sub rbtInicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbtInicial.CheckedChanged
@@ -162,18 +178,29 @@ Public Class frmAgregarNota
 
 #Region "metodos creados"
     Public Sub LimpiarDatos()
-        txtdniAlumno.Clear()
+        txtapellidoAlumno.Clear()
         rbtInicial.Checked = False
         rbtprimaria.Checked = False
         cmbCompetencia.Text = Nothing
         cmbnota.Text = Nothing
         DataGridView2.Visible = False
     End Sub
+    Public Sub radioButtonEnableFalse()
+        If rbtInicial.Checked = True Then
+            rbtprimaria.Enabled = False
+        ElseIf rbtprimaria.Checked = True Then
+            rbtInicial.Enabled = False
+        End If
+    End Sub
+    Public Sub radioButtonEnabletrue()
+        rbtprimaria.Enabled = True
+        rbtInicial.Enabled = True
+    End Sub
 #End Region
 
 #Region "funciones creadas"
     Private Function comprobar() As Boolean
-        If Len(Trim$(txtdniAlumno.Text)) <> 0 And Len(Trim$(cmbannoEscolar.Text)) <> 0 And Len(Trim$(cmbnota.Text)) <> 0 And Len(Trim$(cmbCompetencia.Text)) <> 0 Then
+        If Len(Trim$(txtapellidoAlumno.Text)) <> 0 And Len(Trim$(cmbannoEscolar.Text)) <> 0 And Len(Trim$(cmbnota.Text)) <> 0 And Len(Trim$(cmbCompetencia.Text)) <> 0 Then
             Return True
         Else
             Return False
@@ -182,18 +209,15 @@ Public Class frmAgregarNota
 #End Region
 
 #Region "validacion de numeros y letras"
-    Private Sub txtdniAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniAlumno.KeyPress
-        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+    Private Sub txtapellidoAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellidoAlumno.KeyPress
+        If Char.IsLetter(e.KeyChar) Then 'Si es letra si entra al textbox
+
             e.Handled = False
-            If txtdniAlumno.TextLength > 7 Then
-                e.Handled = True
-            End If
+
         ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
             e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
-            e.Handled = True
         Else
-            e.Handled = True   'Si es letra no entra al textbox
+            e.Handled = True   'Si es number no entra al textbox
         End If
     End Sub
 #End Region
@@ -224,4 +248,11 @@ Public Class frmAgregarNota
 #End Region
 
     
+    Private Sub cmbannoEscolar_MouseHover(sender As Object, e As EventArgs) Handles cmbannoEscolar.MouseHover
+        cmbannoEscolar.Items.Add(cmbannoEscolar.Text)
+        cmbannoEscolar.DropDownStyle = ComboBoxStyle.DropDownList
+    End Sub
+
+   
+  
 End Class

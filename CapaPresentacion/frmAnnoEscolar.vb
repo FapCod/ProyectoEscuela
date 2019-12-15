@@ -4,15 +4,20 @@ Public Class frmAnnoEscolar
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAperturar.Click
         Dim objent As New entAnnoEscolar
-        objent._numeroAnno = txtAnnoEscolar.Text
-        objent._fechaInicio = dtFechaInicio.Text
-        objent._fechaTermino = dtFechaFin.Text
-        Dim objneg As New negAnnoEscolar
-        Dim verificar = objneg.registrarAnnoEscolar(objent)
-        If verificar Then
-            MsgBox("Registro exitoso")
+        If compararAnnos() = False Then
+
+            objent._numeroAnno = txtAnnoEscolar.Text
+            objent._fechaInicio = dtFechaInicio.Text
+            objent._fechaTermino = dtFechaFin.Text
+            Dim objneg As New negAnnoEscolar
+            Dim verificar = objneg.registrarAnnoEscolar(objent)
+            If verificar Then
+                MsgBox("Registro exitoso")
+            Else
+                MsgBox("AÑO YA ESTABLECIDO")
+            End If
         Else
-            MsgBox("AÑO YA ESTABLECIDO")
+            MsgBox("Los años deben coincidir")
         End If
     End Sub
 
@@ -37,4 +42,27 @@ Public Class frmAnnoEscolar
         Me.Close()
     End Sub
 #End Region
+
+    Private Sub frmAnnoEscolar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim neg As New negAnnoEscolar
+        DataGridView1.DataSource = neg.listarAnnoEscolar()
+    End Sub
+
+    Private Function compararAnnos() As Boolean
+        Dim fecha1 As Integer = dtFechaInicio.Value.Year
+        Dim fecha2 As Integer = dtFechaFin.Value.Year
+        Dim fecha3 As Integer = Val(txtAnnoEscolar.Text)
+        Dim fecha4 As Integer = Year(Now)
+        Dim comparar As Integer
+        Dim comparar1 As Integer
+        Dim comparar2 As Integer
+        comparar2 = fecha3.CompareTo(fecha4)
+        comparar = fecha1.CompareTo(fecha3)
+        comparar1 = fecha2.CompareTo(fecha3)
+        If comparar = 0 And comparar1 = 0 And comparar2 = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 End Class

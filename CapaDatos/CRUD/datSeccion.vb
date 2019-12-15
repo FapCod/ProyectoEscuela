@@ -15,7 +15,6 @@ Public Class datSeccion
                 Command.Parameters.AddWithValue("@numeroAnno", objSeccion.objentNumeroAnno._numeroAnno)
                 Command.Parameters.AddWithValue("@numeroVacantes", objSeccion._numeroVacantes)
                 Command.Parameters.AddWithValue("@nivel", objSeccion._nivel)
-                Command.Parameters.AddWithValue("@eliminacionLogica", objSeccion._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -47,7 +46,7 @@ Public Class datSeccion
         End Using
     End Function
     
-    Public Function cargarSeccion(grado As Integer) As DataTable
+    Public Function cargarSeccion(grado As Integer, anno As Integer) As DataTable
         Using conexion = ObtenerConexion()
             conexion.Open()
             Dim dt As DataTable
@@ -56,6 +55,7 @@ Public Class datSeccion
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "listarSeccionI"
+                Command.Parameters.AddWithValue("@anno", anno)
                 Command.Parameters.AddWithValue("@grado", grado)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
@@ -69,7 +69,7 @@ Public Class datSeccion
         End Using
     End Function
 
-    Public Function cargarSeccionP(grado As Integer) As DataTable
+    Public Function cargarSeccionP(grado As Integer, anno As Integer) As DataTable
         Using conexion = ObtenerConexion()
             conexion.Open()
             Dim dt As DataTable
@@ -78,6 +78,7 @@ Public Class datSeccion
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "listarSeccionP"
+                Command.Parameters.AddWithValue("@anno", anno)
                 Command.Parameters.AddWithValue("@grado", grado)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
@@ -100,6 +101,7 @@ Public Class datSeccion
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "VerificarSiExisteSeccionYGradoI"
+                Command.Parameters.AddWithValue("@anno", objSeccion.objentNumeroAnno._numeroAnno)
                 Command.Parameters.AddWithValue("@nombreSeccion", objSeccion._nombreSeccion)
                 Command.Parameters.AddWithValue("@codigoGrado", objSeccion.objentGrado._codigoGrado)
                 If Command.ExecuteNonQuery Then
@@ -126,6 +128,7 @@ Public Class datSeccion
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "VerificarSiExisteSeccionYGradoP"
+                Command.Parameters.AddWithValue("@anno", objSeccion.objentNumeroAnno._numeroAnno)
                 Command.Parameters.AddWithValue("@nombreSeccion", objSeccion._nombreSeccion)
                 Command.Parameters.AddWithValue("@codigoGrado", objSeccion.objentGrado._codigoGrado)
                 If Command.ExecuteNonQuery Then

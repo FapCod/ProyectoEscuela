@@ -9,6 +9,7 @@ Public Class frmAgregarMatricula
         cmbannoEscolar.DisplayMember = "numeroAnno"
         dgvinicial.Visible = False
         dgvprimaria.Visible = False
+        DataGridView2.Visible = False
         ver()
     End Sub
 
@@ -17,45 +18,51 @@ Public Class frmAgregarMatricula
         Dim objentMatricula As New entMatricula
         Dim objnegMatricula As New negMatricula
         If comprobar() Then
-            If compararFechas() = False Then
-                If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
-                    If objnegMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 0 Then
-                        If objnegMatricula.VerificarSiHayVacante(cmbcodGrado.SelectedValue) = 0 Then
-                            objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
-                            objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
-                            objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
-                            objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
-                            objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
-                            If rbtinicial.Checked = True Then
-                                objentMatricula._nivelAlumno = "Inicial"
+            If compararAnnos() = False Then
 
-                            End If
-                            If rbtPrimaria.Checked = True Then
-                                objentMatricula._nivelAlumno = "Primaria"
 
-                            End If
-                            objentMatricula._eliminacionLogica = False
+                If compararFechas() = False Then
+                    If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
+                        If objnegMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 0 Then
+                            If objnegMatricula.VerificarSiHayVacante(cmbcodGrado.SelectedValue) = 0 Then
+                                objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
+                                objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
+                                objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
+                                objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
+                                objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
+                                If rbtinicial.Checked = True Then
+                                    objentMatricula._nivelAlumno = "Inicial"
 
-                            Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
-                            If verificarRP = True Then
-                                MsgBox("registro exitoso")
-                                objnegMatricula.decrementarVacante(objentMatricula)
-                                ver()
-                                LimpiarDatos()
+                                End If
+                                If rbtPrimaria.Checked = True Then
+                                    objentMatricula._nivelAlumno = "Primaria"
+
+                                End If
+                                objentMatricula._eliminacionLogica = False
+
+                                Dim verificarRP = objnegMatricula.registrarMatricula(objentMatricula)
+                                If verificarRP = True Then
+                                    MsgBox("registro exitoso")
+                                    objnegMatricula.decrementarVacante(objentMatricula)
+                                    ver()
+                                    LimpiarDatos()
+                                Else
+                                    MsgBox("Error de registro de Matricula")
+                                End If
                             Else
-                                MsgBox("Error de registro de Matricula")
+                                MsgBox("Ya no hay vacantes en esa seccion")
                             End If
                         Else
-                            MsgBox("Ya no hay vacantes en esa seccion")
+                            MsgBox("Este alumno ya esta registrado")
                         End If
                     Else
-                        MsgBox("Este alumno ya esta registrado")
+                        MsgBox("El alumno no existe")
                     End If
                 Else
-                    MsgBox("El alumno no existe")
+                    MsgBox("Debe tener la fecha actual")
                 End If
             Else
-                MsgBox("Debe tener la fecha actual")
+                MsgBox("Deben coincidir los años")
             End If
         Else
             MsgBox("Debe llenar todos los datos")
@@ -104,40 +111,44 @@ Public Class frmAgregarMatricula
         Dim objentMatricula As New entMatricula
         Dim objnegMatricula As New negMatricula
         If comprobar() Then
-            If compararFechas() = False Then
+            If compararAnnos() = False Then
 
 
-                If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
-                    objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
-                    objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
-                    objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
-                    objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
-                    objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
-                    If rbtinicial.Checked = True Then
-                        objentMatricula._nivelAlumno = "Inicial"
+                If compararFechas() = False Then
+                    If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
+                        objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
+                        objentMatricula.objentAlumno._dniAlumno = txtdniAlumno.Text
+                        objentMatricula.objentAnnoEscolar._numeroAnno = Val(cmbannoEscolar.Text)
+                        objentMatricula.objentgrado._codigoGrado = cmbcodGrado.SelectedValue
+                        objentMatricula.objentSeccion._codigoSeccion = cmbcodseccion.SelectedValue
+                        If rbtinicial.Checked = True Then
+                            objentMatricula._nivelAlumno = "Inicial"
 
-                    End If
-                    If rbtPrimaria.Checked = True Then
-                        objentMatricula._nivelAlumno = "Primaria"
+                        End If
+                        If rbtPrimaria.Checked = True Then
+                            objentMatricula._nivelAlumno = "Primaria"
 
-                    End If
-                    objentMatricula._eliminacionLogica = False
+                        End If
+                        objentMatricula._eliminacionLogica = False
 
-                    Dim verificarRP = objnegMatricula.editarMatricula(objentMatricula, idMatricula)
-                    If verificarRP = True Then
-                        MsgBox("Actualizacion exitosa")
-                        objnegMatricula.decrementarVacante(cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
-                        objnegMatricula.aumentarVacante(cmbcodGrado.SelectedValue, RetornarCodigo)
-                        ver()
-                        LimpiarDatos()
+                        Dim verificarRP = objnegMatricula.editarMatricula(objentMatricula, idMatricula)
+                        If verificarRP = True Then
+                            MsgBox("Actualizacion exitosa")
+                            objnegMatricula.decrementarVacante(cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
+                            objnegMatricula.aumentarVacante(cmbcodGrado.SelectedValue, RetornarCodigo)
+                            ver()
+                            LimpiarDatos()
+                        Else
+                            MsgBox("Error al actualizar Matricula")
+                        End If
                     Else
-                        MsgBox("Error al actualizar Matricula")
+                        MsgBox("El alumno no existe")
                     End If
                 Else
-                    MsgBox("El alumno no existe")
+                    MsgBox("Debe tener la fecha actual")
                 End If
             Else
-                MsgBox("Debe tener la fecha actual")
+                MsgBox("Deben coincidir los años")
             End If
         Else
             MsgBox("Debe llenar todos los datos")
@@ -145,26 +156,31 @@ Public Class frmAgregarMatricula
     End Sub
 
     Private Sub btneliminarMatricula_Click(sender As Object, e As EventArgs) Handles btneliminarMatricula.Click
-        Dim idMatricula As Integer
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        idMatricula = DataGridView1.Item(0, i).Value()
-        Dim objnegMatricula As New negMatricula
-        Dim verificarRP = objnegMatricula.eliminarMatricula(idMatricula)
-        If verificarRP = True Then
-            MsgBox("Elimincacion exitosa")
-            objnegMatricula.aumentarVacante(cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
-            ver()
-            LimpiarDatos()
-        Else
-            MsgBox("Error al eliminar Matricula")
-        End If
+        Try
+            Dim idMatricula As Integer
+            Dim i As Integer
+            i = DataGridView1.CurrentRow.Index
+            idMatricula = DataGridView1.Item(0, i).Value()
+            Dim objnegMatricula As New negMatricula
+            Dim verificarRP = objnegMatricula.eliminarMatricula(idMatricula)
+            If verificarRP = True Then
+                MsgBox("Elimincacion exitosa")
+                objnegMatricula.aumentarVacante(cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
+                ver()
+                LimpiarDatos()
+            Else
+                MsgBox("Error al eliminar Matricula")
+            End If
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
     Private Sub rbtinicial_CheckedChanged(sender As Object, e As EventArgs) Handles rbtinicial.CheckedChanged
         Dim objnegGrado As New negGrado
         Dim objnegCurso As New negCurso
         If rbtinicial.Checked = True Then
-            cmbcodGrado.DataSource = objnegGrado.listarGradoInicial()
+            cmbcodGrado.DataSource = objnegGrado.listarGradoInicial
             cmbcodGrado.DisplayMember = "numeroGrado"
             cmbcodGrado.ValueMember = "codigoGrado"
             dgvinicial.DataSource = objnegCurso.listarCursoInicial()
@@ -177,7 +193,7 @@ Public Class frmAgregarMatricula
         Dim objnegGrado As New negGrado
         Dim objnegCurso As New negCurso
         If rbtPrimaria.Checked = True Then
-            cmbcodGrado.DataSource = objnegGrado.listarGradoPrimaria()
+            cmbcodGrado.DataSource = objnegGrado.listarGradoPrimaria
             cmbcodGrado.DisplayMember = "numeroGrado"
             cmbcodGrado.ValueMember = "codigoGrado"
             dgvprimaria.DataSource = objnegCurso.listarCursoPrimaria()
@@ -205,13 +221,13 @@ Public Class frmAgregarMatricula
 
     Public Sub cargarDatosSeccionInicial()
         Dim objneg As New negSeccion
-        cmbcodseccion.DataSource = objneg.cargarSeccion(Val(cmbcodGrado.Text))
+        cmbcodseccion.DataSource = objneg.cargarSeccion(Val(cmbcodGrado.Text), Val(cmbannoEscolar.Text))
         cmbcodseccion.DisplayMember = "nombreSeccion"
         cmbcodseccion.ValueMember = "codigoSeccion"
     End Sub
     Public Sub cargarDatosSeccionPrimaria()
         Dim objneg As New negSeccion
-        cmbcodseccion.DataSource = objneg.cargarSeccionP(Val(cmbcodGrado.Text))
+        cmbcodseccion.DataSource = objneg.cargarSeccionP(Val(cmbcodGrado.Text), Val(cmbannoEscolar.Text))
         cmbcodseccion.DisplayMember = "nombreSeccion"
         cmbcodseccion.ValueMember = "codigoSeccion"
     End Sub
@@ -237,6 +253,18 @@ Public Class frmAgregarMatricula
     Private Function compararFechas() As Boolean
         Dim fecha1 As Date = dtFecha.Text
         Dim fecha2 As Date = DateTime.Now.ToShortDateString()
+        Dim comparar As Integer
+        comparar = fecha1.CompareTo(fecha2)
+        If comparar = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Private Function compararAnnos() As Boolean
+        Dim fecha1 As Integer = dtFecha.Value.Year
+        Dim fecha2 As Integer = Val(cmbannoEscolar.Text)
         Dim comparar As Integer
         comparar = fecha1.CompareTo(fecha2)
         If comparar = 0 Then
@@ -299,4 +327,49 @@ Public Class frmAgregarMatricula
 #End Region
 
     
+    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
+        Dim negMatricula As New negMatricula
+        If txtdniAlumno.TextLength = 8 Then
+
+            If negMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 1 Then
+
+            ElseIf negMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text) = 1 Then
+                DataGridView2.Visible = True
+                DataGridView2.DataSource = negMatricula.buscarAlumnoLike(txtdniAlumno.Text)
+            Else
+                MsgBox("El alumno no existe")
+            End If
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Dim i As Integer
+        i = DataGridView2.CurrentRow.Index
+        txtdniAlumno.Text = DataGridView2.Item(0, i).Value()
+        DataGridView2.Visible = False
+    End Sub
+
+    Private Sub txtDniBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDniBuscar.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtDniBuscar.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim neg As New negMatricula
+        DataGridView1.DataSource = neg.buscarMatricula(txtDniBuscar.Text)
+    End Sub
+
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        ver()
+    End Sub
 End Class

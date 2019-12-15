@@ -48,6 +48,7 @@ Partial Class frmAgregarProfesor
         Me.txtdniProfesor = New System.Windows.Forms.TextBox()
         Me.txtedadProfesor = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.btnListar = New System.Windows.Forms.Button()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -119,6 +120,7 @@ Partial Class frmAgregarProfesor
         '
         'txtnombreProfesor
         '
+        Me.txtnombreProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombreProfesor.Location = New System.Drawing.Point(307, 85)
         Me.txtnombreProfesor.Multiline = True
         Me.txtnombreProfesor.Name = "txtnombreProfesor"
@@ -127,6 +129,7 @@ Partial Class frmAgregarProfesor
         '
         'txtapellidoProfesor
         '
+        Me.txtapellidoProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellidoProfesor.Location = New System.Drawing.Point(308, 130)
         Me.txtapellidoProfesor.Multiline = True
         Me.txtapellidoProfesor.Name = "txtapellidoProfesor"
@@ -135,6 +138,7 @@ Partial Class frmAgregarProfesor
         '
         'txtcorreoProfesor
         '
+        Me.txtcorreoProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcorreoProfesor.Location = New System.Drawing.Point(308, 311)
         Me.txtcorreoProfesor.Multiline = True
         Me.txtcorreoProfesor.Name = "txtcorreoProfesor"
@@ -143,6 +147,7 @@ Partial Class frmAgregarProfesor
         '
         'txttelefonoProfesor
         '
+        Me.txttelefonoProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txttelefonoProfesor.Location = New System.Drawing.Point(307, 361)
         Me.txttelefonoProfesor.Multiline = True
         Me.txttelefonoProfesor.Name = "txttelefonoProfesor"
@@ -151,6 +156,7 @@ Partial Class frmAgregarProfesor
         '
         'txtdireccionProfesor
         '
+        Me.txtdireccionProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdireccionProfesor.Location = New System.Drawing.Point(307, 264)
         Me.txtdireccionProfesor.Multiline = True
         Me.txtdireccionProfesor.Name = "txtdireccionProfesor"
@@ -162,7 +168,7 @@ Partial Class frmAgregarProfesor
         Me.btnagregarProfesor.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnagregarProfesor.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnagregarProfesor.ForeColor = System.Drawing.Color.White
-        Me.btnagregarProfesor.Location = New System.Drawing.Point(113, 518)
+        Me.btnagregarProfesor.Location = New System.Drawing.Point(113, 436)
         Me.btnagregarProfesor.Name = "btnagregarProfesor"
         Me.btnagregarProfesor.Size = New System.Drawing.Size(133, 52)
         Me.btnagregarProfesor.TabIndex = 23
@@ -191,7 +197,7 @@ Partial Class frmAgregarProfesor
         'dgvlista
         '
         Me.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvlista.Location = New System.Drawing.Point(540, 141)
+        Me.dgvlista.Location = New System.Drawing.Point(541, 117)
         Me.dgvlista.Name = "dgvlista"
         Me.dgvlista.RowTemplate.Height = 24
         Me.dgvlista.Size = New System.Drawing.Size(668, 429)
@@ -202,7 +208,7 @@ Partial Class frmAgregarProfesor
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(565, 58)
+        Me.Label12.Location = New System.Drawing.Point(562, 47)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(47, 24)
         Me.Label12.TabIndex = 35
@@ -210,7 +216,8 @@ Partial Class frmAgregarProfesor
         '
         'txtdniIIProfesor
         '
-        Me.txtdniIIProfesor.Location = New System.Drawing.Point(569, 85)
+        Me.txtdniIIProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdniIIProfesor.Location = New System.Drawing.Point(566, 74)
         Me.txtdniIIProfesor.Multiline = True
         Me.txtdniIIProfesor.Name = "txtdniIIProfesor"
         Me.txtdniIIProfesor.Size = New System.Drawing.Size(217, 35)
@@ -220,7 +227,7 @@ Partial Class frmAgregarProfesor
         '
         Me.btnbuscarProfesor.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnbuscarProfesor.ForeColor = System.Drawing.Color.White
-        Me.btnbuscarProfesor.Location = New System.Drawing.Point(792, 72)
+        Me.btnbuscarProfesor.Location = New System.Drawing.Point(789, 61)
         Me.btnbuscarProfesor.Name = "btnbuscarProfesor"
         Me.btnbuscarProfesor.Size = New System.Drawing.Size(149, 48)
         Me.btnbuscarProfesor.TabIndex = 37
@@ -232,7 +239,7 @@ Partial Class frmAgregarProfesor
         Me.btnactualizarProfesor.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnactualizarProfesor.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnactualizarProfesor.ForeColor = System.Drawing.Color.White
-        Me.btnactualizarProfesor.Location = New System.Drawing.Point(253, 518)
+        Me.btnactualizarProfesor.Location = New System.Drawing.Point(253, 436)
         Me.btnactualizarProfesor.Name = "btnactualizarProfesor"
         Me.btnactualizarProfesor.Size = New System.Drawing.Size(124, 52)
         Me.btnactualizarProfesor.TabIndex = 38
@@ -244,7 +251,7 @@ Partial Class frmAgregarProfesor
         Me.btneliminarProfesor.BackColor = System.Drawing.Color.DodgerBlue
         Me.btneliminarProfesor.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminarProfesor.ForeColor = System.Drawing.Color.White
-        Me.btneliminarProfesor.Location = New System.Drawing.Point(383, 518)
+        Me.btneliminarProfesor.Location = New System.Drawing.Point(383, 436)
         Me.btneliminarProfesor.Name = "btneliminarProfesor"
         Me.btneliminarProfesor.Size = New System.Drawing.Size(124, 52)
         Me.btneliminarProfesor.TabIndex = 39
@@ -256,7 +263,7 @@ Partial Class frmAgregarProfesor
         Me.btncancelarProfesor.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelarProfesor.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelarProfesor.ForeColor = System.Drawing.Color.White
-        Me.btncancelarProfesor.Location = New System.Drawing.Point(253, 576)
+        Me.btncancelarProfesor.Location = New System.Drawing.Point(253, 494)
         Me.btncancelarProfesor.Name = "btncancelarProfesor"
         Me.btncancelarProfesor.Size = New System.Drawing.Size(124, 52)
         Me.btncancelarProfesor.TabIndex = 43
@@ -276,6 +283,7 @@ Partial Class frmAgregarProfesor
         '
         'txtdniProfesor
         '
+        Me.txtdniProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdniProfesor.Location = New System.Drawing.Point(308, 44)
         Me.txtdniProfesor.Multiline = True
         Me.txtdniProfesor.Name = "txtdniProfesor"
@@ -284,6 +292,7 @@ Partial Class frmAgregarProfesor
         '
         'txtedadProfesor
         '
+        Me.txtedadProfesor.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtedadProfesor.Location = New System.Drawing.Point(308, 174)
         Me.txtedadProfesor.Multiline = True
         Me.txtedadProfesor.Name = "txtedadProfesor"
@@ -301,12 +310,24 @@ Partial Class frmAgregarProfesor
         Me.Label13.TabIndex = 46
         Me.Label13.Text = "Edad"
         '
+        'btnListar
+        '
+        Me.btnListar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnListar.ForeColor = System.Drawing.Color.White
+        Me.btnListar.Location = New System.Drawing.Point(960, 61)
+        Me.btnListar.Name = "btnListar"
+        Me.btnListar.Size = New System.Drawing.Size(149, 48)
+        Me.btnListar.TabIndex = 47
+        Me.btnListar.Text = "LISTAR"
+        Me.btnListar.UseVisualStyleBackColor = False
+        '
         'frmAgregarProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1244, 643)
+        Me.ClientSize = New System.Drawing.Size(1244, 558)
+        Me.Controls.Add(Me.btnListar)
         Me.Controls.Add(Me.txtedadProfesor)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtdniProfesor)
@@ -368,4 +389,5 @@ Partial Class frmAgregarProfesor
     Friend WithEvents txtdniProfesor As System.Windows.Forms.TextBox
     Friend WithEvents txtedadProfesor As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents btnListar As System.Windows.Forms.Button
 End Class

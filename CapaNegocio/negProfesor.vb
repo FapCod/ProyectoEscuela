@@ -12,6 +12,10 @@ Public Class negProfesor
         Return objdatProfesor.actualizarProfesor(objentProfesor)
     End Function
 
+    Public Function editarProfesor(objentProfesor) As Boolean
+        Return objdatProfesor.editarProfesor(objentProfesor)
+    End Function
+
     Public Function eliminarProfesor(objentProfesor) As Boolean
         Return objdatProfesor.eliminarProfesor(objentProfesor)
     End Function

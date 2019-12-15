@@ -46,6 +46,7 @@ Partial Class frmAgregarAlumno
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtnumeroTelefonoApoderado = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnListar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -271,12 +272,25 @@ Partial Class frmAgregarAlumno
         Me.Label4.TabIndex = 32
         Me.Label4.Text = "Telf Apoderado"
         '
+        'btnListar
+        '
+        Me.btnListar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnListar.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListar.ForeColor = System.Drawing.Color.White
+        Me.btnListar.Location = New System.Drawing.Point(1024, 19)
+        Me.btnListar.Name = "btnListar"
+        Me.btnListar.Size = New System.Drawing.Size(136, 57)
+        Me.btnListar.TabIndex = 34
+        Me.btnListar.Text = "LISTAR"
+        Me.btnListar.UseVisualStyleBackColor = False
+        '
         'frmAgregarAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1209, 567)
+        Me.Controls.Add(Me.btnListar)
         Me.Controls.Add(Me.txtnumeroTelefonoApoderado)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtedadAlumno)
@@ -332,4 +346,5 @@ Partial Class frmAgregarAlumno
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtnumeroTelefonoApoderado As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnListar As System.Windows.Forms.Button
 End Class

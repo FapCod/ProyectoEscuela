@@ -97,7 +97,7 @@ Partial Class frmReportes
         Me.Controls.Add(Me.btnReporteProfesor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmReportes"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmReportes"
         Me.ResumeLayout(False)
         Me.PerformLayout()

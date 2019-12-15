@@ -6,7 +6,6 @@
     Public objentNumeroAnno As entAnnoEscolar
     Private numeroVacantes
     Private nivel
-    Private eliminacionLogica
     Public Property _codigoSeccion As Integer
         Get
             Return codigoSeccion
@@ -39,14 +38,7 @@
             nivel = value
         End Set
     End Property
-    Public Property _eliminacionLogica As Boolean
-        Get
-            Return eliminacionLogica
-        End Get
-        Set(value As Boolean)
-            eliminacionLogica = value
-        End Set
-    End Property
+    
     Public Sub New()
         objentGrado = New entGrado
         objentProfesor = New entProfesor

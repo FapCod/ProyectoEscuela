@@ -55,4 +55,16 @@ Public Class frmLogin
     Private Sub btnIngresar_MouseLeave(sender As Object, e As EventArgs) Handles btnIngresar.MouseLeave
         btnIngresar.BackColor = Color.Orange
     End Sub
+
+    Private Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
+        txtPass.PasswordChar = ""
+        btnMostrar.Hide()
+        btnOcultar.Show()
+    End Sub
+
+    Private Sub btnOcultar_Click(sender As Object, e As EventArgs) Handles btnOcultar.Click
+        txtPass.PasswordChar = "*"
+        btnOcultar.Hide()
+        btnMostrar.Show()
+    End Sub
 End Class

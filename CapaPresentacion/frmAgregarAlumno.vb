@@ -63,19 +63,24 @@ Public Class frmAgregarAlumno
     End Sub
 
     Private Sub btnEliminarA_Click(sender As Object, e As EventArgs) Handles btneliminarAlumno.Click
-        Dim negalum As New negAlumno
-        Dim dni As String
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        dni = DataGridView1.Item(0, i).Value()
-        Dim verificarRA = negalum.eliminarAlumno(dni)
-        If verificarRA = True Then
-            MsgBox("Eliminacion Exitosa")
-            LimpiarDatos()
-            Ver()
-        Else
-            MsgBox("Error de Eliminacion de Alumno")
-        End If
+        Try
+            Dim negalum As New negAlumno
+            Dim dni As String
+            Dim i As Integer
+            i = DataGridView1.CurrentRow.Index
+            dni = DataGridView1.Item(0, i).Value()
+            Dim verificarRA = negalum.eliminarAlumno(dni)
+            If verificarRA = True Then
+                MsgBox("Eliminacion Exitosa")
+                LimpiarDatos()
+                Ver()
+            Else
+                MsgBox("Error de Eliminacion de Alumno")
+            End If
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
     Private Sub btnBuscarA_Click(sender As Object, e As EventArgs) Handles btnbuscarAlumno.Click
         Dim objnegAlumno As New negAlumno
@@ -213,7 +218,7 @@ Public Class frmAgregarAlumno
     Private Sub txtdniiAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniiAlumno.KeyPress
         If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
             e.Handled = False
-            If txtdniAlumno.TextLength > 7 Then
+            If txtdniiAlumno.TextLength > 7 Then
                 e.Handled = True
             End If
         ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
@@ -269,4 +274,8 @@ Public Class frmAgregarAlumno
 #End Region
 
    
+   
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        Ver()
+    End Sub
 End Class

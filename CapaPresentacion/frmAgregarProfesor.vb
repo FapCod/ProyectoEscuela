@@ -8,30 +8,41 @@ Public Class frmAgregarProfesor
     End Sub
 
     Private Sub btnAgregarM_Click(sender As Object, e As EventArgs) Handles btnagregarProfesor.Click
-
         Dim objentProfesor As New entProfesor
+        Dim objentUser As New entUser
         If comprobar() Then
-        objentProfesor._dniProfesor = txtdniProfesor.Text
-        objentProfesor._nombreProfesor = txtnombreProfesor.Text
-        objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
-        objentProfesor._edadProfesor = txtedadProfesor.Text
-        objentProfesor._sexoProfesor = cmbsexoProfesor.Text
-        objentProfesor._direccionProfesor = txtdireccionProfesor.Text
-        objentProfesor._correoProfesor = txtcorreoProfesor.Text
-        objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-            objentProfesor._estadoProfesor = True
-
-        Dim objnegProfesor As New negProfesor
-        Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
-        If verificarRP = True Then
-            MsgBox("registro exitoso")
+            objentProfesor._dniProfesor = txtdniProfesor.Text
+            objentProfesor._nombreProfesor = txtnombreProfesor.Text
+            objentProfesor._apellidoProfesor = txtapellidoProfesor.Text
+            objentProfesor._edadProfesor = txtedadProfesor.Text
+            objentProfesor._sexoProfesor = cmbsexoProfesor.Text
+            objentProfesor._direccionProfesor = txtdireccionProfesor.Text
+            objentProfesor._correoProfesor = txtcorreoProfesor.Text
+            objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
+            objentUser._username = txtdniProfesor.Text
+            objentUser._contrasenaUsuario = txtdniProfesor.Text
+            objentUser._dniUsuario = txtdniProfesor.Text
+            objentUser._nombreUsuario = txtnombreProfesor.Text
+            objentUser._apellidoUsuario = txtapellidoProfesor.Text
+            objentUser._correoUsuario = txtcorreoProfesor.Text
+            objentUser._cargoUsuario = "Profesor"
+            Dim objnegProfesor As New negProfesor
+            Dim objnegUser As New negUser
+            Dim verificarRP = objnegProfesor.registrarProfesor(objentProfesor)
+            Dim verificarRU = objnegUser.crearUsuario(objentUser)
+            If verificarRP = True Then
+                MsgBox("registro exitoso")
+                If verificarRU = True Then
+                    MsgBox("Usuario Creado")
+                    MsgBox("Nombre de usuario:" & txtdniProfesor.Text & vbLf & "Su contraseña es:" & txtdniProfesor.Text)
+                End If
+            Else
+                MsgBox("Error de registro de profesor")
+            End If
+            Ver()
+            LimpiarDatos()
         Else
-            MsgBox("Error de registro de profesor")
-        End If
-        Ver()
-        LimpiarDatos()
-        Else
-        MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
+            MsgBox("DEBE DE LLENAR TODOS LOS DATOS", MsgBoxStyle.Critical)
         End If
 
     End Sub
@@ -53,7 +64,6 @@ Public Class frmAgregarProfesor
             objentProfesor._direccionProfesor = txtdireccionProfesor.Text
             objentProfesor._correoProfesor = txtcorreoProfesor.Text
             objentProfesor._telefonoProfesor = txttelefonoProfesor.Text
-            objentProfesor._estadoProfesor = True
             Dim objnegProfesor As New negProfesor
             Dim verificarRP = objnegProfesor.actualizarProfesor(objentProfesor)
             If verificarRP = True Then
@@ -87,19 +97,26 @@ Public Class frmAgregarProfesor
 
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btneliminarProfesor.Click
-        Dim objnegProfesor As New negProfesor
-        Dim dni As String
-        Dim i As Integer
-        i = dgvlista.CurrentRow.Index
-        dni = dgvlista.Item(0, i).Value()
-        Dim verificarRA = objnegProfesor.eliminarProfesor(dni)
-        If verificarRA = True Then
-            MsgBox("Eliminacion Exitosa")
-            Ver()
-        Else
-            MsgBox("Error de Eliminacion de Profesor")
-        End If
-        LimpiarDatos()
+        Try
+            Dim objnegProfesor As New negProfesor
+            Dim objnegU As New negUser
+            Dim dni As String
+            Dim i As Integer
+            i = dgvlista.CurrentRow.Index
+            dni = dgvlista.Item(0, i).Value()
+            Dim verificarRA = objnegProfesor.eliminarProfesor(dni)
+            Dim verificarRU = objnegU.eliminarUsuario(dni)
+            If verificarRA = True And verificarRU = True Then
+                MsgBox("Eliminacion Exitosa")
+                Ver()
+            Else
+                MsgBox("Error de Eliminacion de Profesor")
+            End If
+            LimpiarDatos()
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
 
 
@@ -279,4 +296,7 @@ Public Class frmAgregarProfesor
 #End Region
 
     
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        Ver()
+    End Sub
 End Class

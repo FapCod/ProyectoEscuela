@@ -1,9 +1,37 @@
 ﻿Public Class entUser
+    Private username
+    Private contrasenaUsuario
+    Private dniUsuario
     Private nombreUsuario
-    Private contraseUsuario
-    Private nombresUsuario
-    Private apellidosUsuario
+    Private apellidoUsuario
+    Private correoUsuario
     Private cargoUsuario
+    Public Property _username As String
+        Get
+            Return username
+        End Get
+        Set(value As String)
+            username = value
+        End Set
+    End Property
+    Public Property _contrasenaUsuario As String
+        Get
+            Return contrasenaUsuario
+        End Get
+        Set(value As String)
+            contrasenaUsuario = value
+        End Set
+    End Property
+
+    Public Property _dniUsuario As String
+        Get
+            Return dniUsuario
+        End Get
+        Set(value As String)
+            dniUsuario = value
+        End Set
+    End Property
+
     Public Property _nombreUsuario As String
         Get
             Return nombreUsuario
@@ -12,30 +40,21 @@
             nombreUsuario = value
         End Set
     End Property
-    Public Property _contraseUsuario As String
+
+    Public Property _apellidoUsuario As String
         Get
-            Return contraseUsuario
+            Return apellidoUsuario
         End Get
         Set(value As String)
-            contraseUsuario = value
+            apellidoUsuario = value
         End Set
     End Property
-
-    Public Property _nombresUsuario As String
+    Public Property _correoUsuario As String
         Get
-            Return nombresUsuario
+            Return correoUsuario
         End Get
         Set(value As String)
-            nombresUsuario = value
-        End Set
-    End Property
-
-    Public Property _apellidosUsuario As String
-        Get
-            Return apellidosUsuario
-        End Get
-        Set(value As String)
-            apellidosUsuario = value
+            correoUsuario = value
         End Set
     End Property
 
@@ -47,5 +66,6 @@
             cargoUsuario = value
         End Set
     End Property
-    
+
+
 End Class

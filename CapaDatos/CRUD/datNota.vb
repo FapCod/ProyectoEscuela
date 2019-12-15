@@ -38,6 +38,7 @@ Public Class datNota
                 Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
                 Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
+                Command.Parameters.AddWithValue("@dniProfesor", usuarioActivo.nombreUsuario)
                 Command.Parameters.AddWithValue("@eliminacionLogica", objNota._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
                 Try
@@ -67,6 +68,7 @@ Public Class datNota
                 Command.Parameters.AddWithValue("@dniAlumno", objNota.objentAlumno._dniAlumno)
                 Command.Parameters.AddWithValue("@codigoTrimestre", objNota.objentTrimestre._codigoTrimestre)
                 Command.Parameters.AddWithValue("@numeroAnno", objNota.objentAnnoEscolar._numeroAnno)
+                Command.Parameters.AddWithValue("@dniProfesor", usuarioActivo.nombreUsuario)
                 Command.Parameters.AddWithValue("@eliminacionLogica", objNota._eliminacionLogica)
                 Command.CommandType = CommandType.StoredProcedure
 

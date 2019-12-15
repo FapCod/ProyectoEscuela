@@ -41,4 +41,13 @@ Public Class negMatricula
     Public Function aumentarVacante(codigoGrado As Integer, codigoSeccion As Integer) As Boolean
         Return objdatMatricula.aumentarVacante(codigoGrado, codigoSeccion)
     End Function
+
+
+    Public Function buscarAlumnoLike(dni As String) As DataTable
+        Return objdatMatricula.buscarAlumnoLike(dni)
+    End Function
+    Public Function buscarMatricula(dni As String) As DataTable
+        Return objdatMatricula.buscarMatricula(dni)
+    End Function
+
 End Class

@@ -31,6 +31,8 @@ Partial Class frmAnnoEscolar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.btnAperturar = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -113,12 +115,22 @@ Partial Class frmAnnoEscolar
         Me.btnAperturar.Text = "APERTURAR"
         Me.btnAperturar.UseVisualStyleBackColor = False
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(468, 49)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(147, 301)
+        Me.DataGridView1.TabIndex = 8
+        '
         'frmAnnoEscolar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(417, 390)
+        Me.ClientSize = New System.Drawing.Size(644, 390)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnAperturar)
         Me.Controls.Add(Me.dtFechaFin)
         Me.Controls.Add(Me.Label4)
@@ -129,8 +141,9 @@ Partial Class frmAnnoEscolar
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAnnoEscolar"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAnnoEscolar"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,4 +156,5 @@ Partial Class frmAnnoEscolar
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents dtFechaFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnAperturar As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
 End Class

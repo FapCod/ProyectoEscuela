@@ -17,7 +17,6 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@direccionProfesor", objProfesor._direccionProfesor)
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
-                Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
                 Command.CommandType = CommandType.StoredProcedure
                 'Dim reader = Command.ExecuteReader()
                 Try
@@ -27,7 +26,7 @@ Public Class datProfesor
                         Return False
                     End If
                 Catch ex As Exception
-                    MsgBox("Alumno ya creado")
+                    MsgBox("Profesor ya creado")
                 End Try
                 
             End Using
@@ -49,7 +48,26 @@ Public Class datProfesor
                 Command.Parameters.AddWithValue("@direccionProfesor", objProfesor._direccionProfesor)
                 Command.Parameters.AddWithValue("@correoProfesor", objProfesor._correoProfesor)
                 Command.Parameters.AddWithValue("@telefonoProfesor", objProfesor._telefonoProfesor)
-                Command.Parameters.AddWithValue("@estadoProfesor", objProfesor._estadoProfesor)
+                Command.CommandType = CommandType.StoredProcedure
+                If Command.ExecuteNonQuery Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        End Using
+        Return False
+    End Function
+    Public Function editarProfesor(objProfesor As entProfesor) As Boolean
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "editarProfesor"
+                Command.Parameters.AddWithValue("@dni", objProfesor._dniProfesor)
+                Command.Parameters.AddWithValue("@nombre", objProfesor._nombreProfesor)
+                Command.Parameters.AddWithValue("@apellido", objProfesor._apellidoProfesor)
+                Command.Parameters.AddWithValue("@correo", objProfesor._correoProfesor)
                 Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
@@ -88,11 +106,15 @@ Public Class datProfesor
                 Command.CommandText = "eliminarProfesor"
                 Command.Parameters.AddWithValue("@dniProfesor", dni)
                 Command.CommandType = CommandType.StoredProcedure
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
                     Return False
-                End If
+                End Try
             End Using
         End Using
         Return False

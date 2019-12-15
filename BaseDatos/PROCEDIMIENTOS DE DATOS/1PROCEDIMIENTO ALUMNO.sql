@@ -1,19 +1,6 @@
-DROP DATABASE Colegio_DB
-create database Colegio_DB -- creamos la base de datos
-use Colegio_DB -- Usamos la database creada
-------Creacion de la tabla alumno-----------------
-create table alumno(
-dniAlumno char (8) Primary Key not null,
-nombreAlumno varchar (40) not null,
-apellidoAlumno varchar (40) not null,
-edadAlumno int not null,
-sexoAlumno char(1) not null,
-direccionAlumno varchar (50) not null,
-nombreApoderadoAlumno varchar(50) not null, 
-numeroTelefonoApoderado varchar(11)
-)
-------Fin de la creacion  de la tabla alumno-------
-
+-------------------------------------------------------------------------------------------
+---->>>>>>>>>PROCEDIMIENTOS ALMACENADOS TABLA ALUMNO<<<<<<<-----------
+-------------------------------------------------------------------------------------------
 
 ----Creacion de procedimiento de AgregarAlumno----
 CREATE PROCEDURE agregaralumno(
@@ -77,6 +64,7 @@ end
 go
 ----Finalizacion del procedimiento de BuscarAlumno----
 
+--creamos procedimiento almacenado para obtener la tabla alumno
 create procedure obtenerTablaAlumno
 as
 begin
@@ -91,18 +79,26 @@ nombreApoderadoAlumno ,
 numeroTelefonoApoderado 
 FROM alumno 
 end
+--fin de la creacion del procedimiento almacenado
 
-
+--creamos procedimiento almacenado para verificar si ya existe un alumno
 create procedure VerificarSiExisteAlumno(
 @dni char(8))
 as begin 
 SELECT dniAlumno FROM alumno 
           WHERE  dniAlumno=@dni
+
 END  
+--fin de la creacion del procedimiento almacenado 
 
-
-
---creacion de procedimientos para listar los alumnos con grado y seccion
+--creamos procedimiento almacenado para buscar alumno con la funcion LIKE 
+create procedure buscarAlumnoLike(
+@dni char(8))
+as begin 
+SELECT dniAlumno,nombreAlumno,apellidoAlumno FROM alumno 
+          WHERE  dniAlumno like '%'+@dni+'%'
+END  
+--fin de la creacion del procedimiento almacenado
 
 --creamos un procedimiento almacenado para listar alumnos por grado y seccion 
 create procedure listarAlumnosPorGradoSeccion(
@@ -120,4 +116,10 @@ FROM     dbo.alumno INNER JOIN
                   dbo.seccion ON dbo.matricula.codigoSeccion = dbo.seccion.codigoSeccion AND dbo.grado.codigoGrado = dbo.seccion.codigoGrado
 				  where dbo.matricula.codigoGrado = @grado and dbo.matricula.codigoSeccion = @seccion and dbo.matricula.eliminacionLogica = 0 and dbo.matricula.nivelAlumno = @nivel and dbo.matricula.numeroAnno = @anno
 end 
+--fin de la creacion del procedimiento almacenado 
+
+
+
+
+
 

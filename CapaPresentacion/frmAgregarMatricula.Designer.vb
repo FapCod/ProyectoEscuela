@@ -43,9 +43,15 @@ Partial Class frmAgregarMatricula
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgvprimaria = New System.Windows.Forms.DataGridView()
         Me.dgvinicial = New System.Windows.Forms.DataGridView()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtDniBuscar = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnListar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvprimaria, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvinicial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
@@ -80,7 +86,7 @@ Partial Class frmAgregarMatricula
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(452, 34)
+        Me.DataGridView1.Location = New System.Drawing.Point(469, 110)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(643, 176)
@@ -228,7 +234,7 @@ Partial Class frmAgregarMatricula
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(448, 219)
+        Me.Label5.Location = New System.Drawing.Point(453, 309)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(208, 24)
         Me.Label5.TabIndex = 65
@@ -237,7 +243,7 @@ Partial Class frmAgregarMatricula
         'dgvprimaria
         '
         Me.dgvprimaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvprimaria.Location = New System.Drawing.Point(456, 254)
+        Me.dgvprimaria.Location = New System.Drawing.Point(457, 336)
         Me.dgvprimaria.Name = "dgvprimaria"
         Me.dgvprimaria.RowTemplate.Height = 24
         Me.dgvprimaria.Size = New System.Drawing.Size(638, 119)
@@ -246,18 +252,74 @@ Partial Class frmAgregarMatricula
         'dgvinicial
         '
         Me.dgvinicial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvinicial.Location = New System.Drawing.Point(456, 254)
+        Me.dgvinicial.Location = New System.Drawing.Point(457, 336)
         Me.dgvinicial.Name = "dgvinicial"
         Me.dgvinicial.RowTemplate.Height = 24
         Me.dgvinicial.Size = New System.Drawing.Size(638, 119)
         Me.dgvinicial.TabIndex = 67
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(2, 60)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView2.TabIndex = 68
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnBuscar.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(695, 36)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(181, 57)
+        Me.btnBuscar.TabIndex = 69
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtDniBuscar
+        '
+        Me.txtDniBuscar.Location = New System.Drawing.Point(491, 60)
+        Me.txtDniBuscar.Name = "txtDniBuscar"
+        Me.txtDniBuscar.Size = New System.Drawing.Size(184, 22)
+        Me.txtDniBuscar.TabIndex = 70
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(487, 31)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 24)
+        Me.Label7.TabIndex = 71
+        Me.Label7.Text = "DNI"
+        '
+        'btnListar
+        '
+        Me.btnListar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnListar.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnListar.ForeColor = System.Drawing.Color.White
+        Me.btnListar.Location = New System.Drawing.Point(892, 36)
+        Me.btnListar.Name = "btnListar"
+        Me.btnListar.Size = New System.Drawing.Size(181, 57)
+        Me.btnListar.TabIndex = 72
+        Me.btnListar.Text = "Listar"
+        Me.btnListar.UseVisualStyleBackColor = False
         '
         'frmAgregarMatricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1124, 391)
+        Me.ClientSize = New System.Drawing.Size(1124, 468)
+        Me.Controls.Add(Me.btnListar)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtDniBuscar)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.dgvinicial)
         Me.Controls.Add(Me.dgvprimaria)
         Me.Controls.Add(Me.Label5)
@@ -285,6 +347,7 @@ Partial Class frmAgregarMatricula
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvprimaria, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvinicial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -309,4 +372,9 @@ Partial Class frmAgregarMatricula
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents dgvprimaria As System.Windows.Forms.DataGridView
     Friend WithEvents dgvinicial As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents txtDniBuscar As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btnListar As System.Windows.Forms.Button
 End Class

@@ -6,23 +6,7 @@ CapaPresentacion
 </name>
 </assembly>
 <members>
-<member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:CapaPresentacion.Colegio_DBDataSet2">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:CapaPresentacion.Colegio_DBDataSet1.DataTable1DataTable">
+<member name="T:CapaPresentacion.Colegio_DBDataSet1.DataTable1DataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -66,6 +50,22 @@ Represents a strongly typed in-memory cache of data.
 </member><member name="T:CapaPresentacion.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:CapaPresentacion.Colegio_DBDataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
 </members>

@@ -57,11 +57,16 @@ Public Class datMatricula
                 Command.CommandText = "eliminarMatricula"
                 Command.Parameters.AddWithValue("@idMatricula", idMatricula)
                 Command.CommandType = CommandType.StoredProcedure
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
                     Return False
-                End If
+                End Try
+                
             End Using
         End Using
         Return False
@@ -221,7 +226,7 @@ Public Class datMatricula
             End Using
         End Using
     End Function
-    Public Function VerificarSiEsDeInicialoPrimaria(dni As String, nivel As String) As DataTable
+    Public Function VerificarSiEsDeInicialoPrimaria(apellido As String, nivel As String) As DataTable
         Using conexion = ObtenerConexion()
             conexion.Open()
             Dim dt As DataTable
@@ -230,7 +235,7 @@ Public Class datMatricula
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "VerificarSiEsDeInicialoPrimaria"
-                Command.Parameters.AddWithValue("@dni", dni)
+                Command.Parameters.AddWithValue("@apellido", apellido)
                 Command.Parameters.AddWithValue("@nivel", nivel)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
@@ -244,7 +249,7 @@ Public Class datMatricula
         End Using
     End Function
 
-    Public Function VerificarSiEsDeInicialoPrimariaInteger(dni As String, nivel As String) As Integer
+    Public Function VerificarSiEsDeInicialoPrimariaInteger(apellido As String, nivel As String) As Integer
         Using conexion = ObtenerConexion()
             conexion.Open()
             Dim dt As DataTable
@@ -253,7 +258,7 @@ Public Class datMatricula
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "VerificarSiEsDeInicialoPrimaria"
-                Command.Parameters.AddWithValue("@dni", dni)
+                Command.Parameters.AddWithValue("@apellido", apellido)
                 Command.Parameters.AddWithValue("@nivel", nivel)
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
@@ -270,4 +275,50 @@ Public Class datMatricula
             End Using
         End Using
     End Function
+
+
+
+    Public Function buscarAlumnoLike(dni As String) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "buscarAlumnoLike"
+                Command.Parameters.AddWithValue("@dni", dni)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+    Public Function buscarMatricula(dni As String) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Dim dt As DataTable
+            Dim da As SqlDataAdapter
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "buscarMatricula"
+                Command.Parameters.AddWithValue("@dni", dni)
+                If Command.ExecuteNonQuery Then
+                    dt = New DataTable
+                    da = New SqlDataAdapter(Command)
+                    da.Fill(dt)
+                    Return dt
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+    End Function
+
 End Class

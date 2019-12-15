@@ -25,6 +25,7 @@ Partial Class frmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnEditarMisDatos = New System.Windows.Forms.Button()
         Me.btnAperturarAno = New System.Windows.Forms.Button()
         Me.btnReporteProfesor = New System.Windows.Forms.Button()
         Me.btnRegistrarSeccion = New System.Windows.Forms.Button()
@@ -45,14 +46,21 @@ Partial Class frmPrincipal
         Me.lblHora = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.thorafecha = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.OrangeRed
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.btnEditarMisDatos)
         Me.Panel1.Controls.Add(Me.btnAperturarAno)
         Me.Panel1.Controls.Add(Me.btnReporteProfesor)
         Me.Panel1.Controls.Add(Me.btnRegistrarSeccion)
@@ -74,8 +82,25 @@ Partial Class frmPrincipal
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(341, 882)
+        Me.Panel1.Size = New System.Drawing.Size(439, 882)
         Me.Panel1.TabIndex = 2
+        '
+        'btnEditarMisDatos
+        '
+        Me.btnEditarMisDatos.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEditarMisDatos.FlatAppearance.BorderSize = 0
+        Me.btnEditarMisDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditarMisDatos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarMisDatos.ForeColor = System.Drawing.Color.White
+        Me.btnEditarMisDatos.Image = CType(resources.GetObject("btnEditarMisDatos.Image"), System.Drawing.Image)
+        Me.btnEditarMisDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEditarMisDatos.Location = New System.Drawing.Point(43, 154)
+        Me.btnEditarMisDatos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnEditarMisDatos.Name = "btnEditarMisDatos"
+        Me.btnEditarMisDatos.Size = New System.Drawing.Size(341, 58)
+        Me.btnEditarMisDatos.TabIndex = 17
+        Me.btnEditarMisDatos.Text = "Editar Mis datos"
+        Me.btnEditarMisDatos.UseVisualStyleBackColor = False
         '
         'btnAperturarAno
         '
@@ -84,7 +109,9 @@ Partial Class frmPrincipal
         Me.btnAperturarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAperturarAno.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAperturarAno.ForeColor = System.Drawing.Color.White
-        Me.btnAperturarAno.Location = New System.Drawing.Point(0, 128)
+        Me.btnAperturarAno.Image = CType(resources.GetObject("btnAperturarAno.Image"), System.Drawing.Image)
+        Me.btnAperturarAno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAperturarAno.Location = New System.Drawing.Point(43, 216)
         Me.btnAperturarAno.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAperturarAno.Name = "btnAperturarAno"
         Me.btnAperturarAno.Size = New System.Drawing.Size(341, 58)
@@ -99,7 +126,9 @@ Partial Class frmPrincipal
         Me.btnReporteProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReporteProfesor.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReporteProfesor.ForeColor = System.Drawing.Color.White
-        Me.btnReporteProfesor.Location = New System.Drawing.Point(0, 662)
+        Me.btnReporteProfesor.Image = CType(resources.GetObject("btnReporteProfesor.Image"), System.Drawing.Image)
+        Me.btnReporteProfesor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteProfesor.Location = New System.Drawing.Point(43, 712)
         Me.btnReporteProfesor.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReporteProfesor.Name = "btnReporteProfesor"
         Me.btnReporteProfesor.Size = New System.Drawing.Size(341, 58)
@@ -114,7 +143,9 @@ Partial Class frmPrincipal
         Me.btnRegistrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarSeccion.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarSeccion.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(0, 314)
+        Me.btnRegistrarSeccion.Image = CType(resources.GetObject("btnRegistrarSeccion.Image"), System.Drawing.Image)
+        Me.btnRegistrarSeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegistrarSeccion.Location = New System.Drawing.Point(43, 402)
         Me.btnRegistrarSeccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarSeccion.Name = "btnRegistrarSeccion"
         Me.btnRegistrarSeccion.Size = New System.Drawing.Size(341, 58)
@@ -129,7 +160,9 @@ Partial Class frmPrincipal
         Me.btnRegistrarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarNotas.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarNotas.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarNotas.Location = New System.Drawing.Point(0, 438)
+        Me.btnRegistrarNotas.Image = CType(resources.GetObject("btnRegistrarNotas.Image"), System.Drawing.Image)
+        Me.btnRegistrarNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegistrarNotas.Location = New System.Drawing.Point(43, 526)
         Me.btnRegistrarNotas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarNotas.Name = "btnRegistrarNotas"
         Me.btnRegistrarNotas.Size = New System.Drawing.Size(341, 58)
@@ -144,7 +177,9 @@ Partial Class frmPrincipal
         Me.btnListarMaestros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarMaestros.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarMaestros.ForeColor = System.Drawing.Color.White
-        Me.btnListarMaestros.Location = New System.Drawing.Point(0, 538)
+        Me.btnListarMaestros.Image = CType(resources.GetObject("btnListarMaestros.Image"), System.Drawing.Image)
+        Me.btnListarMaestros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnListarMaestros.Location = New System.Drawing.Point(43, 588)
         Me.btnListarMaestros.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarMaestros.Name = "btnListarMaestros"
         Me.btnListarMaestros.Size = New System.Drawing.Size(341, 58)
@@ -157,7 +192,7 @@ Partial Class frmPrincipal
         Me.lblCargoUsuario.AutoSize = True
         Me.lblCargoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCargoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblCargoUsuario.Location = New System.Drawing.Point(68, 102)
+        Me.lblCargoUsuario.Location = New System.Drawing.Point(76, 107)
         Me.lblCargoUsuario.Name = "lblCargoUsuario"
         Me.lblCargoUsuario.Size = New System.Drawing.Size(137, 24)
         Me.lblCargoUsuario.TabIndex = 13
@@ -168,7 +203,7 @@ Partial Class frmPrincipal
         Me.lblCorreoUsuario.AutoSize = True
         Me.lblCorreoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCorreoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblCorreoUsuario.Location = New System.Drawing.Point(67, 78)
+        Me.lblCorreoUsuario.Location = New System.Drawing.Point(75, 83)
         Me.lblCorreoUsuario.Name = "lblCorreoUsuario"
         Me.lblCorreoUsuario.Size = New System.Drawing.Size(145, 24)
         Me.lblCorreoUsuario.TabIndex = 12
@@ -179,7 +214,7 @@ Partial Class frmPrincipal
         Me.lblApellidoUsuario.AutoSize = True
         Me.lblApellidoUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApellidoUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblApellidoUsuario.Location = New System.Drawing.Point(68, 54)
+        Me.lblApellidoUsuario.Location = New System.Drawing.Point(76, 59)
         Me.lblApellidoUsuario.Name = "lblApellidoUsuario"
         Me.lblApellidoUsuario.Size = New System.Drawing.Size(161, 24)
         Me.lblApellidoUsuario.TabIndex = 11
@@ -190,7 +225,7 @@ Partial Class frmPrincipal
         Me.lblNombresUsuario.AutoSize = True
         Me.lblNombresUsuario.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombresUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblNombresUsuario.Location = New System.Drawing.Point(60, 33)
+        Me.lblNombresUsuario.Location = New System.Drawing.Point(75, 38)
         Me.lblNombresUsuario.Name = "lblNombresUsuario"
         Me.lblNombresUsuario.Size = New System.Drawing.Size(168, 24)
         Me.lblNombresUsuario.TabIndex = 10
@@ -201,7 +236,7 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(112, 792)
+        Me.Label1.Location = New System.Drawing.Point(109, 796)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 24)
         Me.Label1.TabIndex = 9
@@ -210,7 +245,7 @@ Partial Class frmPrincipal
         'btnCerrarC
         '
         Me.btnCerrarC.Image = CType(resources.GetObject("btnCerrarC.Image"), System.Drawing.Image)
-        Me.btnCerrarC.Location = New System.Drawing.Point(43, 779)
+        Me.btnCerrarC.Location = New System.Drawing.Point(43, 783)
         Me.btnCerrarC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrarC.Name = "btnCerrarC"
         Me.btnCerrarC.Size = New System.Drawing.Size(50, 50)
@@ -225,7 +260,9 @@ Partial Class frmPrincipal
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.Color.White
-        Me.btnReportes.Location = New System.Drawing.Point(0, 376)
+        Me.btnReportes.Image = CType(resources.GetObject("btnReportes.Image"), System.Drawing.Image)
+        Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReportes.Location = New System.Drawing.Point(43, 464)
         Me.btnReportes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(341, 58)
@@ -240,7 +277,9 @@ Partial Class frmPrincipal
         Me.btnListarAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarAlumnos.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarAlumnos.ForeColor = System.Drawing.Color.White
-        Me.btnListarAlumnos.Location = New System.Drawing.Point(0, 600)
+        Me.btnListarAlumnos.Image = CType(resources.GetObject("btnListarAlumnos.Image"), System.Drawing.Image)
+        Me.btnListarAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnListarAlumnos.Location = New System.Drawing.Point(43, 650)
         Me.btnListarAlumnos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnListarAlumnos.Name = "btnListarAlumnos"
         Me.btnListarAlumnos.Size = New System.Drawing.Size(341, 58)
@@ -255,7 +294,9 @@ Partial Class frmPrincipal
         Me.btnRegistrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarAlumno.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarAlumno.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(0, 190)
+        Me.btnRegistrarAlumno.Image = CType(resources.GetObject("btnRegistrarAlumno.Image"), System.Drawing.Image)
+        Me.btnRegistrarAlumno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegistrarAlumno.Location = New System.Drawing.Point(43, 278)
         Me.btnRegistrarAlumno.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarAlumno.Name = "btnRegistrarAlumno"
         Me.btnRegistrarAlumno.Size = New System.Drawing.Size(341, 58)
@@ -270,7 +311,9 @@ Partial Class frmPrincipal
         Me.btnRegistrarMaestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrarMaestro.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarMaestro.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(0, 252)
+        Me.btnRegistrarMaestro.Image = CType(resources.GetObject("btnRegistrarMaestro.Image"), System.Drawing.Image)
+        Me.btnRegistrarMaestro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegistrarMaestro.Location = New System.Drawing.Point(43, 340)
         Me.btnRegistrarMaestro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRegistrarMaestro.Name = "btnRegistrarMaestro"
         Me.btnRegistrarMaestro.Size = New System.Drawing.Size(341, 58)
@@ -283,7 +326,7 @@ Partial Class frmPrincipal
         Me.lblNombreUser.AutoSize = True
         Me.lblNombreUser.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreUser.ForeColor = System.Drawing.Color.White
-        Me.lblNombreUser.Location = New System.Drawing.Point(67, 9)
+        Me.lblNombreUser.Location = New System.Drawing.Point(75, 14)
         Me.lblNombreUser.Name = "lblNombreUser"
         Me.lblNombreUser.Size = New System.Drawing.Size(129, 24)
         Me.lblNombreUser.TabIndex = 1
@@ -326,12 +369,45 @@ Partial Class frmPrincipal
         '
         Me.thorafecha.Enabled = True
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(-624, 279)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(8, 8)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 17
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(489, 190)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(882, 499)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 17
+        Me.PictureBox3.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Gadugi", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(576, 79)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(698, 52)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "INSTITUCION EDUCATIVA 15144"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
-        Me.ClientSize = New System.Drawing.Size(1409, 882)
+        Me.ClientSize = New System.Drawing.Size(1403, 882)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.Panel1)
@@ -346,6 +422,8 @@ Partial Class frmPrincipal
         Me.Panel1.PerformLayout()
         CType(Me.btnCerrarC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -371,4 +449,8 @@ Partial Class frmPrincipal
     Friend WithEvents lblFecha As System.Windows.Forms.Label
     Friend WithEvents thorafecha As System.Windows.Forms.Timer
     Friend WithEvents btnAperturarAno As System.Windows.Forms.Button
+    Friend WithEvents btnEditarMisDatos As System.Windows.Forms.Button
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

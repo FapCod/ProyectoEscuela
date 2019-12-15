@@ -28,7 +28,6 @@ Partial Class frmagregarSeccion
         Me.txtSeccion = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbGrado = New System.Windows.Forms.ComboBox()
         Me.cmbProfesor = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,6 +37,7 @@ Partial Class frmagregarSeccion
         Me.dgvSeccion = New System.Windows.Forms.DataGridView()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.cmbannoEscolar = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dgvSeccion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,7 +53,7 @@ Partial Class frmagregarSeccion
         Me.label.AutoSize = True
         Me.label.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label.ForeColor = System.Drawing.Color.White
-        Me.label.Location = New System.Drawing.Point(67, 263)
+        Me.label.Location = New System.Drawing.Point(67, 56)
         Me.label.Name = "label"
         Me.label.Size = New System.Drawing.Size(121, 24)
         Me.label.TabIndex = 38
@@ -61,7 +61,7 @@ Partial Class frmagregarSeccion
         '
         'txtSeccion
         '
-        Me.txtSeccion.Location = New System.Drawing.Point(251, 51)
+        Me.txtSeccion.Location = New System.Drawing.Point(251, 107)
         Me.txtSeccion.Name = "txtSeccion"
         Me.txtSeccion.Size = New System.Drawing.Size(184, 22)
         Me.txtSeccion.TabIndex = 37
@@ -71,7 +71,7 @@ Partial Class frmagregarSeccion
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(67, 48)
+        Me.Label10.Location = New System.Drawing.Point(67, 104)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(165, 24)
         Me.Label10.TabIndex = 36
@@ -82,35 +82,27 @@ Partial Class frmagregarSeccion
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(67, 206)
+        Me.Label2.Location = New System.Drawing.Point(67, 259)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 24)
         Me.Label2.TabIndex = 33
         Me.Label2.Text = "Profesor"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(67, 151)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 24)
-        Me.Label1.TabIndex = 32
-        Me.Label1.Text = "Grado"
-        '
         'cmbGrado
         '
+        Me.cmbGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGrado.FormattingEnabled = True
-        Me.cmbGrado.Location = New System.Drawing.Point(251, 154)
+        Me.cmbGrado.Location = New System.Drawing.Point(251, 203)
         Me.cmbGrado.Name = "cmbGrado"
         Me.cmbGrado.Size = New System.Drawing.Size(175, 24)
         Me.cmbGrado.TabIndex = 40
         '
         'cmbProfesor
         '
+        Me.cmbProfesor.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbProfesor.FormattingEnabled = True
-        Me.cmbProfesor.Location = New System.Drawing.Point(251, 206)
+        Me.cmbProfesor.Location = New System.Drawing.Point(251, 259)
         Me.cmbProfesor.Name = "cmbProfesor"
         Me.cmbProfesor.Size = New System.Drawing.Size(175, 24)
         Me.cmbProfesor.TabIndex = 41
@@ -131,7 +123,7 @@ Partial Class frmagregarSeccion
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(67, 99)
+        Me.Label4.Location = New System.Drawing.Point(67, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 24)
         Me.Label4.TabIndex = 43
@@ -140,7 +132,7 @@ Partial Class frmagregarSeccion
         'rbtinicial
         '
         Me.rbtinicial.AutoSize = True
-        Me.rbtinicial.Location = New System.Drawing.Point(251, 102)
+        Me.rbtinicial.Location = New System.Drawing.Point(251, 149)
         Me.rbtinicial.Name = "rbtinicial"
         Me.rbtinicial.Size = New System.Drawing.Size(64, 21)
         Me.rbtinicial.TabIndex = 44
@@ -151,7 +143,7 @@ Partial Class frmagregarSeccion
         'rbtprimaria
         '
         Me.rbtprimaria.AutoSize = True
-        Me.rbtprimaria.Location = New System.Drawing.Point(345, 103)
+        Me.rbtprimaria.Location = New System.Drawing.Point(345, 150)
         Me.rbtprimaria.Name = "rbtprimaria"
         Me.rbtprimaria.Size = New System.Drawing.Size(81, 21)
         Me.rbtprimaria.TabIndex = 45
@@ -182,11 +174,23 @@ Partial Class frmagregarSeccion
         '
         'cmbannoEscolar
         '
+        Me.cmbannoEscolar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbannoEscolar.FormattingEnabled = True
-        Me.cmbannoEscolar.Location = New System.Drawing.Point(251, 266)
+        Me.cmbannoEscolar.Location = New System.Drawing.Point(251, 59)
         Me.cmbannoEscolar.Name = "cmbannoEscolar"
         Me.cmbannoEscolar.Size = New System.Drawing.Size(164, 24)
         Me.cmbannoEscolar.TabIndex = 48
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Gadugi", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(67, 203)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 24)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "Grado"
         '
         'frmagregarSeccion
         '
@@ -208,10 +212,10 @@ Partial Class frmagregarSeccion
         Me.Controls.Add(Me.txtSeccion)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label5)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmagregarSeccion"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmagregarSeccion"
         CType(Me.dgvSeccion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -223,7 +227,6 @@ Partial Class frmagregarSeccion
     Friend WithEvents txtSeccion As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmbGrado As System.Windows.Forms.ComboBox
     Friend WithEvents cmbProfesor As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -233,4 +236,5 @@ Partial Class frmagregarSeccion
     Friend WithEvents dgvSeccion As System.Windows.Forms.DataGridView
     Friend WithEvents btnguardar As System.Windows.Forms.Button
     Friend WithEvents cmbannoEscolar As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

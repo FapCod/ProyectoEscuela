@@ -34,13 +34,13 @@ Public Class frmListarAlumnos
 
     Public Sub cargarDatosSeccionInicial()
         Dim objneg As New negSeccion
-        cmbcodseccion.DataSource = objneg.cargarSeccion(Val(cmbcodGrado.Text))
+        cmbcodseccion.DataSource = objneg.cargarSeccion(Val(cmbcodGrado.Text), Val(cmbannoEscolar.Text))
         cmbcodseccion.DisplayMember = "nombreSeccion"
         cmbcodseccion.ValueMember = "codigoSeccion"
     End Sub
     Public Sub cargarDatosSeccionPrimaria()
         Dim objneg As New negSeccion
-        cmbcodseccion.DataSource = objneg.cargarSeccionP(Val(cmbcodGrado.Text))
+        cmbcodseccion.DataSource = objneg.cargarSeccionP(Val(cmbcodGrado.Text), Val(cmbannoEscolar.Text))
         cmbcodseccion.DisplayMember = "nombreSeccion"
         cmbcodseccion.ValueMember = "codigoSeccion"
     End Sub
@@ -49,7 +49,7 @@ Public Class frmListarAlumnos
         Dim objnegGrado As New negGrado
         Dim objnegCurso As New negCurso
         If rbtinicial.Checked = True Then
-            cmbcodGrado.DataSource = objnegGrado.listarGradoInicial()
+            cmbcodGrado.DataSource = objnegGrado.listarGradoInicial
             cmbcodGrado.DisplayMember = "numeroGrado"
             cmbcodGrado.ValueMember = "codigoGrado"
         End If
@@ -59,7 +59,7 @@ Public Class frmListarAlumnos
         Dim objnegGrado As New negGrado
         Dim objnegCurso As New negCurso
         If rbtPrimaria.Checked = True Then
-            cmbcodGrado.DataSource = objnegGrado.listarGradoPrimaria()
+            cmbcodGrado.DataSource = objnegGrado.listarGradoPrimaria
             cmbcodGrado.DisplayMember = "numeroGrado"
             cmbcodGrado.ValueMember = "codigoGrado"
         End If

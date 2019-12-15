@@ -26,7 +26,7 @@ Partial Class frmAgregarNota
         Me.cmbnota = New System.Windows.Forms.ComboBox()
         Me.cmbtrimestre = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtdniAlumno = New System.Windows.Forms.TextBox()
+        Me.txtapellidoAlumno = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btneditarNota = New System.Windows.Forms.Button()
@@ -75,12 +75,12 @@ Partial Class frmAgregarNota
         Me.Label6.TabIndex = 68
         Me.Label6.Text = "NOTA"
         '
-        'txtdniAlumno
+        'txtapellidoAlumno
         '
-        Me.txtdniAlumno.Location = New System.Drawing.Point(53, 83)
-        Me.txtdniAlumno.Name = "txtdniAlumno"
-        Me.txtdniAlumno.Size = New System.Drawing.Size(184, 22)
-        Me.txtdniAlumno.TabIndex = 67
+        Me.txtapellidoAlumno.Location = New System.Drawing.Point(53, 83)
+        Me.txtapellidoAlumno.Name = "txtapellidoAlumno"
+        Me.txtapellidoAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtapellidoAlumno.TabIndex = 67
         '
         'Label10
         '
@@ -89,9 +89,9 @@ Partial Class frmAgregarNota
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(53, 56)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(141, 24)
+        Me.Label10.Size = New System.Drawing.Size(197, 24)
         Me.Label10.TabIndex = 66
-        Me.Label10.Text = "DNI ALUMNO"
+        Me.Label10.Text = "APELLIDO ALUMNO"
         '
         'DataGridView1
         '
@@ -215,19 +215,18 @@ Partial Class frmAgregarNota
         '
         Me.cmbannoEscolar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbannoEscolar.FormattingEnabled = True
-        Me.cmbannoEscolar.Items.AddRange(New Object() {"Exposicion", "Trabajos", "Examen"})
         Me.cmbannoEscolar.Location = New System.Drawing.Point(257, 156)
         Me.cmbannoEscolar.Name = "cmbannoEscolar"
-        Me.cmbannoEscolar.Size = New System.Drawing.Size(180, 24)
+        Me.cmbannoEscolar.Size = New System.Drawing.Size(63, 24)
         Me.cmbannoEscolar.TabIndex = 80
         '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(24, 111)
+        Me.DataGridView2.Location = New System.Drawing.Point(2, 106)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(227, 124)
+        Me.DataGridView2.Size = New System.Drawing.Size(296, 124)
         Me.DataGridView2.TabIndex = 81
         '
         'frmAgregarNota
@@ -247,7 +246,7 @@ Partial Class frmAgregarNota
         Me.Controls.Add(Me.cmbnota)
         Me.Controls.Add(Me.cmbtrimestre)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtdniAlumno)
+        Me.Controls.Add(Me.txtapellidoAlumno)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btneditarNota)
@@ -267,7 +266,7 @@ Partial Class frmAgregarNota
     Friend WithEvents cmbnota As System.Windows.Forms.ComboBox
     Friend WithEvents cmbtrimestre As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txtdniAlumno As System.Windows.Forms.TextBox
+    Friend WithEvents txtapellidoAlumno As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btneditarNota As System.Windows.Forms.Button

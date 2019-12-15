@@ -133,6 +133,18 @@
     <Compile Include="frmAgregarProfesor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmEditarDatosDirector.Designer.vb">
+      <DependentUpon>frmEditarDatosDirector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarDatosDirector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarDatosProfesor.Designer.vb">
+      <DependentUpon>frmEditarDatosProfesor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarDatosProfesor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListarAlumnos.Designer.vb">
       <DependentUpon>frmListarAlumnos.vb</DependentUpon>
     </Compile>
@@ -225,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarProfesor.resx">
       <DependentUpon>frmAgregarProfesor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarDatosDirector.resx">
+      <DependentUpon>frmEditarDatosDirector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarDatosProfesor.resx">
+      <DependentUpon>frmEditarDatosProfesor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarAlumnos.resx">
       <DependentUpon>frmListarAlumnos.vb</DependentUpon>

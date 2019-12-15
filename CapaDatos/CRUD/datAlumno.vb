@@ -67,11 +67,16 @@ Public Class datAlumno
                 Command.CommandText = "eliminaralumno"
                 Command.Parameters.AddWithValue("@dni", dni)
                 Command.CommandType = CommandType.StoredProcedure
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
                     Return False
-                End If
+                End Try
+                
             End Using
         End Using
         Return False
@@ -107,6 +112,7 @@ Public Class datAlumno
                 Command.Connection = conexion
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "obtenerTablaAlumno"
+
                 If Command.ExecuteNonQuery Then
                     dt = New DataTable
                     da = New SqlDataAdapter(Command)

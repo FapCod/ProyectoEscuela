@@ -29,7 +29,6 @@ Public Class frmagregarSeccion
             objentSeccion.objentGrado._codigoGrado = cmbGrado.SelectedValue
             objentSeccion.objentNumeroAnno._numeroAnno = Val(cmbannoEscolar.Text)
             objentSeccion.objentProfesor._dniProfesor = cmbProfesor.SelectedValue
-            objentSeccion._eliminacionLogica = False
             If rbtinicial.Checked = True Then
                 If objnegSeccion.VerificarSiExisteSeccionYGradoI(objentSeccion) = 0 Then
                     If objnegSeccion.registrarSeccion(objentSeccion) Then
@@ -37,7 +36,7 @@ Public Class frmagregarSeccion
                         dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
                     End If
                 Else
-                    MsgBox("Ya existe un Grado con esa seccion")
+                    MsgBox("Ya existe seccion con ese grado")
                     txtSeccion.Focus()
                 End If
             ElseIf rbtprimaria.Checked = True Then
@@ -47,7 +46,7 @@ Public Class frmagregarSeccion
                         dgvSeccion.DataSource = objnegSeccion.obtenerTabla()
                     End If
                 Else
-                    MsgBox("Ya existe un Grado con esa seccion")
+                    MsgBox("Ya existe seccion con ese grado")
                     txtSeccion.Focus()
                 End If
             End If

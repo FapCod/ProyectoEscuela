@@ -9,11 +9,11 @@ Public Class negSeccion
     Public Function obtenerTabla() As DataTable
         Return objdatSeccion.obtenerTabla()
     End Function
-    Public Function cargarSeccion(grado As Integer) As DataTable
-        Return objdatSeccion.cargarSeccion(grado)
+    Public Function cargarSeccion(grado As Integer, anno As Integer) As DataTable
+        Return objdatSeccion.cargarSeccion(grado, anno)
     End Function
-    Public Function cargarSeccionP(grado As Integer) As DataTable
-        Return objdatSeccion.cargarSeccionP(grado)
+    Public Function cargarSeccionP(grado As Integer, anno As Integer) As DataTable
+        Return objdatSeccion.cargarSeccionP(grado, anno)
     End Function
     Public Function VerificarSiExisteSeccionYGradoI(objentSeccion) As Integer
         Return objdatSeccion.VerificarSiExisteSeccionYGradoI(objentSeccion)

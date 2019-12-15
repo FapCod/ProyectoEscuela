@@ -7,7 +7,6 @@
     Private direccionProfesor
     Private correoProfesor
     Private telefonoProfesor
-    Private estadoProfesor
     Public Property _dniProfesor As String
         Get
             Return dniProfesor
@@ -81,14 +80,7 @@
             telefonoProfesor = value
         End Set
     End Property
-    Public Property _estadoProfesor As Boolean
-        Get
-            Return estadoProfesor
-        End Get
-        Set(value As Boolean)
-            estadoProfesor = value
-        End Set
-    End Property
+    
     
 
 

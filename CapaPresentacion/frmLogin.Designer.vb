@@ -34,7 +34,11 @@ Partial Class frmLogin
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnOcultar = New System.Windows.Forms.PictureBox()
+        Me.btnMostrar = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.btnOcultar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnMostrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -88,7 +92,7 @@ Partial Class frmLogin
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPass.Font = New System.Drawing.Font("Gadugi", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.White
-        Me.txtPass.Location = New System.Drawing.Point(656, 318)
+        Me.txtPass.Location = New System.Drawing.Point(656, 313)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -163,12 +167,34 @@ Partial Class frmLogin
         Me.Label4.TabIndex = 10
         Me.Label4.Text = " IE 15144"
         '
+        'btnOcultar
+        '
+        Me.btnOcultar.Image = CType(resources.GetObject("btnOcultar.Image"), System.Drawing.Image)
+        Me.btnOcultar.Location = New System.Drawing.Point(844, 307)
+        Me.btnOcultar.Name = "btnOcultar"
+        Me.btnOcultar.Size = New System.Drawing.Size(32, 32)
+        Me.btnOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnOcultar.TabIndex = 12
+        Me.btnOcultar.TabStop = False
+        '
+        'btnMostrar
+        '
+        Me.btnMostrar.Image = CType(resources.GetObject("btnMostrar.Image"), System.Drawing.Image)
+        Me.btnMostrar.Location = New System.Drawing.Point(844, 307)
+        Me.btnMostrar.Name = "btnMostrar"
+        Me.btnMostrar.Size = New System.Drawing.Size(32, 32)
+        Me.btnMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnMostrar.TabIndex = 13
+        Me.btnMostrar.TabStop = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orange
         Me.ClientSize = New System.Drawing.Size(1001, 528)
+        Me.Controls.Add(Me.btnMostrar)
+        Me.Controls.Add(Me.btnOcultar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.LinkLabel1)
@@ -188,6 +214,8 @@ Partial Class frmLogin
         Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.btnOcultar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnMostrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,5 +231,7 @@ Partial Class frmLogin
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents btnOcultar As System.Windows.Forms.PictureBox
+    Friend WithEvents btnMostrar As System.Windows.Forms.PictureBox
 
 End Class

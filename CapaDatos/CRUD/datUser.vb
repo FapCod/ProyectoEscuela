@@ -9,18 +9,18 @@ Public Class datUser
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "select * from usuario where nombreUsuario=@nombreUsuario and contraseUsuario = @contraseUsuario"
+                Command.CommandText = "loginUser"
                 Command.Parameters.AddWithValue("@nombreUsuario", nombreUsuario)
                 Command.Parameters.AddWithValue("@contraseUsuario", contraseUsuario)
-                Command.CommandType = CommandType.Text
+                Command.CommandType = CommandType.StoredProcedure
                 Dim reader = Command.ExecuteReader()
                 If reader.HasRows Then
                     While reader.Read() 'Obtenemos los datos de la columna y asignamos a los campos de usuario activo en cache'
                         usuarioActivo.nombreUsuario = reader.GetString(0)
-                        usuarioActivo.nombresUsuario = reader.GetString(2)
-                        usuarioActivo.apellidoUsuario = reader.GetString(3)
-                        usuarioActivo.correoUsuario = reader.GetString(4)
-                        usuarioActivo.cargoUsuario = reader.GetString(5)
+                        usuarioActivo.nombresUsuario = reader.GetString(3)
+                        usuarioActivo.apellidoUsuario = reader.GetString(4)
+                        usuarioActivo.correoUsuario = reader.GetString(5)
+                        usuarioActivo.cargoUsuario = reader.GetString(6)
                     End While
                     reader.Dispose()
 
@@ -38,9 +38,9 @@ Public Class datUser
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "select * from usuario where nombreUsuario = @nombreUsuario "
+                Command.CommandText = "VerificarSiExisteUsuario "
                 Command.Parameters.AddWithValue("@nombreUsuario ", nombreUsuario)
-                Command.CommandType = CommandType.Text
+                Command.CommandType = CommandType.StoredProcedure
                 Dim reader = Command.ExecuteReader()
                 If reader.HasRows Then
                     Return True
@@ -51,33 +51,46 @@ Public Class datUser
         End Using
         Return False
     End Function
-    Public Function crearUsuario(user As String, pass As String) As Boolean
+    Public Function crearUsuario(obj As entUser) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "create login " + user + " with password = '" + pass + "'"
-                Command.CommandType = CommandType.Text
-                If Command.ExecuteNonQuery Then
-                    crearUsuario1(user)
-                    crearUsuario2(user)
-                    crearUsuario3(user)
-                    Return True
+                Command.CommandText = "registrarUsuario"
+                Command.Parameters.AddWithValue("@usuario", obj._username)
+                Command.Parameters.AddWithValue("@contrasenna", obj._contrasenaUsuario)
+                Command.Parameters.AddWithValue("@dniUsuario", obj._dniUsuario)
+                Command.Parameters.AddWithValue("@nombreUsuario", obj._nombreUsuario)
+                Command.Parameters.AddWithValue("@apellidoUsuario", obj._apellidoUsuario)
+                Command.Parameters.AddWithValue("@correoUsuario", obj._correoUsuario)
+                Command.Parameters.AddWithValue("@cargoUsuario", obj._cargoUsuario)
+                Command.CommandType = CommandType.StoredProcedure
+                Try
+                    If Command.ExecuteNonQuery Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As Exception
 
-                Else
-                    Return False
-                End If
+                End Try
+                
             End Using
         End Using
         Return False
     End Function
-    Public Function crearUsuario1(user As String) As Boolean
+    Public Function editarUsuario(obj As entUser) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = "create user " + user + " for login " + user
-                Command.CommandType = CommandType.Text
+                Command.CommandText = "actualizarUsuario"
+                Command.Parameters.AddWithValue("@contrasenna", obj._contrasenaUsuario)
+                Command.Parameters.AddWithValue("@dni", obj._dniUsuario)
+                Command.Parameters.AddWithValue("@nombreUsuario", obj._nombreUsuario)
+                Command.Parameters.AddWithValue("@apellidoUsuario", obj._apellidoUsuario)
+                Command.Parameters.AddWithValue("@correoUsuario", obj._correoUsuario)
+                Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
                 Else
@@ -87,29 +100,14 @@ Public Class datUser
         End Using
         Return False
     End Function
-    Public Function crearUsuario2(user As String) As Boolean
+    Public Function eliminarUsuario(dni As String) As Boolean
         Using conexion = ObtenerConexion()
             conexion.Open()
             Using Command = New SqlCommand()
                 Command.Connection = conexion
-                Command.CommandText = " grant select, update, delete, insert on Alumno To " + user + " with grant option "
-                Command.CommandType = CommandType.Text
-                If Command.ExecuteNonQuery Then
-                    Return True
-                Else
-                    Return False
-                End If
-            End Using
-        End Using
-        Return False
-    End Function
-    Public Function crearUsuario3(user As String) As Boolean
-        Using conexion = ObtenerConexion()
-            conexion.Open()
-            Using Command = New SqlCommand()
-                Command.Connection = conexion
-                Command.CommandText = "grant select, update, delete, insert on Profesor To " + user + " with grant option"
-                Command.CommandType = CommandType.Text
+                Command.CommandText = "eliminarUsuario"
+                Command.Parameters.AddWithValue("@dni", dni)
+                Command.CommandType = CommandType.StoredProcedure
                 If Command.ExecuteNonQuery Then
                     Return True
                 Else
@@ -157,5 +155,48 @@ Public Class datUser
 
             End Using
         End Using
+    End Function
+
+
+
+
+    Public Function listarProfesores(dni As String) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "listarProfesores"
+                Command.Parameters.AddWithValue("@dni", dni)
+                Command.CommandType = CommandType.StoredProcedure
+                Dim dt1 As New DataTable
+                dt1.Load(Command.ExecuteReader())
+                If Command.ExecuteNonQuery Then
+                    Return dt1
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+        Return Nothing
+    End Function
+
+    Public Function listarDirector(dni As String) As DataTable
+        Using conexion = ObtenerConexion()
+            conexion.Open()
+            Using Command = New SqlCommand()
+                Command.Connection = conexion
+                Command.CommandText = "listarDirector"
+                Command.Parameters.AddWithValue("@dni", dni)
+                Command.CommandType = CommandType.StoredProcedure
+                Dim dt1 As New DataTable
+                dt1.Load(Command.ExecuteReader())
+                If Command.ExecuteNonQuery Then
+                    Return dt1
+                Else
+                    Return Nothing
+                End If
+            End Using
+        End Using
+        Return Nothing
     End Function
 End Class
