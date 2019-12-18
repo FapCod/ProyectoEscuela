@@ -2,6 +2,7 @@
 Imports CapaNegocio
 Public Class frmEditarDatosProfesor
 
+#Region "Funcionalidad de la ventana"
 
     Private Sub frmEditarDatosProfesor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ver()
@@ -46,6 +47,9 @@ Public Class frmEditarDatosProfesor
         
     End Sub
 
+#End Region
+
+#Region "Metodos creados"
     Public Sub ver()
         Dim objneg As New negUser
         DataGridView1.DataSource = objneg.listarProfesores(usuarioActivo.nombreUsuario)
@@ -59,4 +63,5 @@ Public Class frmEditarDatosProfesor
         txtcorreouser.Clear()
         txtcargouser.Clear()
     End Sub
+#End Region
 End Class

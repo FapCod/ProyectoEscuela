@@ -240,7 +240,7 @@ Partial Class frmAgregarAlumno
         '
         Me.txtedadAlumno.Location = New System.Drawing.Point(252, 135)
         Me.txtedadAlumno.Name = "txtedadAlumno"
-        Me.txtedadAlumno.Size = New System.Drawing.Size(184, 22)
+        Me.txtedadAlumno.Size = New System.Drawing.Size(62, 22)
         Me.txtedadAlumno.TabIndex = 31
         '
         'Label6

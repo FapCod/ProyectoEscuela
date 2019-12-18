@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Imports CapaNegocio
 Public Class frmReporteAlumno
+#Region "Funcionalidad de la ventana"
 
     Private Sub frmReporteAlumno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objnegAnnoEscolar As New negAnnoEscolar
@@ -8,11 +9,7 @@ Public Class frmReporteAlumno
         cmbannoEscolar.DisplayMember = "numeroAnno"
     End Sub
 
-#Region "Finalizar"
-    Protected Overrides Sub Finalize()
-        Me.Close()
-    End Sub
-#End Region
+
     Private Sub cmbcodGrado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodGrado.SelectedIndexChanged
         If rbtinicial.Checked = True Then
             cargarDatosSeccionInicial()
@@ -73,4 +70,12 @@ Public Class frmReporteAlumno
         Me.ReportViewer1.RefreshReport()
 
     End Sub
+
+#End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
 End Class

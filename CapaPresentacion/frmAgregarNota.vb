@@ -7,9 +7,6 @@ Public Class frmAgregarNota
         Dim objnegTrimestre As New negTrimestre
         cmbtrimestre.DataSource = objnegTrimestre.listarTrimestre()
         cmbtrimestre.DisplayMember = "descripcionTrimestre"
-        'Dim objnegAnnoEscolar As New negAnnoEscolar
-        'cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
-        'cmbannoEscolar.DisplayMember = "numeroAnno"
         DataGridView2.Visible = False
     End Sub
 
@@ -71,7 +68,6 @@ Public Class frmAgregarNota
         dniAlumno = DataGridView2.CurrentRow.Cells(0).Value
         Dim objentNotas As New entNota
         If comprobar() Then
-
             objentNotas._nota = cmbnota.Text
             objentNotas._descripcion = cmbCompetencia.Text
             objentNotas.objentAlumno._dniAlumno = dniAlumno
@@ -173,7 +169,10 @@ Public Class frmAgregarNota
             cmbcodigocurso.ValueMember = "codigoCurso"
         End If
     End Sub
-
+    Private Sub cmbannoEscolar_MouseHover(sender As Object, e As EventArgs) Handles cmbannoEscolar.MouseHover
+        cmbannoEscolar.Items.Add(cmbannoEscolar.Text)
+        cmbannoEscolar.DropDownStyle = ComboBoxStyle.DropDownList
+    End Sub
 #End Region
 
 #Region "metodos creados"
@@ -247,12 +246,4 @@ Public Class frmAgregarNota
     End Sub
 #End Region
 
-    
-    Private Sub cmbannoEscolar_MouseHover(sender As Object, e As EventArgs) Handles cmbannoEscolar.MouseHover
-        cmbannoEscolar.Items.Add(cmbannoEscolar.Text)
-        cmbannoEscolar.DropDownStyle = ComboBoxStyle.DropDownList
-    End Sub
-
-   
-  
 End Class

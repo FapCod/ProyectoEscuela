@@ -1,13 +1,14 @@
 ﻿Imports CapaEntidad
 
 Public Class frmBienvenidoUser
+
+#Region "Funcionalidad de la ventana"
     Private Sub BienvenidoUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblnombre.Text = usuarioActivo.nombresUsuario & ", " & usuarioActivo.apellidoUsuario 'Mostramos los datos del usuario'
         ProgressBar1.Value = 0
         Me.Opacity = 0 'Iniciamos la opacidad en 0'
         Timer1.Start() 'Iniciamos el temporizador 1'
     End Sub
-
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ProgressBar1.Value += 1
@@ -29,6 +30,6 @@ Public Class frmBienvenidoUser
             Me.Close()
         End If
     End Sub
-
+#End Region
 
 End Class

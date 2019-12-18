@@ -2,6 +2,7 @@
 Imports Microsoft.Reporting.WinForms
 
 Public Class frmReporteNotas
+#Region "Fucionalidad de la ventana"
 
     Private Sub frmReporteNotas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objnegAnnoEscolar As New negAnnoEscolar
@@ -9,11 +10,7 @@ Public Class frmReporteNotas
         cmbannoEscolar.DisplayMember = "numeroAnno"
     End Sub
 
-#Region "Finalizar"
-    Protected Overrides Sub Finalize()
-        Me.Close()
-    End Sub
-#End Region
+
 
     Private Sub cmbcodGrado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodGrado.SelectedIndexChanged
         If rbtinicial.Checked = True Then
@@ -86,6 +83,10 @@ Public Class frmReporteNotas
 
     End Sub
 
+#End Region
+
+#Region "Validacion de numeros o letras"
+
     Private Sub txtDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDni.KeyPress
         If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
             e.Handled = False
@@ -100,4 +101,12 @@ Public Class frmReporteNotas
             e.Handled = True   'Si es letra no entra al textbox
         End If
     End Sub
+
+#End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
 End Class

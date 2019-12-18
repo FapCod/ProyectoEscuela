@@ -1,14 +1,15 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmLogin
+#Region "Funcionalidad de la ventana"
+
+
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
-
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Dim negUser As New negUser()
@@ -42,20 +43,6 @@ Public Class frmLogin
         frmrecuperarContrasena.Show()
     End Sub
 
-    Private Sub txtUser_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUser.KeyPress
-        If Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub btnIngresar_MouseEnter(sender As Object, e As EventArgs) Handles btnIngresar.MouseEnter
-        btnIngresar.BackColor = Color.DarkOrange
-    End Sub
-
-    Private Sub btnIngresar_MouseLeave(sender As Object, e As EventArgs) Handles btnIngresar.MouseLeave
-        btnIngresar.BackColor = Color.Orange
-    End Sub
-
     Private Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
         txtPass.PasswordChar = ""
         btnMostrar.Hide()
@@ -67,4 +54,22 @@ Public Class frmLogin
         btnOcultar.Hide()
         btnMostrar.Show()
     End Sub
+#End Region
+
+#Region "Validacion"
+    Private Sub txtUser_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUser.KeyPress
+        If Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        End If
+    End Sub
+#End Region
+#Region "Cambio de color de botones"
+    Private Sub btnIngresar_MouseEnter(sender As Object, e As EventArgs) Handles btnIngresar.MouseEnter
+        btnIngresar.BackColor = Color.DarkOrange
+    End Sub
+
+    Private Sub btnIngresar_MouseLeave(sender As Object, e As EventArgs) Handles btnIngresar.MouseLeave
+        btnIngresar.BackColor = Color.Orange
+    End Sub
+#End Region
 End Class

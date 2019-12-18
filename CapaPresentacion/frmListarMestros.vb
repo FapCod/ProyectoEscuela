@@ -1,5 +1,7 @@
 ﻿Imports CapaNegocio
 Public Class frmListarMestros
+#Region "Funcionalidad de la ventana"
+
     Private Sub frmListarMestros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objnegAnnoEscolar As New negAnnoEscolar
         cmbannoEscolar.DataSource = objnegAnnoEscolar.listarAnnoEscolar()
@@ -10,11 +12,7 @@ Public Class frmListarMestros
         DataGridView1.DataSource = conexion.obtenerTabla()
     End Sub
 
-#Region "Finalizar"
-    Protected Overrides Sub Finalize()
-        Me.Close()
-    End Sub
-#End Region
+
     Private Sub cmbcodGrado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcodGrado.SelectedIndexChanged
         If rbtinicial.Checked = True Then
             cargarDatosSeccionInicial()
@@ -67,9 +65,15 @@ Public Class frmListarMestros
         ElseIf rbtPrimaria.Checked = True Then
             nivel = "Primaria"
         End If
-        DataGridView1.DataSource = objneg.obtenerTablaListar(cmbannoEscolar.Text, nivel, cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
+        DataGridView1.DataSource = objneg.ObtenerTablaListar(cmbannoEscolar.Text, nivel, cmbcodGrado.SelectedValue, cmbcodseccion.SelectedValue)
     End Sub
-   
-  
-   
+
+#End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
+
 End Class

@@ -1,8 +1,7 @@
 ﻿Imports CapaNegocio
 Imports CapaEntidad
 Public Class frmEditarDatosDirector
-
-
+#Region "Funcionalidad de la ventana"
     Private Sub frmEditarDatosDirector_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ver()
     End Sub
@@ -38,6 +37,9 @@ Public Class frmEditarDatosDirector
             ver()
         End If
     End Sub
+#End Region
+
+#Region "Metodos creados"
     Public Sub ver()
         Dim objneg As New negUser
         DataGridView1.DataSource = objneg.listarDirector(usuarioActivo.nombreUsuario)
@@ -51,4 +53,5 @@ Public Class frmEditarDatosDirector
         txtcorreouser.Clear()
         txtcargouser.Clear()
     End Sub
+#End Region
 End Class

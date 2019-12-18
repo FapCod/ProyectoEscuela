@@ -14,13 +14,10 @@ Public Class frmAgregarMatricula
     End Sub
 
     Private Sub btnagregarMatricula_Click(sender As Object, e As EventArgs) Handles btnagregarMatricula.Click
-
         Dim objentMatricula As New entMatricula
         Dim objnegMatricula As New negMatricula
         If comprobar() Then
             If compararAnnos() = False Then
-
-
                 If compararFechas() = False Then
                     If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
                         If objnegMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 0 Then
@@ -112,8 +109,6 @@ Public Class frmAgregarMatricula
         Dim objnegMatricula As New negMatricula
         If comprobar() Then
             If compararAnnos() = False Then
-
-
                 If compararFechas() = False Then
                     If (objnegMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text)) Then
                         objentMatricula._fechaMatricula = Format(dtFecha.Value, "Short Date")
@@ -200,6 +195,35 @@ Public Class frmAgregarMatricula
             dgvprimaria.Visible = True
             dgvinicial.Visible = False
         End If
+    End Sub
+    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
+        Dim negMatricula As New negMatricula
+        If txtdniAlumno.TextLength = 8 Then
+
+            If negMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 1 Then
+
+            ElseIf negMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text) = 1 Then
+                DataGridView2.Visible = True
+                DataGridView2.DataSource = negMatricula.buscarAlumnoLike(txtdniAlumno.Text)
+            Else
+                MsgBox("El alumno no existe")
+            End If
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Dim i As Integer
+        i = DataGridView2.CurrentRow.Index
+        txtdniAlumno.Text = DataGridView2.Item(0, i).Value()
+        DataGridView2.Visible = False
+    End Sub
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim neg As New negMatricula
+        DataGridView1.DataSource = neg.buscarMatricula(txtDniBuscar.Text)
+    End Sub
+
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        ver()
     End Sub
 #End Region
 
@@ -290,6 +314,22 @@ Public Class frmAgregarMatricula
             e.Handled = True   'Si es letra no entra al textbox
         End If
     End Sub
+
+    Private Sub txtDniBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDniBuscar.KeyPress
+        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
+            e.Handled = False
+            If txtDniBuscar.TextLength > 7 Then
+                e.Handled = True
+            End If
+        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
+            e.Handled = True
+        Else
+            e.Handled = True   'Si es letra no entra al textbox
+        End If
+    End Sub
+
 #End Region
 
 #Region "los colores cambian"
@@ -319,7 +359,6 @@ Public Class frmAgregarMatricula
 
 #End Region
 
-
 #Region "Finalizar"
     Protected Overrides Sub Finalize()
         Me.Close()
@@ -327,49 +366,4 @@ Public Class frmAgregarMatricula
 #End Region
 
     
-    Private Sub txtdniAlumno_TextChanged(sender As Object, e As EventArgs) Handles txtdniAlumno.TextChanged
-        Dim negMatricula As New negMatricula
-        If txtdniAlumno.TextLength = 8 Then
-
-            If negMatricula.VerificarSiExisteMatricula(txtdniAlumno.Text) = 1 Then
-
-            ElseIf negMatricula.VerificarSiExisteAlumno(txtdniAlumno.Text) = 1 Then
-                DataGridView2.Visible = True
-                DataGridView2.DataSource = negMatricula.buscarAlumnoLike(txtdniAlumno.Text)
-            Else
-                MsgBox("El alumno no existe")
-            End If
-        End If
-    End Sub
-
-    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        Dim i As Integer
-        i = DataGridView2.CurrentRow.Index
-        txtdniAlumno.Text = DataGridView2.Item(0, i).Value()
-        DataGridView2.Visible = False
-    End Sub
-
-    Private Sub txtDniBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDniBuscar.KeyPress
-        If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
-            e.Handled = False
-            If txtDniBuscar.TextLength > 7 Then
-                e.Handled = True
-            End If
-        ElseIf Char.IsControl(e.KeyChar) Then 'Si es una tecla de control si entra al textbox
-            e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then 'Si es espacio no entra al textbox
-            e.Handled = True
-        Else
-            e.Handled = True   'Si es letra no entra al textbox
-        End If
-    End Sub
-
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim neg As New negMatricula
-        DataGridView1.DataSource = neg.buscarMatricula(txtDniBuscar.Text)
-    End Sub
-
-    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
-        ver()
-    End Sub
 End Class

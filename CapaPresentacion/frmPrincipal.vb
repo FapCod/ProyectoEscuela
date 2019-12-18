@@ -1,6 +1,7 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocio
 Public Class frmPrincipal
+
 #Region "Botones del formulario"
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblNombreUser.Text = usuarioActivo.nombreUsuario
@@ -50,8 +51,8 @@ Public Class frmPrincipal
         frmAN.Show()
     End Sub
 
-    
-   
+
+
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
         Dim frmAM As New frmAgregarMatricula
         frmAM.Show()
@@ -138,15 +139,6 @@ Public Class frmPrincipal
     Private Sub btnListarMaestros_Click(sender As Object, e As EventArgs) Handles btnListarMaestros.Click
         frmListarMestros.Show()
     End Sub
-#End Region
-
-#Region "Finalizar"
-    Protected Overrides Sub Finalize()
-        Me.Close()
-    End Sub
-#End Region
-
-   
     Private Sub btnEditarMisDatos_Click(sender As Object, e As EventArgs) Handles btnEditarMisDatos.Click
         Dim director As String = "Director"
         If usuarioActivo.cargoUsuario.Equals(director) Then
@@ -155,4 +147,11 @@ Public Class frmPrincipal
             frmEditarDatosProfesor.Show()
         End If
     End Sub
+#End Region
+
+#Region "Finalizar"
+    Protected Overrides Sub Finalize()
+        Me.Close()
+    End Sub
+#End Region
 End Class

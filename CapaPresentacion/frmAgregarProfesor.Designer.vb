@@ -187,9 +187,10 @@ Partial Class frmAgregarProfesor
         'cmbsexoProfesor
         '
         Me.cmbsexoProfesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbsexoProfesor.DropDownWidth = 109
         Me.cmbsexoProfesor.FormattingEnabled = True
         Me.cmbsexoProfesor.Items.AddRange(New Object() {"M", "F", "N"})
-        Me.cmbsexoProfesor.Location = New System.Drawing.Point(308, 233)
+        Me.cmbsexoProfesor.Location = New System.Drawing.Point(307, 230)
         Me.cmbsexoProfesor.Name = "cmbsexoProfesor"
         Me.cmbsexoProfesor.Size = New System.Drawing.Size(109, 25)
         Me.cmbsexoProfesor.TabIndex = 5
@@ -296,7 +297,7 @@ Partial Class frmAgregarProfesor
         Me.txtedadProfesor.Location = New System.Drawing.Point(308, 174)
         Me.txtedadProfesor.Multiline = True
         Me.txtedadProfesor.Name = "txtedadProfesor"
-        Me.txtedadProfesor.Size = New System.Drawing.Size(217, 35)
+        Me.txtedadProfesor.Size = New System.Drawing.Size(69, 35)
         Me.txtedadProfesor.TabIndex = 4
         '
         'Label13

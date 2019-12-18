@@ -100,11 +100,12 @@ Public Class frmAgregarAlumno
         txtnombreApoderadoAlumno.Text = DataGridView1.Item(6, i).Value()
         txtnumeroTelefonoApoderado.Text = DataGridView1.Item(7, i).Value()
     End Sub
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        Ver()
+    End Sub
 #End Region
 
 #Region "metodos creados"
-
-
     Sub Ver()
         Dim conexion As New negAlumno
         DataGridView1.DataSource = conexion.obtenerTabla()
@@ -132,8 +133,6 @@ Public Class frmAgregarAlumno
 #End Region
 
 #Region "Validacion de numero y letras"
-
-
     Private Sub txtdniAlumno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdniAlumno.KeyPress
         If Char.IsNumber(e.KeyChar) Then 'Si es numero si entra al textbox
             e.Handled = False
@@ -232,8 +231,6 @@ Public Class frmAgregarAlumno
 #End Region
 
 #Region "Los colores cambian"
-
-
     Private Sub btnagregarAlumno_MouseEnter(sender As Object, e As EventArgs) Handles btnagregarAlumno.MouseEnter
         btnagregarAlumno.BackColor = Color.DeepSkyBlue
     End Sub
@@ -275,7 +272,5 @@ Public Class frmAgregarAlumno
 
    
    
-    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
-        Ver()
-    End Sub
+    
 End Class

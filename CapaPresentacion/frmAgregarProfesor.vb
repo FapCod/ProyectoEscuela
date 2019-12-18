@@ -130,7 +130,9 @@ Public Class frmAgregarProfesor
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btncancelarProfesor.Click
         LimpiarDatos()
     End Sub
-
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        Ver()
+    End Sub
 #End Region
 
 #Region "metodos creados"
@@ -295,8 +297,4 @@ Public Class frmAgregarProfesor
     End Sub
 #End Region
 
-    
-    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
-        Ver()
-    End Sub
 End Class
